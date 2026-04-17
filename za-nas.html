@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>За Нас — YourFaceTalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+  :root {
+    --bg:#faf8f4; --bg2:#f2ede4; --bg3:#ede7db; --surface:#ffffff;
+    --gold:#b8892e; --gold-rich:#c9a84c; --gold-pale:#f5edd8;
+    --ink:#1a1612; --ink2:#3d3630; --muted:#8a8078;
+    --border:rgba(184,137,46,0.18); --border2:rgba(184,137,46,0.30);
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;overflow-x:hidden}
+  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar-track{background:var(--bg2)}
+  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all 0.4s ease;gap:0.8rem}
+  .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
+  .nav-logo img{height:44px;width:auto;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:1.2rem}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{background:transparent!important;border:1px solid var(--gold)!important;color:var(--gold)!important;padding:0.42rem 1.1rem;border-radius:2px;font-size:0.76rem!important;letter-spacing:0.12em!important;transition:background 0.3s,color 0.3s!important}
+  .nav-cta:hover{background:var(--gold)!important;color:#fff!important}
+  .nav-cta::after{display:none!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;text-decoration:none;color:var(--ink2);font-size:0.78rem;font-weight:600;padding:0.4rem 0.9rem;border:1px solid var(--border2);transition:all 0.3s;border-radius:2px;white-space:nowrap;flex-shrink:0}
+  .nav-phone:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .nav-phone svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform 0.3s ease,opacity 0.3s ease}
+
+  /* ── SHARED ── */
+  .gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.2;margin:0 4rem}
+  section{padding:7rem 4rem}
+  .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .section-tag::before{content:"";width:22px;height:1px;background:var(--gold)}
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.8vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink)}
+  h2 em{font-style:italic;color:var(--gold)}
+  .btn-primary{background:var(--gold);color:#fff;padding:0.9rem 2rem;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,137,46,0.25)}
+  .btn-ghost{background:transparent;color:var(--ink);padding:0.9rem 2rem;border:1px solid rgba(26,22,18,0.2);cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* ── PAGE HERO ── */
+  #page-hero{padding-top:80px;min-height:60vh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);overflow:hidden}
+  .page-hero-left{padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative}
+  .page-hero-left::after{content:"";position:absolute;top:0;bottom:0;right:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border2),transparent)}
+  .page-hero-breadcrumb{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none}
+  .page-hero-breadcrumb:hover{color:var(--gold)}
+  .page-hero-breadcrumb svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
+  .page-hero-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+  .page-hero-tag::before{content:"";width:28px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,4.5vw,4.4rem);font-weight:300;line-height:1.08;letter-spacing:-0.01em;color:var(--ink);opacity:0;animation:fadeUp 0.9s 0.4s forwards;margin-bottom:1.4rem}
+  h1 em{font-style:italic;color:var(--gold)}
+  .page-hero-sub{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-style:italic;color:var(--ink2);line-height:1.7;max-width:460px;opacity:0;animation:fadeUp 0.9s 0.6s forwards}
+  .page-hero-right{position:relative;overflow:hidden}
+  .page-hero-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .page-hero-img-overlay{position:absolute;top:0;left:0;bottom:0;width:80px;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none}
+
+  /* ── INTRO / STORY ── */
+  #story{background:var(--bg2)}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:3.5rem}
+  .story-img-col{position:relative}
+  .story-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+  .story-badge{position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--gold);color:#fff;padding:1.4rem;min-width:140px;text-align:center;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+  .story-badge-num{font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;line-height:1}
+  .story-badge-text{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem}
+  .story-text-col{}
+  .story-opening{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:300;font-style:italic;line-height:1.75;color:var(--ink);margin-bottom:2rem;padding-left:1.4rem;border-left:2px solid var(--gold)}
+  .story-text p{color:var(--ink2);line-height:1.9;margin-bottom:1.4rem;font-size:0.96rem}
+  .story-text p:last-child{margin-bottom:0}
+  .cert-block{margin-top:2.5rem;padding:1.6rem;background:var(--surface);border:1px solid var(--border)}
+  .cert-block-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .cert-pills{display:flex;flex-wrap:wrap;gap:0.6rem}
+  .cert-pill{border:1px solid var(--border2);padding:0.4rem 0.9rem;font-size:0.72rem;letter-spacing:0.08em;color:var(--ink2);background:var(--gold-pale)}
+
+  /* ── MISSION ── */
+  #mission{background:var(--bg)}
+  .mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem}
+  .mission-text p{color:var(--ink2);line-height:1.9;margin-bottom:1.4rem;font-size:0.96rem}
+  .mission-items{display:flex;flex-direction:column;gap:1.4rem;margin-top:2rem}
+  .mission-item{display:flex;gap:1.2rem;align-items:flex-start}
+  .mission-item-icon{width:44px;height:44px;flex-shrink:0;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center}
+  .mission-item-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+  .mission-item-text{font-size:0.92rem;color:var(--ink2);line-height:1.75;padding-top:0.6rem}
+  .mission-visual{position:relative}
+  .mission-quote-block{background:#1f3d38;color:var(--gold-pale);padding:3.5rem 3rem;position:relative;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px))}
+  .mission-quote-mark{font-family:"Cormorant Garamond",serif;font-size:6rem;line-height:0.7;color:rgba(184,137,46,0.25);display:block;margin-bottom:1rem}
+  .mission-quote-text{font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:300;font-style:italic;line-height:1.7;color:#faf8f4;margin-bottom:2rem}
+  .mission-quote-author{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich)}
+  .mission-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:2px}
+  .mission-stat{background:#1f3d38;padding:1.4rem;text-align:center}
+  .mission-stat-num{font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:600;color:var(--gold-rich);line-height:1}
+  .mission-stat-label{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.45);margin-top:0.3rem}
+
+  /* ── BELIEFS ── */
+  #beliefs{background:var(--bg2)}
+  .beliefs-header{max-width:640px;margin-bottom:4rem}
+  .beliefs-header p{color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-top:1.2rem}
+  .beliefs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border)}
+  .belief-card{background:var(--surface);padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:all 0.4s}
+  .belief-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .belief-card:hover{background:var(--gold-pale);transform:translateY(-4px);box-shadow:0 8px 40px rgba(184,137,46,0.10)}
+  .belief-card:hover::before{transform:scaleX(1)}
+  .belief-num{font-family:"Cormorant Garamond",serif;font-size:3.5rem;font-weight:300;color:rgba(184,137,46,0.12);line-height:1;margin-bottom:1.2rem;transition:color 0.4s}
+  .belief-card:hover .belief-num{color:rgba(184,137,46,0.22)}
+  .belief-icon{margin-bottom:1.2rem}
+  .belief-icon svg{width:30px;height:30px;stroke:var(--gold);fill:none;stroke-width:1.5}
+  .belief-title{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;margin-bottom:0.8rem;color:var(--ink)}
+  .belief-desc{color:var(--muted);line-height:1.8;font-size:0.87rem}
+
+  /* ── SCHOOLS ── */
+  #schools{background:var(--bg)}
+  .schools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
+  .school-card{padding:2.5rem 2rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+  .school-card:hover{border-color:var(--border2);box-shadow:0 8px 32px rgba(184,137,46,0.08);transform:translateY(-3px)}
+  .school-flag{font-size:2.2rem;margin-bottom:1.2rem;display:block}
+  .school-name{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin-bottom:0.6rem}
+  .school-origin{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+  .school-desc{font-size:0.86rem;color:var(--muted);line-height:1.8}
+  .school-cert{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;font-size:0.72rem;color:var(--gold);letter-spacing:0.08em}
+  .school-cert svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
+
+  /* ── CTA ── */
+  #cta{background:#1f3d38;padding:7rem 4rem;position:relative;overflow:hidden}
+  #cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.04) 1px,transparent 1px);background-size:60px 60px}
+  .cta-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.4rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:1rem;color:rgba(250,248,244,0.55);line-height:1.8;margin-bottom:3rem;max-width:560px;margin-left:auto;margin-right:auto}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,46,0.3)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* ── FOOTER ── */
+  footer{background:#1f3d38;color:rgba(250,248,244,0.65);padding:4rem 4rem 2rem;border-top:1px solid rgba(184,137,46,0.12)}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,137,46,0.18)}
+  .footer-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:#faf8f4;margin-bottom:0.8rem}
+  .footer-logo span{color:var(--gold-rich)}
+  .footer-brand p{font-size:0.82rem;line-height:1.75;color:rgba(250,248,244,0.42)}
+  .footer-col h4{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.2rem}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:0.7rem}
+  .footer-col a{text-decoration:none;color:rgba(250,248,244,0.42);font-size:0.85rem;transition:color 0.3s}
+  .footer-col a:hover{color:#faf8f4}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(250,248,244,0.28)}
+  .footer-social{display:flex;gap:0.6rem}
+  .fsoc{width:32px;height:32px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
+  .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}
+  .fsoc svg{width:13px;height:13px;stroke:rgba(250,248,244,0.35);fill:none;stroke-width:1.5;transition:stroke 0.3s}
+  .fsoc:hover svg{stroke:var(--gold-rich)}
+  .fsoc .tt{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .tt{fill:var(--gold-rich)}
+  .fsoc .yt-tri{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .yt-tri{fill:var(--gold-rich)}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.8s ease,transform 0.8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    nav{padding:1rem 2rem}
+    section{padding:5rem 2rem}
+    #page-hero{grid-template-columns:1fr;min-height:auto}
+    .page-hero-left{padding:4rem 2rem;min-height:50vh}
+    .page-hero-left::after{display:none}
+    .page-hero-right{height:55vw;max-height:420px}
+    .story-grid,.mission-grid{grid-template-columns:1fr;gap:3rem}
+    .story-img-col{max-width:380px}
+    .beliefs-grid{grid-template-columns:1fr 1fr}
+    .schools-grid{grid-template-columns:1fr 1fr}
+    .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+    .gold-divider{margin:0 2rem}
+  }
+  @media(max-width:768px){
+    .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(250,248,244,0.98);backdrop-filter:blur(24px);flex-direction:column;gap:0;padding:1rem 0;border-bottom:1px solid var(--border);display:none;z-index:99}
+    .nav-links.mobile-open{display:flex}
+    .nav-links li{width:100%}
+    .nav-links a{display:block;padding:0.9rem 2rem;font-size:0.9rem;border-bottom:1px solid var(--border)}
+    .hamburger{display:flex}
+    .beliefs-grid,.schools-grid{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr}
+    .nav-phone .phone-num{display:none}
+    .nav-phone{padding:0.4rem 0.5rem}
+    .mission-stats{grid-template-columns:repeat(3,1fr)}
+    #cta{padding:5rem 2rem}
+    .cta-actions{flex-direction:column;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="img/logo.png" alt="YourFaceTalk Logo">
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Начало</a></li>
+      <li><a href="#" class="active">За нас</a></li>
+      <li><a href="uslugi.html">Услуги</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<!-- 
+<section id="page-hero">
+  <div class="page-hero-left">
+    <a href="index.html" class="page-hero-breadcrumb">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Начало
+    </a>
+    <div class="page-hero-tag">За нас · Историята</div>
+    <h1>Науката да<br>четеш <em>лицето</em></h1>
+    <p class="page-hero-sub">„Помагам на хората да открият себе си — чрез лицето им, което никога не лъже."</p>
+  </div>
+  <div class="page-hero-right">
+    <img src="img/elina.jpg" alt="Елина Божимирова — YourFaceTalk" class="page-hero-img">
+    <div class="page-hero-img-overlay"></div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+ -->
+
+<!-- STORY -->
+<section id="story">
+  <div class="section-tag reveal">Историята</div>
+  <div class="story-grid">
+    <div class="story-img-col reveal">
+      <img src="img/elina.jpg" alt="Елина Божимирова" class="story-img">
+      <div class="story-badge">
+        <div class="story-badge-num">15+</div>
+        <div class="story-badge-text">Години опит</div>
+      </div>
+    </div>
+    <div class="story-text-col reveal">
+      <h2>Науката за четене за лицето<br>влезе в <em>живота ми</em></h2>
+      <div class="story-opening" style="margin-top:1.8rem">
+        През годините, работейки в корпоративния свят, винаги съм търсела различни отговори — за себе си и за света, в който живеем.
+      </div>
+      <div class="story-text">
+        <p>Винаги съм знаела и усещала, че макар всички да сме уникални същества на тази Земя, има нещо в нас, което ни свързва и ни дава обяснения за нашите действия. Нещо, което извира отвъд думите ни.</p>
+        <p>Нещо, което ни е като чертеж за нас самите — основа, върху която да се градим, докато учим от преживяванията, стремежите и грешките си.</p>
+        <p>След 15 години работа в различни бизнес направления, животът ми поднесе неочаквани изпитания. В годините на търсене дойде времето да се запозная по-отблизо с едно знание, което търсех отдавна — <strong>разчитането на лицето</strong>.</p>
+        <p>Тази наука и изкуство ме притегли с деликатността и точността си. Намерих отговорите си в западната, индийската и китайската школи — три различни, но взаимно допълващи се системи, които изцяло паснаха на природата ми.</p>
+      </div>
+      <div class="cert-block reveal">
+        <div class="cert-block-label">Образование & Сертификации</div>
+        <div class="cert-pills">
+          <span class="cert-pill">Psychosomatic Therapy College — Австралия</span>
+          <span class="cert-pill">Face Reader / Четец на лица</span>
+          <span class="cert-pill">Западна школа</span>
+          <span class="cert-pill">Индийска школа</span>
+          <span class="cert-pill">Китайска школа</span>
+          <span class="cert-pill">100+ Консултации</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="mission-grid">
+    <div class="reveal">
+      <div class="section-tag">Мисията</div>
+      <h2>Защо правим<br><em>това, което правим</em></h2>
+      <div class="mission-text" style="margin-top:1.6rem">
+        <p>Продължавам да се развивам в тази област, защото знам, че с тези знания човек може да разбере себе си и да си отговори на въпроса: <strong>КОЙ съм АЗ сега?</strong></p>
+      </div>
+      <div class="mission-items">
+        <div class="mission-item">
+          <div class="mission-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <p class="mission-item-text">Да помогна на все повече хора да опознаят себе си чрез лицата си — с разбиране, уважение и дълбочина.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-item-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <p class="mission-item-text">Да разпространя това знание в различни области и сфери — там, където знам, че наистина работи и помага.</p>
+        </div>
+        <div class="mission-item">
+          <div class="mission-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <p class="mission-item-text">Да покажа как само с онова, което лицето „казва", можем да се разбираме, свързваме и виждаме как всеки мисли, чувства и действа.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mission-visual reveal">
+      <div class="mission-quote-block">
+        <span class="mission-quote-mark">"</span>
+        <p class="mission-quote-text">Всеки идва на този свят с чертеж. Лицето е картата, с която можем да го прочетем.</p>
+        <div class="mission-quote-author">— Елина Божимирова</div>
+      </div>
+      <div class="mission-stats">
+        <div class="mission-stat">
+          <div class="mission-stat-num">15+</div>
+          <div class="mission-stat-label">Години опит</div>
+        </div>
+        <div class="mission-stat">
+          <div class="mission-stat-num">100+</div>
+          <div class="mission-stat-label">Консултации</div>
+        </div>
+        <div class="mission-stat">
+          <div class="mission-stat-num">3</div>
+          <div class="mission-stat-label">Школи</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- BELIEFS -->
+<section id="beliefs">
+  <div class="beliefs-header reveal">
+    <div class="section-tag">В какво вярваме</div>
+    <h2>Ценностите, които<br><em>ни движат</em></h2>
+    <p>Разчитането на лицето не е инструмент за преценка. То е език за разбиране — на себе си и на другите.</p>
+  </div>
+  <div class="beliefs-grid">
+    <div class="belief-card reveal">
+      <div class="belief-num">01</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <div class="belief-title">Всеки човек е уникален</div>
+      <p class="belief-desc">Вярваме, че зад всяко лице стои неповторима история. Подходът ни е винаги индивидуален — без шаблони, без готови отговори.</p>
+    </div>
+    <div class="belief-card reveal">
+      <div class="belief-num">02</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div class="belief-title">Самопознанието е пътят</div>
+      <p class="belief-desc">Когато разбираме себе си по-дълбоко, можем да вземаме по-осъзнати решения, да изграждаме по-здрави връзки и да живеем по-пълноценно.</p>
+    </div>
+    <div class="belief-card reveal">
+      <div class="belief-num">03</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="belief-title">Разбирането свързва</div>
+      <p class="belief-desc">Когато виждаме как другите мислят и чувстват, намаляват конфликтите и нараства доверието — в екипи, в партньорства, в семейства.</p>
+    </div>
+    <div class="belief-card reveal">
+      <div class="belief-num">04</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="belief-title">Знанието има практическа стойност</div>
+      <p class="belief-desc">Физиогномиката не е мистика — тя е система. Приложима в бизнеса, в личния живот, в лидерството и в себеразбирането.</p>
+    </div>
+    <div class="belief-card reveal">
+      <div class="belief-num">05</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="belief-title">Уважение към всяка история</div>
+      <p class="belief-desc">Всяка консултация е поверителна и провеждана с уважение. Вярваме, че пространството за себеразкриване трябва да бъде безопасно.</p>
+    </div>
+    <div class="belief-card reveal">
+      <div class="belief-num">06</div>
+      <div class="belief-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+      <div class="belief-title">Ученето е непрекъснато</div>
+      <p class="belief-desc">Науката за лицето е жива. Продължаваме да учим, да задълбочаваме знанията си и да интегрираме нови прозрения в практиката си.</p>
+    </div>
+  </div>
+</section>
+<!-- 
+<div class="gold-divider"></div>
+
+<!-- SCHOOLS 
+<section id="schools">
+  <div class="section-tag reveal">Методологията</div>
+  <h2 class="reveal">Три школи,<br><em>една цел</em></h2>
+  <p class="reveal" style="color:var(--muted);font-size:0.96rem;margin-top:1rem;max-width:560px;line-height:1.85">Работим с три утвърдени системи за разчитане на лица, всяка с уникална дълбочина и акценти — заедно те дават цялостна картина.</p>
+  <div class="schools-grid">
+    <div class="school-card reveal">
+      <span class="school-flag">🌿</span>
+      <div class="school-name">Западна школа</div>
+      <div class="school-origin">Европа & Северна Америка</div>
+      <p class="school-desc">Базирана на физиогномиката и психологията, тя свързва чертите на лицето с личностните качества, поведенческите модели и емоционалните тенденции.</p>
+    </div>
+    <div class="school-card reveal">
+      <span class="school-flag">🪷</span>
+      <div class="school-name">Индийска школа</div>
+      <div class="school-origin">Аюрведа & Самудрика Шастра</div>
+      <p class="school-desc">Хилядолетна традиция, която чете лицето като карма и съдба. Свързва чертите с дълбоките вибрации на духа, потенциалите и жизнения път.</p>
+    </div>
+    <div class="school-card reveal">
+      <span class="school-flag">☯️</span>
+      <div class="school-name">Китайска школа</div>
+      <div class="school-origin">Мяо Сян — Четене на лицето</div>
+      <p class="school-desc">Древна даоистка традиция, интегрирана в китайската медицина. Разчита зоните на лицето като карта на органи, енергии и жизнени периоди.</p>
+      <div class="school-cert">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Psychosomatic Therapy College — Австралия
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<div class="gold-divider"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Следваща стъпка</div>
+    <h2 class="cta-title">Готови ли сте да разберете<br>какво казва <em>вашето лице?</em></h2>
+    <p class="cta-sub">Всяка консултация е уникална среща с вас самите. Запазете час или разгледайте услугите, за да намерите най-подходящото за вас.</p>
+    <div class="cta-actions">
+      <a href="uslugi.html" class="btn-cta-primary">Разгледай услугите</a>
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-cta-ghost">Запази консултация</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез физиогномиката.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="#">Персонален анализ</a></li><li><a href="#">Бизнес обучения</a></li><li><a href="#">Екипна динамика</a></li><li><a href="#">Коучинг</a></li><li><a href="#">Лекции</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:info@yourfacetalk.com">info@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 YourFaceTalk. Всички права запазени.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE-%D1%82%D0%B8-3360a9301/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Nav compact on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 80) {
+      nav.style.padding = '0.7rem 3rem';
+      nav.style.boxShadow = '0 2px 24px rgba(26,22,18,0.07)';
+    } else {
+      nav.style.padding = '1rem 3rem';
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Mobile hamburger
+  (function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksEl = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinksEl.classList.toggle('mobile-open');
+      hamburger.classList.toggle('is-open', isOpen);
+      const bars = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        bars[0].style.transform = 'translateY(6px) rotate(45deg)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+      } else {
+        bars[0].style.transform = '';
+        bars[1].style.opacity = '';
+        bars[2].style.transform = '';
+      }
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinksEl.classList.remove('mobile-open');
+        const bars = hamburger.querySelectorAll('span');
+        bars[0].style.transform = '';
+        bars[1].style.opacity = '';
+        bars[2].style.transform = '';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

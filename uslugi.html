@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Услуги — YourFaceTalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+  :root {
+    --bg:#faf8f4; --bg2:#f2ede4; --bg3:#ede7db; --surface:#ffffff;
+    --gold:#b8892e; --gold-rich:#c9a84c; --gold-pale:#f5edd8;
+    --ink:#1a1612; --ink2:#3d3630; --muted:#8a8078;
+    --border:rgba(184,137,46,0.18); --border2:rgba(184,137,46,0.30);
+    --teal:#1f3d38;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;overflow-x:hidden}
+  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar-track{background:var(--bg2)}
+  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all 0.4s ease;gap:0.8rem}
+  .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
+  .nav-logo img{height:44px;width:auto;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:1.2rem}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{background:transparent!important;border:1px solid var(--gold)!important;color:var(--gold)!important;padding:0.42rem 1.1rem;border-radius:2px;font-size:0.76rem!important;letter-spacing:0.12em!important;transition:background 0.3s,color 0.3s!important}
+  .nav-cta:hover{background:var(--gold)!important;color:#fff!important}
+  .nav-cta::after{display:none!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;text-decoration:none;color:var(--ink2);font-size:0.78rem;font-weight:600;padding:0.4rem 0.9rem;border:1px solid var(--border2);transition:all 0.3s;border-radius:2px;white-space:nowrap;flex-shrink:0}
+  .nav-phone:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .nav-phone svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform 0.3s ease,opacity 0.3s ease}
+
+  /* ── SHARED ── */
+  .gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.2;margin:0 4rem}
+  section{padding:7rem 4rem}
+  .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .section-tag::before{content:"";width:22px;height:1px;background:var(--gold)}
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.8vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink)}
+  h2 em{font-style:italic;color:var(--gold)}
+  .btn-primary{background:var(--gold);color:#fff;padding:0.9rem 2rem;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,137,46,0.25)}
+  .btn-ghost{background:transparent;color:var(--ink);padding:0.9rem 2rem;border:1px solid rgba(26,22,18,0.2);cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* ── PAGE HERO ── */
+  #page-hero{padding-top:80px;min-height:52vh;display:flex;align-items:center;background:var(--bg);position:relative;overflow:hidden}
+  .page-hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 60% 50%,black 0%,transparent 70%)}
+  .page-hero-inner{position:relative;z-index:2;max-width:700px;padding:5rem 4rem}
+  .page-hero-breadcrumb{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
+  .page-hero-breadcrumb:hover{color:var(--gold)}
+  .page-hero-breadcrumb svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+  .page-hero-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+  .page-hero-tag::before{content:"";width:28px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,4.5vw,4.4rem);font-weight:300;line-height:1.08;letter-spacing:-0.01em;color:var(--ink);opacity:0;animation:fadeUp 0.9s 0.4s forwards;margin-bottom:1.4rem}
+  h1 em{font-style:italic;color:var(--gold)}
+  .page-hero-sub{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-style:italic;color:var(--ink2);line-height:1.7;max-width:560px;opacity:0;animation:fadeUp 0.9s 0.6s forwards}
+  /* Tab nav */
+  .services-tabs{display:flex;gap:0;margin-top:3rem;border-bottom:1px solid var(--border);opacity:0;animation:fadeUp 0.9s 0.75s forwards}
+  .tab-btn{padding:0.8rem 1.8rem;font-family:"DM Sans",sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.3s;margin-bottom:-1px}
+  .tab-btn:hover{color:var(--gold)}
+  .tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+  /* ── CONSULTATIONS ── */
+  #consultations{background:var(--bg);padding-top:5rem}
+  .consult-intro{max-width:640px;margin-bottom:4rem}
+  .consult-intro p{color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-top:1rem}
+
+  /* Service cards */
+  .service-list{display:flex;flex-direction:column;gap:2px;background:var(--border)}
+  .service-item{background:var(--surface);display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:start;padding:3rem;position:relative;transition:all 0.35s;border-left:2px solid transparent}
+  .service-item:hover{background:var(--bg);border-left-color:var(--gold)}
+  .service-item-num{position:absolute;top:2.5rem;left:3rem;font-family:"Cormorant Garamond",serif;font-size:4rem;font-weight:300;color:rgba(184,137,46,0.08);line-height:1;pointer-events:none;transition:color 0.35s}
+  .service-item:hover .service-item-num{color:rgba(184,137,46,0.14)}
+  .service-item-body{padding-left:3.5rem}
+  .service-item-tag{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+  .service-item-title{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.25}
+  .service-item-desc{color:var(--ink2);font-size:0.9rem;line-height:1.85;margin-bottom:1.4rem}
+  .service-benefits{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1.6rem}
+  .service-benefits li{display:flex;gap:0.7rem;align-items:flex-start;font-size:0.87rem;color:var(--ink2);line-height:1.65}
+  .service-benefits li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.55rem}
+  .service-item-price{flex-shrink:0;text-align:right;padding-top:0.5rem}
+  .price-amount{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1;white-space:nowrap}
+  .price-bgn{font-size:0.82rem;color:var(--muted);margin-top:0.2rem;white-space:nowrap}
+  .price-duration{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.4rem;white-space:nowrap}
+  .price-cta{margin-top:1.2rem}
+
+  /* Voucher card — special */
+  .service-item.voucher{background:linear-gradient(135deg,var(--bg2) 0%,var(--bg) 100%);border-left:2px solid var(--gold)}
+  .service-item.voucher .service-item-num{color:rgba(184,137,46,0.12)}
+  .voucher-note{margin-top:1.4rem;padding:1.2rem 1.4rem;background:rgba(184,137,46,0.06);border:1px solid var(--border);font-size:0.82rem;color:var(--muted);line-height:1.75}
+  .voucher-note strong{color:var(--ink2)}
+
+  /* Important notice */
+  .important-notice{margin-top:3rem;padding:2rem 2.4rem;background:var(--teal);color:rgba(250,248,244,0.85);display:flex;gap:1.4rem;align-items:flex-start}
+  .important-notice svg{width:22px;height:22px;stroke:var(--gold-rich);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:0.15rem}
+  .important-notice-text{font-size:0.87rem;line-height:1.8}
+  .important-notice-text strong{color:var(--gold-rich)}
+
+  /* ── TRAININGS ── */
+  #trainings{background:var(--bg2);padding-top:5rem}
+  .training-intro{max-width:700px;margin-bottom:3rem}
+  .training-intro p{color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-top:1rem}
+  .training-target{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem;align-items:start}
+  .training-target-col h3{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:400;color:var(--ink);margin-bottom:1rem}
+  .check-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+  .check-list li{display:flex;gap:0.8rem;align-items:flex-start;font-size:0.87rem;color:var(--ink2);line-height:1.65}
+  .check-list li svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:0.3rem}
+  .modules-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
+  .module-card{background:var(--surface);padding:2.8rem 2.4rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+  .module-card:hover{border-color:var(--border2);box-shadow:0 8px 32px rgba(184,137,46,0.08);transform:translateY(-3px)}
+  .module-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .module-card:hover::before{transform:scaleX(1)}
+  .module-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+  .module-title{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.3}
+  .module-desc{color:var(--muted);font-size:0.86rem;line-height:1.8;margin-bottom:1.4rem}
+  .module-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+  .module-list li{display:flex;gap:0.7rem;font-size:0.85rem;color:var(--ink2);line-height:1.6}
+  .module-list li::before{content:"→";color:var(--gold);font-size:0.8rem;flex-shrink:0;margin-top:0.1rem}
+  .training-benefits-block{margin-top:3rem;background:var(--surface);border:1px solid var(--border);padding:2.8rem 3rem}
+  .training-benefits-block h3{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin-bottom:1.6rem}
+  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .benefit-item{padding:1.4rem;background:var(--bg2);border-left:2px solid var(--gold)}
+  .benefit-item p{font-size:0.86rem;color:var(--ink2);line-height:1.75}
+
+  /* ── CTA ── */
+  #cta{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  #cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.05) 1px,transparent 1px);background-size:60px 60px}
+  .cta-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.4rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:1rem;color:rgba(250,248,244,0.55);line-height:1.8;margin-bottom:3rem;max-width:560px;margin-left:auto;margin-right:auto}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,46,0.3)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* ── FOOTER ── */
+  footer{background:var(--teal);color:rgba(250,248,244,0.65);padding:4rem 4rem 2rem;border-top:1px solid rgba(184,137,46,0.12)}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,137,46,0.18)}
+  .footer-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:#faf8f4;margin-bottom:0.8rem}
+  .footer-logo span{color:var(--gold-rich)}
+  .footer-brand p{font-size:0.82rem;line-height:1.75;color:rgba(250,248,244,0.42)}
+  .footer-col h4{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.2rem}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:0.7rem}
+  .footer-col a{text-decoration:none;color:rgba(250,248,244,0.42);font-size:0.85rem;transition:color 0.3s}
+  .footer-col a:hover{color:#faf8f4}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(250,248,244,0.28)}
+  .footer-social{display:flex;gap:0.6rem}
+  .fsoc{width:32px;height:32px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
+  .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}
+  .fsoc svg{width:13px;height:13px;stroke:rgba(250,248,244,0.35);fill:none;stroke-width:1.5;transition:stroke 0.3s}
+  .fsoc:hover svg{stroke:var(--gold-rich)}
+  .fsoc .tt{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .tt{fill:var(--gold-rich)}
+  .fsoc .yt-tri{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .yt-tri{fill:var(--gold-rich)}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.8s ease,transform 0.8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    nav{padding:1rem 2rem}
+    section{padding:5rem 2rem}
+    .page-hero-inner{padding:4rem 2rem}
+    .service-item{grid-template-columns:1fr;gap:2rem}
+    .service-item-price{text-align:left}
+    .training-target,.modules-grid{grid-template-columns:1fr}
+    .benefits-grid{grid-template-columns:1fr 1fr}
+    .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+    .gold-divider{margin:0 2rem}
+  }
+  @media(max-width:768px){
+    .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(250,248,244,0.98);backdrop-filter:blur(24px);flex-direction:column;gap:0;padding:1rem 0;border-bottom:1px solid var(--border);display:none;z-index:99}
+    .nav-links.mobile-open{display:flex}
+    .nav-links li{width:100%}
+    .nav-links a{display:block;padding:0.9rem 2rem;font-size:0.9rem;border-bottom:1px solid var(--border)}
+    .hamburger{display:flex}
+    .service-item{padding:2rem}
+    .service-item-body{padding-left:2.5rem}
+    .services-tabs{overflow-x:auto}
+    .benefits-grid{grid-template-columns:1fr}
+    .footer-top{grid-template-columns:1fr}
+    .nav-phone .phone-num{display:none}
+    .nav-phone{padding:0.4rem 0.5rem}
+    #cta{padding:5rem 2rem}
+    .cta-actions{flex-direction:column;align-items:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="img/logo.png" alt="YourFaceTalk Logo">
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Начало</a></li>
+      <li><a href="za-nas.html">За нас</a></li>
+      <li><a href="#" class="active">Услуги</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-inner">
+    <a href="index.html" class="page-hero-breadcrumb">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Начало
+    </a>
+    <div class="page-hero-tag">Персонални · Корпоративни · Обучения</div>
+    <h1>Услуги за<br><em>себепознание</em><br>и развитие</h1>
+    <p class="page-hero-sub">Изберете формата, която отговаря на вашите нужди — от кратък личен анализ до корпоративно обучение за целия екип.</p>
+    <div class="services-tabs">
+      <button class="tab-btn active" onclick="scrollTo('consultations')">Персонални анализи</button>
+      <button class="tab-btn" onclick="scrollTo('trainings')">Бизнес обучения</button>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- CONSULTATIONS -->
+<section id="consultations">
+  <div class="consult-intro reveal">
+    <div class="section-tag">Персонални анализи</div>
+    <h2>Какво разкрива<br><em>лицето ти за теб?</em></h2>
+    <p>Всяка среща е уникална — персонализирана, поверителна и провеждана с дълбоко уважение към вашата история. Изберете формата, която ви говори най-много.</p>
+  </div>
+
+  <div class="service-list">
+
+    <!-- 1 -->
+    <div class="service-item reveal">
+      <div class="service-item-num">01</div>
+      <div class="service-item-body">
+        <div class="service-item-tag">Базов анализ</div>
+        <div class="service-item-title">Базово разчитане на лице</div>
+        <p class="service-item-desc">Прочит на най-важното от чертите на лицето — синтезиран анализ, който ще ви разгърне представите за себе си. Ще останете изненадани колко много основни неща за личността могат да се кажат само за 30 минути.</p>
+        <ul class="service-benefits">
+          <li>Най-важното за вас и онова, което изпъква на преден план в момента на разчитане</li>
+          <li>Синтезиран анализ на водещите черти на личността</li>
+          <li>Идеален за първа среща с разчитането на лицето</li>
+        </ul>
+      </div>
+      <div class="service-item-price">
+        <div class="price-amount">25 €</div>
+        <div class="price-bgn">48.90 лв</div>
+        <div class="price-duration">30 минути</div>
+        <div class="price-cta">
+          <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="service-item reveal">
+      <div class="service-item-num">02</div>
+      <div class="service-item-body">
+        <div class="service-item-tag">Подробен анализ</div>
+        <div class="service-item-title">Подробно разчитане на лице</div>
+        <p class="service-item-desc">Подробен прочит на лицето спрямо трите школи — индийска, китайска и западна — и анализ на личността и нейния потенциал в работен и личен план.</p>
+        <ul class="service-benefits">
+          <li>Индийска школа — психосоматичен прочит, открояващ се във формите и чертите на лицето</li>
+          <li>Китайска школа — спрямо 5-те елемента: таланти, силни страни и предизвикателства</li>
+          <li>Западна школа — как всяка черта показва начина на вземане на решения и действие</li>
+          <li>Анализ на всяка зона: чело, очи, нос, вежди, уста, скули, брадичка</li>
+          <li>Силни черти и предизвикателства на личността</li>
+          <li>Огледални снимки — двата аспекта на личността</li>
+          <li>Насоченост на енергията в момента</li>
+        </ul>
+      </div>
+      <div class="service-item-price">
+        <div class="price-amount">54 €</div>
+        <div class="price-bgn">105.61 лв</div>
+        <div class="price-duration">60 минути</div>
+        <div class="price-cta">
+          <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="service-item reveal">
+      <div class="service-item-num">03</div>
+      <div class="service-item-body">
+        <div class="service-item-tag">Анализ + Писмен доклад</div>
+        <div class="service-item-title">Подробно разчитане с писмен анализ</div>
+        <p class="service-item-desc">Подробен прочит на лицето, допълнен с персонализиран писмен анализ, написан лично от Елина Божимирова — не по шаблон или AI, защото всеки от нас е толкова индивидуален.</p>
+        <ul class="service-benefits">
+          <li>Всичко от Подробното разчитане (Индийска, Китайска и Западна школа)</li>
+          <li>Огледални снимки — двата аспекта на личността</li>
+          <li>Насоченост на енергията в момента</li>
+          <li>Персонализиран писмен анализ с всички характеристики по лицето</li>
+          <li>Обобщен анализ с основната тема в лицето в момента на разчитането</li>
+        </ul>
+        <p style="font-size:0.85rem;color:var(--gold);font-style:italic;margin-top:0.5rem">„Всеки идва на този свят точно с тези качества на личността, които да го водят напред — и много от тях са изписани на лицето ни."</p>
+      </div>
+      <div class="service-item-price">
+        <div class="price-amount">77 €</div>
+        <div class="price-bgn">150.59 лв</div>
+        <div class="price-duration">90 минути</div>
+        <div class="price-cta">
+          <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="service-item reveal">
+      <div class="service-item-num">04</div>
+      <div class="service-item-body">
+        <div class="service-item-tag">За двойки</div>
+        <div class="service-item-title">Разчитане на лица на партньорски двойки</div>
+        <p class="service-item-desc">Малко повече за взаимоотношенията между двама души, погледнато от призмата на психосоматичното разчитане на лица по индийската и китайската школа — използвани в целия свят за анализ на личността и нейния потенциал.</p>
+        <ul class="service-benefits">
+          <li>Задълбочен поглед за двамата — поотделно и заедно</li>
+          <li>Силни страни, предизвикателства и личен стил на всеки</li>
+          <li>Как индивидуалните качества се комбинират във взаимоотношенията</li>
+          <li>Изцяло нов аспект за разбиране на партньорството</li>
+          <li>Необходими: снимки и на двамата преди срещата</li>
+        </ul>
+      </div>
+      <div class="service-item-price">
+        <div class="price-amount">87 €</div>
+        <div class="price-bgn">170 лв</div>
+        <div class="price-duration">За двама</div>
+        <div class="price-cta">
+          <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 — Voucher -->
+    <div class="service-item voucher reveal">
+      <div class="service-item-num">05</div>
+      <div class="service-item-body">
+        <div class="service-item-tag">Подарък</div>
+        <div class="service-item-title">Ваучер за подарък</div>
+        <p class="service-item-desc">Чудесен подарък за близък човек с интерес към себепознанието. Ваучерът може да бъде изпратен в електронен формат или доставен физически.</p>
+        <ul class="service-benefits">
+          <li>Изберете услугата: Базово, Подробно или с Писмен анализ</li>
+          <li>Датата на срещата се уточнява допълнително</li>
+          <li>Изпратете имейл на: <a href="mailto:elina@yourfacetalk.com" style="color:var(--gold)">elina@yourfacetalk.com</a></li>
+        </ul>
+        <div class="voucher-note">
+          <strong>За да поръчате ваучер, посочете:</strong> имената на получателя · коя услуга · дата за изписване на ваучера.<br>
+          Разходите за куриер при физическа доставка са за сметка на клиента.
+        </div>
+      </div>
+      <div class="service-item-price">
+        <div class="price-amount" style="font-size:1.4rem;color:var(--ink2)">По избор</div>
+        <div class="price-bgn">според услугата</div>
+        <div class="price-cta">
+          <a href="mailto:elina@yourfacetalk.com" class="btn-primary">Поръчай ваучер</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Important notice -->
+  <div class="important-notice reveal">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    <div class="important-notice-text">
+      <strong>Важно за всички срещи:</strong> Можете да се свържете с Елина до 4 часа преди предварително уговорената среща за отмяна или пренасрочване. При неявяване без предупреждение ваучерът или услугата се считат за използвани.
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- TRAININGS -->
+<section id="trainings">
+  <div class="training-intro reveal">
+    <div class="section-tag">Бизнес обучения</div>
+    <h2>Лицето показва<br><em>качествата, които носим</em></h2>
+    <p>Готови ли сте да научите как да познавате и работите с хората около вас, само виждайки лицата им? Авторските бизнес модули са изцяло практични, работещи и приложими от първия ден.</p>
+  </div>
+
+  <div class="training-target reveal">
+    <div class="training-target-col">
+      <h3>За кого са обученията</h3>
+      <ul class="check-list">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Специалисти в сферата на човешките ресурси</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Мениджъри и ръководители на екипи</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Психолози, ментори и коучове</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Специалисти в продажбите</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Всички, които работят с хора ежедневно</li>
+      </ul>
+    </div>
+    <div class="training-target-col">
+      <h3>Целта на обучението</h3>
+      <ul class="check-list">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Подпомагане на процеса по набор и подбор на кандидати</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Повишаване на удовлетвореността на служителите</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Разпознаване на „меките" умения на личността</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Формиране на успешни и балансирани екипи</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Определяне на силни черти и потенциал на личността</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="modules-grid">
+    <div class="module-card reveal">
+      <div class="module-label">Модул 1</div>
+      <div class="module-title">Разчитане на дългосрочни личностни характеристики и модели на поведение</div>
+      <p class="module-desc">Как по зоните и формите на лицето можете да разберете по-добре хората, с които работите и общувате.</p>
+      <ul class="module-list">
+        <li>Основни подходи и начин на действие на хората около вас</li>
+        <li>Повишаване нивото на комуникация и разбиране</li>
+        <li>Разпознаване на силните качества на всеки човек</li>
+        <li>Подобряване на процеса по наемане и подбор</li>
+      </ul>
+    </div>
+    <div class="module-card reveal">
+      <div class="module-label">Модул 2</div>
+      <div class="module-title">Отделните черти в лицето казват повече от автобиографията</div>
+      <p class="module-desc">С подбраните черти на лицето в това обучение ще се научите да четете характеристики на личността веднага и на практика.</p>
+      <ul class="module-list">
+        <li>Основни черти, разкриващи качества на личността</li>
+        <li>Бизнес насочеността на личността</li>
+        <li>Начини на действие и вземане на решения</li>
+        <li>Как се обработва информация</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="training-benefits-block reveal">
+    <h3>Ползи от обученията</h3>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <p>Практични знания, приложими още на същия ден след обучението</p>
+      </div>
+      <div class="benefit-item">
+        <p>Упражнения и обсъждания, затвърждаващи наученото</p>
+      </div>
+      <div class="benefit-item">
+        <p>Синтезирана информация — само за няколко часа, ценна за целия живот</p>
+      </div>
+      <div class="benefit-item">
+        <p>Разбиране защо колегите, партньорите и ръководителите действат по определен начин</p>
+      </div>
+      <div class="benefit-item">
+        <p>Знание как различните лица оформят и различно поведение в екипна среда</p>
+      </div>
+      <div class="benefit-item">
+        <p>Това знание ще промени начина, по който виждате хората около вас — завинаги</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:3rem" class="reveal">
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.2rem">За по-детайлна информация и индивидуална оферта направете запитване</p>
+    <a href="index.html#contact" class="btn-primary">Запитване за обучение</a>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Следваща стъпка</div>
+    <h2 class="cta-title">Готови ли сте да разберете<br>какво казва <em>вашето лице?</em></h2>
+    <p class="cta-sub">Всяка консултация е уникална среща с вас самите. Запазете час или се свържете с нас за повече информация.</p>
+    <div class="cta-actions">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-cta-primary">Запази консултация</a>
+      <a href="index.html#contact" class="btn-cta-ghost">Свържи се с нас</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез физиогномиката.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="#consultations">Персонален анализ</a></li><li><a href="#consultations">Анализ с писмен доклад</a></li><li><a href="#consultations">Анализ за двойки</a></li><li><a href="#trainings">Бизнес обучения</a></li><li><a href="#consultations">Ваучер за подарък</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:elina@yourfacetalk.com">elina@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 YourFaceTalk. Всички права запазени.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE-%D1%82%D0%B8-3360a9301/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll to section
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+  }
+
+  // Sync tab on scroll
+  window.addEventListener('scroll', () => {
+    const c = document.getElementById('consultations');
+    const t = document.getElementById('trainings');
+    const tabs = document.querySelectorAll('.tab-btn');
+    if (t && window.scrollY >= t.offsetTop - 200) {
+      tabs[0].classList.remove('active'); tabs[1].classList.add('active');
+    } else {
+      tabs[1].classList.remove('active'); tabs[0].classList.add('active');
+    }
+  });
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Nav compact on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 80) {
+      nav.style.padding = '0.7rem 3rem';
+      nav.style.boxShadow = '0 2px 24px rgba(26,22,18,0.07)';
+    } else {
+      nav.style.padding = '1rem 3rem';
+      nav.style.boxShadow = 'none';
+    }
+  });
+
+  // Mobile hamburger
+  (function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksEl = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinksEl.classList.toggle('mobile-open');
+      const bars = hamburger.querySelectorAll('span');
+      if (isOpen) {
+        bars[0].style.transform = 'translateY(6px) rotate(45deg)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+      } else {
+        bars[0].style.transform = '';
+        bars[1].style.opacity = '';
+        bars[2].style.transform = '';
+      }
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinksEl.classList.remove('mobile-open');
+        const bars = hamburger.querySelectorAll('span');
+        bars[0].style.transform = '';
+        bars[1].style.opacity = '';
+        bars[2].style.transform = '';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

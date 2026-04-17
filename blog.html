@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Блог — YourFaceTalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+  :root {
+    --bg:#faf8f4; --bg2:#f2ede4; --bg3:#ede7db; --surface:#ffffff;
+    --gold:#b8892e; --gold-rich:#c9a84c; --gold-pale:#f5edd8;
+    --ink:#1a1612; --ink2:#3d3630; --muted:#8a8078;
+    --border:rgba(184,137,46,0.18); --border2:rgba(184,137,46,0.30);
+    --teal:#1f3d38;
+  }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;overflow-x:hidden}
+  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar-track{background:var(--bg2)}
+  ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all 0.4s ease;gap:0.8rem}
+  .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
+  .nav-logo img{height:44px;width:auto;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:1.2rem}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{background:transparent!important;border:1px solid var(--gold)!important;color:var(--gold)!important;padding:0.42rem 1.1rem;border-radius:2px;font-size:0.76rem!important;letter-spacing:0.12em!important;transition:background 0.3s,color 0.3s!important}
+  .nav-cta:hover{background:var(--gold)!important;color:#fff!important}
+  .nav-cta::after{display:none!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;text-decoration:none;color:var(--ink2);font-size:0.78rem;font-weight:600;padding:0.4rem 0.9rem;border:1px solid var(--border2);transition:all 0.3s;border-radius:2px;white-space:nowrap;flex-shrink:0}
+  .nav-phone:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .nav-phone svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform 0.3s ease,opacity 0.3s ease}
+
+  /* ── SHARED ── */
+  .gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.2;margin:0 4rem}
+  .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .section-tag::before{content:"";width:22px;height:1px;background:var(--gold)}
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.8vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink)}
+  h2 em{font-style:italic;color:var(--gold)}
+  .btn-primary{background:var(--gold);color:#fff;padding:0.9rem 2rem;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,137,46,0.25)}
+
+  /* ── PAGE HERO ── */
+  #page-hero{padding:120px 4rem 5rem;background:var(--bg);position:relative;overflow:hidden}
+  .page-hero-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at 70% 50%,black 0%,transparent 65%)}
+  .page-hero-inner{position:relative;z-index:2;max-width:680px;opacity:0;animation:fadeUp 0.9s 0.3s forwards}
+  .page-hero-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
+  .page-hero-tag::before{content:"";width:28px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.6rem,4.5vw,4.4rem);font-weight:300;line-height:1.08;letter-spacing:-0.01em;color:var(--ink);margin-bottom:1.2rem}
+  h1 em{font-style:italic;color:var(--gold)}
+  .page-hero-sub{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink2);line-height:1.7;max-width:520px}
+
+  /* ── FILTERS ── */
+  #filters{padding:2rem 4rem 0;background:var(--bg);position:sticky;top:72px;z-index:50;border-bottom:1px solid var(--border)}
+  .filter-wrap{display:flex;gap:0;overflow-x:auto}
+  .filter-btn{padding:0.7rem 1.4rem;font-family:"DM Sans",sans-serif;font-size:0.73rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.3s;white-space:nowrap;margin-bottom:-1px}
+  .filter-btn:hover{color:var(--gold)}
+  .filter-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+  /* ── BLOG GRID ── */
+  #blog-grid{padding:5rem 4rem 7rem;background:var(--bg)}
+  .grid-container{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+  .blog-card{background:var(--surface);border:1px solid var(--border);overflow:hidden;transition:all 0.35s;cursor:pointer;display:flex;flex-direction:column}
+  .blog-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(184,137,46,0.10);border-color:var(--border2)}
+  .blog-card.featured{grid-column:span 2}
+  .blog-card-img{position:relative;overflow:hidden;height:220px}
+  .blog-card.featured .blog-card-img{height:280px}
+  .blog-card-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
+  .blog-card:hover .blog-card-img img{transform:scale(1.04)}
+  .blog-card-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.3) 0%,transparent 60%);pointer-events:none}
+  .blog-card-badge{position:absolute;top:1rem;left:1rem;background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.22rem 0.65rem}
+  .blog-card-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
+  .blog-card-meta{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
+  .blog-card-title{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:400;line-height:1.35;color:var(--ink);margin-bottom:0.7rem}
+  .blog-card.featured .blog-card-title{font-size:1.55rem}
+  .blog-card-excerpt{font-size:0.84rem;color:var(--muted);line-height:1.75;flex:1}
+  .blog-card-read{display:inline-flex;align-items:center;gap:0.35rem;margin-top:1.2rem;color:var(--gold);font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;transition:gap 0.3s}
+  .blog-card:hover .blog-card-read{gap:0.6rem}
+  .blog-card-placeholder{width:100%;height:100%;position:relative;overflow:hidden}
+  .blog-card-placeholder canvas{position:absolute;inset:0;width:100%;height:100%}
+  .no-results{grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-style:italic}
+
+  /* ── ARTICLE VIEW ── */
+  #article-view{display:none;padding-top:80px}
+  #article-view.visible{display:block}
+  .article-hero{min-height:55vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+  .article-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+  .article-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.85) 0%,rgba(26,22,18,0.3) 50%,transparent 100%)}
+  .article-hero-content{position:relative;z-index:2;padding:4rem;color:#faf8f4;max-width:820px}
+  .article-hero-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,244,0.65);text-decoration:none;transition:color 0.3s;cursor:pointer;margin-bottom:1.6rem;background:none;border:none}
+  .article-hero-back:hover{color:#faf8f4}
+  .article-hero-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+  .article-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
+  .article-cat{background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.22rem 0.65rem}
+  .article-date{font-size:0.72rem;letter-spacing:0.1em;color:rgba(250,248,244,0.55);text-transform:uppercase}
+  .article-title{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:#faf8f4}
+  .article-body{background:var(--bg);padding:5rem 4rem 7rem}
+  .article-content{max-width:720px;margin:0 auto}
+  .article-content p{color:var(--ink2);line-height:1.9;font-size:0.97rem;margin-bottom:1.4rem}
+  .article-content h3,.article-content h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin:2rem 0 0.8rem}
+  .article-content h4{font-size:1.2rem}
+  .article-content ul,.article-content ol{margin:0 0 1.4rem 1.2rem}
+  .article-content li{color:var(--ink2);line-height:1.85;font-size:0.95rem;margin-bottom:0.5rem}
+  .article-content strong{color:var(--ink);font-weight:500}
+  .article-content em{font-style:italic;color:var(--ink2)}
+  .article-content hr{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+  .article-content blockquote{border-left:2px solid var(--gold);padding:1.2rem 1.6rem;background:rgba(184,137,46,0.05);margin:1.8rem 0}
+  .article-content blockquote p{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink);margin:0}
+  .article-share{margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .article-share-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+  .article-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
+  .article-nav-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;transition:color 0.3s;font-family:"DM Sans",sans-serif}
+  .article-nav-btn:hover{color:var(--gold)}
+  .article-nav-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* ── CTA ── */
+  #cta{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  #cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.05) 1px,transparent 1px);background-size:60px 60px}
+  .cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.2rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:0.96rem;color:rgba(250,248,244,0.5);line-height:1.8;margin-bottom:2.5rem}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,46,0.3)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* ── FOOTER ── */
+  footer{background:var(--teal);color:rgba(250,248,244,0.65);padding:4rem 4rem 2rem;border-top:1px solid rgba(184,137,46,0.12)}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,137,46,0.18)}
+  .footer-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:#faf8f4;margin-bottom:0.8rem}
+  .footer-logo span{color:var(--gold-rich)}
+  .footer-brand p{font-size:0.82rem;line-height:1.75;color:rgba(250,248,244,0.42)}
+  .footer-col h4{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.2rem}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:0.7rem}
+  .footer-col a{text-decoration:none;color:rgba(250,248,244,0.42);font-size:0.85rem;transition:color 0.3s}
+  .footer-col a:hover{color:#faf8f4}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(250,248,244,0.28)}
+  .footer-social{display:flex;gap:0.6rem}
+  .fsoc{width:32px;height:32px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
+  .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}
+  .fsoc svg{width:13px;height:13px;stroke:rgba(250,248,244,0.35);fill:none;stroke-width:1.5;transition:stroke 0.3s}
+  .fsoc:hover svg{stroke:var(--gold-rich)}
+  .fsoc .tt{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .tt{fill:var(--gold-rich)}
+  .fsoc .yt-tri{fill:rgba(250,248,244,0.35);stroke:none!important;transition:fill 0.3s}
+  .fsoc:hover .yt-tri{fill:var(--gold-rich)}
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.8s ease,transform 0.8s ease}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    nav{padding:1rem 2rem}
+    #page-hero{padding:110px 2rem 4rem}
+    #filters{padding:1.5rem 2rem 0}
+    #blog-grid{padding:4rem 2rem 6rem}
+    .grid-container{grid-template-columns:1fr 1fr}
+    .blog-card.featured{grid-column:span 2}
+    .article-body{padding:4rem 2rem 6rem}
+    .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+    .gold-divider{margin:0 2rem}
+    #cta{padding:5rem 2rem}
+  }
+  @media(max-width:768px){
+    .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(250,248,244,0.98);backdrop-filter:blur(24px);flex-direction:column;gap:0;padding:1rem 0;border-bottom:1px solid var(--border);display:none;z-index:99}
+    .nav-links.mobile-open{display:flex}
+    .nav-links li{width:100%}
+    .nav-links a{display:block;padding:0.9rem 2rem;font-size:0.9rem;border-bottom:1px solid var(--border)}
+    .hamburger{display:flex}
+    .grid-container{grid-template-columns:1fr}
+    .blog-card.featured{grid-column:span 1}
+    .footer-top{grid-template-columns:1fr}
+    .nav-phone .phone-num{display:none}
+    .nav-phone{padding:0.4rem 0.5rem}
+    .article-hero-content{padding:2rem}
+    .cta-actions{flex-direction:column;align-items:center}
+  }
+</style>
+</head>
+<body>
+<script src="blog-data.js"></script>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="img/logo.png" alt="YourFaceTalk Logo">
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Начало</a></li>
+      <li><a href="za-nas.html">За нас</a></li>
+      <li><a href="uslugi.html">Услуги</a></li>
+      <li><a href="#" class="active">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════
+     БЛОГ ИЗГЛЕД (списък)
+════════════════════════════════════════════════════ -->
+<div id="blog-view">
+
+  <section id="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-inner">
+      <div class="page-hero-tag">Знание · Прозрения · Физиогномика</div>
+      <h1>Блог —<br><em>Лицата говорят</em></h1>
+      <p class="page-hero-sub">Статии, наблюдения и прозрения от практиката по разчитане на лица. Всяка седмица — нова перспектива за себе си и хората около теб.</p>
+    </div>
+  </section>
+
+  <div id="filters">
+    <div class="filter-wrap" id="filterWrap"></div>
+  </div>
+
+  <section id="blog-grid">
+    <div class="grid-container" id="gridContainer"></div>
+  </section>
+
+</div>
+
+<!-- ════════════════════════════════════════════════════
+     СТАТИЯ ИЗГЛЕД (четене)
+════════════════════════════════════════════════════ -->
+<div id="article-view">
+  <div class="article-hero">
+    <img id="artHeroImg" src="" alt="" class="article-hero-img">
+    <div class="article-hero-overlay"></div>
+    <div class="article-hero-content">
+      <button class="article-hero-back" onclick="showBlog()">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Обратно към блога
+      </button>
+      <div class="article-meta">
+        <span class="article-cat" id="artCat"></span>
+        <span class="article-date" id="artDate"></span>
+      </div>
+      <div class="article-title" id="artTitle"></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <div class="article-content" id="artContent"></div>
+    <div class="article-share">
+      <span class="article-share-label">Сподели:</span>
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="btn-primary" style="padding:0.5rem 1rem;font-size:0.72rem">Facebook</a>
+    </div>
+    <div class="article-nav" id="artNav"></div>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Следваща стъпка</div>
+    <h2 class="cta-title">Готови ли сте да разберете<br>какво казва <em>вашето лице?</em></h2>
+    <p class="cta-sub">Знанието е първата стъпка. Консултацията е втората.</p>
+    <div class="cta-actions">
+      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-cta-primary">Запази консултация</a>
+      <a href="uslugi.html" class="btn-cta-ghost">Разгледай услугите</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез физиогномиката.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi.html">Персонален анализ</a></li><li><a href="uslugi.html">Бизнес обучения</a></li><li><a href="uslugi.html">Ваучер за подарък</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:elina@yourfacetalk.com">elina@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 YourFaceTalk. Всички права запазени.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE-%D1%82%D0%B8-3360a9301/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ARTICLES са заредени от blog-data.js (зареден в <head>) */
+
+
+/* ════════════════════════════════════════════════
+   НЕ РЕДАКТИРАЙ ПО-ДОЛУ — ЛОГИКА НА БЛОГА
+════════════════════════════════════════════════ */
+
+let currentFilter = 'Всички';
+let currentArticleIdx = null;
+
+// Build category filter buttons
+function buildFilters() {
+  const cats = ['Всички', ...new Set(ARTICLES.map(a => a.category))];
+  const wrap = document.getElementById('filterWrap');
+  wrap.innerHTML = cats.map(function(c) {
+    var cls = (c === currentFilter) ? 'filter-btn active' : 'filter-btn';
+    return '<button class="' + cls + '" onclick="setFilter(\'' + c + '\',this)">' + c + '</button>';
+  }).join('');
+}
+
+// Set active filter and re-render grid
+function setFilter(cat, btn) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+  setTimeout(drawPlaceholders, 0);
+}
+
+// Placeholder SVG for articles without images
+function placeholderHTML(articleIdx) {
+  return '<div class="blog-card-placeholder"><canvas data-idx="' + articleIdx + '" class="ph-canvas"></canvas></div>';
+}
+
+// Draw unique geometric art on each placeholder canvas
+function drawPlaceholders() {
+  // Palette sets — each article gets its own palette
+  var palettes = [
+    { bg: ['#e8e2d9','#d4c9b8'], shapes: ['#b8892e','#c9a84c','#1f3d38'] },  // gold/teal
+    { bg: ['#d6dde3','#c4cfd8'], shapes: ['#1f3d38','#2a5248','#b8892e'] },  // teal/gold
+    { bg: ['#e2d9e8','#d0c4da'], shapes: ['#6b4f8a','#b8892e','#1f3d38'] },  // purple/gold
+    { bg: ['#dde3d6','#ccd8c4'], shapes: ['#3a6b4f','#b8892e','#1a2535'] },  // green/gold
+    { bg: ['#e3ddd6','#d8cfc4'], shapes: ['#8a5a2e','#1f3d38','#c9a84c'] },  // warm/teal
+    { bg: ['#d6dde3','#bfcdd8'], shapes: ['#1a2535','#b8892e','#2a5248'] },  // navy/gold
+    { bg: ['#e8dfd6','#d4c8bc'], shapes: ['#c9a84c','#1f3d38','#8a5a2e'] },  // amber/teal
+    { bg: ['#dce3dd','#c8d4ca'], shapes: ['#2a5248','#b8892e','#6b4f8a'] },  // sage/gold
+    { bg: ['#e3dce3','#d4c8d4'], shapes: ['#6b4f8a','#1f3d38','#c9a84c'] },  // mauve/teal
+  ];
+
+  document.querySelectorAll('.ph-canvas').forEach(function(canvas) {
+    var idx = parseInt(canvas.dataset.idx) % palettes.length;
+    var pal = palettes[idx];
+    var w = canvas.offsetWidth || 400;
+    var h = canvas.offsetHeight || 260;
+    canvas.width = w;
+    canvas.height = h;
+    var ctx = canvas.getContext('2d');
+
+    // Background gradient
+    var grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, pal.bg[0]);
+    grad.addColorStop(1, pal.bg[1]);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // Seed random from idx for consistent art per article
+    var seed = idx * 137 + 42;
+    function rnd() { seed = (seed * 1664525 + 1013904223) & 0xffffffff; return Math.abs(seed) / 0xffffffff; }
+
+    // Draw geometric shapes
+    for (var i = 0; i < 8; i++) {
+      var x = rnd() * w;
+      var y = rnd() * h;
+      var r = 30 + rnd() * (Math.min(w,h) * 0.35);
+      var color = pal.shapes[Math.floor(rnd() * pal.shapes.length)];
+      var alpha = 0.06 + rnd() * 0.12;
+
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = color;
+
+      var shape = Math.floor(rnd() * 3);
+      if (shape === 0) {
+        // Circle
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      } else if (shape === 1) {
+        // Rotated rectangle
+        ctx.translate(x, y);
+        ctx.rotate(rnd() * Math.PI);
+        ctx.fillRect(-r * 0.5, -r * 0.5, r * (0.8 + rnd()), r * (0.4 + rnd() * 0.4));
+      } else {
+        // Triangle
+        ctx.beginPath();
+        ctx.moveTo(x, y - r);
+        ctx.lineTo(x + r * 0.9, y + r * 0.6);
+        ctx.lineTo(x - r * 0.9, y + r * 0.6);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    // Fine lines grid overlay
+    ctx.globalAlpha = 0.04;
+    ctx.strokeStyle = pal.shapes[0];
+    ctx.lineWidth = 1;
+    for (var gx = 0; gx < w; gx += 40) {
+      ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke();
+    }
+    for (var gy = 0; gy < h; gy += 40) {
+      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
+    }
+
+    // Central accent — small circle
+    ctx.globalAlpha = 0.18;
+    ctx.fillStyle = pal.shapes[0];
+    ctx.beginPath();
+    ctx.arc(w * 0.5, h * 0.5, 18, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 0.08;
+    ctx.beginPath();
+    ctx.arc(w * 0.5, h * 0.5, 35, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
+// Render blog grid
+function renderGrid() {
+  const filtered = currentFilter === 'Всички'
+    ? ARTICLES
+    : ARTICLES.filter(a => a.category === currentFilter);
+
+  const container = document.getElementById('gridContainer');
+  if (filtered.length === 0) {
+    container.innerHTML = '<div class="no-results">Няма статии в тази категория</div>';
+    return;
+  }
+
+  container.innerHTML = filtered.map((a, i) => {
+    const featured = i === 0 && currentFilter === 'Всички' ? ' featured' : '';
+    const imgHTML = a.img
+      ? `<img src="${a.img}" alt="${a.title}" loading="lazy">`
+      : placeholderHTML(ARTICLES.indexOf(a));
+    return `
+      <div class="blog-card${featured}" style="animation:fadeUp 0.5s ${i*0.07}s both" onclick="showArticle(${ARTICLES.indexOf(a)})">
+        <div class="blog-card-img">
+          ${imgHTML}
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-badge">${a.category}</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">${a.date}</div>
+          <div class="blog-card-title">${a.title}</div>
+          <p class="blog-card-excerpt">${a.excerpt}</p>
+          <span class="blog-card-read">Прочети →</span>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Cards animate via CSS animation-delay
+}
+
+// Show full article
+function showArticle(idx) {
+  currentArticleIdx = idx;
+  const a = ARTICLES[idx];
+  document.getElementById('blog-view').style.display = 'none';
+  document.getElementById('filters').style.display = 'none';
+  const av = document.getElementById('article-view');
+  av.classList.add('visible');
+
+  // Hero image
+  const heroImg = document.getElementById('artHeroImg');
+  if (a.img) {
+    heroImg.src = a.img;
+    heroImg.style.display = 'block';
+  } else {
+    heroImg.style.display = 'none';
+    av.querySelector('.article-hero').style.minHeight = '30vh';
+    av.querySelector('.article-hero').style.background = 'var(--teal)';
+  }
+
+  document.getElementById('artCat').textContent = a.category;
+  document.getElementById('artDate').textContent = a.date;
+  document.getElementById('artTitle').textContent = a.title;
+  document.getElementById('artContent').innerHTML = a.content;
+
+  // Prev/Next nav
+  const prev = idx < ARTICLES.length - 1 ? ARTICLES[idx + 1] : null;
+  const next = idx > 0 ? ARTICLES[idx - 1] : null;
+  document.getElementById('artNav').innerHTML = `
+    ${prev ? `<button class="article-nav-btn" onclick="showArticle(${idx+1})"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> ${prev.title.substring(0,45)}...</button>` : '<span></span>'}
+    ${next ? `<button class="article-nav-btn" onclick="showArticle(${idx-1})">${next.title.substring(0,45)}... <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>` : '<span></span>'}
+  `;
+
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Back to blog list
+function showBlog() {
+  document.getElementById('blog-view').style.display = 'block';
+  document.getElementById('filters').style.display = 'block';
+  document.getElementById('article-view').classList.remove('visible');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Reveal observer
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(e.target);
+    }
+  });
+}, {threshold: 0.08});
+
+// Nav compact on scroll
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 80) {
+    nav.style.padding = '0.7rem 3rem';
+    nav.style.boxShadow = '0 2px 24px rgba(26,22,18,0.07)';
+  } else {
+    nav.style.padding = '1rem 3rem';
+    nav.style.boxShadow = 'none';
+  }
+});
+
+// Mobile hamburger
+(function() {
+  const hamburger = document.querySelector('.hamburger');
+  const navLinksEl = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinksEl.classList.toggle('mobile-open');
+    const bars = hamburger.querySelectorAll('span');
+    if (isOpen) {
+      bars[0].style.transform = 'translateY(6px) rotate(45deg)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '';
+      bars[2].style.transform = '';
+    }
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinksEl.classList.remove('mobile-open');
+      const bars = hamburger.querySelectorAll('span');
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '';
+      bars[2].style.transform = '';
+    });
+  });
+})();
+
+// Init
+buildFilters();
+renderGrid();
+drawPlaceholders();
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// Handle ?article=N from index.html links
+var urlParams = new URLSearchParams(window.location.search);
+var articleParam = urlParams.get('article');
+if (articleParam !== null) {
+  var idx = parseInt(articleParam);
+  if (!isNaN(idx) && idx >= 0 && idx < ARTICLES.length) {
+    setTimeout(function() { showArticle(idx); }, 100);
+  }
+}
+</script>
+</body>
+</html>
