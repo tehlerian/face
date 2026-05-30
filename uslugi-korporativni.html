@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Корпоративни услуги — YourFaceTalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<style>
+  :root{--bg:#faf8f4;--bg2:#f2ede4;--surface:#fff;--gold:#b8892e;--gold-rich:#c9a84c;--gold-pale:#f5edd8;--ink:#1a1612;--ink2:#3d3630;--muted:#8a8078;--border:rgba(184,137,46,0.18);--border2:rgba(184,137,46,0.30);--teal:#1f3d38}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;overflow-x:hidden}
+  ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--gold)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all 0.4s;gap:0.8rem}
+  .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
+  .nav-logo img{height:44px;width:auto;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:1.2rem}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{background:transparent!important;border:1px solid var(--gold)!important;color:var(--gold)!important;padding:0.42rem 1.1rem;border-radius:2px;font-size:0.76rem!important;letter-spacing:0.12em!important}
+  .nav-cta:hover{background:var(--gold)!important;color:#fff!important}.nav-cta::after{display:none!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;text-decoration:none;color:var(--ink2);font-size:0.78rem;font-weight:600;padding:0.4rem 0.9rem;border:1px solid var(--border2);transition:all 0.3s;border-radius:2px;white-space:nowrap;flex-shrink:0}
+  .nav-phone:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .nav-phone svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform 0.3s,opacity 0.3s}
+  section{padding:7rem 4rem}
+  .gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.2;margin:0 4rem}
+  .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .section-tag::before{content:"";width:22px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,4.5vw,4.2rem);font-weight:300;line-height:1.1;color:var(--ink)}
+  h1 em{font-style:italic;color:var(--gold)}
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink)}
+  h2 em{font-style:italic;color:var(--gold)}
+  h3{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;color:var(--ink);line-height:1.3}
+  .btn-primary{background:var(--gold);color:#fff;padding:0.9rem 2rem;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,137,46,0.25)}
+  .btn-ghost{background:transparent;color:var(--ink);padding:0.9rem 2rem;border:1px solid rgba(26,22,18,0.2);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.8s,transform 0.8s}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .page-hero-breadcrumb{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
+  .page-hero-breadcrumb:hover{color:var(--gold)}
+  .page-hero-breadcrumb svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* HERO */
+  #page-hero{padding:9rem 4rem 7rem;background:var(--bg2);position:relative;overflow:hidden}
+  #page-hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.04) 1px,transparent 1px);background-size:60px 60px}
+  .hero-inner{position:relative;z-index:1;max-width:720px}
+  .hero-inner p{color:var(--ink2);font-size:1.05rem;line-height:1.85;margin-top:1.2rem;max-width:600px}
+  .hero-actions{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:3rem;margin-top:3.5rem;padding-top:3rem;border-top:1px solid var(--border)}
+  .hero-stat-num{font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
+  .hero-stat-label{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:0.3rem}
+
+  /* 3 SERVICE CARDS */
+  #services{background:var(--bg);padding-top:5rem}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:3.5rem}
+  .service-card{background:var(--surface);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:all 0.4s}
+  .service-card:hover{background:var(--bg)}
+  .service-card-top{padding:2.8rem 2.4rem 2rem;flex:1}
+  .service-card-num{font-family:"Cormorant Garamond",serif;font-size:3.5rem;font-weight:300;color:rgba(184,137,46,0.1);line-height:1;margin-bottom:1.2rem;transition:color 0.4s}
+  .service-card:hover .service-card-num{color:rgba(184,137,46,0.18)}
+  .service-card-tag{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+  .service-card h3{margin-bottom:1rem}
+  .service-card p{font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:1.4rem}
+  .service-card-details{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.8rem}
+  .service-detail{display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;color:var(--ink2)}
+  .service-detail svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .service-card-bottom{padding:1.8rem 2.4rem;border-top:1px solid var(--border);background:var(--bg2);transition:background 0.4s}
+  .service-card:hover .service-card-bottom{background:var(--gold-pale)}
+  .service-card-cta{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);font-weight:500;text-decoration:none;transition:gap 0.3s}
+  .service-card:hover .service-card-cta{gap:0.8rem}
+  .service-card-accent{position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .service-card:hover .service-card-accent{transform:scaleX(1)}
+
+  /* FOR WHO */
+  #for-who{background:var(--bg2)}
+  .for-who-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
+  .for-who-list{display:flex;flex-direction:column;gap:1rem}
+  .for-who-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 1.6rem;background:var(--surface);border:1px solid var(--border);transition:all 0.3s}
+  .for-who-item:hover{border-color:var(--border2);transform:translateX(4px)}
+  .for-who-item-icon{width:38px;height:38px;flex-shrink:0;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center}
+  .for-who-item-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5}
+  .for-who-item-text h4{font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.2rem}
+  .for-who-item-text p{font-size:0.82rem;color:var(--muted);line-height:1.6}
+  .for-who-visual{background:var(--teal);padding:3.5rem 3rem;position:relative;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px))}
+  .for-who-visual h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;color:#faf8f4;margin-bottom:1.4rem;font-weight:300}
+  .for-who-visual h3 em{font-style:italic;color:var(--gold-rich)}
+  .fwv-list{list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+  .fwv-list li{display:flex;gap:0.8rem;font-size:0.87rem;color:rgba(250,248,244,0.75);line-height:1.65}
+  .fwv-list li svg{width:14px;height:14px;stroke:var(--gold-rich);fill:none;stroke-width:2;flex-shrink:0;margin-top:0.25rem}
+
+  /* TRAINING MODULES */
+  #modules{background:var(--bg)}
+  .modules-header{max-width:640px;margin-bottom:3.5rem}
+  .modules-header p{color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-top:1rem}
+  .modules-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .module-card{background:var(--bg2);padding:2.8rem 2.4rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+  .module-card:hover{border-color:var(--border2);box-shadow:0 8px 32px rgba(184,137,46,0.08);transform:translateY(-3px)}
+  .module-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .module-card:hover::before{transform:scaleX(1)}
+  .module-label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+  .module-title{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.3}
+  .module-desc{color:var(--muted);font-size:0.86rem;line-height:1.8;margin-bottom:1.4rem}
+  .module-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}
+  .module-list li{display:flex;gap:0.7rem;font-size:0.85rem;color:var(--ink2);line-height:1.6}
+  .module-list li::before{content:"→";color:var(--gold);font-size:0.8rem;flex-shrink:0;margin-top:0.1rem}
+
+  /* BENEFITS */
+  #benefits{background:var(--bg2)}
+  .benefits-header{max-width:600px;margin-bottom:3.5rem}
+  .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .benefit-card{background:var(--surface);padding:2.4rem 2rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:all 0.4s}
+  .benefit-card:hover{background:var(--gold-pale);transform:translateY(-4px);box-shadow:0 8px 40px rgba(184,137,46,0.10)}
+  .benefit-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .benefit-card:hover::before{transform:scaleX(1)}
+  .benefit-num{font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:300;color:rgba(184,137,46,0.1);line-height:1;margin-bottom:1rem}
+  .benefit-text{font-size:0.88rem;color:var(--ink2);line-height:1.8}
+
+  /* CTA */
+  #cta{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  #cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.05) 1px,transparent 1px);background-size:60px 60px}
+  .cta-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.4rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:1rem;color:rgba(250,248,244,0.55);line-height:1.8;margin-bottom:3rem}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* FOOTER */
+  footer{background:var(--teal);color:rgba(250,248,244,0.65);padding:4rem 4rem 2rem;border-top:1px solid rgba(184,137,46,0.12)}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,137,46,0.18)}
+  .footer-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:#faf8f4;margin-bottom:0.8rem}
+  .footer-logo span{color:var(--gold-rich)}
+  .footer-brand p{font-size:0.82rem;line-height:1.75;color:rgba(250,248,244,0.42)}
+  .footer-col h4{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.2rem}
+  .footer-col ul{list-style:none}.footer-col li{margin-bottom:0.7rem}
+  .footer-col a{text-decoration:none;color:rgba(250,248,244,0.42);font-size:0.85rem;transition:color 0.3s}
+  .footer-col a:hover{color:#faf8f4}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(250,248,244,0.28)}
+  .footer-social{display:flex;gap:0.6rem}
+  .fsoc{width:32px;height:32px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
+  .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}
+  .fsoc svg{width:13px;height:13px;stroke:rgba(250,248,244,0.35);fill:none;stroke-width:1.5}
+  .fsoc:hover svg{stroke:var(--gold-rich)}
+  .fsoc .tt{fill:rgba(250,248,244,0.35);stroke:none!important}.fsoc:hover .tt{fill:var(--gold-rich)}
+  .fsoc .yt-tri{fill:rgba(250,248,244,0.35);stroke:none!important}.fsoc:hover .yt-tri{fill:var(--gold-rich)}
+
+  @media(max-width:1100px){nav{padding:1rem 2rem}section{padding:5rem 2rem}.services-grid{grid-template-columns:1fr}.for-who-inner{grid-template-columns:1fr;gap:3rem}.modules-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}.gold-divider{margin:0 2rem}}
+  @media(max-width:768px){.nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(250,248,244,0.98);backdrop-filter:blur(24px);flex-direction:column;gap:0;padding:1rem 0;border-bottom:1px solid var(--border);display:none;z-index:99}.nav-links.mobile-open{display:flex}.nav-links li{width:100%}.nav-links a{display:block;padding:0.9rem 2rem;font-size:0.9rem;border-bottom:1px solid var(--border)}.hamburger{display:flex}.benefits-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.nav-phone .phone-num{display:none}.nav-phone{padding:0.4rem 0.5rem}.cta-actions{flex-direction:column;align-items:center}.hero-stats{gap:1.5rem}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="YourFaceTalk Logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Начало</a></li>
+      <li><a href="za-nas.html">За нас</a></li>
+      <li><a href="uslugi.html" class="active">Услуги</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-num">+359 888 773 076</span></a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="page-hero">
+  <div class="hero-inner reveal">
+    <a href="uslugi.html" class="page-hero-breadcrumb">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Всички услуги
+    </a>
+    <div class="section-tag">Корпоративни услуги</div>
+    <h1>Face Reading<br>в <em>бизнес среда</em></h1>
+    <p>Практични инструменти за мениджъри, HR специалисти и екипи — базирани на разчитането на лицата и приложими от деня на обучението.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Разгледай услугите</a>
+      <a href="index.html#contact" class="btn-ghost">Изпрати запитване</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Консултации</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">15+</div>
+        <div class="hero-stat-label">Години опит</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Школи</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- 3 SERVICES -->
+<section id="services">
+  <div class="section-tag reveal">Изберете услугата</div>
+  <h2 class="reveal">Три формата,<br><em>един инструмент</em></h2>
+  <div class="services-grid">
+
+    <!-- Workshop -->
+    <a href="uslugi-workshop.html" class="service-card reveal" style="text-decoration:none;color:inherit">
+      <div class="service-card-accent"></div>
+      <div class="service-card-top">
+        <div class="service-card-num">01</div>
+        <div class="service-card-tag">Уъркшоп</div>
+        <h3>Практически уъркшоп за екипи</h3>
+        <p>Уъркшопът съчетава въведение в Face Reading с практически упражнения. Участниците разпознават бизнес маркери и ги прилагат директно към себе си и колегите.</p>
+        <div class="service-card-details">
+          <div class="service-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>90 минути</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>6 до 15 участника</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>При вас или неутрална локация</div>
+        </div>
+      </div>
+      <div class="service-card-bottom">
+        <span class="service-card-cta">Научи повече →</span>
+      </div>
+    </a>
+
+    <!-- Podbor -->
+    <a href="uslugi-podbor.html" class="service-card reveal" style="text-decoration:none;color:inherit">
+      <div class="service-card-accent"></div>
+      <div class="service-card-top">
+        <div class="service-card-num">02</div>
+        <div class="service-card-tag">Подбор на кадри</div>
+        <h3>Консултация при подбор на кадри</h3>
+        <p>Интервюто показва как се представя кандидатът. Лицето показва как работи. Face Reading добавя информация, която иначе излиза едва след първите три месеца.</p>
+        <div class="service-card-details">
+          <div class="service-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>До 45 мин на кандидат</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Писмено резюме до 24 часа</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>На живо или онлайн</div>
+        </div>
+      </div>
+      <div class="service-card-bottom">
+        <span class="service-card-cta">Научи повече →</span>
+      </div>
+    </a>
+
+    <!-- Obuchenia -->
+    <div class="service-card reveal">
+      <div class="service-card-accent"></div>
+      <div class="service-card-top">
+        <div class="service-card-num">03</div>
+        <div class="service-card-tag">Обучения</div>
+        <h3>Корпоративни обучения</h3>
+        <p>Два специализирани модула за разчитане на дългосрочни личностни характеристики и бизнес маркери — приложими при подбор, управление и комуникация.</p>
+        <div class="service-card-details">
+          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>2 модула</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>HR, мениджъри, търговски екипи</div>
+          <div class="service-detail"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Приложимо от деня на обучението</div>
+        </div>
+      </div>
+      <div class="service-card-bottom" style="cursor:pointer" onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})">
+        <span class="service-card-cta">Разгледай модулите ↓</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- FOR WHO -->
+<section id="for-who">
+  <div class="for-who-inner">
+    <div class="reveal">
+      <div class="section-tag">За кого</div>
+      <h2>Специалисти,<br><em>които работят с хора</em></h2>
+      <div class="for-who-list" style="margin-top:2rem">
+        <div class="for-who-item">
+          <div class="for-who-item-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+          <div class="for-who-item-text"><h4>HR специалисти</h4><p>Подбор, оценка на таланти, формиране на екипи</p></div>
+        </div>
+        <div class="for-who-item">
+          <div class="for-who-item-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="for-who-item-text"><h4>Мениджъри и ръководители</h4><p>По-добро разбиране на екипа и индивидуалните стилове</p></div>
+        </div>
+        <div class="for-who-item">
+          <div class="for-who-item-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="for-who-item-text"><h4>Търговски екипи</h4><p>Разпознаване на стила на клиента и по-ефективна комуникация</p></div>
+        </div>
+        <div class="for-who-item">
+          <div class="for-who-item-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="for-who-item-text"><h4>Психолози, ментори и коучове</h4><p>Допълнителен инструмент за по-задълбочена работа с клиенти</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="for-who-visual">
+        <h3>Защо работи<br><em>толкова добре</em></h3>
+        <ul class="fwv-list" style="margin-top:1.4rem">
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Практични знания, приложими още на същия ден</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Упражнения и обсъждания затвърждават наученото</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Синтезирана информация — само за няколко часа</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Разбиране защо колегите действат по определен начин</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Знанието за лицата не може да бъде „забравено"</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ще промени начина, по който виждате хората — завинаги</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- MODULES -->
+<section id="modules">
+  <div class="modules-header reveal">
+    <div class="section-tag">Корпоративни обучения</div>
+    <h2>Два модула,<br><em>изцяло практични</em></h2>
+    <p>Всеки модул е самостоятелен — може да се проведе поотделно или в комбинация. Форматът е гъвкав спрямо нуждите на организацията.</p>
+  </div>
+  <div class="modules-grid">
+    <div class="module-card reveal">
+      <div class="module-label">Модул 1</div>
+      <div class="module-title">Разчитане на дългосрочни личностни характеристики и модели на поведение</div>
+      <p class="module-desc">Как по зоните и формите на лицето можете да разберете по-добре хората, с които работите и общувате.</p>
+      <ul class="module-list">
+        <li>Основни подходи и начин на действие на хората около вас</li>
+        <li>Повишаване нивото на комуникация и разбиране</li>
+        <li>Разпознаване на силните качества на всеки човек</li>
+        <li>Подобряване на процеса по наемане и подбор</li>
+      </ul>
+    </div>
+    <div class="module-card reveal">
+      <div class="module-label">Модул 2</div>
+      <div class="module-title">Отделните черти в лицето казват повече от автобиографията</div>
+      <p class="module-desc">С подбраните черти на лицето в това обучение ще се научите да четете характеристики на личността веднага и на практика.</p>
+      <ul class="module-list">
+        <li>Основни черти, разкриващи качества на личността</li>
+        <li>Бизнес насочеността на личността</li>
+        <li>Начини на действие и вземане на решения</li>
+        <li>Как се обработва информация</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="benefits-header reveal">
+    <div class="section-tag">Ползи</div>
+    <h2>Какво остава<br><em>след обучението</em></h2>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal">
+      <div class="benefit-num">01</div>
+      <p class="benefit-text">Практични знания, приложими още на същия ден след обучението</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">02</div>
+      <p class="benefit-text">Упражнения и обсъждания, затвърждаващи наученото</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">03</div>
+      <p class="benefit-text">Синтезирана информация — само за няколко часа, ценна за целия живот</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">04</div>
+      <p class="benefit-text">Разбиране защо колегите, партньорите и ръководителите действат по определен начин</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">05</div>
+      <p class="benefit-text">Знание как различните лица оформят различно поведение в екипна среда</p>
+    </div>
+    <div class="benefit-card reveal">
+      <div class="benefit-num">06</div>
+      <p class="benefit-text">Това знание ще промени начина, по който виждате хората около вас — завинаги</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Следваща стъпка</div>
+    <h2 class="cta-title">Готови ли сте да видите<br>хората около вас <em>по нов начин?</em></h2>
+    <p class="cta-sub">Изпратете запитване и ще се свържем с вас за индивидуална оферта, съобразена с нуждите на вашата организация.</p>
+    <div class="cta-actions">
+      <a href="index.html#contact" class="btn-cta-primary">Изпрати запитване</a>
+      <a href="uslugi-workshop.html" class="btn-cta-ghost">Уъркшоп за екипи</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">YourFace<span>Talk</span></div><p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез физиогномиката.</p></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Моминско парти</a></li><li><a href="uslugi-workshop.html">Уъркшоп за екипи</a></li><li><a href="uslugi-podbor.html">Консултация при подбор</a></li><li><a href="uslugi-korporativni.html">Корпоративни обучения</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:elina@yourfacetalk.com">elina@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 YourFaceTalk. Всички права запазени.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE-%D1%82%D0%B8-3360a9301/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*80);obs.unobserve(el.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');if(window.scrollY>80){n.style.padding='0.7rem 3rem';n.style.boxShadow='0 2px 24px rgba(26,22,18,0.07)';}else{n.style.padding='1rem 3rem';n.style.boxShadow='none';}});
+  (function(){const h=document.querySelector('.hamburger');const nl=document.querySelector('.nav-links');if(!h)return;h.addEventListener('click',()=>{const o=nl.classList.toggle('mobile-open');const b=h.querySelectorAll('span');if(o){b[0].style.transform='translateY(6px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-6px) rotate(-45deg)';}else{b[0].style.transform='';b[1].style.opacity='';b[2].style.transform='';}});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('mobile-open');const b=h.querySelectorAll('span');b[0].style.transform='';b[1].style.opacity='';b[2].style.transform='';}));})();
+</script>
+</body>
+</html>

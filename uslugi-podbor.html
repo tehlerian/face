@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Консултация при подбор на кадри — YourFaceTalk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#faf8f4;--bg2:#f2ede4;--surface:#fff;--gold:#b8892e;--gold-rich:#c9a84c;--gold-pale:#f5edd8;--ink:#1a1612;--ink2:#3d3630;--muted:#8a8078;--border:rgba(184,137,46,0.18);--border2:rgba(184,137,46,0.30);--teal:#1f3d38}
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:300;overflow-x:hidden}
+  ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--gold)}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:all 0.4s;gap:0.8rem}
+  .nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;flex-shrink:0}
+  .nav-logo img{height:44px;width:auto;object-fit:contain}
+  .nav-right{display:flex;align-items:center;gap:1.2rem}
+  .nav-links{display:flex;gap:1.6rem;list-style:none;align-items:center}
+  .nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;position:relative}
+  .nav-links a::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-cta{background:transparent!important;border:1px solid var(--gold)!important;color:var(--gold)!important;padding:0.42rem 1.1rem;border-radius:2px;font-size:0.76rem!important;letter-spacing:0.12em!important}
+  .nav-cta:hover{background:var(--gold)!important;color:#fff!important}.nav-cta::after{display:none!important}
+  .nav-phone{display:flex;align-items:center;gap:0.4rem;text-decoration:none;color:var(--ink2);font-size:0.78rem;font-weight:600;padding:0.4rem 0.9rem;border:1px solid var(--border2);transition:all 0.3s;border-radius:2px;white-space:nowrap;flex-shrink:0}
+  .nav-phone:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .nav-phone svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .hamburger span{width:24px;height:1px;background:var(--ink);display:block;transition:transform 0.3s,opacity 0.3s}
+  section{padding:7rem 4rem}
+  .gold-divider{height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.2;margin:0 4rem}
+  .section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem}
+  .section-tag::before{content:"";width:22px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4.5vw,4rem);font-weight:300;line-height:1.1;color:var(--ink)}
+  h1 em{font-style:italic;color:var(--gold)}
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;line-height:1.15;color:var(--ink)}
+  h2 em{font-style:italic;color:var(--gold)}
+  h3{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:0.7rem}
+  .btn-primary{background:var(--gold);color:#fff;padding:0.9rem 2rem;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-primary:hover{background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 10px 30px rgba(184,137,46,0.25)}
+  .btn-ghost{background:transparent;color:var(--ink);padding:0.9rem 2rem;border:1px solid rgba(26,22,18,0.2);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .reveal{opacity:0;transform:translateY(35px);transition:opacity 0.8s,transform 0.8s}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+  .page-hero-breadcrumb{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
+  .page-hero-breadcrumb:hover{color:var(--gold)}
+  .page-hero-breadcrumb svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* HERO */
+  #page-hero{padding:9rem 4rem 7rem;background:var(--bg);position:relative}
+  .hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto}
+  .hero-text p{color:var(--ink2);font-size:1rem;line-height:1.85;margin-top:1.2rem;max-width:500px}
+  .hero-lead{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-style:italic;color:var(--ink);line-height:1.65;margin-top:1.4rem;padding-left:1.4rem;border-left:2px solid var(--gold)}
+  .hero-actions{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+  .hero-contrast{background:var(--teal);padding:3rem;display:flex;flex-direction:column;gap:0}
+  .contrast-row{padding:1.6rem 0;border-bottom:1px solid rgba(250,248,244,0.1);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .contrast-row:last-child{border-bottom:none}
+  .contrast-label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.35);margin-bottom:0.6rem}
+  .contrast-bad{color:rgba(250,248,244,0.45);font-size:0.88rem;line-height:1.6}
+  .contrast-good{color:#faf8f4;font-size:0.88rem;line-height:1.6}
+  .contrast-good strong{color:var(--gold-rich)}
+
+  /* WHEN */
+  #when{background:var(--bg2)}
+  .when-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+  .when-card{background:var(--surface);padding:2.4rem 2rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+  .when-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 8px 28px rgba(184,137,46,0.08)}
+  .when-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+  .when-card:hover::before{transform:scaleX(1)}
+  .when-icon{width:48px;height:48px;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+  .when-icon svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5}
+  .when-title{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--ink);margin-bottom:0.6rem}
+  .when-desc{font-size:0.85rem;color:var(--muted);line-height:1.75}
+
+  /* WHAT YOU GET */
+  #you-get{background:var(--bg)}
+  .get-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
+  .get-list{display:flex;flex-direction:column;gap:1.2rem}
+  .get-item{display:flex;gap:1.2rem;align-items:flex-start;padding:1.6rem;background:var(--bg2);border:1px solid var(--border);transition:border-color 0.3s}
+  .get-item:hover{border-color:var(--border2)}
+  .get-item-icon{width:40px;height:40px;flex-shrink:0;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center}
+  .get-item-icon svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:2}
+  .get-item-text h4{font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.3rem}
+  .get-item-text p{font-size:0.84rem;color:var(--muted);line-height:1.7}
+  .format-box{background:var(--teal);color:#faf8f4;padding:2.8rem}
+  .format-box h3{font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:#faf8f4;margin-bottom:1.6rem}
+  .format-row{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(250,248,244,0.1);font-size:0.88rem}
+  .format-row:last-child{border-bottom:none}
+  .format-row-label{color:rgba(250,248,244,0.4);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase}
+  .format-row-val{color:#faf8f4;font-weight:500}
+
+  /* CTA */
+  #cta{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  #cta::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,137,46,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(184,137,46,0.05) 1px,transparent 1px);background-size:60px 60px}
+  .cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.2rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:0.96rem;color:rgba(250,248,244,0.5);line-height:1.8;margin-bottom:2.5rem}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* FOOTER */
+  footer{background:var(--teal);color:rgba(250,248,244,0.65);padding:4rem 4rem 2rem;border-top:1px solid rgba(184,137,46,0.12)}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,137,46,0.18)}
+  .footer-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:600;color:#faf8f4;margin-bottom:0.8rem}
+  .footer-logo span{color:var(--gold-rich)}
+  .footer-brand p{font-size:0.82rem;line-height:1.75;color:rgba(250,248,244,0.42)}
+  .footer-col h4{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.2rem}
+  .footer-col ul{list-style:none}.footer-col li{margin-bottom:0.7rem}
+  .footer-col a{text-decoration:none;color:rgba(250,248,244,0.42);font-size:0.85rem;transition:color 0.3s}
+  .footer-col a:hover{color:#faf8f4}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.75rem;color:rgba(250,248,244,0.28)}
+  .footer-social{display:flex;gap:0.6rem}
+  .fsoc{width:32px;height:32px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
+  .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}
+  .fsoc svg{width:13px;height:13px;stroke:rgba(250,248,244,0.35);fill:none;stroke-width:1.5}
+  .fsoc:hover svg{stroke:var(--gold-rich)}
+  .fsoc .tt{fill:rgba(250,248,244,0.35);stroke:none!important}.fsoc:hover .tt{fill:var(--gold-rich)}
+  .fsoc .yt-tri{fill:rgba(250,248,244,0.35);stroke:none!important}.fsoc:hover .yt-tri{fill:var(--gold-rich)}
+
+  @media(max-width:1100px){nav{padding:1rem 2rem}section{padding:5rem 2rem}.hero-inner,.get-grid{grid-template-columns:1fr;gap:3rem}.when-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}.gold-divider{margin:0 2rem}}
+  @media(max-width:768px){.nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(250,248,244,0.98);backdrop-filter:blur(24px);flex-direction:column;gap:0;padding:1rem 0;border-bottom:1px solid var(--border);display:none;z-index:99}.nav-links.mobile-open{display:flex}.nav-links li{width:100%}.nav-links a{display:block;padding:0.9rem 2rem;font-size:0.9rem;border-bottom:1px solid var(--border)}.hamburger{display:flex}.when-grid{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr}.nav-phone .phone-num{display:none}.nav-phone{padding:0.4rem 0.5rem}.cta-actions{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="YourFaceTalk Logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Начало</a></li>
+      <li><a href="za-nas.html">За нас</a></li>
+      <li><a href="uslugi.html" class="active">Услуги</a></li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span class="phone-num">+359 888 773 076</span></a>
+  </div>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="page-hero">
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <a href="uslugi-korporativni.html" class="page-hero-breadcrumb">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Корпоративни услуги
+      </a>
+      <div class="section-tag">Подбор на кадри</div>
+      <h1>Интервюто показва<br>как се <em>представя.</em><br>Лицето показва<br>как <em>работи.</em></h1>
+      <p class="hero-lead">Face Reading добавя конкретна информация към процеса на подбор — информация, която не излиза нито от автобиографията, нито от интервюто.</p>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.8;margin-top:1rem">Консултацията не замества вашата преценка. Допълва я с информация, която иначе излиза едва след първите три месеца работа.</p>
+      <div class="hero-actions">
+        <a href="index.html#contact" class="btn-primary">Запитване за консултация</a>
+        <a href="#you-get" class="btn-ghost">Какво получавате</a>
+      </div>
+    </div>
+    <div class="hero-contrast reveal">
+      <div style="padding:0 0 1.2rem;border-bottom:1px solid rgba(250,248,244,0.1)">
+        <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.35)">Сравнение</p>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">Без Face Reading</div>
+          <p class="contrast-bad">Разбирате как работи кандидатът едва след 3 месеца на работа</p>
+        </div>
+        <div>
+          <div class="contrast-label">С Face Reading</div>
+          <p class="contrast-good"><strong>Знаете преди да вземете решението</strong> — стил, комуникация, реакция под стрес</p>
+        </div>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">CV и интервю</div>
+          <p class="contrast-bad">Показват как се представя кандидатът, не как работи</p>
+        </div>
+        <div>
+          <div class="contrast-label">Анализ на лицето</div>
+          <p class="contrast-good"><strong>Устойчиви черти на личността</strong> — не може да се научат или симулират</p>
+        </div>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">Тестове</div>
+          <p class="contrast-bad">Показват текущо поведение, не дълготрайни модели</p>
+        </div>
+        <div>
+          <div class="contrast-label">Face Reading</div>
+          <p class="contrast-good"><strong>Дълготрайни характеристики</strong> — как обработва информация, как реагира под натиск</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- WHEN -->
+<section id="when">
+  <div class="section-tag reveal">Подходящо когато</div>
+  <h2 class="reveal">Три ситуации,<br><em>едно решение</em></h2>
+  <div class="when-grid">
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="when-title">Финални кандидати</div>
+      <p class="when-desc">Колебаете се между двама или трима финалисти с близки профили — нужен е допълнителен обективен критерий</p>
+    </div>
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="when-title">Специфична роля</div>
+      <p class="when-desc">Позицията изисква конкретен стил на работа или комуникация — лидер, медиатор, аналитик, продавач</p>
+    </div>
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="when-title">Важно решение</div>
+      <p class="when-desc">Искате да намалите риска преди ключово назначение — ново ръководство, стратегическа позиция</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- WHAT YOU GET -->
+<section id="you-get">
+  <div class="get-grid">
+    <div class="reveal">
+      <div class="section-tag">Какво получавате</div>
+      <h2>Конкретна информация,<br><em>готова за употреба</em></h2>
+      <div class="get-list" style="margin-top:2rem">
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="get-item-text">
+            <h4>Анализ на ключови черти</h4>
+            <p>В бизнес контекст за всеки кандидат — как вземат решения, как комуникират, как реагират под натиск</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="get-item-text">
+            <h4>Писмено резюме</h4>
+            <p>Структуриран документ след консултацията — готов за сравнение и архив</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="get-item-text">
+            <h4>Стил на работа</h4>
+            <p>Естествените силни страни в работна среда — готова информация за интеграция в екипа</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="format-box">
+        <h3>Формат</h3>
+        <div class="format-row"><span class="format-row-label">Начин</span><span class="format-row-val">На живо при вас или онлайн сесия</span></div>
+        <div class="format-row"><span class="format-row-label">Продължителност</span><span class="format-row-val">До 45 минути на кандидат</span></div>
+        <div class="format-row"><span class="format-row-label">Необходимо</span><span class="format-row-val">Качествена снимка на кандидата</span></div>
+        <div class="format-row"><span class="format-row-label">Доставка</span><span class="format-row-val">Писмено резюме до 24 часа</span></div>
+        <div class="format-row"><span class="format-row-label">Брой кандидати</span><span class="format-row-val">По договаряне</span></div>
+      </div>
+      <div style="margin-top:1.5rem;padding:1.8rem;background:var(--gold-pale);border:1px solid var(--border2)">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--ink);line-height:1.65">„В свят, в който човешкият капитал е ключов, Face Reading дава цялостна визия за това какви сме ние всички като личности."</p>
+        <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:1rem">— Елина Божимирова</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<section id="cta">
+  <div class="cta-inner reveal">
+    <div class="cta-tag">Следваща стъпка</div>
+    <h2 class="cta-title">Намалете риска<br>при следващото <em>важно назначение</em></h2>
+    <p class="cta-sub">Изпратете запитване и ще се свържем с вас за детайли и оферта.</p>
+    <div class="cta-actions">
+      <a href="index.html#contact" class="btn-cta-primary">Запитване за консултация</a>
+      <a href="uslugi-korporativni.html" class="btn-cta-ghost">Всички корпоративни услуги</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><div class="footer-logo">YourFace<span>Talk</span></div><p>Професионални консултации за разчитане на лица.</p></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Моминско парти</a></li><li><a href="uslugi-workshop.html">Уъркшоп за екипи</a></li><li><a href="uslugi-podbor.html">Консултация при подбор</a></li><li><a href="uslugi-korporativni.html">Корпоративни обучения</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:elina@yourfacetalk.com">elina@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2025 YourFaceTalk. Всички права запазени.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*80);obs.unobserve(el.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  window.addEventListener('scroll',()=>{const n=document.getElementById('navbar');if(window.scrollY>80){n.style.padding='0.7rem 3rem';n.style.boxShadow='0 2px 24px rgba(26,22,18,0.07)';}else{n.style.padding='1rem 3rem';n.style.boxShadow='none';}});
+  (function(){const h=document.querySelector('.hamburger');const nl=document.querySelector('.nav-links');if(!h)return;h.addEventListener('click',()=>{const o=nl.classList.toggle('mobile-open');const b=h.querySelectorAll('span');if(o){b[0].style.transform='translateY(6px) rotate(45deg)';b[1].style.opacity='0';b[2].style.transform='translateY(-6px) rotate(-45deg)';}else{b[0].style.transform='';b[1].style.opacity='';b[2].style.transform='';}});document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('mobile-open');const b=h.querySelectorAll('span');b[0].style.transform='';b[1].style.opacity='';b[2].style.transform='';}));})();
+</script>
+</body>
+</html>
