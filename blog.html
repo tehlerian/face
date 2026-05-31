@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Блог — YourFaceTalk</title>
@@ -94,22 +98,18 @@
   /* ── ARTICLE VIEW ── */
   #article-view{display:none;padding-top:80px}
   #article-view.visible{display:block}
-  .article-hero{position:relative;background:var(--bg2)}
-  .article-hero-img{width:100%;max-height:75vh;object-fit:contain;object-position:center top;display:block;background:var(--bg2)}
-  .article-hero-overlay{display:none}
-  .article-hero-content{position:relative;z-index:2;padding:2.5rem 4rem 2rem;color:var(--ink);background:var(--bg);border-top:2px solid var(--gold)}
-  .article-hero-content .article-hero-back{color:var(--muted)}
-  .article-hero-content .article-hero-back:hover{color:var(--gold)}
-  .article-meta .article-cat{background:var(--gold)}
-  .article-meta .article-date{color:var(--muted)}
+  .article-hero{height:60vh;min-height:400px;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--bg2)}
+  .article-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+  .article-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.85) 0%,rgba(26,22,18,0.3) 50%,transparent 100%)}
+  .article-hero-content{position:relative;z-index:2;padding:4rem;color:#faf8f4;max-width:820px}
   .article-hero-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,244,0.65);text-decoration:none;transition:color 0.3s;cursor:pointer;margin-bottom:1.6rem;background:none;border:none}
   .article-hero-back:hover{color:#faf8f4}
   .article-hero-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
   .article-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
   .article-cat{background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.22rem 0.65rem}
   .article-date{font-size:0.72rem;letter-spacing:0.1em;color:rgba(250,248,244,0.55);text-transform:uppercase}
-  .article-title{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:var(--ink)}
-  .article-body{background:var(--bg);padding:3rem 4rem 7rem}
+  .article-title{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:#faf8f4}
+  .article-body{background:var(--bg);padding:5rem 4rem 7rem}
   .article-content{max-width:720px;margin:0 auto}
   .article-content p{color:var(--ink2);line-height:1.9;font-size:0.97rem;margin-bottom:1.4rem}
   .article-content h3,.article-content h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin:2rem 0 0.8rem}
@@ -178,7 +178,7 @@
     #blog-grid{padding:2.5rem 2rem 6rem}
     .grid-container{grid-template-columns:1fr 1fr}
     .blog-card.featured{grid-column:span 2}
-    .article-body{padding:2rem 2rem 5rem}
+    .article-body{padding:4rem 2rem 6rem}
     .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
     .gold-divider{margin:0 2rem}
     #cta{padding:5rem 2rem}
@@ -194,7 +194,7 @@
     .footer-top{grid-template-columns:1fr}
     .nav-phone .phone-num{display:none}
     .nav-phone{padding:0.4rem 0.5rem}
-    .article-hero-content{padding:1.5rem 2rem}
+    .article-hero-content{padding:2rem}
     .cta-actions{flex-direction:column;align-items:center}
   }
 </style>
@@ -300,7 +300,7 @@
     </div>
     <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi.html">Персонален анализ</a></li><li><a href="uslugi.html">Бизнес обучения</a></li><li><a href="uslugi.html">Ваучер за подарък</a></li></ul></div>
     <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За нас</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
-    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:elina@yourfacetalk.com">elina@yourfacetalk.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 YourFaceTalk. Всички права запазени.</span>
@@ -498,9 +498,8 @@ function showArticle(idx) {
     heroEl.style.background = '';
   } else {
     heroImg.style.display = 'none';
-    heroEl.style.height = '';
-    heroEl.style.minHeight = '';
-    heroEl.style.background = '';
+    heroEl.style.height = '35vh'; heroEl.style.minHeight = '200px';
+    heroEl.style.background = 'var(--teal)';
   }
 
   document.getElementById('artCat').textContent = a.category;
