@@ -8,10 +8,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Персонални анализи — YourFaceTalk</title>
+<meta name="description" content="Персонални анализи с разчитане на лице от Елина Божимирова — базово и подробно разчитане, писмен анализ, анализ за двойки и ваучер за подарък.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <link rel="stylesheet" href="styles.css">
 <style>
 .nav-links a:hover,.nav-links a.active {color:var(--gold)}
@@ -21,33 +20,53 @@
 .page-hero-breadcrumb svg {width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 #page-hero {padding-top:80px;background:var(--bg);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;padding:80px 4rem 5rem}
 .hero-text {display:flex;flex-direction:column;justify-content:center}
-.hero-text p {color:var(--ink2);font-size:1rem;line-height:1.85;margin-top:1.2rem;max-width:480px}
+.hero-text p {color:var(--ink2);font-size:1.05rem;line-height:1.85;margin-top:1.2rem;max-width:480px}
+/* comfortable air between hero text and buttons */
+.hero-text .hero-actions {margin-top:2rem}
 .hero-img-col {position:relative}
 .hero-img-col img {width:100%;max-width:420px;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
-.hero-badge {position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--gold);color:#fff;padding:1.2rem 1.4rem;text-align:center;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.hero-badge {position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--gold);color:#fff;padding:1.2rem 1.4rem;text-align:center;border:1px solid rgba(250,248,244,0.65);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
 .hero-badge-num {font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:600;line-height:1}
 .hero-badge-txt {font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.2rem}
+
+/* ── SERVICE LIST (photo · body · price+testimonial) ── */
 .service-list {display:flex;flex-direction:column;gap:2px;background:var(--border);margin-top:3rem}
-.service-item {background:var(--surface);display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:start;padding:3rem;position:relative;transition:all 0.35s;border-left:2px solid transparent}
+.service-item {background:var(--surface);display:grid;grid-template-columns:200px 1fr 300px;gap:2.5rem;align-items:start;padding:2.6rem;position:relative;transition:all 0.35s;border-left:2px solid transparent}
 .service-item:hover {background:var(--bg);border-left-color:var(--gold)}
-.service-item-num {position:absolute;top:2.5rem;left:3rem;font-family:"Cormorant Garamond",serif;font-size:4rem;font-weight:300;color:rgba(184,137,46,0.07);line-height:1;pointer-events:none}
-.service-item-body {padding-left:3.5rem}
+
+/* photo placeholder */
+.service-photo {position:relative}
+.service-item-num {position:absolute;top:0.7rem;left:0.7rem;z-index:2;font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:600;color:#fff;background:rgba(184,137,46,0.94);width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;line-height:1}
+.photo-ph {aspect-ratio:3/4;width:100%;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;color:var(--muted);text-align:center;padding:1rem}
+.photo-ph svg {width:38px;height:38px;stroke:var(--gold);fill:none;stroke-width:1.3;opacity:0.85}
+.photo-ph span {font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase}
+
+.service-item-body {min-width:0}
 .service-item-tag {font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
 .service-item-title {font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:400;color:var(--ink);margin-bottom:1rem;line-height:1.25}
-.service-item-desc {color:var(--ink2);font-size:0.9rem;line-height:1.85;margin-bottom:1.2rem}
+.service-item-desc {color:var(--ink2);font-size:0.98rem;line-height:1.85;margin-bottom:1.2rem}
 .service-benefits {list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1.4rem}
-.service-benefits li {display:flex;gap:0.7rem;align-items:flex-start;font-size:0.87rem;color:var(--ink2);line-height:1.65}
+.service-benefits li {display:flex;gap:0.7rem;align-items:flex-start;font-size:0.95rem;color:var(--ink2);line-height:1.65}
 .service-benefits li::before {content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.55rem}
-.service-item-price {flex-shrink:0;text-align:right;padding-top:0.5rem}
+
+/* right column: price + testimonial */
+.service-item-side {display:flex;flex-direction:column;gap:1.4rem}
+.service-item-price {text-align:left;padding-top:0}
 .price-amount {font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
-.price-bgn {font-size:0.82rem;color:var(--muted);margin-top:0.2rem}
+.price-bgn {font-size:0.85rem;color:var(--muted);margin-top:0.2rem}
 .price-duration {font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-top:0.4rem}
 .price-cta {margin-top:1.2rem}
+
+.service-testimonial {margin:0;border-top:1px solid var(--border);padding-top:1.3rem}
+.st-stars {color:var(--gold);font-size:0.8rem;letter-spacing:2px;margin-bottom:0.6rem}
+.service-testimonial blockquote {font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;line-height:1.6;color:var(--ink2);margin:0 0 0.7rem;border:none;padding:0}
+.service-testimonial figcaption {font-size:0.78rem;color:var(--muted);letter-spacing:0.04em}
+
 .service-item.voucher {background:linear-gradient(135deg,var(--bg2) 0%,var(--bg) 100%);border-left:2px solid var(--gold)}
-.voucher-note {margin-top:1.2rem;padding:1rem 1.2rem;background:rgba(184,137,46,0.06);border:1px solid var(--border);font-size:0.82rem;color:var(--muted);line-height:1.75}
+.voucher-note {margin-top:1.2rem;padding:1rem 1.2rem;background:rgba(184,137,46,0.06);border:1px solid var(--border);font-size:0.85rem;color:var(--muted);line-height:1.75}
 .important-notice {margin-top:3rem;padding:1.8rem 2.2rem;background:var(--teal);color:rgba(250,248,244,0.85);display:flex;gap:1.2rem;align-items:flex-start}
 .important-notice svg {width:20px;height:20px;stroke:var(--gold-rich);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:0.1rem}
-.important-notice p {font-size:0.86rem;line-height:1.8}
+.important-notice p {font-size:0.9rem;line-height:1.8}
 .important-notice strong {color:var(--gold-rich)}
 #cta {background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
 .cta-inner {position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
@@ -63,10 +82,16 @@
 .btn-cta-ghost:hover {border-color:var(--gold-rich);color:var(--gold-rich)}
 @media (max-width:1100px) {
   #page-hero {grid-template-columns:1fr;padding:80px 2rem 4rem;gap:2rem}
-  .service-item {grid-template-columns:1fr;gap:1.5rem}
+  .service-item {grid-template-columns:1fr;gap:1.8rem;padding:2rem}
+  .service-photo {max-width:280px}
+  .photo-ph {aspect-ratio:16/10}
   .service-item-price {text-align:left}
 }
 @media (max-width:768px) {
+  .service-item {padding:1.5rem;gap:1.4rem}
+  .service-photo {max-width:none}
+  .photo-ph {aspect-ratio:16/9}
+  .service-item-num {font-size:1.25rem;width:2.1rem;height:2.1rem}
   .cta-actions {flex-direction:column;align-items:center}
 }
 </style>
@@ -107,7 +132,7 @@
     <h1>Среща с<br><em>вашето лице</em></h1>
     <p>Всеки носи своя чертеж — изписан в лицето от раждането. Персоналните анализи са индивидуална среща с вашите силни страни, потенциал и посоки на развитие.</p>
     <div class="hero-actions">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a>
+      <a href="mailto:yourfacetalk@gmail.com?subject=Запитване за персонален анализ" class="btn-primary">Запитване по имейл</a>
       <a href="#services" class="btn-ghost">Разгледай услугите</a>
     </div>
   </div>
@@ -130,7 +155,13 @@
   <div class="service-list">
 
     <div class="service-item reveal">
-      <div class="service-item-num">01</div>
+      <div class="service-photo">
+        <div class="service-item-num">01</div>
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Снимка</span>
+        </div>
+      </div>
       <div class="service-item-body">
         <div class="service-item-tag">Базов анализ</div>
         <div class="service-item-title">Базово разчитане на лице</div>
@@ -144,16 +175,29 @@
           <li>Предварително заплащане по банков път / Revolut</li>
         </ul>
       </div>
-      <div class="service-item-price">
-        <div class="price-amount">25 €</div>
-        <div class="price-bgn">48.90 лв</div>
-        <div class="price-duration">30 минути</div>
-        <div class="price-cta"><a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a></div>
-      </div>
+      <aside class="service-item-side">
+        <div class="service-item-price">
+          <div class="price-amount">25 €</div>
+          <div class="price-bgn">48.90 лв</div>
+          <div class="price-duration">30 минути</div>
+          <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com?subject=Запитване: Базово разчитане на лице" class="btn-primary">Запитване по имейл</a></div>
+        </div>
+        <figure class="service-testimonial">
+          <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+          <blockquote>„Много интересен метод за самопознание.“</blockquote>
+          <figcaption>— Невена Арнаудова</figcaption>
+        </figure>
+      </aside>
     </div>
 
     <div class="service-item reveal">
-      <div class="service-item-num">02</div>
+      <div class="service-photo">
+        <div class="service-item-num">02</div>
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Снимка</span>
+        </div>
+      </div>
       <div class="service-item-body">
         <div class="service-item-tag">Подробен анализ</div>
         <div class="service-item-title">Подробно разчитане на лице</div>
@@ -169,16 +213,29 @@
           <li>Предварително заплащане по банков път / Revolut</li>
         </ul>
       </div>
-      <div class="service-item-price">
-        <div class="price-amount">54 €</div>
-        <div class="price-bgn">105.61 лв</div>
-        <div class="price-duration">60 минути</div>
-        <div class="price-cta"><a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a></div>
-      </div>
+      <aside class="service-item-side">
+        <div class="service-item-price">
+          <div class="price-amount">54 €</div>
+          <div class="price-bgn">105.61 лв</div>
+          <div class="price-duration">60 минути</div>
+          <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com?subject=Запитване: Подробно разчитане на лице" class="btn-primary">Запитване по имейл</a></div>
+        </div>
+        <figure class="service-testimonial">
+          <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+          <blockquote>„Благодаря ти за анализа и записа. Цялата среща я усещах в много приятелска и лека атмосфера.“</blockquote>
+          <figcaption>— Рали Матеева</figcaption>
+        </figure>
+      </aside>
     </div>
 
     <div class="service-item reveal">
-      <div class="service-item-num">03</div>
+      <div class="service-photo">
+        <div class="service-item-num">03</div>
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Снимка</span>
+        </div>
+      </div>
       <div class="service-item-body">
         <div class="service-item-tag">Анализ + Писмен доклад</div>
         <div class="service-item-title">Подробно разчитане с писмен анализ</div>
@@ -193,18 +250,31 @@
           <li>Срещата може да се осъществи онлайн - през Zoom</li>
           <li>Предварително заплащане по банков път / Revolut</li>
         </ul>
-        <p style="font-size:0.85rem;color:var(--gold);font-style:italic;margin-top:0.5rem">„Всеки идва на този свят точно с тези качества на личността, които да го водят напред — и много от тях са изписани на лицето ни."</p>
+        <p style="font-size:0.9rem;color:var(--gold);font-style:italic;margin-top:0.5rem">„Всеки идва на този свят точно с тези качества на личността, които да го водят напред — и много от тях са изписани на лицето ни."</p>
       </div>
-      <div class="service-item-price">
-        <div class="price-amount">77 €</div>
-        <div class="price-bgn">150.59 лв</div>
-        <div class="price-duration">90 минути</div>
-        <div class="price-cta"><a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a></div>
-      </div>
+      <aside class="service-item-side">
+        <div class="service-item-price">
+          <div class="price-amount">77 €</div>
+          <div class="price-bgn">150.59 лв</div>
+          <div class="price-duration">90 минути</div>
+          <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com?subject=Запитване: Подробно разчитане с писмен анализ" class="btn-primary">Запитване по имейл</a></div>
+        </div>
+        <figure class="service-testimonial">
+          <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+          <blockquote>„Много положително ми подейства тази консултация. Смятам, че анализът е точен. Благодаря за отделеното време!“</blockquote>
+          <figcaption>— Кремена Христова</figcaption>
+        </figure>
+      </aside>
     </div>
 
     <div class="service-item reveal">
-      <div class="service-item-num">04</div>
+      <div class="service-photo">
+        <div class="service-item-num">04</div>
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Снимка</span>
+        </div>
+      </div>
       <div class="service-item-body">
         <div class="service-item-tag">За двойки</div>
         <div class="service-item-title">Разчитане на лица на партньорски двойки</div>
@@ -219,16 +289,29 @@
           <li>Предварително заплащане по банков път / Revolut</li>
         </ul>
       </div>
-      <div class="service-item-price">
-        <div class="price-amount">87 €</div>
-        <div class="price-bgn">170 лв</div>
-        <div class="price-duration">За двама</div>
-        <div class="price-cta"><a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-primary">Запази час</a></div>
-      </div>
+      <aside class="service-item-side">
+        <div class="service-item-price">
+          <div class="price-amount">87 €</div>
+          <div class="price-bgn">170 лв</div>
+          <div class="price-duration">За двама</div>
+          <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com?subject=Запитване: Разчитане за двойки" class="btn-primary">Запитване по имейл</a></div>
+        </div>
+        <figure class="service-testimonial">
+          <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+          <blockquote>„Срещата с Ели ми даде възможност да погледна себе си през още една перспектива — в личен и професионален план.“</blockquote>
+          <figcaption>— Радостина Георгиева</figcaption>
+        </figure>
+      </aside>
     </div>
 
     <div class="service-item voucher reveal">
-      <div class="service-item-num">05</div>
+      <div class="service-photo">
+        <div class="service-item-num">05</div>
+        <div class="photo-ph">
+          <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+          <span>Снимка</span>
+        </div>
+      </div>
       <div class="service-item-body">
         <div class="service-item-tag">Подарък</div>
         <div class="service-item-title">Ваучер за подарък</div>
@@ -239,11 +322,18 @@
         </ul>
         <div class="voucher-note"><strong>За да поръчате ваучер, посочете:</strong> имената на получателя · коя услуга · дата за изписване на ваучера. Изпратете на <a href="mailto:yourfacetalk@gmail.com" style="color:var(--gold)">yourfacetalk@gmail.com</a></div>
       </div>
-      <div class="service-item-price">
-        <div class="price-amount" style="font-size:1.4rem;color:var(--ink2)">По избор</div>
-        <div class="price-bgn">според услугата</div>
-        <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com" class="btn-primary">Поръчай ваучер</a></div>
-      </div>
+      <aside class="service-item-side">
+        <div class="service-item-price">
+          <div class="price-amount" style="font-size:1.4rem;color:var(--ink2)">По избор</div>
+          <div class="price-bgn">според услугата</div>
+          <div class="price-cta"><a href="mailto:yourfacetalk@gmail.com?subject=Поръчка на ваучер за подарък" class="btn-primary">Поръчай ваучер</a></div>
+        </div>
+        <figure class="service-testimonial">
+          <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+          <blockquote>„Много ценно докосване, до онова, което си.“</blockquote>
+          <figcaption>— Десислава Иванова</figcaption>
+        </figure>
+      </aside>
     </div>
 
   </div>
@@ -260,9 +350,9 @@
   <div class="cta-inner reveal">
     <div class="cta-tag">Следваща стъпка</div>
     <h2 class="cta-title">Готови ли сте да разберете<br>какво казва <em>вашето лице?</em></h2>
-    <p class="cta-sub">Изберете формата, която ви говори, и запазете час онлайн.</p>
+    <p class="cta-sub">Изберете формата, която ви говори, и ни пишете — ще се свържем с вас по имейл до 24 часа.</p>
     <div class="cta-actions">
-      <a href="" onclick="Calendly.initPopupWidget({url:'https://calendly.com/yourfacetalk/30min'});return false;" class="btn-cta-primary">Запази консултация</a>
+      <a href="mailto:yourfacetalk@gmail.com?subject=Запитване за консултация" class="btn-cta-primary">Запитване по имейл</a>
       <a href="index.html#contact" class="btn-cta-ghost">Свържи се с нас</a>
     </div>
   </div>
