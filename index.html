@@ -15,6 +15,7 @@
 <!-- Preload hero (LCP) — responsive WebP -->
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 <script src="blog-data.js"></script>
@@ -93,7 +94,7 @@
         <span class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
       </div>
       <div class="service-title">Бизнес услуги</div>
-      <p class="service-desc">Корпоративни програми за екипи, ръководители и подбор — по-ефективна комуникация чрез разчитане на лица.</p>
+      <p class="service-desc">Консултации на екипи, мениджъри и специалисти по подбор — за по-ефективна комуникация чрез разчитане на лица.</p>
       <span class="service-more">Научи повече →</span>
     </a>
     <a href="uslugi-personalni.html" class="service-card reveal">
@@ -125,7 +126,7 @@
         <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
       </div>
       <div class="service-title">Събития</div>
-      <p class="service-desc">Вдъхновяващи разчитания на лица за момински партита, корпоративни поводи и специални събития.</p>
+      <p class="service-desc">Вдъхновяващи разчитания на лица за партита, тийм билдинги и специални събития.</p>
       <span class="service-more">Научи повече →</span>
     </a>
   </div>
@@ -356,6 +357,7 @@
           <div class="form-group"><label>Вашето име</label><input type="text" name="name" placeholder="Иван Иванов" required></div>
           <div class="form-group"><label>Имейл</label><input type="email" name="email" placeholder="ivan@company.com" required></div>
         </div>
+        <div class="form-group"><label>Телефон</label><input type="text" name="phone" placeholder="+359 88 123 4567"></div>
         <div class="form-group"><label>Компания</label><input type="text" name="company" placeholder="Вашата компания"></div>
         <div class="form-group"><label>Вид услуга</label>
           <select name="service"><option value="">Изберете услуга...</option><option>Бизнес услуги</option><option>Персонален анализ</option><option>Събитие</option></select>
@@ -447,9 +449,16 @@
     error.style.display = 'none';
     btn.textContent = 'Изпращане...';
     btn.disabled = true;
+    const fd = new FormData(e.target);
+    const name = (fd.get('name') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
     try {
-      const res = await fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } });
-      if (res.ok) { success.style.display = 'block'; e.target.reset(); }
+      const res = await fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        success.style.display = 'block';
+        e.target.reset();
+        if (window.sendAutoReply) window.sendAutoReply(name, email);
+      }
       else { error.style.display = 'block'; }
     } catch(err) { error.style.display = 'block'; }
     btn.textContent = 'Изпрати запитване';
