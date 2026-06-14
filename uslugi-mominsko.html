@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3RM10J6K9');
+</script>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -11,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 .nav-links a:hover,.nav-links a.active {color:var(--gold)}
 .nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
@@ -331,7 +340,7 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;colo
 
 <script src="app.js"></script>
 <script>
-  async function handleSubmit(e){e.preventDefault();const btn=document.getElementById('submitBtn');const s=document.getElementById('formSuccess');const er=document.getElementById('formError');s.style.display='none';er.style.display='none';btn.textContent='Изпращане...';btn.disabled=true;try{const r=await fetch(e.target.action,{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}});if(r.ok){s.style.display='block';e.target.reset();}else{er.style.display='block';}}catch(err){er.style.display='block';}btn.textContent='Изпрати запитване';btn.disabled=false;}
+  async function handleSubmit(e){e.preventDefault();const btn=document.getElementById('submitBtn');const s=document.getElementById('formSuccess');const er=document.getElementById('formError');s.style.display='none';er.style.display='none';btn.textContent='Изпращане...';btn.disabled=true;const fd=new FormData(e.target);const nm=(fd.get('name')||'').toString().trim();const em=(fd.get('email')||'').toString().trim();try{const r=await fetch(e.target.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});if(r.ok){s.style.display='block';e.target.reset();if(window.sendAutoReply)window.sendAutoReply(nm,em);}else{er.style.display='block';}}catch(err){er.style.display='block';}btn.textContent='Изпрати запитване';btn.disabled=false;}
 </script>
 </body>
 </html>
