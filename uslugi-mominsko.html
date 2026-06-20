@@ -1,6 +1,109 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #FAF8F4;
+  --backgroundColor: #faf8f4;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #FAF8F4;
+  --iconBackgroundColor: #FAF8F4;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "",
+      label: "Задължителни",
+      description: "<p>Задължителни бисквитки</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Задължителни consent type here');
+      }
+    },
+    {
+      id: "",
+      label: "Аналитични",
+      description: "<p>Аналитични бисквитки</p>",
+      required: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    },
+    {
+      id: "",
+      label: "Маркетингови",
+      description: "<p>Бисквитки за маркетингово измерване</p>",
+      required: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ],
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
+      acceptAllButtonText: "Приеми",
+      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
+      rejectNonEssentialButtonText: "Откажи",
+      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
+      preferencesButtonText: "Настройки",
+      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
+    },
+    preferences: {
+      title: "Настройване на бисквитките",
+      description: "<p>Уважаваме вашето желание за анонимност</p>",
+      saveButtonText: "Запази и Затвори",
+      saveButtonAccessibleLabel: "Запази и Затвори",
+      creditLinkText: "Вземи безплатен банер",
+      creditLinkAccessibleLabel: "Вземи безплатен банер"
+    }
+  }
+});
+</script>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
 <script>

@@ -222,7 +222,7 @@
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
   .form-group{margin-bottom:1rem}
   .form-group label{display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
-  .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--surface);border:1px solid rgba(26,22,18,0.14);color:var(--ink);padding:0.9rem 1rem;font-family:"DM Sans",sans-serif;font-size:0.96rem;outline:none;transition:border-color 0.3s;border-radius:0;-webkit-appearance:none}
+  .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--surface);border:1px solid rgba(26,22,18,0.14);color:var(--ink);padding:0.9rem 1rem;font-family:"DM Sans",sans-serif;font-size:0.96rem;outline:none;transition:border-color 0.3s;border-radius:0;appearance:none}
   .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
   .form-group textarea{resize:vertical;min-height:120px}
   .form-group select option{background:var(--surface)}
