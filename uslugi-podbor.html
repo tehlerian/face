@@ -2,6 +2,22 @@
 <html lang="bg">
 <head>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager -->
 <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
 <style id="silktide-consent-manager-overrides">
 #stcm-wrapper {
@@ -30,19 +46,16 @@ window.silktideConsentManager.init({
   },
   consentTypes: [
     {
-      id: "",
+      id: "essential",
       label: "Задължителни",
       description: "<p>Задължителни бисквитки</p>",
-      required: true,
-      onAccept: function() {
-        console.log('Add logic for the required Задължителни consent type here');
-      }
+      required: true
     },
     {
-      id: "",
+      id: "analytics",
       label: "Аналитични",
       description: "<p>Аналитични бисквитки</p>",
-      required: false,
+      defaultValue: false,
       gtag: "analytics_storage",
       scripts: [
         {
@@ -52,35 +65,20 @@ window.silktideConsentManager.init({
       ],
       onAccept: function() {
         // Google Analytics 4 (G-J3RM10J6K9)
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { window.dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-J3RM10J6K9');
       }
     },
     {
-      id: "",
+      id: "marketing",
       label: "Маркетингови",
       description: "<p>Бисквитки за маркетингово измерване</p>",
-      required: false,
+      defaultValue: false,
       gtag: [
         "ad_storage",
         "ad_user_data",
         "ad_personalization"
-      ],
-      scripts: [
-        {
-          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
-          load: "async"
-        }
-      ],
-      onAccept: function() {
-        // Google Analytics 4 (G-J3RM10J6K9)
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { window.dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-J3RM10J6K9');
-      }
+      ]
     }
   ],
   text: {
@@ -98,8 +96,8 @@ window.silktideConsentManager.init({
       description: "<p>Уважаваме вашето желание за анонимност</p>",
       saveButtonText: "Запази и Затвори",
       saveButtonAccessibleLabel: "Запази и Затвори",
-      creditLinkText: "Вземи безплатен банер",
-      creditLinkAccessibleLabel: "Вземи безплатен банер"
+      //creditLinkText: "Вземи безплатен банер",
+      //creditLinkAccessibleLabel: "Вземи безплатен банер"
     }
   }
 });
