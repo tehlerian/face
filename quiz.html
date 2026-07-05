@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Какво казва лицето ти за теб? — YourFaceTalk</title>
+<meta name="description" content="Безплатен куиз, вдъхновен от метода на разчитане на лица. Открий своя архетип за ~2 минути и получи пълния си профил по имейл.">
+<link rel="canonical" href="https://yourfacetalk.com/quiz.html">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4; --bg2:#f2ede4; --bg3:#ede7db; --surface:#ffffff;
+    --gold:#b8892e; --gold-rich:#c9a84c; --gold-pale:#f5edd8;
+    --ink:#1a1612; --ink2:#39322b; --muted:#6e655b;
+    --teal:#1f3d38;
+    --border:rgba(184,137,46,0.18); --border2:rgba(184,137,46,0.30);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"DM Sans",sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,var(--bg),var(--bg2));min-height:100vh;
+    display:flex;align-items:center;justify-content:center;padding:18px;line-height:1.5;
+    -webkit-font-smoothing:antialiased}
+  .wrap{width:100%;max-width:620px}
+  .card{background:var(--surface);box-shadow:0 14px 40px rgba(26,22,18,0.08);
+    padding:30px 26px;border:1px solid var(--border)}
+  .brand{display:flex;align-items:center;justify-content:center;gap:0.6rem;
+    letter-spacing:0.22em;font-weight:500;color:var(--gold);font-size:0.72rem;
+    text-transform:uppercase;margin-bottom:8px}
+  .brand::before,.brand::after{content:"";width:24px;height:1px;background:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:400;color:var(--ink);text-align:center;
+    font-size:1.7rem;line-height:1.25;margin:6px 0 8px}
+  .sub{text-align:center;color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:20px}
+  .bar{height:6px;background:var(--bg3);overflow:hidden;margin-bottom:6px}
+  .bar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-rich));transition:width .35s ease}
+  .count{font-size:0.72rem;letter-spacing:0.08em;color:var(--muted);text-align:right;margin-bottom:16px}
+  .q{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600;color:var(--ink);margin:8px 0 16px;line-height:1.3}
+  .opt{display:block;width:100%;text-align:left;background:var(--surface);border:1px solid var(--border);
+    padding:14px 16px;margin-bottom:11px;font-family:"DM Sans",sans-serif;font-size:0.94rem;color:var(--ink2);
+    cursor:pointer;transition:.2s}
+  .opt:hover{border-color:var(--gold);background:var(--gold-pale);transform:translateY(-1px)}
+  .start-btn,.submit{display:block;width:100%;border:none;padding:15px;
+    font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;
+    text-transform:uppercase;color:#fff;background:var(--gold);
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+    cursor:pointer;margin-top:8px;transition:.3s}
+  .start-btn:hover,.submit:hover{background:var(--gold-rich)}
+  .lead{font-size:0.92rem;color:var(--ink2);line-height:1.7;margin:14px 0}
+  .lead b{color:var(--gold)}
+  .field{margin-bottom:13px}
+  .field label{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;font-weight:500}
+  .field input[type=text],.field input[type=email]{width:100%;border:1px solid var(--border2);background:var(--bg);
+    padding:12px 14px;font-size:1rem;font-family:inherit;color:var(--ink)}
+  .field input:focus{outline:none;border-color:var(--gold);background:var(--surface)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:0.78rem;color:var(--muted);line-height:1.6;margin:6px 0 14px}
+  .consent input{margin-top:3px;min-width:16px;height:16px;accent-color:var(--gold)}
+  .gift{background:rgba(184,137,46,0.06);border-left:3px solid var(--gold);
+    padding:12px 14px;font-size:0.85rem;color:var(--ink2);line-height:1.6;margin:14px 0}
+  .res-badge{display:flex;align-items:center;justify-content:center;gap:0.6rem;text-align:center;
+    font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:6px}
+  .res-badge::before,.res-badge::after{content:"";width:24px;height:1px;background:var(--gold)}
+  .res-name{font-family:"Cormorant Garamond",serif;font-weight:600;text-align:center;color:var(--ink);font-size:2rem;margin:6px 0 6px}
+  .res-ess{font-family:"Cormorant Garamond",serif;text-align:center;font-style:italic;color:var(--muted);font-size:1.05rem;margin-bottom:16px}
+  .res-card{background:var(--bg2);border:1px solid var(--border);padding:16px 18px;margin:12px 0;font-size:0.9rem;color:var(--ink2);line-height:1.7}
+  .res-card b{color:var(--ink)}
+  .res-card ul{margin:6px 0 0 18px}
+  .res-card li{margin:3px 0}
+  .cta{display:block;text-align:center;text-decoration:none;padding:14px;
+    font-family:"DM Sans",sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:0.08em;
+    text-transform:uppercase;margin-top:10px;transition:.3s}
+  .cta-main{color:#fff;background:var(--gold);
+    clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+  .cta-main:hover{background:var(--gold-rich)}
+  .cta-ghost{color:var(--ink2);background:var(--surface);border:1px solid var(--border2)}
+  .cta-ghost:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-pale)}
+  .share{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+  .share button{flex:1;min-width:120px;border:1px solid var(--border2);background:var(--surface);color:var(--ink2);
+    padding:11px;font-family:"DM Sans",sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;transition:.3s}
+  .share button:hover{background:var(--gold-pale);border-color:var(--gold);color:var(--gold)}
+  .note{font-size:0.74rem;color:var(--muted);text-align:center;line-height:1.6;margin-top:16px}
+  .hide{display:none}
+  .fade{animation:f .4s ease}
+  @keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">YourFaceTalk</div>
+
+    <!-- INTRO -->
+    <section id="intro">
+      <h1>Какво казва лицето ти за теб?</h1>
+      <p class="sub">Кратък куиз, вдъхновен от метода на разчитане на лица. Без гадаене — само едно любопитно огледало към теб. ~2 минути.</p>
+      <button class="start-btn" onclick="start()">Започни куиза →</button>
+      <p class="note">Поглеждай се в огледало по време на въпросите за чертите — за по-точен резултат. 🤍</p>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="hide">
+      <div class="bar"><i id="prog"></i></div>
+      <div class="count" id="count"></div>
+      <div class="q" id="qtext"></div>
+      <div id="opts"></div>
+    </section>
+
+    <!-- EMAIL GATE -->
+    <section id="gate" class="hide">
+      <h1>Готово! Резултатът ти е изчислен. 🎉</h1>
+      <p class="lead">Кажи ни къде да изпратим <b>пълния ти профил</b> — плюс бонус мини-гайд „5-те черти, които те издават“.</p>
+      <div class="field"><label>Име</label><input type="text" id="name" placeholder="Твоето име"></div>
+      <div class="field"><label>Имейл</label><input type="email" id="email" placeholder="ti@email.com"></div>
+      <label class="consent"><input type="checkbox" id="consent">
+        <span>Съгласен/на съм да получавам имейли от YourFaceTalk. Мога да се отпиша по всяко време. (Виж <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:var(--gold)">Политиката за поверителност</a>.)</span></label>
+      <div class="gift">🎁 Бонус веднага: мини-гайдът „5-те черти, които те издават“.</div>
+      <button class="submit" onclick="reveal()">Покажи резултата ми →</button>
+      <p class="note" id="gateErr" style="color:#b03a3a"></p>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="hide"></section>
+  </div>
+  <p class="note">© YourFaceTalk · <a href="index.html" style="color:var(--gold);text-decoration:none">yourfacetalk.com</a> · <a href="privacy-policy.html" style="color:var(--gold);text-decoration:none">Поверителност</a></p>
+</div>
+
+<script>
+/* ============================================================
+   НАСТРОЙКА — промени тези 3 неща и куизът е готов за реални имейли
+   ============================================================ */
+const CONFIG = {
+  // Къде да отиват имейлите. Остави "" за ДЕМО режим (само показва резултата).
+  // Лесен вариант: Formspree -> "https://formspree.io/f/ТВОЯ_КОД"
+  // Или webhook от MailerLite / Make / Zapier.
+  endpoint: "",
+  miniCourseUrl: "#",                               // линк към мини-курса „Азбука на лицето“
+  contactUrl: "https://yourfacetalk.com/#contact",  // линк за запазване на персонален анализ
+  privacyUrl: "privacy-policy.html"                 // линк към Политика за поверителност
+};
+
+/* ---- ВЪПРОСИ (буквите A/B/C/D не се показват) ----
+   weight:2 за въпросите за чертите на лицето (№3,5,7) */
+const QUESTIONS = [
+  { q:"Когато влезеш в непозната стая, какво забелязваш първо?", w:1, a:[
+    ["A","Възможностите и идеите, които витаят."],
+    ["B","Хората и настроението между тях."],
+    ["C","Детайлите и подредбата — какво „не пасва“."],
+    ["D","Какво трябва да се направи и кой води."] ] },
+  { q:"Близките ти най-често те описват като…", w:1, a:[
+    ["A","мечтател с глава, пълна с идеи."],
+    ["B","топъл човек, на когото се доверяват."],
+    ["C","прецизен ум, който вижда логиката."],
+    ["D","двигател, който задвижва нещата."] ] },
+  { q:"Погледни очите си в огледалото. Кое е най-близо до истината?", w:2, a:[
+    ["A","По-раздалечени, с „широк“, обхватен поглед."],
+    ["B","Меки, топли, по-заоблени."],
+    ["C","Фокусирани, наблюдателни, проницателни."],
+    ["D","Интензивни, директни, целенасочени."] ] },
+  { q:"Под напрежение първият ти инстинкт е да…", w:1, a:[
+    ["A","потърсиш нов ъгъл или изход."],
+    ["B","поговориш с някого близък."],
+    ["C","спреш, анализираш и съставиш план."],
+    ["D","действаш веднага и решиш на момента."] ] },
+  { q:"Веждите ти са по-скоро…", w:2, a:[
+    ["A","фини и/или извити."],
+    ["B","меки и заоблени."],
+    ["C","прави и симетрични."],
+    ["D","гъсти и силни."] ] },
+  { q:"Кое те запалва най-много?", w:1, a:[
+    ["A","Смисъл, визия, нови хоризонти."],
+    ["B","Връзки, принадлежност, да помагаш."],
+    ["C","Майсторство и яснота — да разбереш как работи нещо."],
+    ["D","Постижение, предизвикателство, победа."] ] },
+  { q:"Формата на лицето/челюстта ти клони към…", w:2, a:[
+    ["A","издължена / овална."],
+    ["B","кръгла / мека."],
+    ["C","ясно очертана / правоъгълна."],
+    ["D","квадратна / силна челюст."] ] },
+  { q:"Идеалният ти ден е…", w:1, a:[
+    ["A","ново преживяване или идея, която те вдъхновява."],
+    ["B","качествено време с хора, които обичаш."],
+    ["C","ред, фокус и една красиво завършена задача."],
+    ["D","предизвикателство, изправено и победено."] ] }
+];
+
+const RESULTS = {
+  A:{ badge:"Твоят архетип", name:"Визионерът", ess:"Виждаш картината, преди другите да видят пъзела.",
+    story:"По-раздалечените очи и по-фините черти често издават ум, който мисли нашироко — обхваща хоризонти, не подробности. Лицето ти разказва история на простор, идеи и възможност.",
+    str:["Визия и оригиналност — раждаш идеи, които другите не виждат.","Вдъхновяваш — хората те следват към бъдещето.","Гъвкавост — намираш изход там, където другите виждат стена."],
+    edge:"да приземяваш идеите в конкретни, малки стъпки.",
+    cta:"Започни с мини-курса „Азбука на лицето“ — превърни интуицията в яснота." },
+  B:{ badge:"Твоят архетип", name:"Сърцето", ess:"Хората се чувстват видени, когато са до теб.",
+    story:"По-меките, заоблени черти и топлият поглед често говорят за емоционална интелигентност и дарба за връзка. Лицето ти разказва история на топлина, доверие и принадлежност.",
+    str:["Емпатия — усещаш какво чувстват хората, преди да го кажат.","Доверие — другите ти споделят най-важното.","Свързване — обединяваш и сплотяваш."],
+    edge:"да пазиш и собствените си граници, не само чуждите нужди.",
+    cta:"Персоналният анализ е създаден за теб — топлина, насочена навътре." },
+  C:{ badge:"Твоят архетип", name:"Архитектът", ess:"Виждаш реда и логиката, които другите пропускат.",
+    story:"Ясно очертаните, симетрични черти често издават аналитичен, прецизен ум. Лицето ти разказва история на яснота, структура и майсторство.",
+    str:["Логика — разглобяваш сложното до ясни части.","Надеждност — на теб може да се разчита докрай.","Качество — правиш нещата както трябва."],
+    edge:"да оставяш място за спонтанност и чувство.",
+    cta:"Сигнатурният курс „Прочети всяко лице“ ще ти даде цялата система." },
+  D:{ badge:"Твоят архетип", name:"Двигателят", ess:"Където другите се колебаят, ти вече си тръгнал.",
+    story:"Силната челюст и интензивният, директен поглед често говорят за решителност и устойчивост. Лицето ти разказва история на воля, действие и резултат.",
+    str:["Смелост — тръгваш, когато другите още мислят.","Инициатива — задвижваш нещата.","Устойчивост — довеждаш докрай под натиск."],
+    edge:"да забавяш темпо, за да чуеш и другите.",
+    cta:"Персоналният анализ ти дава най-прекия път до себепознанието." }
+};
+
+let i = 0;
+const scores = {A:0,B:0,C:0,D:0};
+const faceScores = {A:0,B:0,C:0,D:0}; // само въпросите за лицето (за tie-break)
+
+function show(id){ ["intro","quiz","gate","result"].forEach(s=>document.getElementById(s).classList.add("hide"));
+  const el=document.getElementById(id); el.classList.remove("hide"); el.classList.remove("fade"); void el.offsetWidth; el.classList.add("fade"); }
+
+function start(){ i=0; show("quiz"); render(); }
+
+function render(){
+  const item = QUESTIONS[i];
+  document.getElementById("prog").style.width = (i/QUESTIONS.length*100)+"%";
+  document.getElementById("count").textContent = "Въпрос "+(i+1)+" от "+QUESTIONS.length;
+  document.getElementById("qtext").textContent = item.q;
+  const box = document.getElementById("opts"); box.innerHTML="";
+  item.a.forEach(opt=>{
+    const b=document.createElement("button"); b.className="opt"; b.textContent=opt[1];
+    b.onclick=()=>choose(opt[0], item.w);
+    box.appendChild(b);
+  });
+}
+
+function choose(letter, weight){
+  scores[letter]+=weight;
+  if(weight===2) faceScores[letter]+=weight;
+  i++;
+  if(i<QUESTIONS.length){ render(); }
+  else { document.getElementById("prog").style.width="100%"; show("gate"); }
+}
+
+function winner(){
+  let max=Math.max(scores.A,scores.B,scores.C,scores.D);
+  let tied=["A","B","C","D"].filter(k=>scores[k]===max);
+  if(tied.length===1) return tied[0];
+  // tie-break 1: по въпросите за лицето
+  let fmax=Math.max(...tied.map(k=>faceScores[k]));
+  let tied2=tied.filter(k=>faceScores[k]===fmax);
+  return tied2[0]; // tie-break 2: ред A,B,C,D
+}
+
+function reveal(){
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const consent=document.getElementById("consent").checked;
+  const err=document.getElementById("gateErr"); err.textContent="";
+  if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Моля, въведи валиден имейл."; return; }
+  if(!consent){ err.textContent="Моля, отбележи съгласието, за да продължиш."; return; }
+  const key=winner();
+  // изпрати данните (ако е настроен endpoint), иначе демо
+  if(CONFIG.endpoint){
+    fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({name:name,email:email,archetype:RESULTS[key].name,archetypeKey:key})}).catch(()=>{});
+  }
+  renderResult(key);
+}
+
+function renderResult(key){
+  const r=RESULTS[key];
+  const html = `
+    <div class="res-badge">${r.badge}</div>
+    <div class="res-name">${r.name}</div>
+    <div class="res-ess">„${r.ess}“</div>
+    <div class="res-card"><b>Историята на лицето ти:</b> ${r.story}</div>
+    <div class="res-card"><b>Силните ти страни:</b><ul>${r.str.map(s=>"<li>"+s+"</li>").join("")}</ul></div>
+    <div class="res-card"><b>Ръбът ти за растеж:</b> ${r.edge}</div>
+    <a class="cta cta-main" href="${CONFIG.miniCourseUrl}">${r.cta} →</a>
+    <a class="cta cta-ghost" href="${CONFIG.contactUrl}">Запази персонален анализ с Елина</a>
+    <div class="share">
+      <button onclick="shareIt('${r.name}')">Сподели резултата</button>
+      <button onclick="restart()">Направи отново</button>
+    </div>
+    <p class="note">Проверката на имейла ти е на път. Виж и папка „Промоции/Spam“. 🤍</p>`;
+  const el=document.getElementById("result"); el.innerHTML=html; show("result");
+}
+
+function shareIt(name){
+  const text="Аз съм „"+name+"“ според YourFaceTalk. А ти какво казва лицето ти?";
+  const url=location.href;
+  if(navigator.share){ navigator.share({title:"YourFaceTalk",text:text,url:url}).catch(()=>{}); }
+  else { navigator.clipboard.writeText(text+" "+url).then(()=>alert("Копирано! Сподели го 🤍")).catch(()=>alert(text)); }
+}
+function restart(){ i=0; scores.A=scores.B=scores.C=scores.D=0; faceScores.A=faceScores.B=faceScores.C=faceScores.D=0;
+  document.getElementById("consent").checked=false; show("intro"); }
+</script>
+</body>
+</html>

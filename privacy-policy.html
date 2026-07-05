@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager -->
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #B8892E;
+  --backgroundColor: #faf8f4;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #B8892E;
+  --iconBackgroundColor: #FAF8F4;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Задължителни",
+      description: "<p>Задължителни бисквитки</p>",
+      required: true
+    },
+    {
+      id: "analytics",
+      label: "Аналитични",
+      description: "<p>Аналитични бисквитки</p>",
+      defaultValue: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    },
+    {
+      id: "marketing",
+      label: "Маркетингови",
+      description: "<p>Бисквитки за маркетингово измерване</p>",
+      defaultValue: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
+      acceptAllButtonText: "Приеми",
+      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
+      rejectNonEssentialButtonText: "Откажи",
+      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
+      preferencesButtonText: "Настройки",
+      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
+    },
+    preferences: {
+      title: "Настройване на бисквитките",
+      description: "<p>Уважаваме вашето желание за анонимност</p>",
+      saveButtonText: "Запази и Затвори",
+      saveButtonAccessibleLabel: "Запази и Затвори",
+      creditLinkText: "+",
+      creditLinkAccessibleLabel: "+"
+    }
+  }
+});
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3RM10J6K9');
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика за поверителност — YourFaceTalk</title>
+<meta name="description" content="Как YourFaceTalk събира, използва и защитава личните ви данни — форма за контакт, куиз, бисквитки и вашите права по GDPR.">
+<link rel="canonical" href="https://yourfacetalk.com/privacy-policy.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.nav-links a:hover,.nav-links a.active {color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
+#legal-hero {padding:140px 4rem 3rem;background:var(--bg);text-align:center}
+#legal-hero h1 {font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--ink);line-height:1.15}
+#legal-hero h1 em {font-style:italic;color:var(--gold)}
+.legal-date {margin-top:1rem;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted)}
+#legal {max-width:800px;margin:0 auto;padding:3rem 2rem 5rem}
+#legal h2 {font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600;color:var(--ink);margin:2.6rem 0 1rem}
+#legal h2:first-of-type {margin-top:0}
+#legal p {color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-bottom:1rem}
+#legal ul {list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin:0 0 1.2rem}
+#legal li {display:flex;gap:0.7rem;align-items:flex-start;font-size:0.95rem;color:var(--ink2);line-height:1.7}
+#legal li::before {content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.6rem}
+#legal a {color:var(--gold);text-decoration:none;transition:color 0.3s}
+#legal a:hover {color:var(--gold-rich)}
+#legal strong {color:var(--ink)}
+.legal-note {margin-top:2.6rem;padding:1.4rem 1.6rem;background:rgba(184,137,46,0.06);border:1px solid var(--border);font-size:0.9rem;color:var(--muted);line-height:1.8}
+.legal-note strong {color:var(--gold)}
+@media (max-width:768px) {
+  #legal-hero {padding:120px 1.5rem 2rem}
+  #legal {padding:2rem 1.5rem 4rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/opt/logo.webp" alt="YourFaceTalk Logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="za-nas.html">За мен</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="uslugi-korporativni.html">Бизнес</a></li>
+          <li><a href="uslugi-personalni.html">Персонални</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
+</nav>
+
+<section id="legal-hero">
+  <div class="section-tag" style="justify-content:center">Правна информация</div>
+  <h1>Политика за <em>поверителност</em></h1>
+  <div class="legal-date">Последна актуализация: 5 юли 2026 г.</div>
+</section>
+
+<div class="gold-divider"></div>
+
+<main id="legal">
+  <h2>Кой се грижи за вашите данни</h2>
+  <p>Този сайт (yourfacetalk.com) се управлява от <strong>Елина Божимирова — YourFaceTalk</strong>, гр. Варна, България. За всичко, свързано с личните ви данни, можете да ни пишете на <a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a> или да се обадите на <a href="tel:+359888773076">+359 888 773 076</a>.</p>
+  <p>Отнасяме се към данните ви така, както се отнасяме и към лицата, които четем — с уважение и без излишно любопитство. Събираме само това, което ни е необходимо, за да ви отговорим и да ви предоставим услугата.</p>
+
+  <h2>Какви данни събираме и защо</h2>
+  <p><strong>Форма за контакт и запитвания по имейл.</strong> Име, имейл и съдържанието на съобщението ви. Използваме ги единствено, за да ви отговорим и да организираме исканата услуга (среща, анализ, ваучер, събитие). Правно основание: предприемане на стъпки по ваше искане преди сключване на договор.</p>
+  <p><strong>Куиз „Какво казва лицето ти за теб?“.</strong> Име, имейл и полученият архетип — само ако изберете да ги оставите и отбележите съгласието. Използваме ги, за да ви изпратим пълния профил и обещания бонус материал, а при изрично съгласие — и последващи имейли от YourFaceTalk, от които можете да се отпишете по всяко време. Правно основание: вашето съгласие.</p>
+  <p><strong>Огледален тест на лицето.</strong> Тук е важно да знаете: <strong>снимката ви не се качва никъде</strong>. Обработката се извършва изцяло във вашия браузър, на вашето устройство. Ние нямаме достъп до нея и не я съхраняваме.</p>
+  <p><strong>Поръчка на ваучер.</strong> Имена на получателя и данни за доставка при физически ваучер. Използваме ги само за изпълнение на поръчката.</p>
+  <p><strong>Бисквитки и статистика.</strong> Само със съгласие от банера за бисквитки използваме Google Analytics 4 за анонимна статистика на посещенията — кои страници се четат, откъде идват посетителите. Тези данни не ви идентифицират лично.</p>
+
+  <h2>С кого споделяме данни</h2>
+  <p>Не продаваме и не отдаваме личните ви данни на трети страни. Работим с ограничен кръг доставчици, които обработват данни от наше име:</p>
+  <ul>
+    <li><strong>Formspree Inc.</strong> — техническа обработка на изпратените форми (контактна форма и куиз).</li>
+    <li><strong>Google LLC</strong> — анонимизирана статистика чрез Google Analytics 4, само при дадено съгласие.</li>
+    <li><strong>Хостинг доставчик</strong> — техническо съхранение на сайта.</li>
+    <li><strong>Имейл платформа</strong> (напр. MailerLite) — само ако сте се абонирали за материали от нас.</li>
+  </ul>
+  <p>Някои от тези доставчици обработват данни извън ЕС/ЕИП. В тези случаи прехвърлянето се основава на одобрени механизми като стандартните договорни клаузи на Европейската комисия.</p>
+
+  <h2>Колко време съхраняваме данните</h2>
+  <ul>
+    <li>Запитвания и кореспонденция — до 12 месеца след приключване на комуникацията, освен ако не станете клиент.</li>
+    <li>Данни от куиза и абонамент за имейли — до отписването ви или до оттегляне на съгласието.</li>
+    <li>Данни по издадени документи — в сроковете, изисквани от счетоводното и данъчното законодателство.</li>
+  </ul>
+
+  <h2>Вашите права</h2>
+  <p>По Общия регламент за защита на данните (GDPR) имате право да поискате от нас:</p>
+  <ul>
+    <li>достъп до личните данни, които съхраняваме за вас;</li>
+    <li>коригиране на неточни данни;</li>
+    <li>изтриване („правото да бъдеш забравен“);</li>
+    <li>ограничаване на обработването или възражение срещу него;</li>
+    <li>преносимост на данните в структуриран формат;</li>
+    <li>оттегляне на дадено съгласие по всяко време — без това да засяга законността на обработката преди оттеглянето.</li>
+  </ul>
+  <p>За да упражните което и да е от тези права, пишете ни на <a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a> — отговаряме в рамките на 30 дни. Ако смятате, че правата ви са нарушени, можете да подадете жалба до Комисията за защита на личните данни (КЗЛД): <a href="https://www.cpdp.bg" target="_blank" rel="noopener">www.cpdp.bg</a>, гр. София 1592, бул. „Проф. Цветан Лазаров“ № 2.</p>
+
+  <h2>Бисквитки</h2>
+  <p>При първото ви посещение сайтът пита кои бисквитки приемате. Задължителните поддържат основната функционалност; аналитичните и маркетинговите се включват само с ваше съгласие. Можете да промените избора си по всяко време от иконата за настройки на бисквитките в долния десен ъгъл на екрана.</p>
+
+  <h2>Деца</h2>
+  <p>Услугите ни са предназначени за пълнолетни лица. Не събираме съзнателно данни на лица под 16 години; ако научим за такива данни, ще ги изтрием.</p>
+
+  <h2>Промени в тази политика</h2>
+  <p>При промяна в услугите или изискванията на закона ще актуализираме тази страница и датата в началото ѝ. Съществените промени ще отбележим видимо на сайта.</p>
+
+  <div class="legal-note"><strong>Накратко:</strong> събираме минимум данни, използваме ги само за това, за което сте ни ги дали, не ги продаваме и ги изтриваме, когато вече не са нужни. Ако нещо ви притеснява — пишете ни, ще отговорим човешки.</div>
+</main>
+
+<div class="gold-divider"></div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-korporativni.html">Бизнес услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/elina-bozhimirova-3360a9301/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" rel="noopener" class="fsoc" aria-label="TikTok"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

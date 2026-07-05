@@ -239,6 +239,8 @@
   .footer-col a{text-decoration:none;color:rgba(250,248,244,0.5);font-size:0.92rem;transition:color 0.3s}
   .footer-col a:hover{color:#faf8f4}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;font-size:0.8rem;color:rgba(250,248,244,0.35);gap:1rem;flex-wrap:wrap}
+  .footer-legal{color:rgba(250,248,244,0.5);text-decoration:none;transition:color 0.3s}
+  .footer-legal:hover{color:var(--gold-rich)}
   .footer-social{display:flex;gap:0.6rem}
   .fsoc{width:34px;height:34px;border:1px solid rgba(184,137,46,0.2);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.3s}
   .fsoc:hover{border-color:var(--gold-rich);background:rgba(184,137,46,0.1)}

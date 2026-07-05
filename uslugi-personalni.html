@@ -143,12 +143,10 @@ window.silktideConsentManager.init({
 .service-item {background:var(--surface);display:grid;grid-template-columns:200px 1fr 300px;gap:2.5rem;align-items:start;padding:2.6rem;position:relative;transition:all 0.35s;border-left:2px solid transparent}
 .service-item:hover {background:var(--bg);border-left-color:var(--gold)}
 
-/* photo placeholder */
+/* service photo — uniform size for all items */
 .service-photo {position:relative}
 .service-item-num {position:absolute;top:0.7rem;left:0.7rem;z-index:2;font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:600;color:#fff;background:rgba(184,137,46,0.94);width:2.4rem;height:2.4rem;display:flex;align-items:center;justify-content:center;line-height:1}
-.photo-ph {aspect-ratio:3/4;width:100%;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px dashed var(--border2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.6rem;color:var(--muted);text-align:center;padding:1rem}
-.photo-ph svg {width:38px;height:38px;stroke:var(--gold);fill:none;stroke-width:1.3;opacity:0.85}
-.photo-ph span {font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase}
+.service-photo img {aspect-ratio:3/4;width:100%;object-fit:cover;object-position:center;display:block;background:var(--bg2)}
 
 .service-item-body {min-width:0}
 .service-item-tag {font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
@@ -171,7 +169,6 @@ window.silktideConsentManager.init({
 .service-testimonial blockquote {font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;line-height:1.6;color:var(--ink2);margin:0 0 0.7rem;border:none;padding:0}
 .service-testimonial figcaption {font-size:0.78rem;color:var(--muted);letter-spacing:0.04em}
 
-.service-item.voucher {background:linear-gradient(135deg,var(--bg2) 0%,var(--bg) 100%);border-left:2px solid var(--gold)}
 .voucher-note {margin-top:1.2rem;padding:1rem 1.2rem;background:rgba(184,137,46,0.06);border:1px solid var(--border);font-size:0.85rem;color:var(--muted);line-height:1.75}
 .important-notice {margin-top:3rem;padding:1.8rem 2.2rem;background:var(--teal);color:rgba(250,248,244,0.85);display:flex;gap:1.2rem;align-items:flex-start}
 .important-notice svg {width:20px;height:20px;stroke:var(--gold-rich);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:0.1rem}
@@ -193,13 +190,13 @@ window.silktideConsentManager.init({
   #page-hero {grid-template-columns:1fr;padding:80px 2rem 4rem;gap:2rem}
   .service-item {grid-template-columns:1fr;gap:1.8rem;padding:2rem}
   .service-photo {max-width:280px}
-  .photo-ph {aspect-ratio:16/10}
+  .service-photo img {aspect-ratio:16/10}
   .service-item-price {text-align:left}
 }
 @media (max-width:768px) {
   .service-item {padding:1.5rem;gap:1.4rem}
   .service-photo {max-width:none}
-  .photo-ph {aspect-ratio:16/9}
+  .service-photo img {aspect-ratio:16/9}
   .service-item-num {font-size:1.25rem;width:2.1rem;height:2.1rem}
   .cta-actions {flex-direction:column;align-items:center}
 }
@@ -266,10 +263,7 @@ window.silktideConsentManager.init({
     <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">01</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/essentialA.jpg" alt="Базово разчитане на лице — първа среща с метода" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">Базов анализ</div>
@@ -303,10 +297,7 @@ window.silktideConsentManager.init({
     <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">02</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/advancedA.jpg" alt="Подробно разчитане на лице — задълбочен поглед към себе си" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">Подробен анализ</div>
@@ -343,10 +334,7 @@ window.silktideConsentManager.init({
     <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">03</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/advancedA+.jpg" alt="Подробно разчитане на лице с персонален писмен доклад" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">Анализ + Писмен доклад</div>
@@ -384,10 +372,7 @@ window.silktideConsentManager.init({
     <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">04</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/couplesA.jpg" alt="Разчитане на лица на партньорски двойки" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">За двойки</div>
@@ -421,13 +406,10 @@ window.silktideConsentManager.init({
       </aside>
     </div>
 
-    <div class="service-item voucher reveal">
+    <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">05</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/voucher.jpg" alt="Ваучер за подарък — разчитане на лице с писмен анализ" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">Подарък</div>
@@ -459,10 +441,7 @@ window.silktideConsentManager.init({
     <div class="service-item reveal">
       <div class="service-photo">
         <div class="service-item-num">06</div>
-        <div class="photo-ph">
-          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-          <span>Снимка</span>
-        </div>
+        <img src="img/opt/mParti2.webp" alt="Събитие с разчитане на лица — моминско парти и лични празници" loading="lazy">
       </div>
       <div class="service-item-body">
         <div class="service-item-tag">Събитие</div>
@@ -525,7 +504,7 @@ window.silktideConsentManager.init({
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 YourFaceTalk. Всички права запазени.</span>
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
     <div class="footer-social">
       <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>

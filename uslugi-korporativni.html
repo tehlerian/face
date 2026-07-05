@@ -138,7 +138,10 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;colo
 .service-card {min-height:auto;padding:0;background:var(--surface);color:var(--ink2);border:1px solid var(--border);clip-path:none}
 .service-card::after {display:none}
 .service-card:hover {box-shadow:0 16px 44px rgba(26,22,18,0.10);border-color:var(--border2)}
-#services .services-grid {margin-top:2.2rem}
+#services .services-grid {margin-top:2.2rem;grid-template-columns:repeat(2,1fr)}
+.service-card-media {aspect-ratio:16/9;overflow:hidden;border-bottom:1px solid var(--border)}
+.service-card-media img {width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 0.7s cubic-bezier(0.2,0,0.2,1)}
+.service-card:hover .service-card-media img {transform:scale(1.07)}
 .service-card-top {padding:2.6rem 2.4rem 1.8rem;flex:1}
 .service-card-num {font-family:"Cormorant Garamond",serif;font-size:3.5rem;font-weight:300;color:rgba(184,137,46,0.1);line-height:1;margin-bottom:1.2rem;transition:color 0.4s}
 .service-card:hover .service-card-num {color:rgba(184,137,46,0.18)}
@@ -274,15 +277,16 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;colo
 
 <div class="gold-divider"></div>
 
-<!-- 3 SERVICES -->
+<!-- 2 SERVICES -->
 <section id="services">
   <div class="section-tag reveal">Изберете услугата</div>
-  <h2 class="reveal">Три формата,<br><em>един инструмент</em></h2>
+  <h2 class="reveal">Два формата,<br><em>един инструмент</em></h2>
   <div class="services-grid">
 
     <!-- Workshop -->
     <a href="uslugi-workshop.html" class="service-card reveal" style="text-decoration:none;color:inherit">
       <div class="service-card-accent"></div>
+      <div class="service-card-media"><img src="img/businessWorkshops.jpg" alt="Практически уъркшоп за екипи — разчитане на лица" loading="lazy"></div>
       <div class="service-card-top">
         <div class="service-card-num">01</div>
         <div class="service-card-tag">Уъркшоп</div>
@@ -299,30 +303,12 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;colo
       </div>
     </a>
 
-    <!-- Podbor -->
-    <a href="uslugi-podbor.html" class="service-card reveal" style="text-decoration:none;color:inherit">
-      <div class="service-card-accent"></div>
-      <div class="service-card-top">
-        <div class="service-card-num">02</div>
-        <div class="service-card-tag">Подбор на кадри</div>
-        <h3>Консултация при подбор на кадри</h3>
-        <p>Интервюто показва как се представя кандидатът. Лицето показва как работи. Face Reading добавя информация, която иначе излиза едва след първите три месеца.</p>
-        <div class="service-card-details">
-          <div class="service-detail"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>До 45 мин на кандидат</div>
-          <div class="service-detail"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Писмено резюме до 24 часа</div>
-          <div class="service-detail"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>На живо или онлайн</div>
-        </div>
-      </div>
-      <div class="service-card-bottom">
-        <span class="service-card-cta">Научи повече →</span>
-      </div>
-    </a>
-
     <!-- Obuchenia -->
     <a href="#modules" class="service-card reveal" style="text-decoration:none;color:inherit">
       <div class="service-card-accent"></div>
+      <div class="service-card-media"><img src="img/businessTrainings.jpg" alt="Корпоративни обучения по разчитане на лица" loading="lazy"></div>
       <div class="service-card-top">
-        <div class="service-card-num">03</div>
+        <div class="service-card-num">02</div>
         <div class="service-card-tag">Обучения</div>
         <h3>Корпоративни обучения</h3>
         <p>Два специализирани модула за разчитане на дългосрочни личностни характеристики и бизнес маркери — приложими при подбор, управление и комуникация.</p>
@@ -479,7 +465,7 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;colo
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 YourFaceTalk. Всички права запазени.</span>
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
     <div class="footer-social">
       <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
