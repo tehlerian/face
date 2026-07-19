@@ -116,7 +116,7 @@ window.silktideConsentManager.init({
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Практически уъркшоп за екипи — YourFaceTalk</title>
+<title>Консултация при подбор на кадри — YourFaceTalk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=20260719">
@@ -127,47 +127,43 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 .page-hero-breadcrumb {display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
 .page-hero-breadcrumb:hover {color:var(--gold)}
 .page-hero-breadcrumb svg {width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
-#page-hero {padding:9rem 4rem 7rem;background:var(--bg2);position:relative;overflow:hidden}
-.hero-inner {position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1100px;margin:0 auto}
-.hero-text p {color:var(--ink2);font-size:1rem;line-height:1.85;margin-top:1.2rem;max-width:480px}
+#page-hero {padding:9rem 4rem 7rem;background:var(--bg);position:relative}
+.hero-inner {display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto}
+.hero-text p {color:var(--ink2);font-size:1rem;line-height:1.85;margin-top:1.2rem;max-width:500px}
 .hero-text .hero-actions {margin-top:2rem}
-.hero-quote {background:var(--teal);color:#faf8f4;padding:3rem;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
-.hero-quote-mark {font-family:"Cormorant Garamond",serif;font-size:5rem;color:rgba(184,137,46,0.25);line-height:0.7;display:block;margin-bottom:1rem}
-.hero-quote-text {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-style:italic;font-weight:300;color:#faf8f4;line-height:1.65;margin-bottom:1.8rem}
-.hero-meta {display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
-.hero-meta-item {text-align:center}
-.hero-meta-num {font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:600;color:var(--gold-rich);line-height:1}
-.hero-meta-label {font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(250,248,244,0.45);margin-top:0.2rem}
-#problem {background:var(--bg)}
-.problem-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
-.problem-text p {color:var(--ink2);font-size:0.96rem;line-height:1.9;margin-bottom:1.2rem}
-.problem-aha {margin-top:2rem;background:var(--gold-pale);border:1px solid var(--border2);padding:2rem 2.4rem;border-left:3px solid var(--gold)}
-.problem-aha p {font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-style:italic;color:var(--ink);line-height:1.6}
-.problem-for {padding:2rem;border:1px solid var(--border);background:var(--surface)}
-.problem-for h3 {margin-bottom:1.2rem}
-.check-list {list-style:none;display:flex;flex-direction:column;gap:0.7rem}
-.check-list li {display:flex;gap:0.8rem;align-items:flex-start;font-size:0.93rem;color:var(--ink2);line-height:1.65}
-.check-list li svg {width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:0.3rem}
-#what-happens {background:var(--bg2)}
-.steps-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.step-card {background:var(--surface);padding:2rem 1.6rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
-.step-card:hover {border-color:var(--border2);transform:translateY(-4px);box-shadow:0 8px 28px rgba(184,137,46,0.08)}
-.step-card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
-.step-card:hover::before {transform:scaleX(1)}
-.step-num {font-family:"Cormorant Garamond",serif;font-size:2.5rem;font-weight:300;color:rgba(184,137,46,0.15);line-height:1;margin-bottom:0.8rem}
-.step-title {font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.6rem;line-height:1.3}
-.step-desc {font-size:0.88rem;color:var(--muted);line-height:1.7}
-#format {background:var(--bg)}
-.format-grid {display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
-.format-box {background:var(--bg2);padding:2.4rem;border:1px solid var(--border)}
-.format-box h3 {margin-bottom:1.4rem}
-.format-row {display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;border-bottom:1px solid var(--border);font-size:0.88rem}
+.hero-lead {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-style:italic;color:var(--ink);line-height:1.65;margin-top:1.4rem;padding-left:1.4rem;border-left:2px solid var(--gold)}
+.hero-contrast {background:var(--teal);padding:3rem;display:flex;flex-direction:column;gap:0}
+.contrast-row {padding:1.6rem 0;border-bottom:1px solid rgba(250,248,244,0.1);display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.contrast-row:last-child {border-bottom:none}
+.contrast-label {font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.35);margin-bottom:0.6rem}
+.contrast-bad {color:rgba(250,248,244,0.45);font-size:0.92rem;line-height:1.6}
+.contrast-good {color:#faf8f4;font-size:0.92rem;line-height:1.6}
+.contrast-good strong {color:var(--gold-rich)}
+#when {background:var(--bg2)}
+.when-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.when-card {background:var(--surface);padding:2.4rem 2rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+.when-card:hover {border-color:var(--border2);transform:translateY(-4px);box-shadow:0 8px 28px rgba(184,137,46,0.08)}
+.when-card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+.when-card:hover::before {transform:scaleX(1)}
+.when-icon {width:48px;height:48px;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.when-icon svg {width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.when-title {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--ink);margin-bottom:0.6rem}
+.when-desc {font-size:0.93rem;color:var(--muted);line-height:1.75}
+#you-get {background:var(--bg)}
+.get-grid {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
+.get-list {display:flex;flex-direction:column;gap:1.2rem}
+.get-item {display:flex;gap:1.2rem;align-items:flex-start;padding:1.6rem;background:var(--bg2);border:1px solid var(--border);transition:border-color 0.3s}
+.get-item:hover {border-color:var(--border2)}
+.get-item-icon {width:40px;height:40px;flex-shrink:0;background:var(--gold-pale);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center}
+.get-item-icon svg {width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:2}
+.get-item-text h4 {font-family:"Cormorant Garamond",serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.3rem}
+.get-item-text p {font-size:0.92rem;color:var(--muted);line-height:1.7}
+.format-box {background:var(--teal);color:#faf8f4;padding:2.8rem}
+.format-box h3 {font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:#faf8f4;margin-bottom:1.6rem}
+.format-row {display:flex;justify-content:space-between;align-items:center;padding:0.9rem 0;border-bottom:1px solid rgba(250,248,244,0.1);font-size:0.88rem}
 .format-row:last-child {border-bottom:none}
-.format-row-label {color:var(--muted);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase}
-.format-row-val {color:var(--ink2);font-weight:500}
-.for-who-list {list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-top:1rem}
-.for-who-list li {display:flex;gap:0.7rem;font-size:0.93rem;color:var(--ink2);line-height:1.6}
-.for-who-list li::before {content:"·";color:var(--gold);font-size:1.2rem;flex-shrink:0;line-height:1.4}
+.format-row-label {color:rgba(250,248,244,0.4);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase}
+.format-row-val {color:#faf8f4;font-weight:500}
 #cta {background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
 .cta-inner {position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
 .cta-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
@@ -181,11 +177,11 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 .btn-cta-ghost {background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
 .btn-cta-ghost:hover {border-color:var(--gold-rich);color:var(--gold-rich)}
 @media (max-width:1100px) {
-  .hero-inner,.problem-grid,.format-grid {grid-template-columns:1fr;gap:3rem}
-  .steps-grid {grid-template-columns:1fr 1fr}
+  .hero-inner,.get-grid {grid-template-columns:1fr;gap:3rem}
+  .when-grid {grid-template-columns:1fr 1fr}
 }
 @media (max-width:768px) {
-  .steps-grid {grid-template-columns:1fr}
+  .when-grid {grid-template-columns:1fr}
   .cta-actions {flex-direction:column;align-items:center}
 }
 </style>
@@ -223,30 +219,47 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
       <a href="uslugi-korporativni.html" class="page-hero-breadcrumb">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Корпоративни услуги
       </a>
-      <div class="section-tag">Уъркшоп за екипи</div>
-      <h1>Практически<br><em>уъркшоп</em><br>за екипи</h1>
-      <p>Хората в един екип вземат решения, комуникират и реагират под натиск по различен начин. Когато тези разлики не са разпознати, се появява напрежение — не защото хората са некомпетентни, а само защото работят с различни вградени стилове на поведение.</p>
+      <div class="section-tag">Подбор на кадри</div>
+      <h1>Интервюто показва<br>как се <em>представя.</em><br>Лицето показва<br>как <em>работи.</em></h1>
+      <p class="hero-lead">Face Reading добавя конкретна информация към процеса на подбор — информация, която не излиза нито от автобиографията, нито от интервюто.</p>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:1.8;margin-top:1rem">Консултацията не замества вашата преценка. Допълва я с информация, която иначе излиза едва след първите три месеца работа.</p>
       <div class="hero-actions">
-        <a href="index.html#contact" class="btn-primary">Заяви уъркшоп</a>
-        <a href="#what-happens" class="btn-ghost">Какво се случва</a>
+        <a href="index.html#contact" class="btn-primary">Запитване за консултация</a>
+        <a href="#you-get" class="btn-ghost">Какво получавате</a>
       </div>
     </div>
-    <div class="hero-quote reveal">
-      <span class="hero-quote-mark">"</span>
-      <p class="hero-quote-text">Аха — затова той/тя прави така.</p>
-      <p style="font-size:0.78rem;color:rgba(250,248,244,0.45);letter-spacing:0.1em;text-transform:uppercase">Моментът, за който говорят участниците след уъркшопа</p>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <div class="hero-meta-num">90</div>
-          <div class="hero-meta-label">Минути</div>
+    <div class="hero-contrast reveal">
+      <div style="padding:0 0 1.2rem;border-bottom:1px solid rgba(250,248,244,0.1)">
+        <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(250,248,244,0.35)">Сравнение</p>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">Без Face Reading</div>
+          <p class="contrast-bad">Разбирате как работи кандидатът едва след 3 месеца на работа</p>
         </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-num">6–12</div>
-          <div class="hero-meta-label">Участника</div>
+        <div>
+          <div class="contrast-label">С Face Reading</div>
+          <p class="contrast-good"><strong>Знаете преди да вземете решението</strong> — стил, комуникация, реакция под стрес</p>
         </div>
-        <div class="hero-meta-item">
-          <div class="hero-meta-num">100%</div>
-          <div class="hero-meta-label">Практично</div>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">CV и интервю</div>
+          <p class="contrast-bad">Показват как се представя кандидатът, не как работи</p>
+        </div>
+        <div>
+          <div class="contrast-label">Анализ на лицето</div>
+          <p class="contrast-good"><strong>Устойчиви черти на личността</strong> — не може да се научат или симулират</p>
+        </div>
+      </div>
+      <div class="contrast-row">
+        <div>
+          <div class="contrast-label">Тестове</div>
+          <p class="contrast-bad">Показват текущо поведение, не дълготрайни модели</p>
+        </div>
+        <div>
+          <div class="contrast-label">Face Reading</div>
+          <p class="contrast-good"><strong>Дълготрайни характеристики</strong> — как обработва информация, как реагира под натиск</p>
         </div>
       </div>
     </div>
@@ -255,98 +268,74 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 
 <div class="gold-divider"></div>
 
-<!-- PROBLEM & FOR WHO -->
-<section id="problem">
-  <div class="problem-grid">
-    <div class="reveal">
-      <div class="section-tag">Защо работи</div>
-      <h2>Различните стилове<br><em>са предимство, а не проблем</em></h2>
-      <div class="problem-text" style="margin-top:1.4rem">
-        <p>Уъркшопът съчетава въведение в Face Reading с практически упражнения и игри в екипа. Участниците разпознават конкретни бизнес маркери, свързани с вземане на решения и комуникационен стил — и ги прилагат директно към себе си и колегите си.</p>
-        <p>Знанието остава. Не е нужно да помниш теория — след уъркшопа ще гледаш колегите си по нов начин.</p>
-      </div>
-      <div class="problem-aha">
-        <p>„Аха — затова той/тя прави така."</p>
-      </div>
+<!-- WHEN -->
+<section id="when">
+  <div class="section-tag reveal">Подходящо когато</div>
+  <h2 class="reveal">Три ситуации,<br><em>едно решение</em></h2>
+  <div class="when-grid">
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="when-title">Финални кандидати</div>
+      <p class="when-desc">Колебаете се между двама или трима финалисти с близки профили — нужен е допълнителен обективен критерий</p>
     </div>
-    <div class="reveal">
-      <div class="problem-for">
-        <h3>Подходящ за</h3>
-        <ul class="check-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Екипи с комуникационни предизвикателства</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Мениджъри, които искат да разберат екипа по-добре</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Търговски екипи</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>HR при подбор и оценка на таланти</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Нови екипи в процес на формиране</li>
-        </ul>
-      </div>
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="when-title">Специфична роля</div>
+      <p class="when-desc">Позицията изисква конкретен стил на работа или комуникация — лидер, медиатор, аналитик, продавач</p>
+    </div>
+    <div class="when-card reveal">
+      <div class="when-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="when-title">Важно решение</div>
+      <p class="when-desc">Искате да намалите риска преди ключово назначение — ново ръководство, стратегическа позиция</p>
     </div>
   </div>
 </section>
 
 <div class="gold-divider"></div>
 
-<!-- WHAT HAPPENS -->
-<section id="what-happens">
-  <div class="section-tag reveal">По време на уъркшопа</div>
-  <h2 class="reveal">Какво се случва<br><em>на практика</em></h2>
-  <div class="steps-grid">
-    <div class="step-card reveal">
-      <div class="step-num">01</div>
-      <div class="step-title">Интерактивно начало</div>
-      <p class="step-desc">Всеки участник открива нещо конкретно и изненадващо за себе си — преди да е чул теория</p>
-    </div>
-    <div class="step-card reveal">
-      <div class="step-num">02</div>
-      <div class="step-title">Въведение в ключови структури</div>
-      <p class="step-desc">Свързани с бизнес поведение, стил на работа и вземане на решения</p>
-    </div>
-    <div class="step-card reveal">
-      <div class="step-num">03</div>
-      <div class="step-title">Игри в екипа</div>
-      <p class="step-desc">Разпознаване на стилове без да е лично или неудобно — с лекота и смях</p>
-    </div>
-    <div class="step-card reveal">
-      <div class="step-num">04</div>
-      <div class="step-title">Лично за всеки участник</div>
-      <p class="step-desc">Всеки получава лично написани една-две силни страни в бизнес контекст</p>
-    </div>
-    <!--<<div class="step-card reveal">
-      <div class="step-num">05</div>
-      <div class="step-title">Екипен профил</div>
-      <p class="step-desc">Мениджърът получава обобщен екипен профил в рамките на 24 часа след уъркшопа</p>
-    </div>-->
-  </div>
-</section>
-
-<div class="gold-divider"></div>
-
-<!-- FORMAT -->
-<section id="format">
-  <div class="format-grid">
+<!-- WHAT YOU GET -->
+<section id="you-get">
+  <div class="get-grid">
     <div class="reveal">
-      <div class="section-tag">Формат</div>
-      <h2>Практично,<br><em>приложимо от ден 1</em></h2>
-      <p style="color:var(--ink2);font-size:0.95rem;line-height:1.85;margin-top:1.2rem">Синтезирана информация — само за 90 минути, ценна за целия живот. Упражнения и обсъждания затвърждават наученото.</p>
-      <div class="format-box" style="margin-top:2rem">
-        <h3>Детайли</h3>
-        <div class="format-row"><span class="format-row-label">Формат</span><span class="format-row-val">На живо — при вас или на неутрална локация</span></div>
-        <div class="format-row"><span class="format-row-label">Продължителност</span><span class="format-row-val">90 минути</span></div>
-        <div class="format-row"><span class="format-row-label">Група</span><span class="format-row-val">6 до 15 участника</span></div>
-        <div class="format-row"><span class="format-row-label">Материали</span><span class="format-row-val">Включени</span></div>
-        <div class="format-row"><span class="format-row-label">Екипен профил</span><span class="format-row-val">До 24 часа след уъркшопа</span></div>
+      <div class="section-tag">Какво получавате</div>
+      <h2>Конкретна информация,<br><em>готова за употреба</em></h2>
+      <div class="get-list" style="margin-top:2rem">
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="get-item-text">
+            <h4>Анализ на ключови черти</h4>
+            <p>В бизнес контекст за всеки кандидат — как вземат решения, как комуникират, как реагират под натиск</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="get-item-text">
+            <h4>Писмено резюме</h4>
+            <p>Структуриран документ след консултацията — готов за сравнение и архив</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <div class="get-item-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="get-item-text">
+            <h4>Стил на работа</h4>
+            <p>Естествените силни страни в работна среда — готова информация за интеграция в екипа</p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="reveal">
-      <div class="section-tag">Ползи</div>
-      <h2>Какво<br><em>остава след</em></h2>
-      <ul class="for-who-list" style="margin-top:1.5rem">
-        <li>Практични знания, приложими още на същия ден</li>
-        <li>Разбиране защо колегите действат по определен начин</li>
-        <li>Знание как различните лица оформят и различно поведение в екипна среда</li>
-        <li>По-лесна комуникация — без конфликти, без предположения</li>
-        <li>Това знание ще промени начина, по който виждате хората около вас</li>
-      </ul>
+      <div class="format-box">
+        <h3>Формат</h3>
+        <div class="format-row"><span class="format-row-label">Начин</span><span class="format-row-val">На живо при вас или онлайн сесия</span></div>
+        <div class="format-row"><span class="format-row-label">Продължителност</span><span class="format-row-val">До 45 минути на кандидат</span></div>
+        <div class="format-row"><span class="format-row-label">Необходимо</span><span class="format-row-val">Качествена снимка на кандидата</span></div>
+        <div class="format-row"><span class="format-row-label">Доставка</span><span class="format-row-val">Писмено резюме до 24 часа</span></div>
+        <div class="format-row"><span class="format-row-label">Брой кандидати</span><span class="format-row-val">По договаряне</span></div>
+      </div>
+      <div style="margin-top:1.5rem;padding:1.8rem;background:var(--gold-pale);border:1px solid var(--border2)">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--ink);line-height:1.65">„В свят, в който човешкият капитал е ключов, Face Reading дава цялостна визия за това какви сме ние всички като личности."</p>
+        <p style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:1rem">— Елина Божимирова</p>
+      </div>
     </div>
   </div>
 </section>
@@ -356,10 +345,10 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 <section id="cta">
   <div class="cta-inner reveal">
     <div class="cta-tag">Следваща стъпка</div>
-    <h2 class="cta-title">Готови ли сте да видите<br><em>екипа си по-ясно?</em></h2>
-    <p class="cta-sub">Изпратете запитване и ще се свържем с вас за индивидуална оферта.</p>
+    <h2 class="cta-title">Намалете риска<br>при следващото <em>важно назначение</em></h2>
+    <p class="cta-sub">Изпратете запитване и ще се свържем с вас за детайли и оферта.</p>
     <div class="cta-actions">
-      <a href="index.html#contact" class="btn-cta-primary">Заяви уъркшоп</a>
+      <a href="index.html#contact" class="btn-cta-primary">Запитване за консултация</a>
       <a href="uslugi-korporativni.html" class="btn-cta-ghost">Всички корпоративни услуги</a>
     </div>
   </div>

@@ -84,3 +84,65 @@
     });
   })();
 })();
+
+/* ═══════════════════════════════════════════════════════════
+   АВТО-ОТГОВОР ПО ИМЕЙЛ (EmailJS) — безплатна алтернатива
+   на платения autoresponse на Formspree.
+
+   Изпраща автоматичен имейл до човека, който е пуснал запитване,
+   че ще се свържем с него до 24 часа. Запитването към Елина
+   продължава да идва както досега през Formspree.
+
+   ЕДНОКРАТНА НАСТРОЙКА (≈5 мин, безплатно до ~200 имейла/месец):
+   1) Регистрирай се в https://www.emailjs.com
+   2) Email Services → Add New Service → свържи Gmail
+        → копирай "Service ID"
+   3) Email Templates → Create New Template със следните полета:
+        To Email:  {{to_email}}
+        From Name: {{from_name}}
+        Reply To:  {{reply_to}}
+        Subject:   {{subject}}
+        Content:   {{message}}
+        → Save → копирай "Template ID"
+   4) Account → General → копирай "Public Key"
+   5) Попълни трите стойности по-долу (между кавичките). Готово!
+
+   Докато стойностите са "YOUR_..." нищо не се чупи —
+   формите работят нормално, само авто-отговорът е изключен.
+═══════════════════════════════════════════════════════════ */
+var EMAILJS_CONFIG = {
+  publicKey:  'NwmWrr5wrZSMkhKMY',
+  serviceId:  'service_w4fmyyq',
+  templateId: 'template_70dtfdp'
+};
+
+(function () {
+  if (typeof emailjs === 'undefined') return;
+  if (EMAILJS_CONFIG.publicKey.indexOf('YOUR_') === 0) return;
+  try { emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey }); } catch (e) {}
+})();
+
+/* Автоматичен имейл до клиента.
+   sendAutoReply(name, email)                    → стандартен отговор за запитване (24 часа)
+   sendAutoReply(name, email, subject, message)  → персонализиран (напр. обратна връзка) */
+window.sendAutoReply = function (name, email, subject, message) {
+  if (typeof emailjs === 'undefined') return;
+  if (!email) return;
+  if (EMAILJS_CONFIG.serviceId.indexOf('YOUR_') === 0) return;
+  if (EMAILJS_CONFIG.templateId.indexOf('YOUR_') === 0) return;
+  var greeting = name ? ('Здравейте, ' + name) : 'Здравейте';
+  subject = subject || 'Благодарим за вашето запитване — YourFaceTalk';
+  message = message || (greeting + ',\n\n' +
+    'Благодарим Ви за запитването! Получихме съобщението Ви и ще се свържем с Вас по имейл до 24 часа.\n\n' +
+    'Поздрави,\nЕлина — YourFaceTalk\nyourfacetalk@gmail.com');
+  try {
+    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, {
+      to_email: email,
+      to_name: name || '',
+      from_name: 'YourFaceTalk',
+      reply_to: 'yourfacetalk@gmail.com',
+      subject: subject,
+      message: message
+    });
+  } catch (e) {}
+};
