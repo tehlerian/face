@@ -474,6 +474,41 @@ window.silktideConsentManager.init({
       </form>
     </div>
   </div>
+
+  <!-- FEEDBACK -->
+  <div class="feedback-wrap reveal">
+    <div class="feedback-head">
+      <div class="section-tag" style="justify-content:center">Обратна връзка</div>
+      <h3>Как беше срещата с <em>YourFaceTalk?</em></h3>
+      <p>Вашето мнение ни помага да ставаме по-добри — и показва на другите какво да очакват.</p>
+    </div>
+    <form id="feedbackForm" action="https://formspree.io/f/xaqajaoz" method="POST" onsubmit="handleFeedbackSubmit(event)">
+      <input type="hidden" name="_subject" value="⭐ Обратна връзка от YourFaceTalk.com">
+      <input type="hidden" name="formType" value="Обратна връзка">
+      <div class="form-group" style="text-align:center">
+        <label>Вашата оценка</label>
+        <div class="stars" role="radiogroup" aria-label="Оценка от 1 до 5 звезди">
+          <input type="radio" id="star5" name="rating" value="5 от 5 звезди" required><label for="star5" title="5 звезди">★</label>
+          <input type="radio" id="star4" name="rating" value="4 от 5 звезди"><label for="star4" title="4 звезди">★</label>
+          <input type="radio" id="star3" name="rating" value="3 от 5 звезди"><label for="star3" title="3 звезди">★</label>
+          <input type="radio" id="star2" name="rating" value="2 от 5 звезди"><label for="star2" title="2 звезди">★</label>
+          <input type="radio" id="star1" name="rating" value="1 от 5 звезди"><label for="star1" title="1 звезда">★</label>
+        </div>
+      </div>
+      <div class="form-group"><label>Вашето мнение</label><textarea name="message" placeholder="Споделете какво ви хареса и какво можем да подобрим..." required></textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label>Вашето име</label><input type="text" name="name" placeholder="Иван Иванов" required></div>
+        <div class="form-group"><label>Имейл</label><input type="email" name="email" placeholder="ivan@email.com" required></div>
+      </div>
+      <button type="submit" class="btn-primary" id="feedbackBtn">Изпрати отзив</button>
+      <div id="feedbackSuccess" style="display:none;margin-top:1.2rem;padding:1rem 1.4rem;background:rgba(31,61,56,0.08);border-left:2px solid #1f3d38;font-size:0.92rem;color:#1f3d38">
+        ✓ Благодарим от сърце! Вашият отзив пристигна при нас.
+      </div>
+      <div id="feedbackError" style="display:none;margin-top:1.2rem;padding:1rem 1.4rem;background:rgba(184,46,46,0.06);border-left:2px solid #c0392b;font-size:0.92rem;color:#c0392b">
+        Нещо се обърка. Моля опитайте отново или пишете директно на <a href="mailto:yourfacetalk@gmail.com" style="color:#c0392b">yourfacetalk@gmail.com</a>
+      </div>
+    </form>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -563,6 +598,39 @@ window.silktideConsentManager.init({
       else { error.style.display = 'block'; }
     } catch(err) { error.style.display = 'block'; }
     btn.textContent = 'Изпрати запитване';
+    btn.disabled = false;
+  }
+
+  // Feedback form submit (+ авто-имейл „благодарим за отзива“ до клиента)
+  async function handleFeedbackSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('feedbackBtn');
+    const success = document.getElementById('feedbackSuccess');
+    const error = document.getElementById('feedbackError');
+    success.style.display = 'none';
+    error.style.display = 'none';
+    btn.textContent = 'Изпращане...';
+    btn.disabled = true;
+    const fd = new FormData(e.target);
+    const name = (fd.get('name') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
+    try {
+      const res = await fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        success.style.display = 'block';
+        e.target.reset();
+        if (window.sendAutoReply) {
+          const greeting = name ? ('Здравейте, ' + name) : 'Здравейте';
+          window.sendAutoReply(name, email,
+            'Благодарим за обратната връзка — YourFaceTalk',
+            greeting + ',\n\n' +
+            'Благодарим от сърце за отделеното време и споделеното мнение! Всяка обратна връзка ни помага да ставаме по-добри.\n\n' +
+            'Топли поздрави,\nЕлина — YourFaceTalk\nyourfacetalk@gmail.com');
+        }
+      }
+      else { error.style.display = 'block'; }
+    } catch(err) { error.style.display = 'block'; }
+    btn.textContent = 'Изпрати отзив';
     btn.disabled = false;
   }
 

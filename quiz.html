@@ -63,8 +63,7 @@
   .res-badge{display:flex;align-items:center;justify-content:center;gap:0.6rem;text-align:center;
     font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:6px}
   .res-badge::before,.res-badge::after{content:"";width:24px;height:1px;background:var(--gold)}
-  .res-name{font-family:"Cormorant Garamond",serif;font-weight:600;text-align:center;color:var(--ink);font-size:2rem;margin:6px 0 6px}
-  .res-ess{font-family:"Cormorant Garamond",serif;text-align:center;font-style:italic;color:var(--muted);font-size:1.05rem;margin-bottom:16px}
+  .res-ess{font-family:"Cormorant Garamond",serif;text-align:center;font-style:italic;color:var(--ink);font-size:1.5rem;line-height:1.35;margin:10px 0 18px}
   .res-card{background:var(--bg2);border:1px solid var(--border);padding:16px 18px;margin:12px 0;font-size:0.9rem;color:var(--ink2);line-height:1.7}
   .res-card b{color:var(--ink)}
   .res-card ul{margin:6px 0 0 18px}
@@ -127,15 +126,23 @@
   <p class="note">© YourFaceTalk · <a href="index.html" style="color:var(--gold);text-decoration:none">yourfacetalk.com</a> · <a href="privacy-policy.html" style="color:var(--gold);text-decoration:none">Поверителност</a></p>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
 /* ============================================================
-   НАСТРОЙКА — промени тези 3 неща и куизът е готов за реални имейли
+   НАСТРОЙКА
    ============================================================ */
 const CONFIG = {
-  // Къде да отиват имейлите. Остави "" за ДЕМО режим (само показва резултата).
-  // Лесен вариант: Formspree -> "https://formspree.io/f/ТВОЯ_КОД"
-  // Или webhook от MailerLite / Make / Zapier.
+  // 1) Къде отиват лийдовете (име + имейл + резултат) — Formspree форма "Quiz Leads".
+  //    Остави "" за ДЕМО режим (само показва резултата, нищо не се записва).
   endpoint: "https://formspree.io/f/xlgyzpvv",
+  // 2) EmailJS — автоматичният имейл с пълния профил до клиента.
+  //    Същите три стойности като в app.js (виж instrukcii-lead-magniti.md).
+  //    Докато са празни, имейл не се изпраща и нищо не се чупи.
+  emailjsPublicKey: "NwmWrr5wrZSMkhKMY",
+  emailjsServiceId: "service_w4fmyyq",
+  emailjsTemplateId: "template_70dtfdp",
+  // 3) Линкове
+  bonusUrl: "",                                     // PDF гайдът „5-те черти, които те издават“ (когато е качен на сайта)
   miniCourseUrl: "#",                               // линк към мини-курса „Азбука на лицето“
   contactUrl: "https://yourfacetalk.com/#contact",  // линк за запазване на персонален анализ
   privacyUrl: "privacy-policy.html"                 // линк към Политика за поверителност
@@ -187,22 +194,22 @@ const QUESTIONS = [
 ];
 
 const RESULTS = {
-  A:{ badge:"Твоят архетип", name:"Визионерът", ess:"Виждаш картината, преди другите да видят пъзела.",
+  A:{ ess:"Виждаш картината, преди другите да видят пъзела.",
     story:"По-раздалечените очи и по-фините черти често издават ум, който мисли нашироко — обхваща хоризонти, не подробности. Лицето ти разказва история на простор, идеи и възможност.",
     str:["Визия и оригиналност — раждаш идеи, които другите не виждат.","Вдъхновяваш — хората те следват към бъдещето.","Гъвкавост — намираш изход там, където другите виждат стена."],
     edge:"да приземяваш идеите в конкретни, малки стъпки.",
     cta:"Започни с мини-курса „Азбука на лицето“ — превърни интуицията в яснота." },
-  B:{ badge:"Твоят архетип", name:"Сърцето", ess:"Хората се чувстват видени, когато са до теб.",
+  B:{ ess:"Хората се чувстват видени, когато са до теб.",
     story:"По-меките, заоблени черти и топлият поглед често говорят за емоционална интелигентност и дарба за връзка. Лицето ти разказва история на топлина, доверие и принадлежност.",
     str:["Емпатия — усещаш какво чувстват хората, преди да го кажат.","Доверие — другите ти споделят най-важното.","Свързване — обединяваш и сплотяваш."],
     edge:"да пазиш и собствените си граници, не само чуждите нужди.",
     cta:"Персоналният анализ е създаден за теб — топлина, насочена навътре." },
-  C:{ badge:"Твоят архетип", name:"Архитектът", ess:"Виждаш реда и логиката, които другите пропускат.",
+  C:{ ess:"Виждаш реда и логиката, които другите пропускат.",
     story:"Ясно очертаните, симетрични черти често издават аналитичен, прецизен ум. Лицето ти разказва история на яснота, структура и майсторство.",
     str:["Логика — разглобяваш сложното до ясни части.","Надеждност — на теб може да се разчита докрай.","Качество — правиш нещата както трябва."],
     edge:"да оставяш място за спонтанност и чувство.",
     cta:"Сигнатурният курс „Прочети всяко лице“ ще ти даде цялата система." },
-  D:{ badge:"Твоят архетип", name:"Двигателят", ess:"Където другите се колебаят, ти вече си тръгнал.",
+  D:{ ess:"Където другите се колебаят, ти вече си тръгнал.",
     story:"Силната челюст и интензивният, директен поглед често говорят за решителност и устойчивост. Лицето ти разказва история на воля, действие и резултат.",
     str:["Смелост — тръгваш, когато другите още мислят.","Инициатива — задвижваш нещата.","Устойчивост — довеждаш докрай под натиск."],
     edge:"да забавяш темпо, за да чуеш и другите.",
@@ -257,35 +264,72 @@ function reveal(){
   if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent="Моля, въведи валиден имейл."; return; }
   if(!consent){ err.textContent="Моля, отбележи съгласието, за да продължиш."; return; }
   const key=winner();
-  // изпрати данните (ако е настроен endpoint), иначе демо
+  // изпрати лийда към Formspree (ако е настроен endpoint), иначе демо
   if(CONFIG.endpoint){
-    fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({name:name,email:email,archetype:RESULTS[key].name,archetypeKey:key})}).catch(()=>{});
+    fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({name:name,email:email,rezultat:key})}).catch(()=>{});
   }
   renderResult(key);
+  sendResultEmail(key, name, email);
 }
 
 function renderResult(key){
   const r=RESULTS[key];
+  const bonusBtn = (CONFIG.bonusUrl && CONFIG.bonusUrl!=="#")
+    ? `<a class="cta cta-main" href="${CONFIG.bonusUrl}" target="_blank" rel="noopener">🎁 Свали бонус гайда</a>` : "";
   const html = `
-    <div class="res-badge">${r.badge}</div>
-    <div class="res-name">${r.name}</div>
+    <div class="res-badge">Твоят резултат</div>
     <div class="res-ess">„${r.ess}“</div>
     <div class="res-card"><b>Историята на лицето ти:</b> ${r.story}</div>
     <div class="res-card"><b>Силните ти страни:</b><ul>${r.str.map(s=>"<li>"+s+"</li>").join("")}</ul></div>
-    <div class="res-card"><b>Ръбът ти за растеж:</b> ${r.edge}</div>
-    <a class="cta cta-main" href="${CONFIG.miniCourseUrl}">${r.cta} →</a>
-    <a class="cta cta-ghost" href="${CONFIG.contactUrl}">Запази персонален анализ с Елина</a>
+    <div class="res-card"><b>Следваща стъпка за развитие:</b> ${r.edge}</div>
+    ${bonusBtn}
+    <a class="cta ${bonusBtn?"cta-ghost":"cta-main"}" href="${CONFIG.contactUrl}">Запази персонален анализ с Елина</a>
     <div class="share">
-      <button onclick="shareIt('${r.name}')">Сподели резултата</button>
+      <button onclick="shareIt()">Сподели теста</button>
       <button onclick="restart()">Направи отново</button>
     </div>
-    <p class="note">Проверката на имейла ти е на път. Виж и папка „Промоции/Spam“. 🤍</p>`;
+    <p class="note" id="emailNote"></p>`;
   const el=document.getElementById("result"); el.innerHTML=html; show("result");
 }
 
-function shareIt(name){
-  const text="Аз съм „"+name+"“ според YourFaceTalk. А ти какво казва лицето ти?";
+/* Автоматичен имейл с пълния профил до клиента (EmailJS).
+   Изпраща се само ако трите emailjs* стойности в CONFIG са попълнени. */
+function sendResultEmail(key, name, email){
+  if(typeof emailjs==="undefined") return;
+  if(!CONFIG.emailjsPublicKey || !CONFIG.emailjsServiceId || !CONFIG.emailjsTemplateId) return;
+  const r=RESULTS[key];
+  const greeting = name ? "Здравей, "+name : "Здравей";
+  let msg = greeting+",\n\n"+
+    "Благодарим, че направи теста „Какво казва лицето ти за теб?“. Ето пълния ти профил:\n\n"+
+    "„"+r.ess+"“\n\n"+
+    "ИСТОРИЯТА НА ЛИЦЕТО ТИ\n"+r.story+"\n\n"+
+    "СИЛНИТЕ ТИ СТРАНИ\n"+r.str.map(s=>"• "+s).join("\n")+"\n\n"+
+    "СЛЕДВАЩА СТЪПКА ЗА РАЗВИТИВ\n"+r.edge+"\n\n";
+  if(CONFIG.bonusUrl && CONFIG.bonusUrl!=="#"){
+    msg += "Твоят бонус — мини-гайдът „5-те черти, които те издават“: "+CONFIG.bonusUrl+"\n\n";
+  }
+  msg += "Ако искаш да чуеш какво още казва лицето ти — персоналният анализ е следващата стъпка:\n"+
+    "https://yourfacetalk.com/uslugi-personalni.html\n\n"+
+    "Топли поздрави,\nЕлина — YourFaceTalk\nyourfacetalk@gmail.com";
+  try{
+    if(!sendResultEmail._init){ emailjs.init({publicKey:CONFIG.emailjsPublicKey}); sendResultEmail._init=true; }
+    emailjs.send(CONFIG.emailjsServiceId, CONFIG.emailjsTemplateId, {
+      to_email: email,
+      to_name: name||"",
+      from_name: "YourFaceTalk",
+      reply_to: "yourfacetalk@gmail.com",
+      subject: "Твоят пълен профил от теста — YourFaceTalk",
+      message: msg
+    }).then(function(){
+      const n=document.getElementById("emailNote");
+      if(n) n.textContent="Пълният ти профил пътува към имейла ти. Виж и папка „Промоции/Spam“. 🤍";
+    }).catch(function(){});
+  }catch(e){}
+}
+
+function shareIt(){
+  const text="Направих си теста „Какво казва лицето ти за теб?“ на YourFaceTalk. Опитай и ти!";
   const url=location.href;
   if(navigator.share){ navigator.share({title:"YourFaceTalk",text:text,url:url}).catch(()=>{}); }
   else { navigator.clipboard.writeText(text+" "+url).then(()=>alert("Копирано! Сподели го 🤍")).catch(()=>alert(text)); }
