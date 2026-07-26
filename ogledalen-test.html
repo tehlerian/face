@@ -111,6 +111,19 @@
   }
   .ethic b{color:var(--gold)}
 
+  /* Email gate преди сваляне */
+  .gate{display:none;margin-top:18px;background:var(--gold-pale);border:1px solid var(--border2);padding:1.5rem 1.4rem}
+  .gate-title{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .gate-sub{font-size:0.85rem;color:var(--ink2);line-height:1.7;margin-bottom:14px}
+  .gate-fields{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .gate-fields input{flex:1;min-width:200px;border:1px solid var(--border2);background:var(--surface);
+    padding:12px 14px;font-family:"DM Sans",sans-serif;font-size:1rem;color:var(--ink)}
+  .gate-fields input:focus{outline:none;border-color:var(--gold)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:14px}
+  .consent input{margin-top:3px;min-width:16px;height:16px;accent-color:var(--gold)}
+  .consent a{color:var(--gold);text-decoration:none}
+  .gate-err{font-size:0.8rem;color:#b03a3a;margin-top:10px}
+
   /* Bottom CTA to the site */
   .site-cta{text-align:center;margin-top:3rem;padding-top:2.4rem;position:relative}
   .site-cta::before{content:"";position:absolute;top:0;left:15%;right:15%;height:1px;background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.35}
@@ -167,6 +180,19 @@
       <button class="btn btn-primary" id="downloadBtn">Свали изображението (PNG)</button>
       <button class="btn btn-ghost" id="newPhotoBtn">Нова снимка</button>
     </div>
+    <!-- Email gate: показва се при първия опит за сваляне -->
+    <div class="gate" id="dlGate">
+      <div class="gate-title">Още една стъпка — и изображението е твое</div>
+      <p class="gate-sub">Остави имейл, за да го свалиш. От време на време ще ти изпращаме кратки открития от света на разчитането на лица — можеш да се отпишеш по всяко време.</p>
+      <div class="gate-fields">
+        <input type="text" id="leadName" placeholder="Твоето име (по избор)" autocomplete="name">
+        <input type="email" id="leadEmail" placeholder="ti@email.com" autocomplete="email">
+      </div>
+      <label class="consent"><input type="checkbox" id="leadConsent">
+        <span>Съгласен/на съм да получавам имейли от YourFaceTalk. Мога да се отпиша по всяко време. (<a href="privacy-policy.html" target="_blank" rel="noopener">Политика за поверителност</a>)</span></label>
+      <button class="btn btn-primary" id="leadSubmit">Свали изображението</button>
+      <p class="gate-err" id="gateErr"></p>
+    </div>
     <div class="ethic"><b>Напомняне от YourFaceTalk:</b> четем лица за себепознание и разбиране — никога за присъда. Разликата ляво/дясно показва тенденции, не „дефекти“.</div>
   </div>
 
@@ -180,6 +206,11 @@
 </div>
 
 <script>
+/* ── НАСТРОЙКА НА ЛИЙД МАГНИТА ──
+   Къде отиват имейлите (Formspree). По подразбиране — същата форма като куиза;
+   полето "test" ги различава в пощата. Остави "" за изключен гейт (директно сваляне). */
+const LEAD_CONFIG = { endpoint: "https://formspree.io/f/xlgyzpvv" };
+
 (function(){
   const drop = document.getElementById('drop');
   const fileInput = document.getElementById('fileInput');
@@ -293,6 +324,7 @@
   genBtn.addEventListener('click', () => {
     if (!img) return;
     buildResult();
+    document.getElementById('dlGate').style.display = 'none';
     resultBox.style.display = 'block';
     resultBox.scrollIntoView({behavior:'smooth', block:'start'});
   });
@@ -349,12 +381,41 @@
     rCtx.restore();
   }
 
-  // ---------- download / reset ----------
-  dlBtn.addEventListener('click', () => {
+  // ---------- download (с email gate) / reset ----------
+  const gate = document.getElementById('dlGate');
+  const leadSubmit = document.getElementById('leadSubmit');
+  const gateErr = document.getElementById('gateErr');
+  let leadSent = false; // веднъж оставен имейл в тази сесия → следващите сваляния са директни
+
+  function doDownload(){
     const a = document.createElement('a');
     a.download = 'yourfacetalk-ogledalen-test.png';
     a.href = rCanvas.toDataURL('image/png');
     a.click();
+  }
+
+  dlBtn.addEventListener('click', () => {
+    if (leadSent || !LEAD_CONFIG.endpoint) { doDownload(); return; }
+    gate.style.display = 'block';
+    gate.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  leadSubmit.addEventListener('click', () => {
+    const name = document.getElementById('leadName').value.trim();
+    const email = document.getElementById('leadEmail').value.trim();
+    const consent = document.getElementById('leadConsent').checked;
+    gateErr.textContent = '';
+    if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { gateErr.textContent = 'Моля, въведи валиден имейл.'; return; }
+    if (!consent) { gateErr.textContent = 'Моля, отбележи съгласието, за да продължиш.'; return; }
+    // изпрати лийда (fire-and-forget — потребителят не чака и не губи изображението при грешка)
+    fetch(LEAD_CONFIG.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, test: 'Огледален тест', _subject: 'Лийд от Огледален тест — YourFaceTalk' })
+    }).catch(()=>{});
+    leadSent = true;
+    gate.style.display = 'none';
+    doDownload();
   });
 
   newBtn.addEventListener('click', () => {
