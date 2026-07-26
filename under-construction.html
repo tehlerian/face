@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>В ремонт — YourFaceTalk</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4; --gold:#b8892e; --gold-rich:#c9a84c;
+    --ink:#1a1612; --ink2:#39322b; --muted:#6e655b;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);
+    min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;
+    padding:2rem;text-align:center;-webkit-font-smoothing:antialiased;
+  }
+  .box{max-width:560px;animation:fadeUp 0.9s ease both}
+  .logo{height:74px;width:auto;margin-bottom:2rem}
+  .brand{
+    display:inline-flex;align-items:center;gap:0.6rem;
+    font-size:0.72rem;letter-spacing:0.24em;text-transform:uppercase;
+    color:var(--gold);font-weight:500;margin-bottom:1.4rem;
+  }
+  .brand::before,.brand::after{content:"";width:26px;height:1px;background:var(--gold)}
+  h1{
+    font-family:"Cormorant Garamond",serif;font-weight:300;
+    font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.15;color:var(--ink);
+  }
+  h1 em{font-style:italic;color:var(--gold)}
+  .sub{margin-top:1.2rem;color:var(--muted);font-size:0.95rem;line-height:1.8}
+  .divider{
+    height:1px;width:180px;margin:2.2rem auto 0;
+    background:linear-gradient(to right,transparent,var(--gold-rich),transparent);opacity:0.5;
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.box{animation:none}}
+</style>
+</head>
+<body>
+  <div class="box">
+    <img src="img/opt/logo.webp" alt="YourFaceTalk" class="logo">
+    <div class="brand">YourFaceTalk</div>
+    <h1>В момента е <em>в ремонт!</em></h1>
+    <p class="sub">Подготвяме нещо хубаво. Заповядайте отново съвсем скоро.</p>
+    <div class="divider"></div>
+  </div>
+</body>
+</html>
