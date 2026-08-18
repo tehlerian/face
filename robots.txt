@@ -1,0 +1,8 @@
+# robots.txt — yourfacetalk.com
+User-agent: *
+Allow: /
+
+# Файлът на лийд магнита се доставя само по имейл — да не се индексира.
+Disallow: /dl/
+
+Sitemap: https://yourfacetalk.com/sitemap.xml

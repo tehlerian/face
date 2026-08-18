@@ -9,7 +9,9 @@
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;font-size:17px}
   body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  img{max-width:100%}
+  /* height:auto пази съотношението на всяко изображение — нищо не се разтяга.
+     По-специфичните правила (.hero-img, .blog-img img и т.н.) го надписват. */
+  img{max-width:100%;height:auto}
   ::-webkit-scrollbar{width:5px}
   ::-webkit-scrollbar-track{background:var(--bg2)}
   ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
@@ -92,17 +94,17 @@
   h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2.1rem,3.8vw,3.4rem);font-weight:300;line-height:1.15;color:var(--ink)}
   h2 em{font-style:italic;color:var(--gold)}
 
-  /* ── INTRO (relocated explainer) ── */
-  #method{background:var(--bg2);text-align:center}
-  .intro-head{max-width:760px;margin:0 auto}
-  .intro-head .section-tag{justify-content:center}
-  .intro-lead{font-family:"Cormorant Garamond",serif;font-size:clamp(1.45rem,2.6vw,2rem);font-style:italic;color:var(--ink);line-height:1.45;margin:1.6rem auto 0;max-width:720px}
-  .intro-body{max-width:760px;margin:2.6rem auto 0;text-align:left}
+  /* ── INTRO (relocated explainer) — заглавие вляво, консистентно с останалите секции ── */
+  #method{background:var(--bg2);text-align:left}
+  .intro-head{max-width:760px;margin:0}
+  .intro-head .section-tag{justify-content:flex-start}
+  .intro-lead{font-family:"Cormorant Garamond",serif;font-size:clamp(1.45rem,2.6vw,2rem);font-style:italic;color:var(--ink);line-height:1.45;margin:1.6rem 0 0;max-width:720px}
+  .intro-body{max-width:820px;margin:2.6rem 0 0;text-align:left}
   .intro-body p{color:var(--ink2);line-height:1.9;font-size:1.05rem;margin-bottom:1.3rem}
   .intro-list{list-style:none;margin:1.8rem 0 0;display:grid;gap:1rem}
   .intro-list li{display:flex;gap:0.9rem;align-items:flex-start;color:var(--ink2);line-height:1.7;font-size:1.05rem}
   .intro-list li::before{content:"";flex-shrink:0;width:9px;height:9px;margin-top:0.6rem;background:var(--gold);transform:rotate(45deg)}
-  .method-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:3rem auto 0;text-align:left}
+  .method-features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:3rem 0 0;text-align:left}
   .method-feature{background:var(--surface);border:1px solid var(--border);padding:1.9rem 1.7rem;transition:transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease}
   .method-feature:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(184,137,46,0.10);border-color:var(--border2)}
   .method-feature-icon{width:50px;height:50px;border:1px solid var(--border2);background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
@@ -171,8 +173,49 @@
   .carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border2);border:none;cursor:pointer;transition:background 0.3s,transform 0.3s;padding:0}
   .carousel-dot.active{background:var(--gold);transform:scale(1.3)}
 
+  /* ── LEAD MAGNET (безплатен наръчник) ── */
+  #leadmagnet{background:var(--bg)}
+  .lm-header{max-width:640px;margin-bottom:3rem}
+  .lm-panel{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:3.5rem;align-items:center;
+    background:var(--teal);padding:3.2rem 3.4rem;position:relative;overflow:hidden;
+    clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
+  }
+  .lm-panel::before{
+    content:"";position:absolute;top:-90px;right:-90px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,168,76,0.18) 0%,transparent 70%);pointer-events:none;
+  }
+  .lm-body{position:relative;z-index:1}
+  .lm-kicker{
+    display:inline-flex;align-items:center;gap:0.55rem;font-size:0.7rem;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--gold-rich);border:1px solid rgba(201,168,76,0.4);
+    padding:0.38rem 0.85rem;margin-bottom:1.3rem;
+  }
+  .lm-kicker::before{content:"";width:6px;height:6px;background:var(--gold-rich);transform:rotate(45deg);flex-shrink:0}
+  .lm-body h3{
+    font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;
+    line-height:1.15;color:#fbf8f2;margin-bottom:0.9rem;
+  }
+  .lm-body h3 em{font-style:italic;color:var(--gold-rich)}
+  .lm-body > p{color:rgba(250,248,244,0.72);line-height:1.8;font-size:1rem;margin-bottom:1.5rem;max-width:520px}
+  .lm-list{list-style:none;display:grid;gap:0.7rem;margin-bottom:2rem}
+  .lm-list li{display:flex;gap:0.75rem;align-items:flex-start;color:rgba(250,248,244,0.88);line-height:1.65;font-size:0.96rem}
+  .lm-list li::before{content:"";flex-shrink:0;width:8px;height:8px;margin-top:0.5rem;background:var(--gold-rich);transform:rotate(45deg)}
+  .lm-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+  .lm-note{font-size:0.8rem;color:rgba(250,248,244,0.55);line-height:1.5}
+  .lm-cover{position:relative;z-index:1;display:flex;justify-content:center}
+  .lm-cover img{
+    /* Двойно ограничение (ширина + височина на екрана), за да не се
+       раздува корицата при зуум или мащабиране на дисплея. */
+    max-width:min(270px,38vh);width:100%;height:auto;aspect-ratio:1311/1853;
+    object-fit:contain;display:block;border:1px solid rgba(201,168,76,0.35);
+    transform:rotate(-3deg);transition:transform 0.5s ease;
+    box-shadow:0 24px 54px rgba(0,0,0,0.35);
+  }
+  .lm-panel:hover .lm-cover img{transform:rotate(0deg) translateY(-6px)}
+
   /* ── BLOG ── */
-  #blog{background:var(--bg)}
+  #blog{background:var(--bg2)}
   .blog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;gap:1.5rem;flex-wrap:wrap}
   .blog-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
   .blog-card{background:var(--surface);overflow:hidden;transition:all 0.35s;cursor:pointer;text-decoration:none;color:inherit;display:block;border:1px solid var(--border);position:relative}
@@ -197,7 +240,7 @@
   .blog-card:hover .blog-read-more{gap:0.6rem}
 
   /* ── CONTACT ── */
-  #contact{background:var(--bg2)}
+  #contact{background:var(--bg)}
   .contact-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:3rem;margin-top:3.5rem;align-items:start}
   .contact-info p{color:var(--ink2);line-height:1.85;margin-bottom:2rem;font-size:1.02rem}
   .contact-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
@@ -291,6 +334,9 @@
     .testimonials-header .section-tag{justify-content:center}
     .testimonials-intro{margin-left:auto;margin-right:auto}
     .method-features{grid-template-columns:1fr;max-width:520px}
+    .lm-panel{grid-template-columns:1fr;gap:2.4rem;padding:2.6rem 2.2rem}
+    .lm-cover{order:-1}
+    .lm-cover img{max-width:min(215px,32vh)}
     .contact-logo-divider{padding:1rem 0}
     .services-grid{grid-template-columns:1fr 1fr}
     .blog-grid{grid-template-columns:1fr 1fr}
@@ -303,6 +349,10 @@
     .hamburger{display:flex}
     .nav-cta{display:none}
     .services-grid,.blog-grid{grid-template-columns:1fr}
+    .lm-panel{padding:2rem 1.5rem}
+    .lm-cover img{max-width:min(185px,30vh)}
+    .lm-actions{flex-direction:column;align-items:flex-start;gap:0.9rem}
+    .lm-actions .btn-primary{width:100%;text-align:center}
     .blog-card:nth-child(3){display:block}
     .footer-top{grid-template-columns:1fr}
     .form-row{grid-template-columns:1fr}

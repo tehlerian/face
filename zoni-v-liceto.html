@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager -->
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #B8892E;
+  --backgroundColor: #faf8f4;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #B8892E;
+  --iconBackgroundColor: #FAF8F4;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Задължителни",
+      description: "<p>Задължителни бисквитки</p>",
+      required: true
+    },
+    {
+      id: "analytics",
+      label: "Аналитични",
+      description: "<p>Аналитични бисквитки</p>",
+      defaultValue: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    },
+    {
+      id: "marketing",
+      label: "Маркетингови",
+      description: "<p>Бисквитки за маркетингово измерване</p>",
+      defaultValue: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
+      acceptAllButtonText: "Приеми",
+      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
+      rejectNonEssentialButtonText: "Откажи",
+      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
+      preferencesButtonText: "Настройки",
+      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
+    },
+    preferences: {
+      title: "Настройване на бисквитките",
+      description: "<p>Уважаваме вашето желание за анонимност</p>",
+      saveButtonText: "Запази и Затвори",
+      saveButtonAccessibleLabel: "Запази и Затвори",
+      creditLinkText: "+",
+      creditLinkAccessibleLabel: "+"
+    }
+  }
+});
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3RM10J6K9');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Зони в лицето — безплатен наръчник по себепознание (PDF) | YourFaceTalk</title>
+<meta name="description" content="Безплатен PDF наръчник от Елина Божимирова: трите зони в лицето — аналитична, емоционална и физическа. Разбери коя зона води при теб и какво казва това за начина, по който мислиш, чувстваш и действаш. 11 страници, 15 минути четене.">
+<link rel="canonical" href="https://yourfacetalk.com/zoni-v-liceto.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Елина Божимирова">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:url" content="https://yourfacetalk.com/zoni-v-liceto.html">
+<meta property="og:title" content="Зони в лицето — безплатен наръчник по себепознание (PDF)">
+<meta property="og:description" content="Трите зони в лицето и какво казват за начина, по който мислиш, чувстваш и действаш. Безплатен наръчник от сертифициран Face Reader.">
+<meta property="og:image" content="https://yourfacetalk.com/img/opt/naruchnik-korica.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Зони в лицето — безплатен наръчник по себепознание (PDF)">
+<meta name="twitter:description" content="Трите зони в лицето и какво казват за начина, по който мислиш, чувстваш и действаш.">
+<meta name="twitter:image" content="https://yourfacetalk.com/img/opt/naruchnik-korica.webp">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/opt/naruchnik-korica.webp" fetchpriority="high">
+<link rel="stylesheet" href="styles.css?v=20260809">
+
+<style>
+  /* ── ЛЕНДИНГ: ЗОНИ В ЛИЦЕТО ── */
+  body{padding-top:0}
+
+  /* Слим хедър — без пълна навигация, за да не отвлича от офертата */
+  .lp-header{
+    position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;padding:0.85rem 4rem;background:rgba(250,248,244,0.95);backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);
+  }
+  .lp-header .lp-logo img{height:42px;width:auto;display:block}
+  .lp-back{
+    display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;color:var(--muted);
+    font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;
+  }
+  .lp-back:hover{color:var(--gold)}
+  .lp-back svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* ── HERO ── */
+  #lp-hero{background:var(--bg);padding:4.5rem 4rem 4rem}
+  .lp-hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:4rem;align-items:center;max-width:1240px;margin:0 auto}
+  .lp-eyebrow{
+    display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.2em;
+    text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.2rem;
+    border:1px solid var(--border2);background:var(--gold-pale);padding:0.4rem 0.9rem;border-radius:2px;
+  }
+  .lp-eyebrow::before{content:"";width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+  #lp-hero h1{font-size:clamp(2.2rem,4.2vw,3.6rem);margin-bottom:1.2rem}
+  .lp-lead{
+    font-family:"Cormorant Garamond",serif;font-size:clamp(1.2rem,2vw,1.5rem);font-style:italic;
+    color:var(--ink2);line-height:1.55;margin-bottom:1.6rem;
+  }
+  .lp-hero-list{list-style:none;display:grid;gap:0.75rem;margin-bottom:2rem}
+  .lp-hero-list li{display:flex;gap:0.75rem;align-items:flex-start;color:var(--ink2);line-height:1.65;font-size:1rem}
+  .lp-hero-list li::before{
+    content:"";flex-shrink:0;width:8px;height:8px;margin-top:0.55rem;background:var(--gold);transform:rotate(45deg);
+  }
+  .lp-microproof{display:flex;flex-wrap:wrap;gap:0.5rem}
+  .lp-chip{
+    display:inline-flex;align-items:center;gap:0.4rem;border:1px solid var(--border2);background:var(--surface);
+    padding:0.4rem 0.85rem;font-size:0.76rem;letter-spacing:0.04em;color:var(--ink2);
+  }
+  .lp-chip strong{color:var(--gold);font-weight:600}
+
+  /* Корица на наръчника */
+  .lp-cover-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+  .lp-cover{
+    position:relative;margin:0;width:100%;
+    /* Двойно ограничение: по ширина И по височина на екрана, за да не
+       може корицата да доминира при зуум или мащабиране на дисплея. */
+    max-width:min(340px,40vh);
+    transform:rotate(-2.5deg);transition:transform 0.5s ease;
+    filter:drop-shadow(0 26px 50px rgba(26,22,18,0.22));
+  }
+  .lp-cover:hover{transform:rotate(0deg) translateY(-6px)}
+  .lp-cover img{
+    width:100%;height:auto;aspect-ratio:1311/1853;object-fit:contain;
+    display:block;border:1px solid var(--border2);
+  }
+  .lp-cover-badge{
+    position:absolute;bottom:-1.1rem;left:-1.1rem;background:var(--gold);color:#fff;
+    padding:0.85rem 1.1rem;text-align:center;line-height:1.15;
+    clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,9px 100%,0 calc(100% - 9px));
+  }
+  .lp-cover-badge b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:600}
+  .lp-cover-badge span{display:block;font-size:0.6rem;letter-spacing:0.13em;text-transform:uppercase;opacity:0.92}
+
+  /* ── ФОРМА ── */
+  .lp-form-card{
+    background:var(--surface);border:1px solid var(--border2);padding:2rem 1.9rem;
+    box-shadow:0 18px 48px rgba(26,22,18,0.09);
+    clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+  }
+  .lp-form-card.is-standalone{max-width:560px;margin:0 auto}
+  .lp-form-card h2,.lp-form-card h3{
+    font-family:"Cormorant Garamond",serif;font-weight:400;font-size:1.6rem;line-height:1.25;
+    color:var(--ink);margin-bottom:0.5rem;
+  }
+  .lp-form-card h2 em,.lp-form-card h3 em{font-style:italic;color:var(--gold)}
+  .lp-form-note{color:var(--muted);font-size:0.88rem;line-height:1.65;margin-bottom:1.4rem}
+  .lp-form-card .form-group{margin-bottom:0.9rem}
+  .lp-consent{display:flex;gap:0.65rem;align-items:flex-start;margin:0.4rem 0 1.3rem}
+  .lp-consent input{
+    width:17px;height:17px;margin-top:2px;flex-shrink:0;accent-color:var(--gold);cursor:pointer;
+  }
+  .lp-consent label{font-size:0.8rem;color:var(--muted);line-height:1.6;cursor:pointer}
+  .lp-consent a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+  .lp-submit{width:100%;text-align:center;border:none;font-size:0.86rem}
+  .lp-submit[disabled]{opacity:0.6;cursor:not-allowed}
+  .lp-privacy-line{
+    display:flex;align-items:center;justify-content:center;gap:0.45rem;
+    margin-top:1rem;font-size:0.76rem;color:var(--muted);text-align:center;line-height:1.5;
+  }
+  .lp-privacy-line svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.6;flex-shrink:0}
+  .lp-err{
+    display:none;margin-top:0.9rem;padding:0.8rem 1rem;background:rgba(184,46,46,0.06);
+    border-left:2px solid #c0392b;font-size:0.86rem;color:#c0392b;line-height:1.55;
+  }
+
+  /* Състояние „благодарим“ */
+  .lp-thanks{display:none;text-align:center}
+  .lp-thanks.show{display:block;animation:fadeUp 0.6s ease both}
+  .lp-thanks-icon{
+    width:62px;height:62px;margin:0 auto 1.1rem;border:1px solid var(--border2);background:var(--gold-pale);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lp-thanks-icon svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.6}
+  .lp-thanks h3{font-size:1.75rem;margin-bottom:0.7rem}
+  .lp-thanks p{color:var(--ink2);font-size:0.95rem;line-height:1.75;margin-bottom:0.8rem}
+  .lp-thanks .lp-steps-mini{
+    list-style:none;text-align:left;max-width:380px;margin:1.4rem auto 0;display:grid;gap:0.7rem;
+    padding-top:1.3rem;border-top:1px solid var(--border);
+  }
+  .lp-thanks .lp-steps-mini li{
+    display:flex;gap:0.7rem;align-items:flex-start;font-size:0.88rem;color:var(--ink2);line-height:1.6;
+  }
+  .lp-thanks .lp-steps-mini li::before{
+    content:"";flex-shrink:0;width:7px;height:7px;margin-top:0.5rem;background:var(--gold);transform:rotate(45deg);
+  }
+
+  /* ── ОБЩИ ЛЕНДИНГ СЕКЦИИ ── */
+  .lp-section-head{max-width:660px;margin-bottom:3rem}
+  .lp-section-head p{color:var(--ink2);line-height:1.8;font-size:1.02rem;margin-top:1.2rem}
+
+  #lp-inside{background:var(--bg2)}
+  .lp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .lp-card{
+    background:var(--surface);border:1px solid var(--border);padding:1.9rem 1.7rem;
+    transition:transform 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease;
+  }
+  .lp-card:hover{transform:translateY(-5px);box-shadow:0 14px 38px rgba(184,137,46,0.10);border-color:var(--border2)}
+  .lp-card-num{
+    font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:300;color:var(--gold);
+    line-height:1;margin-bottom:0.8rem;display:block;
+  }
+  .lp-card h3{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem;line-height:1.3}
+  .lp-card p{color:var(--muted);line-height:1.7;font-size:0.92rem}
+
+  /* Поглед вътре */
+  #lp-preview{background:var(--bg)}
+  .lp-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start;margin-top:3rem}
+  .lp-shots{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+  .lp-shot{
+    border:1px solid var(--border2);background:var(--surface);overflow:hidden;
+    box-shadow:0 12px 34px rgba(26,22,18,0.10);transition:transform 0.4s ease;
+  }
+  .lp-shot:hover{transform:translateY(-5px)}
+  .lp-shot img{width:100%;height:auto;aspect-ratio:1311/1853;object-fit:contain;display:block}
+  .lp-zones{list-style:none;display:grid;gap:1.1rem}
+  .lp-zone{display:flex;gap:1.1rem;align-items:flex-start;padding:1.3rem 1.4rem;background:var(--surface);border:1px solid var(--border)}
+  .lp-zone-mark{
+    width:46px;height:46px;flex-shrink:0;border:1px solid var(--border2);background:var(--gold-pale);
+    display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;
+    font-size:1.25rem;font-weight:600;color:var(--gold);
+  }
+  .lp-zone h3{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem}
+  .lp-zone p{color:var(--muted);font-size:0.92rem;line-height:1.7}
+
+  /* Как става */
+  #lp-how{background:var(--bg2)}
+  .lp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .lp-step{position:relative;padding:1.9rem 1.7rem;background:var(--surface);border:1px solid var(--border)}
+  .lp-step-num{
+    position:absolute;top:-14px;left:1.7rem;width:34px;height:34px;background:var(--gold);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:"Cormorant Garamond",serif;
+    font-size:1.05rem;font-weight:600;
+  }
+  .lp-step h3{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--ink);margin:0.8rem 0 0.45rem}
+  .lp-step p{color:var(--muted);font-size:0.92rem;line-height:1.7}
+
+  /* Автор */
+  #lp-author{background:var(--bg)}
+  .lp-author-grid{display:grid;grid-template-columns:0.75fr 1.25fr;gap:3.5rem;align-items:center}
+  .lp-author-img{
+    width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;
+    clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));
+  }
+  .lp-author-text p{color:var(--ink2);line-height:1.85;margin-bottom:1.2rem;font-size:1.02rem}
+  .lp-author-quote{
+    padding:1.4rem 1.6rem;border-left:2px solid var(--gold);background:rgba(184,137,46,0.05);margin-bottom:1.4rem;
+  }
+  .lp-author-quote p{
+    font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-style:italic;font-weight:300;
+    color:var(--ink);line-height:1.6;margin:0;
+  }
+
+  /* Отзиви */
+  #lp-proof{background:var(--bg2)}
+  .lp-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .lp-quote{background:var(--surface);border:1px solid var(--border);padding:2rem 1.8rem}
+  .lp-quote .t-stars{margin-bottom:0.9rem}
+  .lp-quote p{
+    font-family:"Cormorant Garamond",serif;font-size:1.1rem;font-style:italic;color:var(--ink2);
+    line-height:1.7;margin-bottom:1.3rem;
+  }
+  .lp-quote .t-author{padding-top:1.1rem}
+
+  /* FAQ */
+  #lp-faq{background:var(--bg)}
+  .lp-faq-list{max-width:820px;margin:3rem auto 0;display:grid;gap:0.8rem}
+  .lp-faq-item{background:var(--surface);border:1px solid var(--border);transition:border-color 0.3s}
+  .lp-faq-item[open]{border-color:var(--border2)}
+  .lp-faq-item summary{
+    cursor:pointer;list-style:none;padding:1.25rem 1.6rem;display:flex;align-items:center;
+    justify-content:space-between;gap:1rem;font-family:"Cormorant Garamond",serif;font-size:1.22rem;
+    font-weight:500;color:var(--ink);line-height:1.35;
+  }
+  .lp-faq-item summary::-webkit-details-marker{display:none}
+  .lp-faq-item summary::after{
+    content:"";flex-shrink:0;width:9px;height:9px;border-right:1.5px solid var(--gold);
+    border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translateY(-3px);transition:transform 0.3s;
+  }
+  .lp-faq-item[open] summary::after{transform:rotate(-135deg) translateY(0)}
+  .lp-faq-item summary:hover{color:var(--gold)}
+  .lp-faq-answer{padding:0 1.6rem 1.4rem;color:var(--ink2);line-height:1.8;font-size:0.96rem}
+  .lp-faq-answer a{color:var(--gold)}
+
+  /* Финален CTA */
+  #lp-final{background:var(--teal);color:#faf8f4;text-align:center}
+  #lp-final .section-tag{color:var(--gold-rich);justify-content:center}
+  #lp-final .section-tag::before{background:var(--gold-rich)}
+  #lp-final h2{color:#fbf8f2}
+  #lp-final h2 em{color:var(--gold-rich)}
+  #lp-final .lp-final-sub{
+    color:rgba(250,248,244,0.72);font-size:1.02rem;line-height:1.8;max-width:600px;margin:1.2rem auto 2.6rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    .lp-header{padding:0.8rem 2rem}
+    #lp-hero{padding:3rem 2rem}
+    .lp-hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .lp-cover-wrap{order:-1}
+    .lp-cover{max-width:min(270px,34vh)}
+    .lp-cards,.lp-steps,.lp-quotes{grid-template-columns:1fr 1fr}
+    .lp-cards .lp-card:last-child,.lp-quotes .lp-quote:last-child{grid-column:1 / -1}
+    .lp-preview-grid,.lp-author-grid{grid-template-columns:1fr;gap:2.2rem}
+    .lp-author-img{max-width:320px;margin:0 auto}
+  }
+  @media(max-width:768px){
+    .lp-header{padding:0.7rem 1.4rem}
+    .lp-header .lp-logo img{height:36px}
+    .lp-back span{display:none}
+    #lp-hero{padding:2.4rem 1.4rem 3rem}
+    section{padding:3.2rem 1.4rem}
+    .lp-cards,.lp-steps,.lp-quotes,.lp-shots{grid-template-columns:1fr}
+    .lp-cards .lp-card:last-child,.lp-quotes .lp-quote:last-child{grid-column:auto}
+    .lp-form-card{padding:1.6rem 1.3rem}
+    .lp-cover{max-width:min(230px,32vh)}
+    .lp-cover-badge{left:-0.7rem;bottom:-0.9rem;padding:0.7rem 0.9rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ── СЛИМ ХЕДЪР ── -->
+<header class="lp-header">
+  <a href="index.html" class="lp-logo" aria-label="YourFaceTalk — начало">
+    <img src="img/logo.png" alt="YourFaceTalk" width="140" height="42">
+  </a>
+  <a href="index.html" class="lp-back">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <span>Към сайта</span>
+  </a>
+</header>
+
+<!-- ── HERO + ФОРМА ── -->
+<section id="lp-hero">
+  <div class="lp-hero-grid">
+    <div>
+      <div class="lp-eyebrow">Безплатен наръчник · PDF · 11 страници</div>
+      <h1>Лицето ти вече знае <br><em>отговора.</em></h1>
+      <p class="lp-lead">Трите зони в лицето показват как мислиш, как чувстваш и как действаш.</p>
+      <ul class="lp-hero-list">
+        <li>Как да разпознаеш своята водеща зона.</li>
+        <li>Защо взимаш решения точно по този начин.</li>
+        <li>Три въпроса към себе си, които обръщат разговора със самия теб в нова посока.</li>
+      </ul>
+      <div class="lp-microproof">
+        <span class="lp-chip"><strong>15 минути</strong> четене</span>
+      </div>
+    </div>
+
+    <div class="lp-cover-wrap">
+      <figure class="lp-cover">
+        <img src="img/opt/naruchnik-korica.webp"
+             alt="Корица на безплатния наръчник „Познаваш ли себе си?“ от Елина Божимирова — YourFaceTalk"
+             width="1311" height="1853" fetchpriority="high">
+        <figcaption class="lp-cover-badge"><b>11</b><span>страници</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Формата — веднага под hero-а, видима без скрол на мобилно -->
+  <div class="lp-form-card is-standalone" id="lp-form-top" style="margin-top:3.2rem">
+    <div class="lp-form-body">
+      <h2>Изпрати ми <em>наръчника</em></h2>
+      <p class="lp-form-note">Изпращам ти PDF-а веднага след като потвърдиш адреса си.</p>
+      <form class="lp-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lpName1">Вашето име</label>
+            <input type="text" id="lpName1" name="name" placeholder="Иван Иванов" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label for="lpEmail1">Имейл</label>
+            <input type="email" id="lpEmail1" name="email" placeholder="ivan@email.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="lp-consent">
+          <input type="checkbox" id="lpConsent1" required>
+          <label for="lpConsent1">Съгласен/а съм да получа наръчника по имейл и да получавам полезни материали от YourFaceTalk. Прочетох <a href="privacy-policy.html" target="_blank" rel="noopener">Политиката за поверителност</a>.</label>
+        </div>
+        <button type="submit" class="btn-primary lp-submit">Изпрати ми наръчника</button>
+        <div class="lp-err" role="alert"></div>
+        <div class="lp-privacy-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Без спам. Отписваш се с един клик, когато решиш.
+        </div>
+      </form>
+    </div>
+
+    <!-- Състояние след успешно записване -->
+    <div class="lp-thanks">
+      <div class="lp-thanks-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Готово — <em>провери пощата си</em></h3>
+      <p>Изпратих ти имейл за потвърждение. Един клик в него и наръчникът тръгва към теб.</p>
+      <ul class="lp-steps-mini">
+        <li>Не го виждаш? Погледни в <strong>Промоции</strong> или <strong>Спам</strong>.</li>
+        <li>Добави <strong>yourfacetalk@gmail.com</strong> в контактите си, за да не се губят следващите писма.</li>
+        <li>Имаш въпрос? Просто отговори на имейла — пише ти истински човек.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── КАКВО ИМА ВЪТРЕ ── -->
+<section id="lp-inside">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Какво има вътре</div>
+    <h2>Инструкции <br><em>за бърз анализ</em></h2>
+    <p>Наръчникът е кратък нарочно. Всяка страница те кара да погледнеш нещо конкретно в собственото си лице — и да си отговориш на въпрос, който обикновено пропускаме.</p>
+  </div>
+  <div class="lp-cards">
+    <article class="lp-card reveal">
+      <span class="lp-card-num">01</span>
+      <h3>Трите зони в лицето</h3>
+      <p>Аналитична, емоционална и физическа — къде минава границата на всяка и как да ги сравниш по височина.</p>
+    </article>
+    <article class="lp-card reveal">
+      <span class="lp-card-num">02</span>
+      <h3>Коя зона води при теб</h3>
+      <p>Практическо упражнение, с което определяш водещата си зона визуално — за две минути, без измервания.</p>
+    </article>
+    <article class="lp-card reveal">
+      <span class="lp-card-num">03</span>
+      <h3>Мисля → Чувствам → Действам</h3>
+      <p>Как начинът, по който мислиш, поражда чувства, а те определят действията ти.</p>
+    </article>
+    <article class="lp-card reveal">
+      <span class="lp-card-num">04</span>
+      <h3>Огледалното упражнение</h3>
+      <p>Какво точно да гледаш, когато се погледнеш — и какво си казваш в този момент, без да си давал сметка.</p>
+    </article>
+    <article class="lp-card reveal">
+      <span class="lp-card-num">05</span>
+      <h3>Трите въпроса</h3>
+      <p>Как мислиш, как чувстваш, как действаш. Отговорите ти казват повече, отколкото очакваш.</p>
+    </article>
+    <article class="lp-card reveal">
+      <span class="lp-card-num">06</span>
+      <h3>И за най-близките ти</h3>
+      <p>Същият поглед работи и навън — към партньора, детето, колегата. Не за да ги „разобличиш“, а за да ги разбереш.</p>
+    </article>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── ПОГЛЕД ВЪТРЕ ── -->
+<section id="lp-preview">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Поглед вътре</div>
+    <h2>Три зони,<br><em>един ясен отговор</em></h2>
+    <p>Лицето се чете отгоре надолу. Ето какво стои зад всяка от трите зони — и защо най-голямата от тях подсказва как взимаш решения.</p>
+  </div>
+  <div class="lp-preview-grid">
+    <div class="lp-shots reveal">
+      <figure class="lp-shot">
+        <img src="img/opt/naruchnik-str1.webp" alt="Страница от наръчника: трите зони в лицето — аналитична, емоционална и физическа" loading="lazy" width="1311" height="1853">
+      </figure>
+      <figure class="lp-shot">
+        <img src="img/opt/naruchnik-str2.webp" alt="Страница от наръчника: как да разпознаеш коя зона е водеща в твоето лице" loading="lazy" width="1311" height="1853">
+      </figure>
+    </div>
+    <ul class="lp-zones reveal">
+      <li class="lp-zone">
+        <div class="lp-zone-mark" aria-hidden="true">М</div>
+        <div>
+          <h3>Аналитична зона — Мисля</h3>
+          <p>От линията на косата до веждите. Показва с отворен ум ли си или гледаш на нещата черно-бяло и доколко „потъваш“ в мислите си.</p>
+        </div>
+      </li>
+      <li class="lp-zone">
+        <div class="lp-zone-mark" aria-hidden="true">Ч</div>
+        <div>
+          <h3>Емоционална зона — Чувствам</h3>
+          <p>От веждите до основата на носа. Как усещаш хората и ситуациите около теб и доколко решенията ти минават през сърцето.</p>
+        </div>
+      </li>
+      <li class="lp-zone">
+        <div class="lp-zone-mark" aria-hidden="true">Д</div>
+        <div>
+          <h3>Физическа зона — Действам</h3>
+          <p>От под носа до края на брадичката. Как действаш в света, имаш ли воля и устойчивост, и как се защитаваш.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── КАК СТАВА ── -->
+<section id="lp-how">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Как става</div>
+    <h2>Три стъпки,<br><em>по-малко от минута</em></h2>
+  </div>
+  <div class="lp-steps">
+    <div class="lp-step reveal">
+      <div class="lp-step-num">1</div>
+      <h3>Оставяш име и имейл</h3>
+      <p>Само двете полета. Нищо повече не ти трябва, за да получиш наръчника.</p>
+    </div>
+    <div class="lp-step reveal">
+      <div class="lp-step-num">2</div>
+      <h3>Потвърждаваш адреса</h3>
+      <p>Пристига кратък имейл с един бутон. Кликваш — и вече си вътре.</p>
+    </div>
+    <div class="lp-step reveal">
+      <div class="lp-step-num">3</div>
+      <h3>Наръчникът пристига</h3>
+      <p>PDF-ът идва веднага в пощата ти. Твой е — четеш го когато и където поискаш.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── ЗА АВТОРА ── -->
+<section id="lp-author">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Кой го написа</div>
+  </div>
+  <div class="lp-author-grid">
+    <div class="reveal">
+      <picture>
+        <source type="image/avif" srcset="img/opt/elina.avif">
+        <source type="image/webp" srcset="img/opt/elina.webp">
+        <img src="img/elina.jpg" alt="Елина Божимирова — сертифициран Face Reader, автор на наръчника" class="lp-author-img" loading="lazy">
+      </picture>
+    </div>
+    <div class="lp-author-text reveal">
+      <h2>Елина <em>Божимирова</em></h2>
+      <div class="lp-author-quote" style="margin-top:1.3rem">
+        <p>„Помагам на хората да опознаят себе си — чрез лицето си.“</p>
+      </div>
+      <p>Започнах да изучавам лицата далеч преди да стартирам обученията си. Винаги съм се вълнувала от това кой е наистина човекът срещу мен — отвъд думите, които казва. Не за да го „разоблича“, а за да го разбера по-добре.</p>
+      <p>Работих дълги години в корпоративния бизнес. И нещо все ми липсваше — не усещах, че разгръщам потенциала си, въпреки постиженията. Тогава започнах да уча точно това.</p>
+      <p>Днес съм сертифициран Face Reader към Psychosomatic Therapy College, Австралия. Над 250 души минаха през личен прочит — и не, не е гадаене. Говорим за тенденции и качества, които сам ще потвърдиш.</p>
+      <div class="about-certs">
+        <span class="cert-pill">Западна школа</span>
+        <span class="cert-pill">Китайска школа</span>
+        <span class="cert-pill">Psychosomatic Therapy College AU</span>
+      </div>
+      <a href="za-nas.html" class="btn-ghost" style="margin-top:0.6rem">Повече за мен</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── ОТЗИВИ ── -->
+<section id="lp-proof">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Отзиви</div>
+    <h2>Какво казват<br><em>хората след прочит</em></h2>
+    <p>Наръчникът е първата стъпка. Ето какво споделят тези, които продължиха с личен прочит.</p>
+  </div>
+  <div class="lp-quotes">
+    <blockquote class="lp-quote reveal">
+      <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p>Цялото преживяване беше изключително интересно, полезно и с лекота организирано, от снимките до срещата с Елина. Препоръчвам на всеки, който желае да се докосне до вътрешния си свят.</p>
+      <div class="t-author">
+        <div class="t-avatar">Й</div>
+        <div><div class="t-name">Йоанна - Елизабет</div></div>
+      </div>
+    </blockquote>
+    <blockquote class="lp-quote reveal">
+      <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p>Много положително ми подейства тази консултация. Смятам, че анализът ти е точен. Мисля, че ще имам ново отношение към лицето си.</p>
+      <div class="t-author">
+        <div class="t-avatar">К</div>
+        <div><div class="t-name">Кремена Христова</div></div>
+      </div>
+    </blockquote>
+    <blockquote class="lp-quote reveal">
+      <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p>Много интересен метод за самопознание. Поизправих си гръбнака с 2-3 сантиметра след тази среща :)</p>
+      <div class="t-author">
+        <div class="t-avatar">Н</div>
+        <div><div class="t-name">Невена Арнаудова</div></div>
+      </div>
+    </blockquote>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ── FAQ ── -->
+<section id="lp-faq">
+  <div class="lp-section-head reveal">
+    <div class="section-tag">Въпроси</div>
+    <h2>Преди да<br><em>оставиш имейла си</em></h2>
+  </div>
+  <div class="lp-faq-list">
+    <details class="lp-faq-item reveal">
+      <summary>Наистина ли е безплатен?</summary>
+      <div class="lp-faq-answer">Да, напълно. Няма скрито плащане и няма нужда от карта. Единственото, което искам в замяна, е имейлът ти — за да мога да ти изпратя файла и от време на време нещо полезно по темата.</div>
+    </details>
+    <details class="lp-faq-item reveal">
+      <summary>Разчитането на лица гадаене ли е?</summary>
+      <div class="lp-faq-answer">Не. Работя със сертифициран метод (Psychosomatic Therapy College, Австралия), който разглежда устойчиви модели на поведение — как мислиш, как реагираш под напрежение, как общуваш. Не предсказва бъдещето и не поставя диагнози.</div>
+    </details>
+    <details class="lp-faq-item reveal">
+      <summary>Колко време ще ми отнеме?</summary>
+      <div class="lp-faq-answer">Около 15 минути четене. Плюс още две-три минути пред огледалото, ако решиш да направиш упражненията — а те са смисълът на цялото нещо.</div>
+    </details>
+    <details class="lp-faq-item reveal">
+      <summary>Ще ме заливате ли с имейли?</summary>
+      <div class="lp-faq-answer">Не. Пиша рядко и само когато имам какво да кажа. Всеки имейл има линк за отписване — един клик и повече няма да получаваш нищо.</div>
+    </details>
+    <details class="lp-faq-item reveal">
+      <summary>Какво правите с данните ми?</summary>
+      <div class="lp-faq-answer">Съхраняват се сигурно и се използват само за да ти изпратя наръчника и материали по темата. Не ги продаваме и не ги предоставяме на трети страни. Подробностите са в <a href="privacy-policy.html">Политиката за поверителност</a>.</div>
+    </details>
+    <details class="lp-faq-item reveal">
+      <summary>Не получих имейла — какво да правя?</summary>
+      <div class="lp-faq-answer">Провери папките „Промоции“ и „Спам“ — понякога първото писмо попада там. Ако и там го няма, пиши директно на <a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a> и ще ти го изпратя лично.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ── ФИНАЛЕН CTA ── -->
+<section id="lp-final">
+  <div class="section-tag">Последна стъпка</div>
+  <h2>Погледни се —<br><em>този път наистина</em></h2>
+  <p class="lp-final-sub">Онова, което казва лицето на всеки от нас, е за да ни припомни кои сме — а не да ни промени и да живеем според очакванията на някой друг.</p>
+
+  <div class="lp-form-card is-standalone" style="text-align:left">
+    <div class="lp-form-body">
+      <h3>Изпрати ми <em>наръчника</em></h3>
+      <p class="lp-form-note">Име, имейл и готово. PDF-ът пристига веднага след потвърждението.</p>
+      <form class="lp-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="lpName2">Вашето име</label>
+            <input type="text" id="lpName2" name="name" placeholder="Иван Иванов" autocomplete="given-name" required>
+          </div>
+          <div class="form-group">
+            <label for="lpEmail2">Имейл</label>
+            <input type="email" id="lpEmail2" name="email" placeholder="ivan@email.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="lp-consent">
+          <input type="checkbox" id="lpConsent2" required>
+          <label for="lpConsent2">Съгласен/а съм да получа наръчника по имейл и да получавам полезни материали от YourFaceTalk. Прочетох <a href="privacy-policy.html" target="_blank" rel="noopener">Политиката за поверителност</a>.</label>
+        </div>
+        <button type="submit" class="btn-primary lp-submit">Изпрати ми наръчника</button>
+        <div class="lp-err" role="alert"></div>
+        <div class="lp-privacy-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          Без спам. Отписваш се с един клик, когато решиш.
+        </div>
+      </form>
+    </div>
+    <div class="lp-thanks">
+      <div class="lp-thanks-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <h3>Готово — <em>провери пощата си</em></h3>
+      <p>Изпратих ти имейл за потвърждение. Един клик в него и наръчникът тръгва към теб.</p>
+      <ul class="lp-steps-mini">
+        <li>Не го виждаш? Погледни в <strong>Промоции</strong> или <strong>Спам</strong>.</li>
+        <li>Добави <strong>yourfacetalk@gmail.com</strong> в контактите си.</li>
+        <li>Имаш въпрос? Просто отговори на имейла.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-korporativni.html">Бизнес услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
+    <div class="footer-col"><h4>Безплатно</h4><ul><li><a href="zoni-v-liceto.html">Наръчник „Зони в лицето“</a></li><li><a href="ogledalen-test.html">Огледален тест</a></li><li><a href="quiz.html">Кратък тест</a></li><li><a href="blog.html">Блог</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="index.html">Начална страница</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/elina-bozhimirova-3360a9301/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" rel="noopener" class="fsoc" aria-label="TikTok"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ── SCHEMA.ORG (SEO + AI агенти) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://yourfacetalk.com/zoni-v-liceto.html",
+      "url": "https://yourfacetalk.com/zoni-v-liceto.html",
+      "name": "Зони в лицето — безплатен наръчник по себепознание (PDF)",
+      "description": "Безплатен PDF наръчник от Елина Божимирова за трите зони в лицето — аналитична, емоционална и физическа — и какво казват за начина, по който мислиш, чувстваш и действаш.",
+      "inLanguage": "bg-BG",
+      "isPartOf": { "@id": "https://yourfacetalk.com/#website" },
+      "about": { "@id": "https://yourfacetalk.com/#elina" },
+      "primaryImageOfPage": "https://yourfacetalk.com/img/opt/naruchnik-korica.webp",
+      "mainEntity": { "@id": "https://yourfacetalk.com/zoni-v-liceto.html#naruchnik" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://yourfacetalk.com/#website",
+      "url": "https://yourfacetalk.com/",
+      "name": "YourFaceTalk",
+      "inLanguage": "bg-BG",
+      "publisher": { "@id": "https://yourfacetalk.com/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://yourfacetalk.com/#org",
+      "name": "YourFaceTalk",
+      "url": "https://yourfacetalk.com/",
+      "email": "yourfacetalk@gmail.com",
+      "telephone": "+359888773076",
+      "logo": "https://yourfacetalk.com/img/logo.png",
+      "founder": { "@id": "https://yourfacetalk.com/#elina" },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61551052808065",
+        "https://www.instagram.com/kakvo_kazva_liceto_ti/",
+        "https://www.linkedin.com/in/elina-bozhimirova-3360a9301/",
+        "https://www.tiktok.com/@your_face_talk"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yourfacetalk.com/#elina",
+      "name": "Елина Божимирова",
+      "jobTitle": "Face Reader",
+      "url": "https://yourfacetalk.com/za-nas.html",
+      "worksFor": { "@id": "https://yourfacetalk.com/#org" },
+      "knowsAbout": ["Разчитане на лица", "Face reading", "Себепознание", "Психосоматика"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified Face Reader",
+        "credentialCategory": "Сертификат",
+        "recognizedBy": { "@type": "Organization", "name": "Psychosomatic Therapy College, Австралия" }
+      }
+    },
+    {
+      "@type": "DigitalDocument",
+      "@id": "https://yourfacetalk.com/zoni-v-liceto.html#naruchnik",
+      "name": "Познаваш ли себе си? Кратък наръчник по себепознание",
+      "alternateName": "Зони в лицето",
+      "description": "Безплатен наръчник от 11 страници за трите зони в лицето — аналитична (мисля), емоционална (чувствам) и физическа (действам) — с практически упражнения за самонаблюдение.",
+      "inLanguage": "bg-BG",
+      "encodingFormat": "application/pdf",
+      "author": { "@id": "https://yourfacetalk.com/#elina" },
+      "publisher": { "@id": "https://yourfacetalk.com/#org" },
+      "image": "https://yourfacetalk.com/img/opt/naruchnik-korica.webp",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://yourfacetalk.com/zoni-v-liceto.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yourfacetalk.com/zoni-v-liceto.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Наистина ли наръчникът е безплатен?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Да, напълно. Няма скрито плащане и няма нужда от карта. Единственото, което се иска, е имейл адрес, за да бъде изпратен файлът и от време на време полезни материали по темата." }
+        },
+        {
+          "@type": "Question",
+          "name": "Разчитането на лица гадаене ли е?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Не. Методът е сертифициран от Psychosomatic Therapy College, Австралия, и разглежда устойчиви модели на поведение — как човек мисли, как реагира под напрежение и как общува. Не предсказва бъдещето и не поставя диагнози." }
+        },
+        {
+          "@type": "Question",
+          "name": "Колко време отнема прочитането на наръчника?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Около 15 минути четене, плюс две-три минути за упражненията пред огледалото, които са същината на наръчника." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ще получавам ли много имейли след записването?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Не. Имейлите се изпращат рядко и само по темата. Всяко писмо съдържа линк за отписване с един клик." }
+        },
+        {
+          "@type": "Question",
+          "name": "Какво се случва с личните ми данни?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Данните се съхраняват сигурно и се използват само за изпращане на наръчника и материали по темата. Не се продават и не се предоставят на трети страни. Подробностите са описани в Политиката за поверителност." }
+        },
+        {
+          "@type": "Question",
+          "name": "Не получих имейла с наръчника — какво да направя?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Трябва да се провери в папките „Промоции“ и „Спам“. Ако и там го няма, може да се пише на yourfacetalk@gmail.com и файлът ще бъде изпратен лично." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://yourfacetalk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Наръчник „Зони в лицето“", "item": "https://yourfacetalk.com/zoni-v-liceto.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- Скрит фрейм — приема отговора на MailerLite, за да не се презарежда страницата -->
+<iframe name="ml-sink" id="ml-sink" style="display:none" title="MailerLite" aria-hidden="true"></iframe>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   НАСТРОЙКА НА ЛИЙД МАГНИТА — попълни след регистрация в MailerLite
+   (виж instrukcii-mailerlite.md в папката на проекта)
+
+   accountId и formId се вземат от HTML кода на формата в MailerLite:
+   action="https://assets.mailerlite.com/jsonp/1234567/forms/89012345/subscribe"
+                                                 ↑ accountId    ↑ formId
+
+   Докато двете полета са празни, страницата работи с резервния
+   Formspree адрес — тоест НИЩО не се чупи, лийдовете идват по имейл.
+   ═══════════════════════════════════════════════════════════════ */
+const ML_CONFIG = {
+  accountId: "",   // напр. "1234567"
+  formId:    "",   // напр. "89012345"
+  fallbackEndpoint: "https://formspree.io/f/xlgyzpvv"  // резервен вариант
+};
+
+(function(){
+  const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  const mlReady  = !!(ML_CONFIG.accountId && ML_CONFIG.formId);
+  const mlAction = mlReady
+    ? "https://assets.mailerlite.com/jsonp/" + ML_CONFIG.accountId + "/forms/" + ML_CONFIG.formId + "/subscribe"
+    : "";
+
+  document.querySelectorAll('.lp-form').forEach(function(form){
+    const card    = form.closest('.lp-form-card');
+    const body    = card.querySelector('.lp-form-body');
+    const thanks  = card.querySelector('.lp-thanks');
+    const btn     = form.querySelector('.lp-submit');
+    const errBox  = form.querySelector('.lp-err');
+    const nameEl  = form.querySelector('input[name="name"]');
+    const emailEl = form.querySelector('input[name="email"]');
+    const okEl    = form.querySelector('input[type="checkbox"]');
+    const btnText = btn.textContent;
+
+    function fail(msg){
+      errBox.textContent = msg;
+      errBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = btnText;
+    }
+
+    function succeed(){
+      body.style.display = 'none';
+      thanks.classList.add('show');
+      thanks.scrollIntoView({ behavior:'smooth', block:'center' });
+      if (window.gtag) {
+        gtag('event', 'generate_lead', {
+          event_category: 'lead_magnet',
+          event_label: 'Зони в лицето — наръчник',
+          currency: 'EUR',
+          value: 0
+        });
+      }
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      errBox.style.display = 'none';
+
+      const name  = nameEl.value.trim();
+      const email = emailEl.value.trim();
+
+      if (!name)                { return fail('Моля, въведи името си.'); }
+      if (!EMAIL_RE.test(email)){ return fail('Моля, въведи валиден имейл адрес.'); }
+      if (!okEl.checked)        { return fail('Моля, отбележи съгласието, за да продължим.'); }
+
+      btn.disabled = true;
+      btn.textContent = 'Изпращане...';
+
+      if (mlReady) {
+        /* MailerLite не връща CORS хедъри → изпращаме класически POST
+           в скрит iframe. Браузърът се справя, страницата не мърда. */
+        const relay = document.createElement('form');
+        relay.method = 'post';
+        relay.action = mlAction;
+        relay.target = 'ml-sink';
+        relay.style.display = 'none';
+        [['fields[name]', name],
+         ['fields[email]', email],
+         ['ml-submit', '1'],
+         ['anticsrf', 'true']].forEach(function(pair){
+          const i = document.createElement('input');
+          i.type = 'hidden'; i.name = pair[0]; i.value = pair[1];
+          relay.appendChild(i);
+        });
+        document.body.appendChild(relay);
+        relay.submit();
+        setTimeout(function(){ relay.remove(); succeed(); }, 600);
+      } else {
+        /* Резервен вариант — Formspree */
+        fetch(ML_CONFIG.fallbackEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            test: 'Наръчник „Зони в лицето“',
+            _subject: 'Нов лийд — наръчник „Зони в лицето“'
+          })
+        }).then(function(r){
+          if (r.ok) { succeed(); }
+          else { fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com'); }
+        }).catch(function(){
+          fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com');
+        });
+      }
+    });
+  });
+
+  /* Reveal при скрол — същото поведение като на останалите страници */
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
