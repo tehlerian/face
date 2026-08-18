@@ -121,7 +121,7 @@ window.silktideConsentManager.init({
 <link rel="canonical" href="https://yourfacetalk.com/privacy-policy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260809">
+<link rel="stylesheet" href="styles.css?v=20260818">
 <style>
 .nav-links a:hover,.nav-links a.active {color:var(--gold)}
 .nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
@@ -134,8 +134,10 @@ window.silktideConsentManager.init({
 #legal h2:first-of-type {margin-top:0}
 #legal p {color:var(--ink2);font-size:0.96rem;line-height:1.85;margin-bottom:1rem}
 #legal ul {list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin:0 0 1.2rem}
-#legal li {display:flex;gap:0.7rem;align-items:flex-start;font-size:0.95rem;color:var(--ink2);line-height:1.7}
-#legal li::before {content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:0.6rem}
+/* Без display:flex — при flex всяко парче текст и всеки <strong> става
+   отделен flex елемент и редът се разпада. Точката е абсолютна. */
+#legal li {position:relative;padding-left:1.2rem;font-size:0.95rem;color:var(--ink2);line-height:1.7}
+#legal li::before {content:"";position:absolute;left:0;top:0.6rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 #legal a {color:var(--gold);text-decoration:none;transition:color 0.3s}
 #legal a:hover {color:var(--gold-rich)}
 #legal strong {color:var(--ink)}

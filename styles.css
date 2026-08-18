@@ -199,8 +199,10 @@
   .lm-body h3 em{font-style:italic;color:var(--gold-rich)}
   .lm-body > p{color:rgba(250,248,244,0.72);line-height:1.8;font-size:1rem;margin-bottom:1.5rem;max-width:520px}
   .lm-list{list-style:none;display:grid;gap:0.7rem;margin-bottom:2rem}
-  .lm-list li{display:flex;gap:0.75rem;align-items:flex-start;color:rgba(250,248,244,0.88);line-height:1.65;font-size:0.96rem}
-  .lm-list li::before{content:"";flex-shrink:0;width:8px;height:8px;margin-top:0.5rem;background:var(--gold-rich);transform:rotate(45deg)}
+  /* Не ползвай display:flex тук — всяко парче текст и всеки <strong> би
+     станал отделен flex елемент и редът се разпада. Ромбчето е абсолютно. */
+  .lm-list li{position:relative;padding-left:1.5rem;color:rgba(250,248,244,0.88);line-height:1.65;font-size:0.96rem}
+  .lm-list li::before{content:"";position:absolute;left:0;top:0.5rem;width:8px;height:8px;background:var(--gold-rich);transform:rotate(45deg)}
   .lm-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
   .lm-note{font-size:0.8rem;color:rgba(250,248,244,0.55);line-height:1.5}
   .lm-cover{position:relative;z-index:1;display:flex;justify-content:center}

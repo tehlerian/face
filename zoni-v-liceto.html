@@ -141,7 +141,7 @@ window.silktideConsentManager.init({
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/opt/naruchnik-korica.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20260809">
+<link rel="stylesheet" href="styles.css?v=20260818">
 
 <style>
   /* ── ЛЕНДИНГ: ЗОНИ В ЛИЦЕТО ── */
@@ -176,9 +176,14 @@ window.silktideConsentManager.init({
     color:var(--ink2);line-height:1.55;margin-bottom:1.6rem;
   }
   .lp-hero-list{list-style:none;display:grid;gap:0.75rem;margin-bottom:2rem}
-  .lp-hero-list li{display:flex;gap:0.75rem;align-items:flex-start;color:var(--ink2);line-height:1.65;font-size:1rem}
+  /* Без flex — виж коментара при .lp-steps-mini li. Така списъкът
+     понася <strong>, <em> и линкове, без редът да се разпада. */
+  .lp-hero-list li{
+    position:relative;padding-left:1.5rem;color:var(--ink2);line-height:1.65;font-size:1rem;
+  }
   .lp-hero-list li::before{
-    content:"";flex-shrink:0;width:8px;height:8px;margin-top:0.55rem;background:var(--gold);transform:rotate(45deg);
+    content:"";position:absolute;left:0;top:0.55rem;
+    width:8px;height:8px;background:var(--gold);transform:rotate(45deg);
   }
   .lp-microproof{display:flex;flex-wrap:wrap;gap:0.5rem}
   .lp-chip{
@@ -256,12 +261,18 @@ window.silktideConsentManager.init({
     list-style:none;text-align:left;max-width:380px;margin:1.4rem auto 0;display:grid;gap:0.7rem;
     padding-top:1.3rem;border-top:1px solid var(--border);
   }
+  /* ВАЖНО: тук НЕ се използва display:flex. При flex всяко парче текст и
+     всеки <strong> става отделен flex елемент и редът се разпада. Ромбчето
+     е абсолютно позиционирано, а текстът тече нормално като inline. */
   .lp-thanks .lp-steps-mini li{
-    display:flex;gap:0.7rem;align-items:flex-start;font-size:0.88rem;color:var(--ink2);line-height:1.6;
+    position:relative;padding-left:1.35rem;font-size:0.88rem;color:var(--ink2);line-height:1.6;
   }
   .lp-thanks .lp-steps-mini li::before{
-    content:"";flex-shrink:0;width:7px;height:7px;margin-top:0.5rem;background:var(--gold);transform:rotate(45deg);
+    content:"";position:absolute;left:0;top:0.48rem;
+    width:7px;height:7px;background:var(--gold);transform:rotate(45deg);
   }
+  /* По-сдържано от плътен болд — само подчертава думите за сканиране */
+  .lp-thanks .lp-steps-mini li strong{font-weight:500;color:var(--ink)}
 
   /* ── ОБЩИ ЛЕНДИНГ СЕКЦИИ ── */
   .lp-section-head{max-width:660px;margin-bottom:3rem}
