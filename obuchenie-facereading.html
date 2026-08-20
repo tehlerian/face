@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager -->
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #B8892E;
+  --backgroundColor: #faf8f4;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #B8892E;
+  --iconBackgroundColor: #FAF8F4;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Задължителни",
+      description: "<p>Задължителни бисквитки</p>",
+      required: true
+    },
+    {
+      id: "analytics",
+      label: "Аналитични",
+      description: "<p>Аналитични бисквитки</p>",
+      defaultValue: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    },
+    {
+      id: "marketing",
+      label: "Маркетингови",
+      description: "<p>Бисквитки за маркетингово измерване</p>",
+      defaultValue: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
+      acceptAllButtonText: "Приеми",
+      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
+      rejectNonEssentialButtonText: "Откажи",
+      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
+      preferencesButtonText: "Настройки",
+      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
+    },
+    preferences: {
+      title: "Настройване на бисквитките",
+      description: "<p>Уважаваме вашето желание за анонимност</p>",
+      saveButtonText: "Запази и Затвори",
+      saveButtonAccessibleLabel: "Запази и Затвори",
+      creditLinkText: "+",
+      creditLinkAccessibleLabel: "+"
+    }
+  }
+});
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3RM10J6K9');
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обучение по разчитане на лица — Варна, 3 и 4 октомври 2026 | YourFaceTalk</title>
+<meta name="description" content="Двудневно обучение на живо по разчитане на лица във Варна, 3 и 4 октомври 2026, Campus 90 (бул. „Цар Освободител“ 90). Западна школа, малка група до 20 души, практика на място. Водещ: Елина Божимирова, сертифициран Face Reader.">
+<link rel="canonical" href="https://yourfacetalk.com/obuchenie-facereading.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Елина Божимирова">
+<meta name="geo.region" content="BG-03">
+<meta name="geo.placename" content="Варна">
+
+<!-- Open Graph / социални мрежи -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:title" content="Разбери човека срещу теб — по чертите на лицето му | Обучение, Варна">
+<meta property="og:description" content="Две сутрини на живо, 3 и 4 октомври 2026, Campus 90 Варна. Без гадаене — по метод. Малка група до 20 души.">
+<meta property="og:url" content="https://yourfacetalk.com/obuchenie-facereading.html">
+<meta property="og:image" content="https://yourfacetalk.com/img/obuchenie-banner.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:image:alt" content="Обучение по разчитане на лица с Елина Божимирова — 3 и 4 октомври, Campus 90, Варна">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Разбери човека срещу теб — по чертите на лицето му">
+<meta name="twitter:description" content="Двудневно обучение по разчитане на лица. 3 и 4 октомври 2026, Campus 90, Варна.">
+<meta name="twitter:image" content="https://yourfacetalk.com/img/obuchenie-banner.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20260818">
+<style>
+/* ══════════════════════════════════════════════════════════
+   ОБУЧЕНИЕ — 3 и 4 октомври 2026, Варна
+   Стиловете тук са само за тази страница (префикс .obu-).
+   Базата идва от styles.css — цветове, шрифтове, бутони, нав.
+   ══════════════════════════════════════════════════════════ */
+.nav-links a:hover,.nav-links a.active {color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
+
+/* ── HERO ── */
+#obu-hero {background:var(--bg);display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;gap:4rem;padding:132px 4rem 5rem}
+.obu-hero-text {display:flex;flex-direction:column;justify-content:center}
+.obu-hero-text h1 {font-size:clamp(2rem,3.05vw,3rem);line-height:1.2;margin-bottom:1.2rem;text-wrap:balance}
+.obu-hero-lead {font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,1.9vw,1.45rem);font-style:italic;color:var(--ink2);line-height:1.6;max-width:520px;margin-bottom:1.6rem}
+.obu-hero-sub {color:var(--ink2);font-size:1rem;line-height:1.85;max-width:520px}
+.obu-hero-text .hero-actions {margin-top:2.2rem;animation:none;opacity:1}
+.obu-hero-meta {display:flex;flex-wrap:wrap;gap:0.55rem 1.4rem;margin-top:1.6rem;font-size:0.82rem;color:var(--muted);letter-spacing:0.02em}
+.obu-hero-meta span {display:inline-flex;align-items:center;gap:0.5rem}
+.obu-hero-meta svg {width:15px;height:15px;stroke:var(--gold);fill:none;stroke-width:1.6;flex-shrink:0}
+.obu-hero-img {display:flex;justify-content:flex-end}
+.obu-hero-img-inner {position:relative;width:100%;max-width:440px}
+.obu-hero-img img {width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:var(--bg2);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.obu-date-badge {position:absolute;bottom:-1.4rem;left:-1.4rem;background:var(--gold);color:#fff;padding:1.1rem 1.5rem;text-align:center;border:1px solid rgba(250,248,244,0.65);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.obu-date-badge-num {font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;line-height:1}
+.obu-date-badge-txt {font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;margin-top:0.25rem}
+
+/* ── общи ── */
+.obu-lead {color:var(--ink2);font-size:1.05rem;line-height:1.9;max-width:820px;margin-top:1.6rem}
+.obu-lead + .obu-lead {margin-top:1.2rem}
+.obu-note {font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,2.2vw,1.75rem);font-style:italic;color:var(--gold);line-height:1.5;max-width:760px;margin-top:2.2rem}
+#obu-problem {background:var(--bg2)}
+#obu-method {background:var(--bg)}
+#obu-outcomes {background:var(--bg2)}
+#obu-format {background:var(--bg)}
+#obu-program {background:var(--bg2)}
+#obu-fit {background:var(--bg)}
+#obu-worth {background:var(--teal)}
+#obu-includes {background:var(--bg)}
+#obu-boundaries {background:var(--bg2)}
+#obu-about {background:var(--bg)}
+#obu-reviews {background:var(--bg2)}
+#obu-faq {background:var(--bg)}
+#obu-practical {background:var(--bg2)}
+#obu-signup {background:var(--teal)}
+
+/* ── СЕКЦИЯ 2 · Познато ли ти е ── */
+.obu-pain-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.obu-pain {background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold);padding:1.8rem 1.9rem;transition:transform 0.35s ease,box-shadow 0.35s ease}
+.obu-pain:hover {transform:translateY(-4px);box-shadow:0 14px 38px rgba(184,137,46,0.10)}
+.obu-pain p {color:var(--ink2);font-size:0.99rem;line-height:1.85;margin:0}
+
+/* ── СЕКЦИЯ 4 · Какво ще можеш ── */
+.obu-outcomes {display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.obu-outcome {background:var(--surface);border:1px solid var(--border);padding:2rem 1.8rem;transition:transform 0.35s ease,box-shadow 0.35s ease,border-color 0.35s ease}
+.obu-outcome:hover {transform:translateY(-5px);box-shadow:0 14px 38px rgba(184,137,46,0.10);border-color:var(--border2)}
+.obu-outcome-icon {width:48px;height:48px;border:1px solid var(--border2);background:var(--gold-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.obu-outcome-icon svg {width:23px;height:23px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.obu-outcome h3 {font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem;line-height:1.3}
+.obu-outcome p {color:var(--ink2);font-size:0.95rem;line-height:1.8;margin:0}
+
+/* ── СЕКЦИЯ 5 · Как минава ── */
+.obu-format-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.obu-format-card {border:1px solid var(--border);background:var(--surface);padding:2rem 1.8rem;position:relative}
+.obu-format-card .obu-fc-num {font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;color:var(--gold-pale);line-height:1;position:absolute;top:1.2rem;right:1.4rem}
+.obu-format-card h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:500;color:var(--ink);margin-bottom:0.7rem;position:relative;z-index:1;padding-right:2.4rem}
+.obu-format-card p {color:var(--ink2);font-size:0.95rem;line-height:1.8;margin:0}
+
+/* ── СЕКЦИЯ 6 · Програма ── */
+.obu-days {display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--border);margin-top:3rem}
+.obu-day {background:var(--surface);padding:2.4rem 2.2rem}
+.obu-day-head {display:flex;align-items:baseline;gap:0.9rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border);margin-bottom:1.6rem}
+.obu-day-num {font-family:"Cormorant Garamond",serif;font-size:2.6rem;font-weight:600;color:var(--gold);line-height:1}
+.obu-day-title {font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--ink);line-height:1.3}
+.obu-day-date {display:block;font-family:"DM Sans",sans-serif;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);margin-top:0.35rem}
+.obu-day ul {list-style:none;display:flex;flex-direction:column;gap:0.85rem}
+.obu-day li {position:relative;padding-left:1.5rem;color:var(--ink2);font-size:0.97rem;line-height:1.7}
+.obu-day li::before {content:"";position:absolute;left:0;top:0.6rem;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.obu-day li strong {color:var(--ink);font-weight:500}
+
+/* ── СЕКЦИЯ 7 · За кого е ── */
+.obu-fit-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+.obu-fit-col {background:var(--surface);border:1px solid var(--border);padding:2.2rem 2rem}
+.obu-fit-col.no {background:var(--bg2)}
+.obu-fit-col h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.7rem}
+.obu-fit-col h3 svg {width:22px;height:22px;fill:none;stroke-width:2;flex-shrink:0}
+.obu-fit-col.yes h3 svg {stroke:var(--gold)}
+.obu-fit-col.no h3 svg {stroke:var(--muted)}
+.obu-fit-col ul {list-style:none;display:flex;flex-direction:column;gap:0.8rem}
+.obu-fit-col li {display:flex;gap:0.75rem;align-items:flex-start;color:var(--ink2);font-size:0.97rem;line-height:1.7}
+.obu-fit-col li::before {content:"";flex-shrink:0;width:6px;height:6px;border-radius:50%;margin-top:0.6rem;background:var(--gold)}
+.obu-fit-col.no li::before {background:var(--muted);opacity:0.5}
+.obu-fit-foot {margin-top:1.6rem;padding-top:1.3rem;border-top:1px solid var(--border);font-size:0.9rem;color:var(--muted);line-height:1.8}
+
+/* ── СЕКЦИЯ 8 · Струва ли си (тъмна) ── */
+.obu-dark-head h2 {color:#faf8f4}
+.obu-dark-head h2 em {color:var(--gold-rich)}
+.obu-dark-head .section-tag {color:var(--gold-rich)}
+.obu-dark-head .section-tag::before {background:var(--gold-rich)}
+.obu-worth-lead {color:rgba(250,248,244,0.72);font-size:1.05rem;line-height:1.9;max-width:820px;margin-top:1.6rem}
+.obu-scales {display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem}
+.obu-scale {border:1px solid rgba(201,168,76,0.28);padding:2.2rem 2rem;background:rgba(250,248,244,0.035)}
+.obu-scale h3 {font-family:"Cormorant Garamond",serif;font-size:1.45rem;font-weight:500;color:var(--gold-rich);margin-bottom:1.2rem}
+.obu-scale ul {list-style:none;display:flex;flex-direction:column;gap:0.9rem}
+.obu-scale li {display:flex;gap:0.75rem;align-items:flex-start;color:rgba(250,248,244,0.72);font-size:0.96rem;line-height:1.75}
+.obu-scale li::before {content:"";flex-shrink:0;width:6px;height:6px;border-radius:50%;margin-top:0.6rem;background:var(--gold-rich)}
+.obu-worth-close {margin-top:2.6rem;padding:1.8rem 2.1rem;border-left:2px solid var(--gold-rich);background:rgba(250,248,244,0.05)}
+.obu-worth-close p {font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2vw,1.45rem);font-style:italic;color:#faf8f4;line-height:1.55;margin:0}
+.obu-worth-close p + p {margin-top:0.9rem;font-family:"DM Sans",sans-serif;font-style:normal;font-size:0.95rem;color:rgba(250,248,244,0.65);line-height:1.8}
+
+/* ── СЕКЦИЯ 9 · Какво получаваш ── */
+.obu-includes {display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:3rem}
+.obu-include {display:flex;gap:1.1rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);padding:1.5rem 1.7rem}
+.obu-include svg {width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:0.2rem}
+.obu-include strong {display:block;font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:500;color:var(--ink);margin-bottom:0.35rem}
+.obu-include span {color:var(--ink2);font-size:0.94rem;line-height:1.75}
+.obu-bonus {margin-top:2rem;background:var(--gold-pale);border:1px solid var(--border2);padding:2rem 2.2rem;display:flex;gap:1.4rem;align-items:flex-start}
+.obu-bonus svg {width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:0.15rem}
+.obu-bonus-tag {font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.obu-bonus h3 {font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:0.6rem}
+.obu-bonus p {color:var(--ink2);font-size:0.97rem;line-height:1.8;margin:0}
+
+/* ── СЕКЦИЯ 10 · Какво няма да правим ── */
+.obu-boundaries {display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.obu-boundary {background:var(--surface);border:1px solid var(--border);padding:1.8rem}
+.obu-boundary h3 {font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:500;color:var(--ink);margin-bottom:0.55rem}
+.obu-boundary p {color:var(--ink2);font-size:0.94rem;line-height:1.8;margin:0}
+.obu-boundaries-close {margin-top:2rem;font-family:"Cormorant Garamond",serif;font-size:clamp(1.2rem,2vw,1.5rem);font-style:italic;color:var(--gold);line-height:1.5;max-width:740px}
+
+/* ── СЕКЦИЯ 11 · Коя съм аз ── */
+.obu-about-grid {display:grid;grid-template-columns:0.85fr 1.15fr;gap:4rem;align-items:center;margin-top:3rem}
+.obu-about-img img {width:100%;max-width:400px;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.obu-about-body p {color:var(--ink2);font-size:1rem;line-height:1.9;margin-bottom:1.2rem}
+.obu-about-body p:last-child {margin-bottom:0}
+.obu-credentials {display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.8rem}
+.obu-cred {font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border2);padding:0.5rem 0.9rem;background:var(--gold-pale)}
+
+/* ── СЕКЦИЯ 12 · Отзиви ── */
+.obu-reviews {display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.obu-review {background:var(--surface);border:1px solid var(--border);padding:2rem 1.9rem;display:flex;flex-direction:column}
+.obu-review-stars {color:var(--gold);font-size:0.85rem;letter-spacing:3px;margin-bottom:1rem}
+.obu-review blockquote {font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-style:italic;line-height:1.65;color:var(--ink2);margin:0 0 1.4rem;border:none;padding:0;flex-grow:1}
+.obu-review figcaption {display:flex;align-items:center;gap:0.8rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.obu-review-avatar {width:38px;height:38px;background:var(--gold-pale);border:1px solid var(--border2);color:var(--gold);font-family:"Cormorant Garamond",serif;font-size:1.15rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.obu-review-name {font-size:0.88rem;font-weight:500;color:var(--ink)}
+
+/* ── СЕКЦИЯ 13 · Въпроси ── */
+.obu-faq-list {max-width:860px;margin-top:3rem;display:grid;gap:0.8rem}
+.obu-faq-item {background:var(--surface);border:1px solid var(--border);transition:border-color 0.3s}
+.obu-faq-item[open] {border-color:var(--border2)}
+.obu-faq-item summary {list-style:none;cursor:pointer;padding:1.25rem 1.6rem;font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color 0.25s}
+.obu-faq-item summary::-webkit-details-marker {display:none}
+.obu-faq-item summary::after {content:"";width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg) translateY(-3px);transition:transform 0.3s;flex-shrink:0}
+.obu-faq-item[open] summary::after {transform:rotate(-135deg) translateY(0)}
+.obu-faq-item summary:hover {color:var(--gold)}
+.obu-faq-answer {padding:0 1.6rem 1.4rem;color:var(--ink2);line-height:1.85;font-size:0.96rem}
+.obu-faq-answer a {color:var(--gold)}
+
+/* ── СЕКЦИЯ 14 · Практично ── */
+.obu-practical {display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);margin-top:3rem}
+.obu-pract {background:var(--surface);padding:1.9rem 1.8rem}
+.obu-pract-label {font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+.obu-pract-value {font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--ink);line-height:1.35}
+.obu-pract-value small {display:block;font-family:"DM Sans",sans-serif;font-size:0.88rem;color:var(--muted);margin-top:0.4rem;line-height:1.7}
+.obu-price-row {display:flex;align-items:baseline;gap:0.7rem;flex-wrap:wrap}
+.obu-price {font-family:"Cormorant Garamond",serif;font-size:2.2rem;font-weight:600;color:var(--gold);line-height:1}
+.obu-price-bgn {font-size:0.88rem;color:var(--muted)}
+
+/* ── СЕКЦИЯ 15 · Записване (форма) ── */
+.obu-signup-grid {display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px;margin:3rem auto 0}
+.obu-signup-info p {color:rgba(250,248,244,0.72);font-size:1rem;line-height:1.9;margin-bottom:1.2rem}
+.obu-signup-points {list-style:none;display:flex;flex-direction:column;gap:0.9rem;margin:2rem 0 0}
+.obu-signup-points li {display:flex;gap:0.8rem;align-items:flex-start;color:rgba(250,248,244,0.78);font-size:0.97rem;line-height:1.7}
+.obu-signup-points svg {width:18px;height:18px;stroke:var(--gold-rich);fill:none;stroke-width:2;flex-shrink:0;margin-top:0.25rem}
+.obu-signup-alt {margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid rgba(250,248,244,0.15);font-size:0.92rem;color:rgba(250,248,244,0.6);line-height:1.9}
+.obu-signup-alt a {color:var(--gold-rich);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.4)}
+.obu-signup-alt a:hover {color:#faf8f4;border-color:#faf8f4}
+.obu-form-card {background:var(--surface);padding:2.6rem 2.4rem;border:1px solid rgba(201,168,76,0.3)}
+.obu-form-card h3 {font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem}
+.obu-form-card > p {color:var(--muted);font-size:0.9rem;line-height:1.75;margin-bottom:1.8rem}
+.obu-fg {margin-bottom:1.1rem}
+.obu-fg label {display:block;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+.obu-fg input,.obu-fg textarea {width:100%;padding:0.85rem 1rem;border:1px solid var(--border2);background:var(--bg);font-family:"DM Sans",sans-serif;font-size:0.95rem;color:var(--ink);transition:border-color 0.25s,background 0.25s}
+.obu-fg input:focus,.obu-fg textarea:focus {outline:none;border-color:var(--gold);background:#fff}
+.obu-fg textarea {min-height:96px;resize:vertical}
+.obu-consent {display:flex;gap:0.7rem;align-items:flex-start;margin:1.3rem 0 1.6rem;font-size:0.85rem;color:var(--muted);line-height:1.65}
+.obu-consent input {width:16px;height:16px;margin-top:0.2rem;accent-color:var(--gold);flex-shrink:0}
+.obu-consent a {color:var(--gold)}
+.obu-form-card .btn-primary {width:100%;text-align:center}
+.obu-msg {display:none;margin-top:1.2rem;padding:1rem 1.3rem;font-size:0.92rem;line-height:1.7}
+.obu-msg.ok {background:rgba(31,61,56,0.08);border-left:2px solid var(--teal);color:var(--teal)}
+.obu-msg.err {background:rgba(184,46,46,0.06);border-left:2px solid #c0392b;color:#c0392b}
+.obu-msg.err a {color:#c0392b}
+
+/* ── АДАПТИВНО ── */
+@media (max-width:1100px) {
+  #obu-hero {grid-template-columns:1fr;padding:112px 2rem 4rem;gap:2.6rem}
+  .obu-hero-img {justify-content:flex-start}
+  .obu-hero-img-inner {max-width:360px}
+  .obu-date-badge {left:auto;right:-1.2rem;bottom:-1.2rem}
+  .obu-outcomes,.obu-format-grid,.obu-boundaries,.obu-reviews,.obu-practical {grid-template-columns:repeat(2,1fr)}
+  .obu-days,.obu-fit-grid,.obu-scales,.obu-includes {grid-template-columns:1fr}
+  .obu-about-grid {grid-template-columns:1fr;gap:2.4rem}
+  .obu-about-img img {max-width:320px}
+  .obu-signup-grid {grid-template-columns:1fr;gap:2.6rem}
+}
+@media (max-width:768px) {
+  #obu-hero {padding:104px 1.5rem 3.5rem}
+  .obu-hero-text .hero-actions {flex-direction:column;align-items:stretch}
+  .obu-hero-text .hero-actions a {text-align:center}
+  .obu-hero-img-inner {max-width:100%}
+  .obu-date-badge {right:0;bottom:-1rem;padding:0.9rem 1.1rem}
+  .obu-pain-grid,.obu-outcomes,.obu-format-grid,.obu-boundaries,.obu-reviews,.obu-practical {grid-template-columns:1fr}
+  .obu-day {padding:1.8rem 1.5rem}
+  .obu-form-card {padding:2rem 1.5rem}
+  .obu-bonus {flex-direction:column;gap:1rem}
+}
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/opt/logo.webp" alt="YourFaceTalk Logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="za-nas.html">За мен</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="uslugi-korporativni.html">Бизнес</a></li>
+          <li><a href="uslugi-personalni.html">Персонални</a></li>
+          <li><a href="obuchenie-facereading.html" class="active">Обучение</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="#obu-signup" class="nav-cta">Запази място</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ═══ СЕКЦИЯ 1 · HERO ═══ -->
+<section id="obu-hero">
+  <div class="obu-hero-text reveal">
+    <div class="section-tag">Обучение на живо · Варна</div>
+    <h1>Разбери човека срещу теб<br><em>по чертите на лицето му</em></h1>
+    <p class="obu-hero-lead">Практично обучение за разчитане на лица в два дни, след които ще виждаш човека срещу теб - как мисли, как решава и как да му говориш още от първата минута.</p>
+    <p class="obu-hero-sub"></p>
+    <div class="hero-actions">
+      <a href="#obu-signup" class="btn-primary">Запази място</a>
+      <a href="#obu-program" class="btn-ghost">Виж програмата</a>
+    </div>
+    <div class="obu-hero-meta">
+      <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>3 и 4 октомври 2026</span>
+      <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10:00 – 13:30</span>
+      <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Campus 90, Варна</span>
+      <span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>малка група</span>
+    </div>
+  </div>
+  <div class="obu-hero-img reveal">
+   <div class="obu-hero-img-inner">
+    <picture>
+      <source srcset="img/opt/obuchenie-elina.webp" type="image/webp">
+      <img src="img/obuchenie-elina.jpg" alt="Елина Божимирова — сертифициран Face Reader, водещ на обучението по разчитане на лица във Варна" width="720" height="900" fetchpriority="high">
+    </picture>
+    <div class="obu-date-badge">
+      <div class="obu-date-badge-num">3–4</div>
+      <div class="obu-date-badge-txt">Октомври 2026</div>
+    </div>
+   </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+
+<!-- ═══ СЕКЦИЯ 3 · Какво е разчитането на лица ═══ -->
+<!--<section id="obu-method">
+  <div class="section-tag reveal">Основата</div>
+  <h2 class="reveal">Какво всъщност е<br><em>разчитането на лица</em></h2>
+  <p class="obu-lead reveal">Разчитането на лица е метод, който показва дълготрайни модели на поведение — как човек мисли, как усеща и как действа в света. Не настроението му днес. Не какво ще му се случи. А начина, по който действа в ежедневието си като изграден модел.</p>
+  <p class="obu-lead reveal">Лицето ни има 43 мускула. Мислите ни създават определени движения, движенията задействат мускулите, а задействаните мускули с годините създават структура. Затова чертите не са случайни: те са следата от това как човек мисли и живее. Върху вродената форма животът дописва своето — и точно това се чете.</p>
+  <p class="obu-lead reveal">В това обучение ще работим по западната школа — знанието, с което боравят най-добрите четци на лица, за да видят и разберат човека срещу тях.</p>
+  <p class="obu-note reveal">Четем тенденции, не съдби. Черта на лицето не е присъда и не е етикет — тя е информация за това как да подходиш към човека срещу теб.</p>
+</section>
+
+<div class="gold-divider"></div>-->
+
+<!-- ═══ СЕКЦИЯ 4 · Какво ще можеш ═══ -->
+<section id="obu-outcomes">
+  <div class="section-tag reveal">Резултатът</div>
+  <h2 class="reveal">Какво ще можеш<br><em>след обучението</em></h2>
+  <div class="obu-outcomes">
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <h3>Ще познаваш кой иска факти и кой иска причината</h3>
+      <p>И ще му говориш така, че да те чуе от първия път. На единия дай числото. На другия - защо. Разликата между тях се вижда на веждите, не на визитката.</p>
+    </div>
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <h3>Ще знаеш кой решава веднага и кой има нужда да помисли.</h3>
+      <p>Има хора, на които решението им идва веднага, и други, които се затварят, ако ги притиснеш. Ще знаеш пред кого да не бързаш, за да не го загубиш.</p>
+    </div>
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Ще виждаш кой работи по-добре сам и кой се чувства по комфортно в екип</h3>
+      <p>Кой се захранва от признание и кой - от свобода. Кой ще довърши задачата на всяка цена и кой ще я остави отворена, без това да го притеснява.</p>
+    </div>
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+      <h3>Ще разбереш защо с определени хора ти е трудно да работиш</h3>
+      <p>Ще знаеш защо други хора работят по различен начин от твоя.</p>
+    </div>
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <h3>Ще познаваш важни черти черти у хората от един поглед</h3>
+      <p>Онова, което разбираш за човек чак след половин година съвместна работа, ще го виждаш от първата среща.</p>
+    </div>
+
+    <div class="obu-outcome reveal">
+      <div class="obu-outcome-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>И ще погледнеш собственото си лице по друг начин</h3>
+      <p>Защо реагираш по определен начин, къде ти е силата и къде е предизвикателството.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 5 · Как минава ═══ -->
+<section id="obu-format">
+  <div class="section-tag reveal">Как минава</div>
+  <h2 class="reveal">Как протича<br><em>практичния курс</em></h2>
+  <div class="obu-format-grid">
+    <div class="obu-format-card reveal">
+      <div class="obu-fc-num">01</div>
+      <h3>Практически курс</h3>
+      <p>Ще гледаме и ще се упражняваме, примери, практически задачи, обратна връзка. Забелязала съм, че човек може да знае какво означава дадена черта, но да не може да я види правилно. Точно това тренираме.</p>
+    </div>
+    <div class="obu-format-card reveal">
+      <div class="obu-fc-num">02</div>
+      <h3>Малка група</h3>
+      <p>Качеството на работата с всеки от вас ми е важно - затова предпочитам малка група и да мога да обърна персонално внимание на всеки.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══ СЕКЦИЯ 6 · Програма ═══ -->
+<section id="obu-program">
+  <div class="section-tag reveal">Програмата</div>
+  <h2 class="reveal">Програмата<br><em>за двата дни</em></h2>
+  <p class="obu-lead reveal">Подбрала съм програмата така, че всеки да си отговори на въпросите, които наистина касаят една личност. В този основен курс съм включила всичко, което се среща всеки ден и което ще ползваш още на следващия ден.</p>
+  <div class="obu-days">
+    <div class="obu-day reveal">
+      <div class="obu-day-head">
+        <div class="obu-day-num">01</div>
+        <div>
+          <div class="obu-day-title">Ден първи</div>
+          <span class="obu-day-date">Събота, 3 октомври · 10:00–13:30</span>
+        </div>
+      </div>
+      <ul>
+        <li>Важните основи на метода - от какво тръгваме</li>
+        <li><strong>Вътрешният човек и социалният човек</strong> - двете лица, които всеки от нас носи</li>
+        <li><strong>Трите зони на лицето</strong> - как мислиш, как усещаш, как действаш</li>
+        <li>Рамката на мислене, изписана в лицето</li>
+        <li><strong>Чело</strong> - как човек обработва информация</li>
+        <li><strong>Вежди</strong> - чертите, които ти казват как да говориш с човека срещу теб</li>
+      </ul>
+    </div>
+    <div class="obu-day reveal">
+      <div class="obu-day-head">
+        <div class="obu-day-num">02</div>
+        <div>
+          <div class="obu-day-title">Ден втори</div>
+          <span class="obu-day-date">Неделя, 4 октомври · 10:00–13:30</span>
+        </div>
+      </div>
+      <ul>
+        <li><strong>Вежди</strong> - колко време му трябва на човека, за да реши</li>
+        <li><strong>Очи</strong> - как човек възприема и филтрира света</li>
+        <li><strong>Нос</strong> - как стои в света</li>
+        <li><strong>Уста и устни</strong> - как се изразява</li>
+        <li><strong>Брадичка</strong> - как действа</li>
+        <li>Практика: четем лица заедно</li>
+      </ul>
+    </div>
+  </div>
+  <p class="obu-note reveal">Ако до днес не знаеш нищо за разчитането на лица, след този курс ще можеш да си отговориш на основни въпроси за поведението на хората около теб - и най-важното, за себе си.</p>
+</section>
+
+<!-- ═══ СЕКЦИЯ 7 · За кого е ═══ -->
+<section id="obu-fit">
+  <div class="section-tag reveal">Честно казано</div>
+  <h2 class="reveal">За кого е това обучение<br><em>и за кого не е</em></h2>
+  <div class="obu-fit-grid">
+    <div class="obu-fit-col yes reveal">
+      <h3><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>За теб е, ако</h3>
+      <ul>
+        <li>Работиш с хора - мениджър, търговец, преговарящ, учител;</li>
+        <li>Общуваш с различни характери и искаш да ти е по-лесно;</li>
+        <li>Си родител и ти се иска да разбираш детето си по-добре;</li>
+        <li>Просто ти е интересно защо хората са толкова различни.</li>
+      </ul>
+      <div class="obu-fit-foot">Предварителни знания не са нужни. Започваме от нулата и всичко се упражнява на място.</div>
+    </div>
+    <div class="obu-fit-col no reveal">
+      <h3><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Не е за теб, ако</h3>
+      <ul>
+        <li>Търсиш предсказания за бъдещето - тук няма такива;</li>
+        <li>Искаш инструмент, с който да въздействаш на хората - тук няма да го намериш;</li>
+        <li>Очакваш само дълга лекция.</li>
+      </ul>
+      <div class="obu-fit-foot">Носи си телефона зареден - ще ти трябва, за да видиш себе си. Естественият процес на самопознание идва точно докато разбираш другите.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 8 · Струва ли си ═══ -->
+<section id="obu-worth">
+  <div class="obu-dark-head">
+    <div class="section-tag reveal">Струва ли си</div>
+    <h2 class="reveal">Ще ти дам няколко начина<br><em>да го погледнеш</em></h2>
+  </div>
+  <p class="obu-worth-lead reveal">И ще те оставя сам да решиш.</p>
+  <div class="obu-scales">
+    <div class="obu-scale reveal">
+      <h3>Какво получаваш</h3>
+      <ul>
+        <li>Два дни - седем часа жива работа в малка група.</li>
+        <li>Умение да четеш всяко лице, което видиш оттук нататък.</li>
+        <li>Възможност сам да си отговаряш на въпроси, които досега са оставали без отговор.</li>
+        <li>Проверка още същия ден - първо върху собственото си лице, после върху хората, които вече познаваш.</li>
+      </ul>
+    </div>
+    <div class="obu-scale reveal">
+      <h3>Какво ти струва да сгрешиш подхода</h3>
+      <ul>
+        <li>Три месеца работа с колега, когото си разбрал погрешно.</li>
+        <li>Клиент, който се е отдръпнал, защото си го притиснал в неподходящия момент.</li>
+        <li>Разговор с дете, който е тръгнал накриво, защото си му дал факти, когато му е трябвало усещане.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="obu-worth-close reveal">
+    <p>Това не е информация, а умение. Информацията остарява и се забравя. Умението остава и работи с всеки човек, когото срещнеш.</p>
+    <p>Надграждащите модули - как се четат дълготрайни емоции по лицето, темперамент и взаимодействие между хората - са отделни и напълно по избор. Този курс е завършен сам по себе си.</p>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 9 · Какво получаваш ═══ -->
+<section id="obu-includes">
+  <div class="section-tag reveal">Включено в цената</div>
+  <h2 class="reveal">Какво друго<br><em>получаваш</em></h2>
+  <div class="obu-includes">
+    <div class="obu-include reveal">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <div><strong>Две сутрини на живо във Варна</strong><span>Седем часа работа в малка група.</span></div>
+    </div>
+    <div class="obu-include reveal">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <div><strong>Практика през целите два дни</strong><span>Гледаме, разпознаваме и се упражняваме на място.</span></div>
+    </div>
+    <div class="obu-include reveal">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <div><strong>PDF материали след обучението</strong><span>Всяка черта с едно изречение, вместо справочник.</span></div>
+    </div>
+    <div class="obu-include reveal">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <div><strong>Онлайн среща около месец по-късно</strong><span>Отговарям на въпросите от практиката ви и четем лице заедно.</span></div>
+    </div>
+  </div>
+  <div class="obu-bonus reveal">
+    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <div>
+      <div class="obu-bonus-tag">За първите шест</div>
+      <h3>Личен мини-прочит по селфи още преди обучението</h3>
+      <p>Първите шест, които запазят мястото си, получават личен мини-прочит на една черта. Изпращаш ми една снимка, а аз ти връщам съобщение с водещата черта на лицето ти и какво означава тя за теб.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 10 · Какво няма да правим ═══ -->
+<section id="obu-boundaries">
+  <div class="section-tag reveal">Границите</div>
+  <h2 class="reveal">Какво няма<br><em>да правим</em></h2>
+  <div class="obu-boundaries">
+    <div class="obu-boundary reveal">
+      <h3>Няма да гадаем</h3>
+      <p>Няма да предсказваме бъдеще и няма да търсим знаци. Работим с устойчиви модели на поведение.</p>
+    </div>
+    <div class="obu-boundary reveal">
+      <h3>Няма да съдим хора</h3>
+      <p>Всяка черта е информация как да подходиш и да комуникираш с човека срещу теб.</p>
+    </div>
+    <div class="obu-boundary reveal">
+      <h3>Няма публични разчитания</h3>
+      <p>Освен ако някой сам не пожелае спонтанно. Подготвената практика е от друго естество и никой няма да бъде поставен в неудобно положение.</p>
+    </div>
+  </div>
+  <p class="obu-boundaries-close reveal">Това е знание за разбиране и общуване.</p>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ═══ СЕКЦИЯ 11 · Коя съм аз ═══ -->
+<section id="obu-about">
+  <div class="section-tag reveal">Водещ</div>
+  <h2 class="reveal">Коя съм аз<br><em>и защо правя това</em></h2>
+  <div class="obu-about-grid">
+    <div class="obu-about-img reveal">
+      <picture>
+        <source srcset="img/opt/elina.webp" type="image/webp">
+        <img src="img/elina.jpg" alt="Елина Божимирова — сертифициран Face Reader, Psychosomatic Therapy College, Австралия" loading="lazy">
+      </picture>
+    </div>
+    <div class="obu-about-body reveal">
+      <p>Казвам се Елина. Петнайсет години бях в корпоративния свят и през цялото време гледах хората - интересуваше ме онова, което стои отвъд думите им. Оказа се, че често познавам неща за човека срещу мен, без да зная защо.</p>
+      <p>Преди няколко години имах силно лично преживяване, което ме отведе на операционната маса и преобърна живота ми. Опитах да продължа постарому, но тялото ми показа, че вече не съм същата, и се озовах повече време у дома. Във времето, в което можех, учех.</p>
+      <p>Записах се в школи по разчитане на лица. Продължих да търся по-дълбоко и по-конкретно: минах през обучение при австралийската ми учителка и след това се сертифицирах към Psychosomatic Therapy College в Австралия като Face Reader. Оттогава не съм спирала да уча - западна школа, китайска школа, книги и материали от доказани фейс рийдъри по цял свят.</p>
+      <p>Правя лични консултации, които влизат в дълбочина за всеки един. Това обучение е онова от тях, което е най-практично: чертите, които се срещат всеки ден и които променят разговорите ти.</p>
+      <div class="obu-credentials">
+        <span class="obu-cred">Сертифициран Face Reader</span>
+        <span class="obu-cred">Psychosomatic Therapy College, Австралия</span>
+        <span class="obu-cred">250+ консултации</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 12 · Отзиви ═══ -->
+<section id="obu-reviews">
+  <div class="section-tag reveal">Отзиви</div>
+  <h2 class="reveal">Какво казват хората<br><em>след срещите с мен</em></h2>
+  <p class="obu-lead reveal">Обучението на 3 и 4 октомври е първо по рода си. Отзивите по-долу са от личните консултации - от същия метод и същия начин на работа.</p>
+  <div class="obu-reviews">
+    <figure class="obu-review reveal">
+      <div class="obu-review-stars" aria-label="5 от 5 звезди">★★★★★</div>
+      <blockquote>„Срещите с Ели винаги са повече от приятни по своему. Тя ми даде възможност да погледна мен през още една перспектива. Сякаш да се кача няколко стъпалца по-нависоко и малко по-осъзнато да видя мен в личен и професионален план. Изненадващо е колко много неща всъщност са изписани на лицето ни.“</blockquote>
+      <figcaption><span class="obu-review-avatar">Р</span><span class="obu-review-name">Радостина Георгиева</span></figcaption>
+    </figure>
+    <figure class="obu-review reveal">
+      <div class="obu-review-stars" aria-label="5 от 5 звезди">★★★★★</div>
+      <blockquote>„Много интересен метод за самопознание. Поизправих си гръбнака с 2-3 сантиметра след тази среща :)“</blockquote>
+      <figcaption><span class="obu-review-avatar">Н</span><span class="obu-review-name">Невена Арнаудова</span></figcaption>
+    </figure>
+    <figure class="obu-review reveal">
+      <div class="obu-review-stars" aria-label="5 от 5 звезди">★★★★★</div>
+      <blockquote>„Разговорът ми с Елина беше много вълнуващо и полезно преживяване. Анализът и разчитането на чертите на лицето ми дадоха множество теми за размисъл и разкриха повече за моята същност.“</blockquote>
+      <figcaption><span class="obu-review-avatar">Н</span><span class="obu-review-name">Никола Станчев</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 13 · Въпроси ═══ -->
+<section id="obu-faq">
+  <div class="section-tag reveal">Въпроси</div>
+  <h2 class="reveal">Това, което хората<br><em>питат най-често</em></h2>
+  <div class="obu-faq-list">
+    <details class="obu-faq-item reveal">
+      <summary>Това гадаене ли е?</summary>
+      <div class="obu-faq-answer">Не. Работим по метод, който чете дълготрайни модели на поведение - как човек мисли, решава и реагира. Тенденции, не съдби.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Нужни ли са предварителни знания?</summary>
+      <div class="obu-faq-answer">Не. Започваме от основите и всичко се упражнява на място.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Ами ако не успея да видя чертите?</summary>
+      <div class="obu-faq-answer">Точно затова има практика. Знанието какво означава една черта е лесната част; виждането се тренира - и точно него тренираме през двата дни.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Достатъчни ли са две сутрини?</summary>
+      <div class="obu-faq-answer">За основите - да. Подбрала съм чертите, които се срещат най-често и носят най-много информация. Няма да излезеш експерт, но ще излезеш човек, който гледа лице и вижда нещо конкретно.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Ще четем ли лицата на присъстващите пред всички?</summary>
+      <div class="obu-faq-answer">Не, освен ако някой сам не пожелае спонтанно. Никой няма да бъде поставен в неудобно положение.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Как се записвам и как плащам?</summary>
+      <div class="obu-faq-answer">Пишеш ми през формата по-долу или на лично съобщение. Отговарям до 24 часа с детайлите за плащане - по банка или през Revolut. Мястото е запазено след плащане.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Ами ако се наложи да се откажа?</summary>
+      <div class="obu-faq-answer">Отказ до 7 дни от плащането - връщам цялата сума без въпроси. След 30-ти септември мястото може да се прехвърли на друг човек по твой избор. При отмяна от моя страна също връщам цялата сума.</div>
+    </details>
+    <details class="obu-faq-item reveal">
+      <summary>Ще има ли следващо ниво?</summary>
+      <div class="obu-faq-answer">Да. За завършилите този курс следва по-кратка среща за това как се четат комбинациите от черти и как по формата на лицето да разбираме взаимодействието между двама души. Обявявам я на място. Подготвя се и второ ниво, в което акцентът е върху емоционалния свят, който се вижда в чертите, и какво носи той на човека в ежедневието му.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 14 · Практично ═══ -->
+<section id="obu-practical">
+  <div class="section-tag reveal">Практично</div>
+  <h2 class="reveal">Дата, място<br><em>и всичко останало</em></h2>
+  <div class="obu-practical">
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Кога</div>
+      <div class="obu-pract-value">3 и 4 октомври 2026<small>Събота и неделя, 10:00–13:30 и в двата дни</small></div>
+    </div>
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Къде</div>
+      <div class="obu-pract-value">Campus 90, Варна<small>бул. „Цар Освободител“ 90 · <a href="https://www.google.com/maps/search/?api=1&query=Campus+90%2C+%D0%B1%D1%83%D0%BB.+%D0%A6%D0%B0%D1%80+%D0%9E%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB+90%2C+%D0%92%D0%B0%D1%80%D0%BD%D0%B0" target="_blank" rel="noopener" style="color:var(--gold)">виж на картата</a><br>Безплатен паркинг за 2 часа в хотела</small></div>
+    </div>
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Цена</div>
+      <div class="obu-pract-value">120 € на човек<br>210 € за двама<br>
+        <!--<div class="obu-price-row"><span class="obu-price">120 €</span></div>-->
+        <small>За двата дни, с включени материали</small>
+      </div>
+    </div>
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Група</div>
+      <div class="obu-pract-value">Малка група за обучение<small>Местата се запазват по реда на плащането</small></div>
+    </div>
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Какво да носиш</div>
+      <div class="obu-pract-value">Телефона си зареден, тефтер за писане<small>И желание да гледаш хората по друг начин</small></div>
+    </div>
+    <div class="obu-pract reveal">
+      <div class="obu-pract-label">Отказ</div>
+      <div class="obu-pract-value">Отказ до 7 дни от плащането не по-късно от 30 септември<small>Връщам цялата сума без въпроси</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ СЕКЦИЯ 15 · Записване ═══ -->
+<section id="obu-signup">
+  <div class="obu-dark-head" style="text-align:center;max-width:760px;margin:0 auto">
+    <div class="section-tag reveal" style="justify-content:center">Записване</div>
+    <h2 class="reveal">Запази мястото си<br><em>за 3 и 4 октомври</em></h2>
+  </div>
+  <div class="obu-signup-grid">
+    <div class="obu-signup-info reveal">
+      <p>Пиши ми през формата и ти отговарям до 24 часа с детайлите за плащане - по банка или през Revolut. Мястото е запазено след плащането. Пиши предварително в случай, че желаеш фактура.</p>
+      <ul class="obu-signup-points">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Първите шест получават личен мини-прочит на една черта още преди обучението.</span></li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Отказ до 7 дни от плащането (до 30 септември) - връщам цялата сума без въпроси. След 30-ти септември мястото може да се прехвърли на друг човек по твой избор.</span></li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Местата са ограничени.</span></li>
+      </ul>
+      <div class="obu-signup-alt">
+        Предпочиташ директно? Пиши ми на <a href="mailto:yourfacetalk@gmail.com?subject=Записване%20за%20обучение%203%20и%204%20октомври">yourfacetalk@gmail.com</a>,
+        на <a href="https://m.me/61551052808065" target="_blank" rel="noopener">лично съобщение в Messenger</a>
+        или се обади на <a href="tel:+359888773076">+359 888 773 076</a>.
+      </div>
+    </div>
+
+    <div class="obu-form-card reveal">
+      <h3>Запази място</h3>
+      <p>Обучение по разчитане на лица · 3 и 4 октомври 2026 · Campus 90, бул. „Цар Освободител“ 90, Варна</p>
+      <form id="obuForm" action="https://formspree.io/f/xaqajaoz" method="POST" onsubmit="handleObuSubmit(event)">
+        <input type="hidden" name="_subject" value="🎓 Записване за обучение 3–4 октомври">
+        <input type="hidden" name="service" value="Обучение 3–4 октомври 2026, Варна">
+        <div class="obu-fg"><label for="obu-name">Вашето име</label><input type="text" id="obu-name" name="name" placeholder="Иван Иванов" required></div>
+        <div class="obu-fg"><label for="obu-email">Имейл</label><input type="email" id="obu-email" name="email" placeholder="ivan@email.com" required></div>
+        <div class="obu-fg"><label for="obu-phone">Телефон</label><input type="tel" id="obu-phone" name="phone" placeholder="+359 88 123 4567"></div>
+        <div class="obu-fg"><label for="obu-message">Въпрос или бележка (по желание)</label><textarea id="obu-message" name="message" placeholder="Ако има нещо, което искаш да ме питаш преди записването..."></textarea></div>
+        <label class="obu-consent"><input type="checkbox" name="consent" value="Да" required><span>Съгласен съм личните ми данни да бъдат използвани за връзка по това запитване. <a href="privacy-policy.html" target="_blank" rel="noopener">Политика за поверителност</a>.</span></label>
+        <button type="submit" class="btn-primary" id="obuSubmitBtn">Запази място</button>
+        <div class="obu-msg ok" id="obuSuccess">✓ Благодарим! Получих запитването ти и ще ти пиша до 24 часа с детайлите за плащане.</div>
+        <div class="obu-msg err" id="obuError">Нещо се обърка. Моля, опитай отново или ми пиши директно на <a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a>.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-korporativni.html">Бизнес услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="obuchenie-facereading.html">Обучение</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/elina-bozhimirova-3360a9301/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" rel="noopener" class="fsoc" aria-label="TikTok"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ Структурирани данни за Google и AI агенти ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://yourfacetalk.com/#organization",
+      "name": "YourFaceTalk",
+      "url": "https://yourfacetalk.com/",
+      "email": "yourfacetalk@gmail.com",
+      "telephone": "+359888773076",
+      "logo": "https://yourfacetalk.com/img/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61551052808065",
+        "https://www.instagram.com/kakvo_kazva_liceto_ti/",
+        "https://www.linkedin.com/in/elina-bozhimirova-3360a9301/",
+        "https://www.tiktok.com/@your_face_talk"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yourfacetalk.com/#elina",
+      "name": "Елина Божимирова",
+      "jobTitle": "Сертифициран Face Reader",
+      "email": "yourfacetalk@gmail.com",
+      "url": "https://yourfacetalk.com/za-nas.html",
+      "image": "https://yourfacetalk.com/img/elina.jpg",
+      "worksFor": { "@id": "https://yourfacetalk.com/#organization" },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Psychosomatic Therapy College",
+        "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+      },
+      "knowsAbout": ["Разчитане на лица", "Face reading", "Психосоматика", "Невербална комуникация"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yourfacetalk.com/obuchenie-facereading.html#webpage",
+      "url": "https://yourfacetalk.com/obuchenie-facereading.html",
+      "name": "Обучение по разчитане на лица — Варна, 3 и 4 октомври 2026",
+      "description": "Двудневно обучение на живо по разчитане на лица във Варна. Западна школа, малка група до 20 души, практика на място.",
+      "inLanguage": "bg-BG",
+      "isPartOf": { "@type": "WebSite", "@id": "https://yourfacetalk.com/#website", "url": "https://yourfacetalk.com/", "name": "YourFaceTalk" },
+      "primaryImageOfPage": "https://yourfacetalk.com/img/obuchenie-banner.jpg"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://yourfacetalk.com/obuchenie-facereading.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://yourfacetalk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://yourfacetalk.com/uslugi.html" },
+        { "@type": "ListItem", "position": 3, "name": "Обучение по разчитане на лица", "item": "https://yourfacetalk.com/obuchenie-facereading.html" }
+      ]
+    },
+    {
+      "@type": "EducationEvent",
+      "@id": "https://yourfacetalk.com/obuchenie-facereading.html#event",
+      "name": "Разбери човека срещу теб - обучение по разчитане на лица",
+      "description": "Двудневно обучение на живо по разчитане на лица по западната школа. Трите зони на лицето, чело, вежди, очи, нос, уста и брадичка - с практика на място в малка група.",
+      "url": "https://yourfacetalk.com/obuchenie-facereading.html",
+      "image": "https://yourfacetalk.com/img/obuchenie-banner.jpg",
+      "inLanguage": "bg-BG",
+      "startDate": "2026-10-03T10:00:00+03:00",
+      "endDate": "2026-10-04T13:30:00+03:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "maximumAttendeeCapacity": 20,
+      "isAccessibleForFree": false,
+      "location": {
+        "@type": "Place",
+        "name": "Campus 90",
+        "address": { "@type": "PostalAddress", "streetAddress": "бул. Цар Освободител 90", "addressLocality": "Варна", "postalCode": "9002", "addressCountry": "BG" }
+      },
+      "organizer": { "@id": "https://yourfacetalk.com/#organization" },
+      "performer": { "@id": "https://yourfacetalk.com/#elina" },
+      "teaches": [
+        "Трите зони на лицето — мислене, усещане, действие",
+        "Как човек обработва информация (чело)",
+        "Как да говориш с човека срещу теб (вежди)",
+        "Как човек възприема света (очи)",
+        "Как човек се изразява и действа (уста, брадичка)"
+      ],
+      "audience": { "@type": "Audience", "audienceType": "Мениджъри, търговци, преговарящи, учители, родители и всеки, който работи с хора" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://yourfacetalk.com/obuchenie-facereading.html#obu-signup",
+        "price": "120",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-08-19T00:00:00+03:00",
+        "category": "Обучение"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yourfacetalk.com/obuchenie-facereading.html#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Това гадаене ли е?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Работим по метод, който чете дълготрайни модели на поведение — как човек мисли, решава и реагира. Тенденции, не съдби." } },
+        { "@type": "Question", "name": "Нужни ли са предварителни знания?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Започваме от основите и всичко се упражнява на място." } },
+        { "@type": "Question", "name": "Ами ако не успея да видя чертите?", "acceptedAnswer": { "@type": "Answer", "text": "Точно затова има практика. Знанието какво означава една черта е лесната част; виждането се тренира — и точно него тренираме през двата дни." } },
+        { "@type": "Question", "name": "Достатъчни ли са два дни?", "acceptedAnswer": { "@type": "Answer", "text": "За основите — да. Подбрани са чертите, които се срещат най-често и носят най-много информация. Няма да излезеш експерт, но ще излезеш човек, който гледа лице и вижда нещо конкретно." } },
+        { "@type": "Question", "name": "Ще четем ли лицата на присъстващите пред всички?", "acceptedAnswer": { "@type": "Answer", "text": "Не, освен ако някой сам не пожелае спонтанно. Никой няма да бъде поставен в неудобно положение." } },
+        { "@type": "Question", "name": "Как се записвам и как плащам?", "acceptedAnswer": { "@type": "Answer", "text": "През формата на страницата или на лично съобщение. Отговор до 24 часа с детайлите за плащане — по банка или през Revolut. Мястото е запазено след плащане." } },
+        { "@type": "Question", "name": "Ами ако се наложи да се откажа?", "acceptedAnswer": { "@type": "Answer", "text": "Отказ до 7 дни от плащането - връща се цялата сума без въпроси. След 30-ти септември мястото може да се прехвърли на друг човек по твой избор. При отмяна от страна на организатора също се връща цялата сума." } },
+        { "@type": "Question", "name": "Ще има ли следващо ниво?", "acceptedAnswer": { "@type": "Answer", "text": "Да. За завършилите този курс следва по-кратка среща за комбинациите от черти и взаимодействието между двама души. Подготвя се и второ ниво с акцент върху емоционалния свят, който се вижда в чертите." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="app.js?v=20260719"></script>
+<script>
+/* Записване за обучението — Formspree + авто-отговор (EmailJS) */
+async function handleObuSubmit(e) {
+  e.preventDefault();
+  var btn = document.getElementById('obuSubmitBtn');
+  var ok = document.getElementById('obuSuccess');
+  var err = document.getElementById('obuError');
+  ok.style.display = 'none';
+  err.style.display = 'none';
+  btn.textContent = 'Изпращане...';
+  btn.disabled = true;
+  var fd = new FormData(e.target);
+  var name = (fd.get('name') || '').toString().trim();
+  var email = (fd.get('email') || '').toString().trim();
+  try {
+    var res = await fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+    if (res.ok) {
+      ok.style.display = 'block';
+      e.target.reset();
+      if (window.sendAutoReply) {
+        window.sendAutoReply(name, email,
+          'Записване за обучението 3 и 4 октомври — YourFaceTalk',
+          (name ? 'Здравейте, ' + name : 'Здравейте') + ',\n\n' +
+          'Благодаря за заявката за обучението „Разбери човека срещу теб“ на 3 и 4 октомври 2026 в Campus 90, бул. „Цар Освободител“ 90, Варна.\n\n' +
+          'Ще Ви пиша лично до 24 часа с детайлите за плащане (по банка или през Revolut). Мястото се счита за запазено след плащане.\n\n' +
+          'Ако имате въпрос дотогава, просто отговорете на този имейл.\n\n' +
+          'Поздрави,\nЕлина — YourFaceTalk\nyourfacetalk@gmail.com');
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { event_category: 'obuchenie', event_label: 'Обучение 3-4 октомври', currency: 'EUR', value: 120 });
+      }
+    } else {
+      err.style.display = 'block';
+    }
+  } catch (ex) {
+    err.style.display = 'block';
+  }
+  btn.textContent = 'Запази място';
+  btn.disabled = false;
+}
+</script>
+</body>
+</html>
