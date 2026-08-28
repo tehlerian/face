@@ -229,6 +229,12 @@ window.silktideConsentManager.init({
   .lp-form-card h2 em,.lp-form-card h3 em{font-style:italic;color:var(--gold)}
   .lp-form-note{color:var(--muted);font-size:0.88rem;line-height:1.65;margin-bottom:1.4rem}
   .lp-form-card .form-group{margin-bottom:0.9rem}
+  /* Капан за ботове. НЕ използвай display:none или visibility:hidden —
+     по-умните ботове ги разпознават и прескачат полето. Изнасянето извън
+     екрана изглежда като истинско поле за тях, а е невидимо за хората. */
+  .lp-trap{
+    position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+  }
   .lp-consent{display:flex;gap:0.65rem;align-items:flex-start;margin:0.4rem 0 1.3rem}
   .lp-consent input{
     width:17px;height:17px;margin-top:2px;flex-shrink:0;accent-color:var(--gold);cursor:pointer;
@@ -431,7 +437,7 @@ window.silktideConsentManager.init({
   <div class="lp-form-card is-standalone" id="lp-form-top" style="margin-top:3.2rem">
     <div class="lp-form-body">
       <h2>Изпрати ми <em>наръчника</em></h2>
-      <p class="lp-form-note">Изпращам ти PDF-а веднага след като потвърдиш адреса си.</p>
+      <p class="lp-form-note">Остави име и имейл — изпращам ти PDF-а веднага.</p>
       <form class="lp-form" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -442,6 +448,12 @@ window.silktideConsentManager.init({
             <label for="lpEmail1">Имейл</label>
             <input type="email" id="lpEmail1" name="email" placeholder="ivan@email.com" autocomplete="email" required>
           </div>
+        </div>
+        <!-- Капан за ботове. Хората не го виждат и не стигат до него с Tab.
+             Ботовете попълват всяко поле — ако е пълно, заявката се изхвърля. -->
+        <div class="lp-trap" aria-hidden="true">
+          <label for="lpWebsite1">Не попълвай това поле</label>
+          <input type="text" id="lpWebsite1" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div class="lp-consent">
           <input type="checkbox" id="lpConsent1" required>
@@ -462,7 +474,7 @@ window.silktideConsentManager.init({
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <h3>Готово — <em>провери пощата си</em></h3>
-      <p>Изпратих ти имейл за потвърждение. Един клик в него и наръчникът тръгва към теб.</p>
+      <p>Наръчникът вече пътува към теб. Писмото пристига до минута.</p>
       <ul class="lp-steps-mini">
         <li>Не го виждаш? Погледни в <strong>Промоции</strong> или <strong>Спам</strong>.</li>
         <li>Добави <strong>yourfacetalk@gmail.com</strong> в контактите си, за да не се губят следващите писма.</li>
@@ -657,7 +669,7 @@ window.silktideConsentManager.init({
   <div class="lp-form-card is-standalone" style="text-align:left">
     <div class="lp-form-body">
       <h3>Изпрати ми <em>наръчника</em></h3>
-      <p class="lp-form-note">Име, имейл и готово. PDF-ът пристига веднага след потвърждението.</p>
+      <p class="lp-form-note">Име, имейл и готово. PDF-ът пристига до минута.</p>
       <form class="lp-form" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -668,6 +680,11 @@ window.silktideConsentManager.init({
             <label for="lpEmail2">Имейл</label>
             <input type="email" id="lpEmail2" name="email" placeholder="ivan@email.com" autocomplete="email" required>
           </div>
+        </div>
+        <!-- Капан за ботове — виж коментара при първата форма. -->
+        <div class="lp-trap" aria-hidden="true">
+          <label for="lpWebsite2">Не попълвай това поле</label>
+          <input type="text" id="lpWebsite2" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div class="lp-consent">
           <input type="checkbox" id="lpConsent2" required>
@@ -686,7 +703,7 @@ window.silktideConsentManager.init({
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <h3>Готово — <em>провери пощата си</em></h3>
-      <p>Изпратих ти имейл за потвърждение. Един клик в него и наръчникът тръгва към теб.</p>
+      <p>Наръчникът вече пътува към теб. Писмото пристига до минута.</p>
       <ul class="lp-steps-mini">
         <li>Не го виждаш? Погледни в <strong>Промоции</strong> или <strong>Спам</strong>.</li>
         <li>Добави <strong>yourfacetalk@gmail.com</strong> в контактите си.</li>
@@ -856,8 +873,8 @@ window.silktideConsentManager.init({
    Formspree адрес — тоест НИЩО не се чупи, лийдовете идват по имейл.
    ═══════════════════════════════════════════════════════════════ */
 const ML_CONFIG = {
-  accountId: "",   // напр. "1234567"
-  formId:    "",   // напр. "89012345"
+  accountId: "2476126",   // напр. "1234567"
+  formId:    "196683693312444342",   // напр. "89012345"
   fallbackEndpoint: "https://formspree.io/f/xlgyzpvv"  // резервен вариант
 };
 
@@ -877,7 +894,22 @@ const ML_CONFIG = {
     const nameEl  = form.querySelector('input[name="name"]');
     const emailEl = form.querySelector('input[name="email"]');
     const okEl    = form.querySelector('input[type="checkbox"]');
+    const trapEl  = form.querySelector('input[name="website"]');
     const btnText = btn.textContent;
+    const openedAt = Date.now();
+
+    /* ── Защита от ботове (заместваме reCAPTCHA, която не важи тук,
+       защото формата праща директно към endpoint-а на MailerLite) ──
+       1) Капанът: скритото поле трябва да остане празно. Ботовете попълват
+          всяко поле, което намерят в HTML-а.
+       2) Времето: човек не въвежда име, имейл и чекбокс за под 3 секунди.
+       При засичане показваме „успех“, но НЕ изпращаме нищо и НЕ броим лийд —
+       ботът си мисли, че е минал, и не опитва отново. */
+    function looksLikeBot(){
+      if (trapEl && trapEl.value.trim() !== '') return true;
+      if (Date.now() - openedAt < 3000) return true;
+      return false;
+    }
 
     function fail(msg){
       errBox.textContent = msg;
@@ -886,11 +918,11 @@ const ML_CONFIG = {
       btn.textContent = btnText;
     }
 
-    function succeed(){
+    function succeed(countLead){
       body.style.display = 'none';
       thanks.classList.add('show');
       thanks.scrollIntoView({ behavior:'smooth', block:'center' });
-      if (window.gtag) {
+      if (countLead && window.gtag) {
         gtag('event', 'generate_lead', {
           event_category: 'lead_magnet',
           event_label: 'Зони в лицето — наръчник',
@@ -910,6 +942,9 @@ const ML_CONFIG = {
       if (!name)                { return fail('Моля, въведи името си.'); }
       if (!EMAIL_RE.test(email)){ return fail('Моля, въведи валиден имейл адрес.'); }
       if (!okEl.checked)        { return fail('Моля, отбележи съгласието, за да продължим.'); }
+
+      /* Тих отказ — ботът вижда „успех“, но нищо не тръгва към MailerLite. */
+      if (looksLikeBot()) { return succeed(false); }
 
       btn.disabled = true;
       btn.textContent = 'Изпращане...';
@@ -932,7 +967,7 @@ const ML_CONFIG = {
         });
         document.body.appendChild(relay);
         relay.submit();
-        setTimeout(function(){ relay.remove(); succeed(); }, 600);
+        setTimeout(function(){ relay.remove(); succeed(true); }, 600);
       } else {
         /* Резервен вариант — Formspree */
         fetch(ML_CONFIG.fallbackEndpoint, {
@@ -945,7 +980,7 @@ const ML_CONFIG = {
             _subject: 'Нов лийд — наръчник „Зони в лицето“'
           })
         }).then(function(r){
-          if (r.ok) { succeed(); }
+          if (r.ok) { succeed(true); }
           else { fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com'); }
         }).catch(function(){
           fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com');
