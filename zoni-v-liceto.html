@@ -301,6 +301,8 @@ window.silktideConsentManager.init({
   /* Как става */
   #lp-how{background:var(--bg)}
   .lp-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  /* Две стъпки — по-тясна мрежа и центрирана, за да не се разтягат картите */
+  .lp-steps-2{grid-template-columns:repeat(2,1fr);max-width:840px;margin-left:auto;margin-right:auto}
   .lp-step{position:relative;padding:1.9rem 1.7rem;background:var(--surface);border:1px solid var(--border)}
   .lp-step-num{
     position:absolute;top:-14px;left:1.7rem;width:34px;height:34px;background:var(--gold);color:#fff;
@@ -533,9 +535,9 @@ window.silktideConsentManager.init({
 <section id="lp-how">
   <div class="lp-section-head reveal">
     <div class="section-tag">Как става</div>
-    <h2>Три стъпки,<br><em>по-малко от минута</em></h2>
+    <h2>Две стъпки,<br><em>по-малко от минута</em></h2>
   </div>
-  <div class="lp-steps">
+  <div class="lp-steps lp-steps-2">
     <div class="lp-step reveal">
       <div class="lp-step-num">1</div>
       <h3>Оставяш име и имейл</h3>
@@ -543,13 +545,8 @@ window.silktideConsentManager.init({
     </div>
     <div class="lp-step reveal">
       <div class="lp-step-num">2</div>
-      <h3>Потвърждаваш адреса</h3>
-      <p>Пристига кратък имейл с един бутон. Кликваш — и вече си вътре.</p>
-    </div>
-    <div class="lp-step reveal">
-      <div class="lp-step-num">3</div>
       <h3>Наръчникът пристига</h3>
-      <p>PDF-ът идва веднага в пощата ти. Твой е — четеш го когато и където поискаш.</p>
+      <p>PDF-ът идва в пощата ти до минута. Твой е — четеш го когато и където поискаш.</p>
     </div>
   </div>
 </section>
