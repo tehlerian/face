@@ -125,6 +125,43 @@ window.silktideConsentManager.init({
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="styles.css?v=20260818">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+/* ── ПРЕДСТОЯЩО ОБУЧЕНИЕ (3 и 4 октомври 2026) ─────────────────
+   Временна секция. След събитието се маха цялата <section id="promo">
+   заедно с този <style> блок и следващия .gold-divider.           */
+#promo{background:var(--teal);padding:4.5rem 4rem}
+.promo-panel{display:grid;grid-template-columns:1.25fr 0.75fr;gap:3.5rem;align-items:center;max-width:1180px;margin:0 auto}
+.promo-kicker{display:inline-flex;align-items:center;gap:0.7rem;font-size:0.74rem;letter-spacing:0.22em;
+  text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.1rem}
+.promo-kicker::before{content:"";width:24px;height:1px;background:var(--gold-rich)}
+.promo-panel h2{color:#faf8f4;font-size:clamp(1.9rem,3vw,2.8rem);margin-bottom:1rem}
+.promo-panel h2 em{color:var(--gold-rich)}
+.promo-panel > div > p{color:rgba(250,248,244,0.75);line-height:1.9;font-size:1rem;max-width:560px}
+.promo-meta{display:flex;flex-wrap:wrap;gap:0.6rem;margin:1.8rem 0}
+.promo-chip{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(201,168,76,0.35);
+  background:rgba(250,248,244,0.05);color:rgba(250,248,244,0.85);font-size:0.82rem;padding:0.5rem 0.9rem}
+.promo-chip svg{width:15px;height:15px;stroke:var(--gold-rich);fill:none;stroke-width:1.6;flex-shrink:0}
+.promo-price{font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;color:var(--gold-rich);line-height:1;margin-bottom:1.4rem}
+.promo-price small{display:block;font-family:"DM Sans",sans-serif;font-size:0.72rem;letter-spacing:0.12em;
+  text-transform:uppercase;color:rgba(250,248,244,0.55);margin-top:0.35rem}
+.promo-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.promo-img{position:relative}
+.promo-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:var(--bg2);
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
+.promo-badge{position:absolute;bottom:-1.1rem;left:-1.1rem;background:var(--gold);color:#fff;padding:0.9rem 1.2rem;text-align:center;
+  border:1px solid rgba(250,248,244,0.5);
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.promo-badge b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:600;line-height:1}
+.promo-badge span{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase}
+@media(max-width:1000px){#promo{padding:3.5rem 2rem}
+  .promo-panel{grid-template-columns:1fr;gap:3rem}
+  .promo-img{max-width:320px}}
+@media(max-width:768px){#promo{padding:3rem 1.5rem}
+  .promo-actions{flex-direction:column;align-items:stretch}
+  .promo-actions a{text-align:center}
+  .promo-img{max-width:100%}
+  .promo-badge{left:0;bottom:-1rem}}
+</style>
 </head>
 <body>
 <script src="blog-data.js"></script>
@@ -183,6 +220,37 @@ window.silktideConsentManager.init({
   </div>
   <a href="#services" class="hero-scroll" aria-label="Надолу"><span class="mouse"></span>Разгледай</a>
 </section>
+
+
+<!-- ═══ ПРЕДСТОЯЩО ОБУЧЕНИЕ · маха се след 4 октомври 2026 ═══ -->
+<section id="promo">
+  <div class="promo-panel reveal">
+    <div>
+      <div class="promo-kicker">Предстоящо обучение</div>
+      <h2>Разбери човека срещу теб<br><em>по чертите на лицето му</em></h2>
+      <p>Два дни на живо във Варна, след които виждаш как човекът срещу теб мисли, как решава и как да му говориш - още от първата минута. Без гадаене, по метод.</p>
+      <div class="promo-meta">
+        <span class="promo-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>3 и 4 октомври 2026</span>
+        <span class="promo-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Campus 90, Варна</span>
+        <span class="promo-chip"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>Малка група</span>
+      </div>
+      <!--<div class="promo-price">120 €<small>за двата дни</small></div>-->
+      <div class="promo-actions">
+        <a href="obuchenie-facereading.html#obu-signup" class="btn-primary">Запиши се</a>
+        <a href="obuchenie-facereading.html#obu-program" class="btn-ghost-light">Виж програмата</a>
+      </div>
+    </div>
+    <div class="promo-img">
+      <picture>
+        <source srcset="img/opt/obuchenie-elina.webp" type="image/webp">
+        <img src="img/obuchenie-elina.jpg" alt="Елина Божимирова — обучение по разчитане на лица, 3 и 4 октомври 2026, Варна" loading="lazy" width="720" height="900">
+      </picture>
+      <div class="promo-badge"><b>3–4</b><span>Октомври</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
 
 <!-- SERVICES -->
 <section id="services">
