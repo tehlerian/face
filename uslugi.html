@@ -119,7 +119,7 @@ window.silktideConsentManager.init({
 <title>Услуги — YourFaceTalk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20260818">
+<link rel="stylesheet" href="styles.css?v=20261001">
 <style>
 .nav-links a:hover,.nav-links a.active {color:var(--gold)}
 .nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
@@ -127,7 +127,7 @@ window.silktideConsentManager.init({
 .page-intro-inner {max-width:640px;margin:0 auto}
 .page-intro-inner p {color:var(--muted);font-size:1rem;line-height:1.8;margin-top:1.2rem}
 #categories {background:var(--bg2);padding:0}
-.category-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--border)}
+.category-grid {display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--border)}
 .category-card {background:var(--surface);position:relative;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all 0.4s}
 .category-card:hover {background:var(--bg)}
 .category-card:hover .cat-img img {transform:scale(1.04)}
@@ -146,11 +146,6 @@ window.silktideConsentManager.init({
 .category-card:hover .cat-cta {gap:0.7rem}
 .cat-accent {position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
 .category-card:hover .cat-accent {transform:scaleX(1)}
-.category-card.corp {background:var(--surface)}
-.category-card.corp:hover {background:#f5f9f8}
-.category-card.corp .cat-service-item::before {background:var(--teal)}
-.category-card.corp .cat-cta {color:var(--teal)}
-.category-card.corp .cat-accent {background:var(--teal)}
 @media (max-width:1100px) {
   .category-grid {grid-template-columns:1fr}
 }
@@ -167,9 +162,8 @@ window.silktideConsentManager.init({
       <li class="has-dropdown">
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="uslugi-korporativni.html">Бизнес</a></li>
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="obuchenie-facereading.html">Обучение</a></li>
+          <li><a href="uslugi-mominsko.html">Събития</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Блог</a></li>
@@ -188,11 +182,11 @@ window.silktideConsentManager.init({
   <div class="page-intro-inner reveal">
     <div class="section-tag">Услуги</div>
     <h1>Изберете<br><em>вашата категория</em></h1>
-    <p>Личностно развитие --- Специални поводи --- Бизнес консултации</p>
+    <p>Личностно развитие --- Специални поводи</p>
   </div>
 </section>
 
-<!-- 3 CATEGORY CARDS -->
+<!-- 2 CATEGORY CARDS -->
 <section id="categories">
   <div class="category-grid">
 
@@ -238,28 +232,6 @@ window.silktideConsentManager.init({
       </div>
     </a>
 
-    <!-- 3. Корпоративни -->
-    <a href="uslugi-korporativni.html" class="category-card corp reveal">
-      <div class="cat-accent"></div>
-      <div class="cat-img">
-        <img src="img/opt/hero-1280.webp" alt="Корпоративни обучения" loading="lazy">
-        <div class="cat-img-overlay"></div>
-        <div class="cat-badge">
-          <div class="cat-num">03 ·</div>
-          <div class="cat-title">Корпоративни консултации и обучения</div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <p class="cat-desc">Практични инструменти за екипи, мениджъри и HR специалисти — от подбор на кадри до изграждане на по-добра екипна комуникация.</p>
-        <div class="cat-services">
-          <span class="cat-service-item">Практически уъркшоп за екипи</span>
-          <span class="cat-service-item">Консултация при подбор на кадри</span>
-          <span class="cat-service-item">Корпоративни обучения</span>
-        </div>
-        <span class="cat-cta" style="color:var(--teal)">Разгледай услугите →</span>
-      </div>
-    </a>
-
   </div>
 </section>
 
@@ -272,7 +244,7 @@ window.silktideConsentManager.init({
       <div class="footer-logo">YourFace<span>Talk</span></div>
       <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-korporativni.html">Бизнес услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="obuchenie-facereading.html">Обучение</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
     <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>

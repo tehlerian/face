@@ -130,7 +130,7 @@
   /* ── SERVICES (image-backed cards) ── */
   #services{background:var(--bg)}
   .services-header{max-width:600px;margin-bottom:3.5rem}
-  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+  .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem}
   .service-card{position:relative;isolation:isolate;min-height:460px;display:flex;flex-direction:column;justify-content:flex-end;padding:2.4rem;overflow:hidden;text-decoration:none;color:#fbf8f2;transition:transform 0.4s ease, box-shadow 0.4s ease;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px))}
   .service-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(26,22,18,0.28)}
   .svc-media{position:absolute;inset:0;z-index:-2}

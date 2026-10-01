@@ -117,51 +117,14 @@ window.silktideConsentManager.init({
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YourFaceTalk — Разчитане на лицето</title>
-<meta name="description" content="YourFaceTalk — професионално разчитане на лица с Елина Божимирова. Бизнес услуги, персонални анализи, лекции и събития.">
+<meta name="description" content="YourFaceTalk — професионално разчитане на лица с Елина Божимирова. Персонални анализи, лекции и събития.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Preload hero (LCP) — responsive WebP -->
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20260818">
+<link rel="stylesheet" href="styles.css?v=20261001">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<style>
-/* ── ПРЕДСТОЯЩО ОБУЧЕНИЕ (3 и 4 октомври 2026) ─────────────────
-   Временна секция. След събитието се маха цялата <section id="promo">
-   заедно с този <style> блок и следващия .gold-divider.           */
-#promo{background:var(--teal);padding:4.5rem 4rem}
-.promo-panel{display:grid;grid-template-columns:1.25fr 0.75fr;gap:3.5rem;align-items:center;max-width:1180px;margin:0 auto}
-.promo-kicker{display:inline-flex;align-items:center;gap:0.7rem;font-size:0.74rem;letter-spacing:0.22em;
-  text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.1rem}
-.promo-kicker::before{content:"";width:24px;height:1px;background:var(--gold-rich)}
-.promo-panel h2{color:#faf8f4;font-size:clamp(1.9rem,3vw,2.8rem);margin-bottom:1rem}
-.promo-panel h2 em{color:var(--gold-rich)}
-.promo-panel > div > p{color:rgba(250,248,244,0.75);line-height:1.9;font-size:1rem;max-width:560px}
-.promo-meta{display:flex;flex-wrap:wrap;gap:0.6rem;margin:1.8rem 0}
-.promo-chip{display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(201,168,76,0.35);
-  background:rgba(250,248,244,0.05);color:rgba(250,248,244,0.85);font-size:0.82rem;padding:0.5rem 0.9rem}
-.promo-chip svg{width:15px;height:15px;stroke:var(--gold-rich);fill:none;stroke-width:1.6;flex-shrink:0}
-.promo-price{font-family:"Cormorant Garamond",serif;font-size:1.9rem;font-weight:600;color:var(--gold-rich);line-height:1;margin-bottom:1.4rem}
-.promo-price small{display:block;font-family:"DM Sans",sans-serif;font-size:0.72rem;letter-spacing:0.12em;
-  text-transform:uppercase;color:rgba(250,248,244,0.55);margin-top:0.35rem}
-.promo-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.promo-img{position:relative}
-.promo-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;background:var(--bg2);
-  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px))}
-.promo-badge{position:absolute;bottom:-1.1rem;left:-1.1rem;background:var(--gold);color:#fff;padding:0.9rem 1.2rem;text-align:center;
-  border:1px solid rgba(250,248,244,0.5);
-  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
-.promo-badge b{display:block;font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:600;line-height:1}
-.promo-badge span{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase}
-@media(max-width:1000px){#promo{padding:3.5rem 2rem}
-  .promo-panel{grid-template-columns:1fr;gap:3rem}
-  .promo-img{max-width:320px}}
-@media(max-width:768px){#promo{padding:3rem 1.5rem}
-  .promo-actions{flex-direction:column;align-items:stretch}
-  .promo-actions a{text-align:center}
-  .promo-img{max-width:100%}
-  .promo-badge{left:0;bottom:-1rem}}
-</style>
 </head>
 <body>
 <script src="blog-data.js"></script>
@@ -178,9 +141,8 @@ window.silktideConsentManager.init({
       <li class="has-dropdown">
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="uslugi-korporativni.html">Бизнес</a></li>
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="obuchenie-facereading.html">Обучение</a></li>
+          <li><a href="uslugi-mominsko.html">Събития</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Блог</a></li>
@@ -205,7 +167,7 @@ window.silktideConsentManager.init({
   </picture>
   <div class="hero-scrim"></div>
   <div class="hero-content">
-    <div class="hero-tag">Face Reading · Бизнес консултации · Събития</div>
+    <div class="hero-tag">Face Reading · Персонални анализи · Събития</div>
     <h1>Лицето показва<br><em>качествата на личността</em></h1>
     <p class="hero-subtitle">Разчитането на лица разкрива дълготрайните модели на поведение, скрити в чертите, които носим през целия си живот.</p>
     <div class="hero-actions">
@@ -221,37 +183,6 @@ window.silktideConsentManager.init({
   <a href="#services" class="hero-scroll" aria-label="Надолу"><span class="mouse"></span>Разгледай</a>
 </section>
 
-
-<!-- ═══ ПРЕДСТОЯЩО ОБУЧЕНИЕ · маха се след 4 октомври 2026 ═══ -->
-<section id="promo">
-  <div class="promo-panel reveal">
-    <div>
-      <div class="promo-kicker">Предстоящо обучение</div>
-      <h2>Разбери човека срещу теб<br><em>по чертите на лицето му</em></h2>
-      <p>Два дни на живо във Варна, след които виждаш как човекът срещу теб мисли, как решава и как да му говориш - още от първата минута. Без гадаене, по метод.</p>
-      <div class="promo-meta">
-        <span class="promo-chip"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>3 и 4 октомври 2026</span>
-        <span class="promo-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Campus 90, Варна</span>
-        <span class="promo-chip"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>Малка група</span>
-      </div>
-      <!--<div class="promo-price">120 €<small>за двата дни</small></div>-->
-      <div class="promo-actions">
-        <a href="obuchenie-facereading.html#obu-signup" class="btn-primary">Запиши се</a>
-        <a href="obuchenie-facereading.html#obu-program" class="btn-ghost-light">Виж програмата</a>
-      </div>
-    </div>
-    <div class="promo-img">
-      <picture>
-        <source srcset="img/opt/obuchenie-elina.webp" type="image/webp">
-        <img src="img/obuchenie-elina.jpg" alt="Елина Божимирова — обучение по разчитане на лица, 3 и 4 октомври 2026, Варна" loading="lazy" width="720" height="900">
-      </picture>
-      <div class="promo-badge"><b>3–4</b><span>Октомври</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="gold-divider"></div>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="services-header reveal">
@@ -259,24 +190,12 @@ window.silktideConsentManager.init({
     <h2>Как можем<br><em>да помогнем</em></h2>
   </div>
   <div class="services-grid">
-    <a href="uslugi-korporativni.html" class="service-card reveal">
-      <div class="svc-media">
-        <img src="img/businessS.jpg" alt="Бизнес услуги — корпоративни обучения" loading="lazy">
-      </div>
-      <div class="svc-top">
-        <span class="service-num">01</span>
-        <span class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></span>
-      </div>
-      <div class="service-title">Бизнес услуги</div>
-      <p class="service-desc">Уъркшопи, Тиймбилдинги и Обучения на мениджъри и екипи — за по-ефективна комуникация чрез разчитане на лица.</p>
-      <span class="service-more">Научи повече →</span>
-    </a>
     <a href="uslugi-personalni.html" class="service-card reveal">
       <div class="svc-media">
         <img src="img/personalS.jpg" alt="Персонални анализи — индивидуална консултация" loading="lazy">
       </div>
       <div class="svc-top">
-        <span class="service-num">02</span>
+        <span class="service-num">01</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M15 5.5c1.5.8 2.5 2.3 2.5 4s-1 3.2-2.5 4"/></svg></span>
       </div>
       <div class="service-title">Персонални анализи</div>
@@ -292,7 +211,7 @@ window.silktideConsentManager.init({
         </picture>
       </div>
       <div class="svc-top">
-        <span class="service-num">03</span>
+        <span class="service-num">02</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
       </div>
       <div class="service-title">Събития</div>
@@ -561,7 +480,7 @@ window.silktideConsentManager.init({
         <div class="form-group"><label>Телефон</label><input type="text" name="phone" placeholder="+359 88 123 4567"></div>
         <div class="form-group"><label>Компания</label><input type="text" name="company" placeholder="Вашата компания"></div>
         <div class="form-group"><label>Вид услуга</label>
-          <select name="service"><option value="">Изберете услуга...</option><option>Обучение 3–4 октомври</option><option>Бизнес услуги</option><option>Персонален анализ</option><option>Събитие</option></select>
+          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Събитие</option></select>
         </div>
         <div class="form-group"><label>Съобщение</label><textarea name="message" placeholder="Разкажете ни повече за вашите нужди..."></textarea></div>
         <button type="submit" class="btn-primary" id="submitBtn">Изпрати запитване</button>
@@ -618,7 +537,7 @@ window.silktideConsentManager.init({
       <div class="footer-logo">YourFace<span>Talk</span></div>
       <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-korporativni.html">Бизнес услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="obuchenie-facereading.html">Обучение</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
     <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="#contact">Контакти</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
