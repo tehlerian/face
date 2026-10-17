@@ -117,13 +117,13 @@ window.silktideConsentManager.init({
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YourFaceTalk — Разчитане на лицето</title>
-<meta name="description" content="YourFaceTalk — професионално разчитане на лица с Елина Божимирова. Персонални анализи, лекции и събития.">
+<meta name="description" content="YourFaceTalk — професионално разчитане на лица с Елина Божимирова. Персонални анализи, обучения, лекции и събития.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Preload hero (LCP) — responsive WebP -->
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20261001">
+<link rel="stylesheet" href="styles.css?v=20261010">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
@@ -142,10 +142,12 @@ window.silktideConsentManager.init({
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="uslugi-mominsko.html">Събития</a></li>
+          <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
+          <li><a href="uslugi-workshop.html">Обучения</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Блог</a></li>
+      <li><a href="sabitia.html">Събития</a></li>
       <li><a href="#contact" class="nav-cta">Контакти</a></li>
     </ul>
     <a href="tel:+359888773076" class="nav-phone" title="Обади се">
@@ -167,7 +169,7 @@ window.silktideConsentManager.init({
   </picture>
   <div class="hero-scrim"></div>
   <div class="hero-content">
-    <div class="hero-tag">Face Reading · Персонални анализи · Събития</div>
+    <div class="hero-tag">Face Reading · Персонални анализи · Обучения · Събития</div>
     <h1>Лицето показва<br><em>качествата на личността</em></h1>
     <p class="hero-subtitle">Разчитането на лица разкрива дълготрайните модели на поведение, скрити в чертите, които носим през целия си живот.</p>
     <div class="hero-actions">
@@ -207,15 +209,27 @@ window.silktideConsentManager.init({
         <picture>
           <source type="image/avif" srcset="img/opt/mParti1.avif">
           <source type="image/webp" srcset="img/opt/mParti1.webp">
-          <img src="img/mParti1.jpg" alt="Събития — разчитане на лица на събития и партита" loading="lazy">
+          <img src="img/mParti1.jpg" alt="Специални поводи — разчитане на лица на партита и празници" loading="lazy">
         </picture>
       </div>
       <div class="svc-top">
         <span class="service-num">02</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
       </div>
-      <div class="service-title">Събития</div>
+      <div class="service-title">Специални поводи</div>
       <p class="service-desc">Вдъхновяващи разчитания на лица за партита, тийм билдинги и специални събития.</p>
+      <span class="service-more">Научи повече →</span>
+    </a>
+    <a href="uslugi-workshop.html" class="service-card reveal">
+      <div class="svc-media">
+        <img src="img/trainingsS.jpg" alt="Обучения — практически уъркшоп по разчитане на лица за екипи" loading="lazy">
+      </div>
+      <div class="svc-top">
+        <span class="service-num">03</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
+      </div>
+      <div class="service-title">Обучения</div>
+      <p class="service-desc">Практически уъркшопи за екипи и мениджъри — как колегите вземат решения, комуникират и реагират под натиск.</p>
       <span class="service-more">Научи повече →</span>
     </a>
   </div>
@@ -480,7 +494,7 @@ window.silktideConsentManager.init({
         <div class="form-group"><label>Телефон</label><input type="text" name="phone" placeholder="+359 88 123 4567"></div>
         <div class="form-group"><label>Компания</label><input type="text" name="company" placeholder="Вашата компания"></div>
         <div class="form-group"><label>Вид услуга</label>
-          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Събитие</option></select>
+          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Специален повод</option><option>Обучение за екип</option></select>
         </div>
         <div class="form-group"><label>Съобщение</label><textarea name="message" placeholder="Разкажете ни повече за вашите нужди..."></textarea></div>
         <button type="submit" class="btn-primary" id="submitBtn">Изпрати запитване</button>
@@ -537,8 +551,8 @@ window.silktideConsentManager.init({
       <div class="footer-logo">YourFace<span>Talk</span></div>
       <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Събития</a></li></ul></div>
-    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="#contact">Контакти</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
