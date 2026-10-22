@@ -476,7 +476,7 @@ window.silktideConsentManager.init({
 
 <div class="gold-divider"></div>
 
-<!-- ИНФОРМАЦИЯ ЗА ОБУЧЕНИЯ И ЛЕКЦИИ — директен линк: yourfacetalk.com/#newsletter -->
+<!-- ИНФОРМАЦИЯ ЗА СЪБИТИЯ И КУРСОВЕ — директен линк: yourfacetalk.com/#newsletter -->
 <section id="newsletter">
   <div class="nl-panel reveal">
     <div class="nl-text">
@@ -724,9 +724,9 @@ window.silktideConsentManager.init({
   }
 
   /* ═══════════════════════════════════════════════════════════════
-     ИНФОРМАЦИЯ ЗА ОБУЧЕНИЯ И ЛЕКЦИИ (#newsletter) — MailerLite, като наръчника
+     ИНФОРМАЦИЯ ЗА СЪБИТИЯ И КУРСОВЕ (#newsletter) — MailerLite, като наръчника
      в zoni-v-liceto.html.
-     formId: създай в MailerLite отделен формуляр „Обучения и лекции“ и постави ID-то му
+     formId: създай в MailerLite отделен формуляр „Събития и курсове“ и постави ID-то му
      тук (от action="https://assets.mailerlite.com/jsonp/2476126/forms/ID/subscribe").
      Не ползвай formId-а на наръчника — той праща PDF-а автоматично.
      Докато formId е празен, абонаментите идват по имейл през Formspree.
@@ -799,7 +799,7 @@ window.silktideConsentManager.init({
         fetch(NL_CONFIG.fallbackEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, list: 'Обучения и лекции', _subject: 'Нов абонат — информация за обучения и лекции' })
+          body: JSON.stringify({ name: name, email: email, list: 'Събития и курсове', _subject: 'Нов абонат — информация за събития и курсове' })
         }).then(function (r) {
           if (r.ok) done(true);
           else fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com');
