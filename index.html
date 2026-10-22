@@ -123,7 +123,7 @@ window.silktideConsentManager.init({
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Preload hero (LCP) — responsive WebP -->
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20261010">
+<link rel="stylesheet" href="styles.css?v=20261022">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
@@ -144,6 +144,7 @@ window.silktideConsentManager.init({
           <li><a href="uslugi-personalni.html">Персонални</a></li>
           <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
           <li><a href="uslugi-workshop.html">Обучения</a></li>
+          <li><a href="uslugi-vaucher.html">Подари разчитане</a></li>
         </ul>
       </li>
       <li><a href="blog.html">Блог</a></li>
@@ -230,6 +231,18 @@ window.silktideConsentManager.init({
       </div>
       <div class="service-title">Обучения</div>
       <p class="service-desc">Практически уъркшопи и обучения за екипи и за всеки, който иска да разбере как хората около него вземат решения, комуникират и реагират под натиск.</p>
+      <span class="service-more">Научи повече →</span>
+    </a>
+    <a href="uslugi-vaucher.html" class="service-card reveal">
+      <div class="svc-media">
+        <img src="img/voucher.jpg" alt="Подари разчитане — ваучер за подарък за разчитане на лице" loading="lazy">
+      </div>
+      <div class="svc-top">
+        <span class="service-num">04</span>
+        <span class="service-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
+      </div>
+      <div class="service-title">Подари разчитане</div>
+      <p class="service-desc">Ваучер за персонален анализ — личен и запомнящ се подарък за близък човек.</p>
       <span class="service-more">Научи повече →</span>
     </a>
   </div>
@@ -463,6 +476,36 @@ window.silktideConsentManager.init({
 
 <div class="gold-divider"></div>
 
+<!-- ИНФОРМАЦИЯ ЗА ОБУЧЕНИЯ И ЛЕКЦИИ — директен линк: yourfacetalk.com/#newsletter -->
+<section id="newsletter">
+  <div class="nl-panel reveal">
+    <div class="nl-text">
+      <div class="section-tag">Събития и курсове</div>
+      <h2>Искам да получавам информация<br><em>за следващи събития и курсове</em></h2>
+      <p>Остави име и имейл и ще ти пишем, щом обявим нови дати.</p>
+    </div>
+    <form class="nl-form" id="newsletterForm" novalidate>
+      <div class="form-group"><label for="nlName">Вашето име</label><input type="text" id="nlName" name="name" placeholder="Иван Иванов" autocomplete="given-name" required></div>
+      <div class="form-group"><label for="nlEmail">Имейл</label><input type="email" id="nlEmail" name="email" placeholder="ivan@email.com" autocomplete="email" required></div>
+      <!-- Капан за ботове: хората не го виждат; ако е попълнен, заявката се игнорира -->
+      <div class="nl-trap" aria-hidden="true"><label for="nlWebsite">Не попълвай това поле</label><input type="text" id="nlWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="nl-consent">
+        <input type="checkbox" id="nlConsent" required>
+        <label for="nlConsent">Съгласен/а съм да получавам по имейл информация за събития и курсове на YourFaceTalk. Прочетох <a href="privacy-policy.html" target="_blank" rel="noopener">Политиката за поверителност</a>.</label>
+      </div>
+      <button type="submit" class="btn-primary" id="nlBtn">Искам информация</button>
+      <div class="nl-privacy">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Без спам. Отписваш се с един клик, когато решиш.
+      </div>
+      <div class="nl-msg nl-ok" id="nlSuccess" role="status">✓ Готово! Ще ти пишем, щом обявим нови обучения и лекции.</div>
+      <div class="nl-msg nl-err" id="nlError" role="alert"></div>
+    </form>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-tag reveal">Контакти</div>
@@ -504,7 +547,7 @@ window.silktideConsentManager.init({
         <div class="form-group"><label>Телефон</label><input type="text" name="phone" placeholder="+359 88 123 4567"></div>
         <div class="form-group"><label>Компания</label><input type="text" name="company" placeholder="Вашата компания"></div>
         <div class="form-group"><label>Вид услуга</label>
-          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Специален повод</option><option>Обучение за екип</option></select>
+          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Специален повод</option><option>Обучение за екип</option><option>Ваучер за подарък</option></select>
         </div>
         <div class="form-group"><label>Съобщение</label><textarea name="message" placeholder="Разкажете ни повече за вашите нужди..."></textarea></div>
         <button type="submit" class="btn-primary" id="submitBtn">Изпрати запитване</button>
@@ -518,8 +561,8 @@ window.silktideConsentManager.init({
     </div>
   </div>
 
-  <!-- FEEDBACK -->
-  <div class="feedback-wrap reveal">
+  <!-- FEEDBACK — директен линк: yourfacetalk.com/#feedback -->
+  <div class="feedback-wrap reveal" id="feedback">
     <div class="feedback-head">
       <div class="section-tag" style="justify-content:center">Обратна връзка</div>
       <h3>Как беше срещата с <em>YourFaceTalk?</em></h3>
@@ -561,7 +604,7 @@ window.silktideConsentManager.init({
       <div class="footer-logo">YourFace<span>Talk</span></div>
       <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
     <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="#contact">Контакти</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
@@ -576,6 +619,9 @@ window.silktideConsentManager.init({
     </div>
   </div>
 </footer>
+
+<!-- Скрит фрейм — приема отговора на MailerLite (бюлетин), за да не се презарежда страницата -->
+<iframe name="ml-sink-nl" id="ml-sink-nl" style="display:none" title="MailerLite" aria-hidden="true"></iframe>
 
 <script src="app.js?v=20260719"></script>
 <script>
@@ -676,6 +722,93 @@ window.silktideConsentManager.init({
     btn.textContent = 'Изпрати отзив';
     btn.disabled = false;
   }
+
+  /* ═══════════════════════════════════════════════════════════════
+     ИНФОРМАЦИЯ ЗА ОБУЧЕНИЯ И ЛЕКЦИИ (#newsletter) — MailerLite, като наръчника
+     в zoni-v-liceto.html.
+     formId: създай в MailerLite отделен формуляр „Обучения и лекции“ и постави ID-то му
+     тук (от action="https://assets.mailerlite.com/jsonp/2476126/forms/ID/subscribe").
+     Не ползвай formId-а на наръчника — той праща PDF-а автоматично.
+     Докато formId е празен, абонаментите идват по имейл през Formspree.
+     ═══════════════════════════════════════════════════════════════ */
+  const NL_CONFIG = {
+    accountId: "2476126",
+    formId:    "",
+    fallbackEndpoint: "https://formspree.io/f/xlgyzpvv"
+  };
+
+  (function () {
+    const form = document.getElementById('newsletterForm');
+    if (!form) return;
+    const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    const btn = document.getElementById('nlBtn');
+    const ok = document.getElementById('nlSuccess');
+    const errBox = document.getElementById('nlError');
+    const nameEl = form.querySelector('input[name="name"]');
+    const emailEl = form.querySelector('input[name="email"]');
+    const consentEl = document.getElementById('nlConsent');
+    const trapEl = form.querySelector('input[name="website"]');
+    const btnText = btn.textContent;
+    const openedAt = Date.now();
+    const mlReady = !!(NL_CONFIG.accountId && NL_CONFIG.formId);
+
+    function fail(msg) {
+      errBox.textContent = msg;
+      errBox.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = btnText;
+    }
+    function done(countSignup) {
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = btnText;
+      ok.classList.add('show');
+      if (countSignup && window.gtag) gtag('event', 'sign_up', { method: 'trainings_lectures' });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      ok.classList.remove('show');
+      errBox.classList.remove('show');
+      const name = nameEl.value.trim();
+      const email = emailEl.value.trim();
+      if (!name) return fail('Моля, въведи името си.');
+      if (!EMAIL_RE.test(email)) return fail('Моля, въведи валиден имейл адрес.');
+      if (!consentEl.checked) return fail('Моля, отбележи съгласието, за да ти пишем.');
+      // Бот: попълнен капан или изпращане за под 3 секунди → „успех“ без реално изпращане
+      if (trapEl.value.trim() !== '' || Date.now() - openedAt < 3000) return done(false);
+
+      btn.disabled = true;
+      btn.textContent = 'Изпращане...';
+      if (mlReady) {
+        // MailerLite не връща CORS хедъри → класически POST в скрития фрейм
+        const relay = document.createElement('form');
+        relay.method = 'post';
+        relay.action = 'https://assets.mailerlite.com/jsonp/' + NL_CONFIG.accountId + '/forms/' + NL_CONFIG.formId + '/subscribe';
+        relay.target = 'ml-sink-nl';
+        relay.style.display = 'none';
+        [['fields[name]', name], ['fields[email]', email], ['ml-submit', '1'], ['anticsrf', 'true']].forEach(function (pair) {
+          const i = document.createElement('input');
+          i.type = 'hidden'; i.name = pair[0]; i.value = pair[1];
+          relay.appendChild(i);
+        });
+        document.body.appendChild(relay);
+        relay.submit();
+        setTimeout(function () { relay.remove(); done(true); }, 600);
+      } else {
+        fetch(NL_CONFIG.fallbackEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, list: 'Обучения и лекции', _subject: 'Нов абонат — информация за обучения и лекции' })
+        }).then(function (r) {
+          if (r.ok) done(true);
+          else fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com');
+        }).catch(function () {
+          fail('Нещо се обърка. Опитай пак или пиши на yourfacetalk@gmail.com');
+        });
+      }
+    });
+  })();
 
   // Auto-render last 3 articles from blog-data.js (optimised <picture> with fallback)
   function optBase(src){ return src.replace(/^img\//,'').replace(/\.[^.]+$/,''); }

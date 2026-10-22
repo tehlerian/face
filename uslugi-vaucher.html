@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
+    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted'
+  });
+</script>
+
+<!-- 2. Silktide Consent Manager -->
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<style id="silktide-consent-manager-overrides">
+#stcm-wrapper {
+  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
+  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
+  --primaryColor: #B8892E;
+  --backgroundColor: #faf8f4;
+  --textColor: #4b494b;
+  --backdropBackgroundColor: #00000033;
+  --backdropBackgroundBlur: 0px;
+  --iconColor: #B8892E;
+  --iconBackgroundColor: #FAF8F4;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script>
+window.silktideConsentManager.init({
+  backdrop: {
+    show: false
+  },
+  icon: {
+    position: "bottomRight"
+  },
+  prompt: {
+    position: "bottomRight"
+  },
+  consentTypes: [
+    {
+      id: "essential",
+      label: "Задължителни",
+      description: "<p>Задължителни бисквитки</p>",
+      required: true
+    },
+    {
+      id: "analytics",
+      label: "Аналитични",
+      description: "<p>Аналитични бисквитки</p>",
+      defaultValue: false,
+      gtag: "analytics_storage",
+      scripts: [
+        {
+          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
+          load: "async"
+        }
+      ],
+      onAccept: function() {
+        // Google Analytics 4 (G-J3RM10J6K9)
+        gtag('js', new Date());
+        gtag('config', 'G-J3RM10J6K9');
+      }
+    },
+    {
+      id: "marketing",
+      label: "Маркетингови",
+      description: "<p>Бисквитки за маркетингово измерване</p>",
+      defaultValue: false,
+      gtag: [
+        "ad_storage",
+        "ad_user_data",
+        "ad_personalization"
+      ]
+    }
+  ],
+  text: {
+    prompt: {
+      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
+      acceptAllButtonText: "Приеми",
+      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
+      rejectNonEssentialButtonText: "Откажи",
+      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
+      preferencesButtonText: "Настройки",
+      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
+    },
+    preferences: {
+      title: "Настройване на бисквитките",
+      description: "<p>Уважаваме вашето желание за анонимност</p>",
+      saveButtonText: "Запази и Затвори",
+      saveButtonAccessibleLabel: "Запази и Затвори",
+      creditLinkText: "+",
+      creditLinkAccessibleLabel: "+"
+    }
+  }
+});
+</script>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J3RM10J6K9');
+</script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Подари разчитане — ваучер за подарък | YourFaceTalk</title>
+<meta name="description" content="Подарете разчитане на лице с Елина Божимирова — ваучер за базов анализ (35 €), задълбочен анализ (54 €) или анализ за двойки (90 €). Електронен ваучер до 24 часа, валиден 6 месеца.">
+<link rel="canonical" href="https://yourfacetalk.com/uslugi-vaucher.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:url" content="https://yourfacetalk.com/uslugi-vaucher.html">
+<meta property="og:title" content="Подари разчитане — ваучер за подарък | YourFaceTalk">
+<meta property="og:description" content="Личен подарък, който се помни: ваучер за разчитане на лице с Елина Божимирова — от 35 €.">
+<meta property="og:image" content="https://yourfacetalk.com/img/voucher.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=20261022">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+.nav-links a:hover,.nav-links a.active {color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
+h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;color:var(--ink);margin-bottom:0.7rem}
+.page-hero-breadcrumb {display:flex;width:fit-content;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
+.page-hero-breadcrumb:hover {color:var(--gold)}
+.page-hero-breadcrumb svg {width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+/* HERO */
+#page-hero {padding:9rem 4rem 6rem;background:var(--bg2)}
+.hero-inner {display:grid;grid-template-columns:1.05fr 0.95fr;gap:4.5rem;align-items:center;max-width:1150px;margin:0 auto}
+.hero-text p {color:var(--ink2);font-size:1.05rem;line-height:1.85;margin-top:1.2rem;max-width:500px}
+.hero-text .hero-actions {margin-top:2rem}
+.hero-img-col {position:relative}
+.hero-img-col img {width:100%;height:auto;display:block;background:var(--bg3);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.hero-badge {position:absolute;bottom:-1.5rem;left:-1.5rem;background:var(--gold);color:#fff;padding:1.1rem 1.3rem;text-align:center;border:1px solid rgba(250,248,244,0.65);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.hero-badge-num {font-family:"Cormorant Garamond",serif;font-size:2rem;font-weight:600;line-height:1}
+.hero-badge-txt {font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.2rem}
+/* SECTION HEADS */
+.section-head {max-width:660px;margin-bottom:3rem}
+.section-head p {color:var(--ink2);font-size:0.98rem;line-height:1.85;margin-top:1.1rem}
+/* OPTIONS */
+#options {background:var(--bg)}
+.vo-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.6rem;align-items:stretch}
+.vo-card {background:var(--surface);border:1px solid var(--border);padding:2.4rem 2.2rem;display:flex;flex-direction:column;position:relative;transition:border-color 0.35s,transform 0.35s,box-shadow 0.35s}
+.vo-card:hover {border-color:var(--border2);transform:translateY(-4px);box-shadow:0 12px 34px rgba(184,137,46,0.10)}
+.vo-card.featured {border-top:3px solid var(--gold)}
+.vo-flag {position:absolute;top:-0.85rem;left:2.2rem;background:var(--gold);color:#fff;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.35rem 0.8rem}
+.vo-num {font-family:"Cormorant Garamond",serif;font-size:2.6rem;font-weight:300;color:rgba(184,137,46,0.3);line-height:1;margin-bottom:0.8rem}
+.vo-tag {font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem}
+.vo-title {font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:400;line-height:1.25;color:var(--ink);margin-bottom:0.8rem}
+.vo-desc {color:var(--ink2);font-size:0.95rem;line-height:1.75;margin-bottom:1.2rem}
+.vo-list {list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-bottom:1.8rem;flex:1}
+.vo-list li {position:relative;padding-left:1.2rem;font-size:0.93rem;color:var(--ink2);line-height:1.6}
+.vo-list li::before {content:"";position:absolute;left:0;top:0.6rem;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.vo-price {display:flex;align-items:baseline;gap:0.8rem;padding-top:1.4rem;border-top:1px solid var(--border);margin-bottom:1.4rem}
+.vo-amount {font-family:"Cormorant Garamond",serif;font-size:2.4rem;font-weight:600;color:var(--gold);line-height:1}
+.vo-meta {font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.vo-card .btn-primary {text-align:center}
+.vo-note {margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:0.8rem 2.2rem;justify-content:center;font-size:0.92rem;color:var(--ink2)}
+.vo-note span {display:inline-flex;align-items:center;gap:0.5rem}
+.vo-note svg {width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.8;flex-shrink:0}
+/* HOW */
+#how {background:var(--bg2)}
+.steps-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.step-card {background:var(--surface);padding:2rem 1.6rem;border:1px solid var(--border);position:relative;transition:all 0.35s}
+.step-card:hover {border-color:var(--border2);transform:translateY(-4px);box-shadow:0 8px 28px rgba(184,137,46,0.08)}
+.step-card::before {content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.4s;transform-origin:left}
+.step-card:hover::before {transform:scaleX(1)}
+.step-num {font-family:"Cormorant Garamond",serif;font-size:2.5rem;font-weight:300;color:rgba(184,137,46,0.25);line-height:1;margin-bottom:0.8rem}
+.step-title {font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:var(--ink);margin-bottom:0.6rem;line-height:1.3}
+.step-desc {font-size:0.92rem;color:var(--muted);line-height:1.7}
+/* FAQ */
+#faq {background:var(--bg)}
+.faq-list {max-width:820px;display:flex;flex-direction:column;gap:0.8rem}
+.faq-item {background:var(--surface);border:1px solid var(--border);transition:border-color 0.3s}
+.faq-item[open] {border-color:var(--border2)}
+.faq-item summary {cursor:pointer;list-style:none;padding:1.2rem 1.5rem;font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-item summary::-webkit-details-marker {display:none}
+.faq-item summary::after {content:"+";font-family:"DM Sans",sans-serif;font-size:1.4rem;line-height:1;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
+.faq-item[open] summary::after {transform:rotate(45deg)}
+.faq-item summary:focus-visible {outline:2px solid var(--gold);outline-offset:2px}
+.faq-item p {padding:0 1.5rem 1.4rem;color:var(--ink2);font-size:0.96rem;line-height:1.8}
+/* ORDER */
+#order {background:var(--teal);padding:7rem 4rem}
+.order-inner {display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto}
+.order-text .section-tag {color:var(--gold-rich)}
+.order-text h2 {color:#faf8f4}
+.order-text h2 em {color:var(--gold-rich)}
+.order-text > p {color:rgba(250,248,244,0.72);font-size:1rem;line-height:1.8;margin-top:1.2rem}
+.order-highlights {margin-top:2rem;display:flex;flex-direction:column;gap:0.85rem}
+.ord-hl {display:flex;align-items:center;gap:0.8rem;font-size:0.96rem;color:rgba(250,248,244,0.88)}
+.ord-hl svg {width:16px;height:16px;stroke:var(--gold-rich);fill:none;stroke-width:2;flex-shrink:0}
+.order-quote {margin:2.6rem 0 0;padding-top:1.6rem;border-top:1px solid rgba(250,248,244,0.15)}
+.order-quote .st-stars {color:var(--gold-rich);font-size:0.85rem;letter-spacing:2px;margin-bottom:0.6rem}
+.order-quote blockquote {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-style:italic;color:#faf8f4;line-height:1.55;margin:0}
+.order-quote figcaption {font-size:0.82rem;color:rgba(250,248,244,0.6);margin-top:0.6rem}
+.order-form {background:rgba(250,248,244,0.05);border:1px solid rgba(250,248,244,0.12);padding:2.5rem}
+.order-form .form-group label,.choice-label {color:rgba(250,248,244,0.68)}
+.choice-group {margin:0 0 1.2rem;padding:0;border:none;min-width:0}
+.choice-label {display:block;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.6rem;padding:0}
+.choice {display:flex;flex-direction:column;gap:0.5rem}
+.choice.inline {flex-direction:row;flex-wrap:wrap}
+.choice-opt {display:flex;align-items:center;gap:0.8rem;padding:0.85rem 1rem;border:1px solid rgba(250,248,244,0.18);color:#faf8f4;cursor:pointer;font-size:0.95rem;line-height:1.35;transition:border-color 0.3s,background 0.3s}
+.choice.inline .choice-opt {flex:1;min-width:170px}
+.choice-opt:hover {border-color:rgba(201,168,76,0.6)}
+.choice-opt:has(input:checked) {border-color:var(--gold-rich);background:rgba(201,168,76,0.12)}
+.choice-opt input {width:17px;height:17px;margin:0;accent-color:var(--gold);flex-shrink:0;cursor:pointer}
+.choice-opt span {flex:1}
+.choice-opt b {font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;color:var(--gold-rich);white-space:nowrap}
+.order-form .btn-primary {width:100%;text-align:center;margin-top:0.4rem}
+#orderSuccess,#orderError {display:none;margin-top:1rem;padding:1rem;font-size:0.9rem;line-height:1.6}
+#orderSuccess {background:rgba(184,137,46,0.15);border:1px solid rgba(184,137,46,0.3);color:var(--gold-rich)}
+#orderError {background:rgba(200,80,80,0.1);border:1px solid rgba(200,80,80,0.3);color:#e08080}
+#orderError a {color:var(--gold-rich)}
+@media (max-width:1100px) {
+  .hero-inner,.order-inner {grid-template-columns:1fr;gap:3rem}
+  .hero-img-col {max-width:560px}
+  .vo-grid {grid-template-columns:1fr;max-width:640px}
+  .steps-grid {grid-template-columns:1fr 1fr}
+}
+@media (max-width:768px) {
+  #page-hero {padding:7.5rem 1.6rem 4.5rem}
+  .hero-badge {left:0.8rem;bottom:-1.2rem}
+  .vo-card {padding:2.2rem 1.6rem}
+  .steps-grid {grid-template-columns:1fr}
+  #order {padding:5rem 1.6rem}
+  .order-form {padding:1.8rem 1.3rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/opt/logo.webp" alt="YourFaceTalk Logo"></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Начало</a></li>
+      <li><a href="za-nas.html">За мен</a></li>
+      <li class="has-dropdown">
+        <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="uslugi-personalni.html">Персонални</a></li>
+          <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
+          <li><a href="uslugi-workshop.html">Обучения</a></li>
+          <li><a href="uslugi-vaucher.html" class="active" aria-current="page">Подари разчитане</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Блог</a></li>
+      <li><a href="sabitia.html">Събития</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
+    </ul>
+    <a href="tel:+359888773076" class="nav-phone" title="Обади се">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <span class="phone-num">+359 888 773 076</span>
+    </a>
+  </div>
+  <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="page-hero">
+  <div class="hero-inner">
+    <div class="hero-text reveal">
+      <a href="index.html#services" class="page-hero-breadcrumb">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Всички услуги
+      </a>
+      <div class="section-tag">Ваучер за подарък</div>
+      <h1>Подарете<br><em>среща със себе си</em></h1>
+      <p>Парфюмът свършва, книгата отива на рафта. Ваучерът за разчитане на лице е личен подарък, след който близкият ви човек ще погледне себе си по нов начин — и ще го помни дълго.</p>
+      <div class="hero-actions">
+        <a href="#options" class="btn-primary">Изберете ваучер</a>
+        <a href="#how" class="btn-ghost">Как работи</a>
+      </div>
+    </div>
+    <div class="hero-img-col reveal">
+      <img src="img/voucher.jpg" alt="Ваучер за подарък от YourFaceTalk — разчитане на лице" width="887" height="663" fetchpriority="high">
+      <div class="hero-badge">
+        <div class="hero-badge-num">6</div>
+        <div class="hero-badge-txt">месеца валидност</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ВАУЧЕРИ -->
+<section id="options">
+  <div class="section-head reveal">
+    <div class="section-tag">Изберете подаръка</div>
+    <h2>Три начина<br><em>да подарите разчитане</em></h2>
+    <p>Всеки ваучер е за лична среща с Елина — онлайн през Zoom или на живо във Варна. Изберете формата, която подхожда на човека, когото искате да зарадвате.</p>
+  </div>
+
+  <div class="vo-grid">
+    <article class="vo-card reveal">
+      <div class="vo-num">01</div>
+      <div class="vo-tag">Първа среща с метода</div>
+      <h3 class="vo-title">Базов анализ – Първа среща с лицето ти</h3>
+      <p class="vo-desc">Идеален подарък за човек, който тепърва се запознава с разчитането на лица.</p>
+      <ul class="vo-list">
+        <li>Синтезиран прочит на най-важното от чертите на лицето</li>
+        <li>Какво показва лицето за начина, по който човек мисли, действа и реагира</li>
+        <li>Основната тема, която най-силно влияе на поведението в момента</li>
+      </ul>
+      <div class="vo-price"><span class="vo-amount">35 €</span><span class="vo-meta">30 минути</span></div>
+      <a href="#order" class="btn-primary" data-voucher="1">Избери този ваучер</a>
+    </article>
+
+    <article class="vo-card featured reveal">
+      <div class="vo-flag">Най-популярен</div>
+      <div class="vo-num">02</div>
+      <div class="vo-tag">Подробен анализ</div>
+      <h3 class="vo-title">Разчитане на лице – задълбочен анализ</h3>
+      <p class="vo-desc">За човек, който иска да види цялата картина на своята личност.</p>
+      <ul class="vo-list">
+        <li>Анализ на всяка зона: чело, очи, вежди, нос, уста, скули, брадичка</li>
+        <li>Силните страни и предизвикателствата в личен и работен план</li>
+        <li>Как взема решения и реагира под натиск</li>
+        <li>Разчитане на огледалните снимки</li>
+      </ul>
+      <div class="vo-price"><span class="vo-amount">54 €</span><span class="vo-meta">60 минути</span></div>
+      <a href="#order" class="btn-primary" data-voucher="2">Избери този ваучер</a>
+    </article>
+
+    <article class="vo-card reveal">
+      <div class="vo-num">03</div>
+      <div class="vo-tag">За двойки</div>
+      <h3 class="vo-title">Разчитане на лица на партньорски двойки</h3>
+      <p class="vo-desc">Подарък за двама — за годишнина, сватба или просто за да се опознаят още по-добре.</p>
+      <ul class="vo-list">
+        <li>Задълбочен поглед за двамата — поотделно и заедно</li>
+        <li>Как се допълват и защо реагират различно в едни и същи ситуации</li>
+        <li>Практични наблюдения за комуникацията помежду им</li>
+      </ul>
+      <div class="vo-price"><span class="vo-amount">90 €</span><span class="vo-meta">за двама</span></div>
+      <a href="#order" class="btn-primary" data-voucher="3">Избери този ваучер</a>
+    </article>
+  </div>
+
+  <div class="vo-note reveal">
+    <span><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="22" x2="16" y2="22"/><line x1="12" y1="18" x2="12" y2="22"/></svg>Онлайн през Zoom или на живо във Варна</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Електронен ваучер до 24 часа</span>
+    <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Валиден 6 месеца</span>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- КАК РАБОТИ -->
+<section id="how">
+  <div class="section-head reveal">
+    <div class="section-tag">Как работи</div>
+    <h2>Четири стъпки<br><em>до подаръка</em></h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">Изберете ваучера</div>
+      <p class="step-desc">Изберете анализа и посочете името на човека, когото искате да зарадвате.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">02</div>
+      <div class="step-title">Добавете послание</div>
+      <p class="step-desc">По желание — лично послание, което да придружи подаръка.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">03</div>
+      <div class="step-title">Получавате ваучера</div>
+      <p class="step-desc">Електронен ваучер до 24 часа или физически ваучер, доставен по куриер.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">04</div>
+      <div class="step-title">Получателят избира датата</div>
+      <p class="step-desc">Датата на срещата се уточнява допълнително — когато е удобно на получателя.</p>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- ВЪПРОСИ -->
+<section id="faq">
+  <div class="section-head reveal">
+    <div class="section-tag">Въпроси</div>
+    <h2>Преди да<br><em>подарите</em></h2>
+  </div>
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Не знам кога ще е удобно на получателя.</summary>
+      <p>Не е нужно да знаете. Датата на срещата се уточнява допълнително с получателя, а ваучерът е валиден 6 месеца от датата, изписана на него.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Получателят не живее във Варна.</summary>
+      <p>Няма проблем — срещите се провеждат и онлайн през Zoom. На живо — във Варна.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Това гадаене ли е?</summary>
+      <p>Не. Разчитането на лица е метод за разпознаване на устойчиви модели на поведение — как човек мисли, чувства и действа. Без предсказания и без „езотерика“.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Какво е нужно за срещата?</summary>
+      <p>Няколко снимки на лицето преди срещата. След като получателят запише час, ще му изпратим всички детайли.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ПОРЪЧКА -->
+<section id="order">
+  <div class="order-inner">
+    <div class="order-text reveal">
+      <div class="section-tag">Поръчка</div>
+      <h2>Поръчайте<br><em>ваучер за подарък</em></h2>
+      <p>Попълнете формата и ще се свържем с вас до 24 часа, за да потвърдим поръчката и детайлите по ваучера.</p>
+      <div class="order-highlights">
+        <div class="ord-hl"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Електронен ваучер до 24 часа</div>
+        <div class="ord-hl"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Физически ваучер по куриер — по желание</div>
+        <div class="ord-hl"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Валиден 6 месеца от датата на ваучера</div>
+        <div class="ord-hl"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Онлайн или на живо във Варна</div>
+      </div>
+      <figure class="order-quote">
+        <div class="st-stars" aria-label="5 от 5 звезди">★★★★★</div>
+        <blockquote>„Много ценно докосване, до онова, което си.“</blockquote>
+        <figcaption>— Десислава Иванова</figcaption>
+      </figure>
+    </div>
+    <div class="order-form reveal">
+      <form id="voucherForm" action="https://formspree.io/f/xaqajaoz" method="POST">
+        <input type="hidden" name="_subject" value="Поръчка: Ваучер за подарък">
+        <div class="form-row">
+          <div class="form-group"><label for="voName">Вашето име</label><input type="text" id="voName" name="name" placeholder="Иван Иванов" autocomplete="name" required></div>
+          <div class="form-group"><label for="voEmail">Имейл</label><input type="email" id="voEmail" name="email" placeholder="ivan@email.com" autocomplete="email" required></div>
+        </div>
+        <div class="form-group"><label for="voPhone">Телефон</label><input type="tel" id="voPhone" name="phone" placeholder="+359 888 ..." autocomplete="tel"></div>
+        <fieldset class="choice-group">
+          <legend class="choice-label">Ваучер</legend>
+          <div class="choice">
+            <label class="choice-opt"><input type="radio" id="vo1" name="voucher" value="Базов анализ – Първа среща с лицето ти (35 €)" data-price="35" required><span>Базов анализ – Първа среща с лицето ти</span><b>35 €</b></label>
+            <label class="choice-opt"><input type="radio" id="vo2" name="voucher" value="Разчитане на лице – задълбочен анализ (54 €)" data-price="54"><span>Разчитане на лице – задълбочен анализ</span><b>54 €</b></label>
+            <label class="choice-opt"><input type="radio" id="vo3" name="voucher" value="Разчитане на лица на партньорски двойки (90 €)" data-price="90"><span>Разчитане на лица на партньорски двойки</span><b>90 €</b></label>
+          </div>
+        </fieldset>
+        <div class="form-group"><label for="voRecipient">Име на получателя</label><input type="text" id="voRecipient" name="recipient" placeholder="Името за ваучера" required></div>
+        <fieldset class="choice-group">
+          <legend class="choice-label">Вид ваучер</legend>
+          <div class="choice inline">
+            <label class="choice-opt"><input type="radio" name="format" value="Електронен" checked><span>Електронен</span></label>
+            <label class="choice-opt"><input type="radio" id="fmtPhysical" name="format" value="Физически (по куриер)"><span>Физически, по куриер</span></label>
+          </div>
+        </fieldset>
+        <div class="form-group" id="deliveryField" hidden><label for="voAddress">Адрес за доставка</label><input type="text" id="voAddress" name="address" placeholder="Град, адрес или офис на куриер" autocomplete="street-address"></div>
+        <div class="form-group"><label for="voDate">Дата за изписване на ваучера</label><input type="date" id="voDate" name="voucher_date"></div>
+        <div class="form-group"><label for="voMessage">Лично послание (по желание)</label><textarea id="voMessage" name="message" placeholder="Например: „Честит рожден ден! Време е за среща със себе си.“"></textarea></div>
+        <button type="submit" class="btn-primary" id="orderBtn">Поръчай ваучер</button>
+        <div id="orderSuccess" role="status">✓ Благодарим! Получихме поръчката и ще се свържем с вас до 24 часа.</div>
+        <div id="orderError" role="alert">Нещо се обърка. Пишете на <a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">YourFace<span>Talk</span></div>
+      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+    </div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 YourFaceTalk. Всички права запазени. · <a href="privacy-policy.html" class="footer-legal">Поверителност</a></span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/kakvo_kazva_liceto_ti/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.linkedin.com/in/elina-bozhimirova-3360a9301/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      <a href="https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon class="yt-tri" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+      <a href="https://www.tiktok.com/@your_face_talk" target="_blank" rel="noopener" class="fsoc" aria-label="TikTok"><svg viewBox="0 0 24 24"><path class="tt" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js?v=20260719"></script>
+<script>
+(function () {
+  var form = document.getElementById('voucherForm');
+  if (!form) return;
+  var addrField = document.getElementById('deliveryField');
+  var addrInput = document.getElementById('voAddress');
+  var physical = document.getElementById('fmtPhysical');
+
+  // „Избери този ваучер“ отбелязва съответната опция във формата за поръчка
+  document.querySelectorAll('[data-voucher]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = document.getElementById('vo' + a.dataset.voucher);
+      if (r) r.checked = true;
+    });
+  });
+
+  // Адрес за доставка — само при физически ваучер
+  function syncDelivery() {
+    addrField.hidden = !physical.checked;
+    addrInput.required = physical.checked;
+  }
+  form.querySelectorAll('input[name="format"]').forEach(function (r) { r.addEventListener('change', syncDelivery); });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('orderBtn');
+    var ok = document.getElementById('orderSuccess');
+    var er = document.getElementById('orderError');
+    ok.style.display = 'none';
+    er.style.display = 'none';
+    btn.textContent = 'Изпращане...';
+    btn.disabled = true;
+    var fd = new FormData(form);
+    var nm = (fd.get('name') || '').toString().trim();
+    var em = (fd.get('email') || '').toString().trim();
+    var chosen = form.querySelector('input[name="voucher"]:checked');
+    try {
+      var r = await fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+      if (r.ok) {
+        ok.style.display = 'block';
+        form.reset();
+        syncDelivery();
+        if (window.sendAutoReply) window.sendAutoReply(nm, em);
+        if (window.gtag && chosen) {
+          gtag('event', 'generate_lead', { event_category: 'voucher', event_label: chosen.value, currency: 'EUR', value: Number(chosen.dataset.price) });
+        }
+      } else { er.style.display = 'block'; }
+    } catch (err) { er.style.display = 'block'; }
+    btn.textContent = 'Поръчай ваучер';
+    btn.disabled = false;
+  });
+})();
+</script>
+</body>
+</html>
