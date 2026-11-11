@@ -117,14 +117,14 @@ window.silktideConsentManager.init({
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Събития — YourFaceTalk</title>
-<meta name="description" content="Събития с Елина Божимирова — лекции, работилници и срещи по разчитане на лица. Предстоящи дати и снимки от изминалите събития.">
+<meta name="description" content="Събития с Елина Божимирова — лекции, работилници и срещи по разчитане на лица. Предстоящи дати и архив на изминалите събития.">
 <link rel="canonical" href="https://yourfacetalk.com/sabitia.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="YourFaceTalk">
 <meta property="og:locale" content="bg_BG">
 <meta property="og:url" content="https://yourfacetalk.com/sabitia.html">
 <meta property="og:title" content="Събития — лекции и работилници по разчитане на лица | YourFaceTalk">
-<meta property="og:description" content="Лекции, работилници и срещи по разчитане на лица с Елина Божимирова — предстоящи дати и снимки от изминалите събития.">
+<meta property="og:description" content="Лекции, работилници и срещи по разчитане на лица с Елина Божимирова — предстоящи дати и архив на изминалите събития.">
 <meta property="og:image" content="https://yourfacetalk.com/img/sabitia/liceto-2-1600.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -155,27 +155,24 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 .upcoming-place {font-size:0.85rem;color:var(--muted)}
 .upcoming-card p {color:var(--ink2);font-size:0.92rem;line-height:1.75}
 .upcoming-card .btn-primary {align-self:flex-start;margin-top:0.6rem}
-/* PAST EVENTS */
+/* PAST EVENTS — архив с плакати, по години */
 #izminali {background:var(--bg2)}
-.events {display:flex;flex-direction:column;gap:4.5rem;max-width:1200px}
-.event {display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.4fr);gap:3.5rem;align-items:center}
-.event:nth-child(even) {grid-template-columns:minmax(0,1.4fr) minmax(0,0.85fr)}
-.event:nth-child(even) .event-info {order:2}
-.event-num {font-family:"Cormorant Garamond",serif;font-size:3rem;font-weight:300;color:rgba(184,137,46,0.3);line-height:1;margin-bottom:0.6rem}
-.event-type {font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem}
-.event-title {font-family:"Cormorant Garamond",serif;font-size:clamp(1.6rem,2.4vw,2.1rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.9rem}
-.event-meta {display:flex;flex-wrap:wrap;gap:0.5rem 1.2rem;font-size:0.8rem;color:var(--muted);margin-bottom:1rem}
+.archive {max-width:1100px}
+.archive-group + .archive-group {margin-top:4rem}
+.archive-year {display:flex;align-items:center;gap:1.4rem;font-family:"Cormorant Garamond",serif;font-size:2.6rem;font-weight:300;line-height:1;color:var(--gold);margin-bottom:0.6rem}
+.archive-year::after {content:"";flex:1;height:1px;background:var(--border2)}
+.pe {display:grid;grid-template-columns:320px minmax(0,1fr);gap:2.8rem;align-items:center;padding:2.2rem 0}
+.pe + .pe {border-top:1px solid var(--border)}
+.pe-poster {display:block;overflow:hidden;background:var(--bg3);cursor:zoom-in;box-shadow:0 14px 34px -22px rgba(26,22,18,0.55)}
+.pe-poster img {width:100%;height:auto;display:block;transition:transform 0.6s ease}
+.pe-poster:hover img {transform:scale(1.03)}
+.pe-poster:focus-visible {outline:2px solid var(--gold);outline-offset:3px}
+.event-type {font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+.event-title {font-family:"Cormorant Garamond",serif;font-size:clamp(1.55rem,2.2vw,1.95rem);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:0.8rem}
+.event-meta {display:flex;flex-wrap:wrap;gap:0.5rem 1.2rem;font-size:0.82rem;color:var(--muted);margin-bottom:0.9rem}
 .event-meta span {display:inline-flex;align-items:center;gap:0.4rem}
-.event-meta svg {width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.8}
-.event-desc {color:var(--ink2);font-size:0.95rem;line-height:1.85}
-.event-photos {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0.8rem}
-.ev-photo {position:relative;display:block;overflow:hidden;background:var(--bg3);cursor:zoom-in}
-.ev-photo img {width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;transition:transform 0.6s ease}
-.ev-photo:hover img {transform:scale(1.04)}
-.ev-photo:focus-visible {outline:2px solid var(--gold);outline-offset:3px}
-.event-photos.trio {grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr)}
-.event-photos.trio .ev-photo:first-child {grid-row:span 2}
-.event-photos.trio .ev-photo:first-child img {position:absolute;inset:0;height:100%;aspect-ratio:auto;object-position:center 30%}
+.event-meta svg {width:14px;height:14px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.8}
+.event-desc {color:var(--ink2);font-size:0.95rem;line-height:1.8}
 /* LIGHTBOX */
 .lightbox {margin:auto;border:none;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
 .lightbox::backdrop {background:rgba(18,15,11,0.9)}
@@ -206,18 +203,16 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
   .hero-inner {grid-template-columns:1fr;gap:3rem}
   .upcoming-empty {grid-template-columns:auto 1fr;gap:1.4rem 1.6rem}
   .upcoming-actions {grid-column:1 / -1}
-  .event,.event:nth-child(even) {grid-template-columns:1fr;gap:1.8rem}
-  .event:nth-child(even) .event-info {order:0}
+  .pe {grid-template-columns:240px minmax(0,1fr);gap:2rem}
 }
 @media (max-width:768px) {
   #page-hero {padding:7.5rem 1.6rem 4rem}
   #cta {padding:5rem 1.6rem}
   .upcoming-empty {grid-template-columns:1fr;padding:1.8rem 1.6rem}
-  .events {gap:3.5rem}
-  .event-photos {gap:0.5rem}
-  .event-photos.trio {grid-template-columns:repeat(2,minmax(0,1fr))}
-  .event-photos.trio .ev-photo:first-child {grid-row:auto;grid-column:1 / -1}
-  .event-photos.trio .ev-photo:first-child img {position:static;aspect-ratio:3/2}
+  .archive-group + .archive-group {margin-top:3rem}
+  .archive-year {font-size:2.2rem}
+  .pe {grid-template-columns:1fr;gap:1.3rem;padding:1.8rem 0}
+  .pe-poster {max-width:480px}
   .cta-actions {flex-direction:column;align-items:center}
   .lb-prev {left:0.5rem}
   .lb-next {right:0.5rem}
@@ -311,85 +306,171 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
 <!-- ИЗМИНАЛИ -->
 <section id="izminali">
   <div class="section-head reveal">
-    <div class="section-tag">Изминали събития</div>
-    <h2>Как изглеждат<br><em>срещите на живо</em></h2>
-    <p>Моменти от лекции, работилници и срещи по разчитане на лица. Кликнете върху снимка, за да я видите в цял размер.</p>
+    <div class="section-tag">Архив</div>
+    <h2>Изминали<br><em>събития</em></h2>
+    <p>Лекции, срещи и работилници по разчитане на лица — от <span style="white-space:nowrap">най-новите</span> към <span style="white-space:nowrap">най-старите</span>. Кликнете върху плакат, за да го видите в цял размер.</p>
   </div>
 
-  <!-- Всяко събитие е един <article class="event">. За ново събитие копирай целия блок
-       и смени номера, заглавието, датата и мястото (event-meta) и снимките.
-       Снимките са в img/sabitia/: *-800.jpg се показват в страницата, *-1600.jpg при увеличение.
-       При 3 снимки добави клас "trio" към event-photos; първата снимка е вертикалната. -->
-  <div class="events">
+  <!-- Ново изминало събитие:
+       1. Плакатът отива в img/sabitia/plakati/ в два размера: ГГГГ-ММ-ДД-име.jpg (до 1600 px)
+          и ГГГГ-ММ-ДД-име-640.jpg (640 px широк). В страницата се вижда малкият, при клик се отваря големият.
+       2. Копирай един <article class="pe"> и го сложи най-отгоре в групата на неговата година
+          (най-новите са първи). За нова година добави нова <div class="archive-group"> най-отгоре.
+       3. Смени плаката (href, src, srcset, width/height на малкия), alt текста, вида, заглавието,
+          датата (datetime и текста), часа, мястото и описанието. -->
+  <div class="archive">
 
-    <article class="event reveal">
-      <div class="event-info">
-        <div class="event-num">01</div>
-        <div class="event-type">Работилница</div>
-        <h3 class="event-title">Работилница за разчитане на лица</h3>
-        <p class="event-desc">Как да разпознаваме стила на взаимодействие на партньора до нас.</p>
-      </div>
-      <div class="event-photos">
-        <a href="img/sabitia/rabotilnica-1-1600.jpg" class="ev-photo"><img src="img/sabitia/rabotilnica-1-800.jpg" alt="Елина Божимирова до екран с надпис „Работилница за разчитане на лица“" width="800" height="533" loading="lazy"></a>
-        <a href="img/sabitia/rabotilnica-2-1600.jpg" class="ev-photo"><img src="img/sabitia/rabotilnica-2-800.jpg" alt="Елина Божимирова в края на работилницата за разчитане на лица" width="800" height="533" loading="lazy"></a>
-      </div>
-    </article>
+    <div class="archive-group">
+      <h3 class="archive-year">2026</h3>
 
-    <article class="event reveal">
-      <div class="event-info">
-        <div class="event-num">02</div>
-        <div class="event-type">Лекция</div>
-        <h3 class="event-title">Какво може да се „прочете“ по лицето?</h3>
-        <p class="event-desc">Какво казват чертите на лицето за емоциите ни, за начина, по който вземаме решения, за силните ни страни и предизвикателствата.</p>
-      </div>
-      <div class="event-photos trio">
-        <a href="img/sabitia/liceto-3-1600.jpg" class="ev-photo"><img src="img/sabitia/liceto-3-800.jpg" alt="Елина Божимирова говори пред участниците в лекцията" width="533" height="800" loading="lazy"></a>
-        <a href="img/sabitia/liceto-1-1600.jpg" class="ev-photo"><img src="img/sabitia/liceto-1-800.jpg" alt="Елина Божимирова представя слайд „Какво може да се прочете по лицето?“" width="800" height="533" loading="lazy"></a>
-        <a href="img/sabitia/liceto-2-1600.jpg" class="ev-photo"><img src="img/sabitia/liceto-2-800.jpg" alt="Участници в лекцията по разчитане на лица" width="800" height="533" loading="lazy"></a>
-      </div>
-    </article>
-
-    <article class="event reveal">
-      <div class="event-info">
-        <div class="event-num">03</div>
-        <div class="event-type">Среща</div>
-        <h3 class="event-title">Среща за разчитане на лица: Очите</h3>
-        <p class="event-desc">Какво можете да прочетете и вие по очите на човек.</p>
-      </div>
-      <div class="event-photos">
-        <a href="img/sabitia/ochite-1-1600.jpg" class="ev-photo"><img src="img/sabitia/ochite-1-800.jpg" alt="Елина Божимирова на срещата „Очите“" width="800" height="372" loading="lazy"></a>
-        <a href="img/sabitia/ochite-2-1600.jpg" class="ev-photo"><img src="img/sabitia/ochite-2-800.jpg" alt="Елина Божимирова показва линиите около очите на слайд" width="800" height="461" loading="lazy"></a>
-      </div>
-    </article>
-
-    <article class="event reveal">
-      <div class="event-info">
-        <div class="event-num">04</div>
-        <div class="event-type">Лекция</div>
-        <h3 class="event-title">Какъв е твоят стил на взаимодействие?</h3>
-        <div class="event-meta">
-          <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>23 ноември 2024</span>
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2026-06-20-liceto-na-dushata.jpg" class="pe-poster"><img src="img/sabitia/plakati/2026-06-20-liceto-na-dushata-640.jpg" srcset="img/sabitia/plakati/2026-06-20-liceto-na-dushata-640.jpg 640w, img/sabitia/plakati/2026-06-20-liceto-na-dushata.jpg 1600w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Лицето на душата“ — вечер за себепознание, 20 юни 2026, Варна" width="640" height="640" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Вечер за себепознание</div>
+          <h4 class="event-title">Лицето на душата</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2026-06-20">20 юни 2026</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>16:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Студио „Баланс“, Варна</span>
+          </div>
+          <p class="event-desc">Специална вечер в малка група до 12 жени. В програмата: психология на лицето и как чертите издават характера, аури и енергия, регресия и таро послания.</p>
         </div>
-        <p class="event-desc">Как разпознаваме собствения си стил на взаимодействие — и този на хората около нас.</p>
-      </div>
-      <div class="event-photos">
-        <a href="img/sabitia/stil-1-1600.jpg" class="ev-photo"><img src="img/sabitia/stil-1-800.jpg" alt="Публиката на лекцията „Какъв е твоят стил на взаимодействие?“" width="800" height="360" loading="lazy"></a>
-        <a href="img/sabitia/stil-2-1600.jpg" class="ev-photo"><img src="img/sabitia/stil-2-800.jpg" alt="Елина Божимирова говори с микрофон пред слайд за стила на взаимодействие" width="600" height="539" loading="lazy"></a>
-      </div>
-    </article>
+      </article>
 
-    <article class="event reveal">
-      <div class="event-info">
-        <div class="event-num">05</div>
-        <div class="event-type">Лекция</div>
-        <h3 class="event-title">Лекция по разчитане на лица</h3>
-        <p class="event-desc">Как чертите на лицето разкриват устойчиви модели на поведение — с примери от известни лица.</p>
-      </div>
-      <div class="event-photos">
-        <a href="img/sabitia/lekcia-1-1600.jpg" class="ev-photo"><img src="img/sabitia/lekcia-1-800.jpg" alt="Елина Божимирова по време на лекция по разчитане на лица" width="800" height="541" loading="lazy"></a>
-        <a href="img/sabitia/lekcia-2-1600.jpg" class="ev-photo"><img src="img/sabitia/lekcia-2-800.jpg" alt="Елина Божимирова обяснява пример със снимки на лица" width="800" height="360" loading="lazy"></a>
-      </div>
-    </article>
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2026-04-30-kakvo-kazva-liceto-ti.jpg" class="pe-poster"><img src="img/sabitia/plakati/2026-04-30-kakvo-kazva-liceto-ti-640.jpg" srcset="img/sabitia/plakati/2026-04-30-kakvo-kazva-liceto-ti-640.jpg 640w, img/sabitia/plakati/2026-04-30-kakvo-kazva-liceto-ti.jpg 1600w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Какво казва лицето ти?“ — 30 април 2026, Шумен" width="640" height="335" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Вечер</div>
+          <h4 class="event-title">Какво казва лицето ти?</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2026-04-30">30 април 2026</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>18:30</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Арт студио „Градът и изкуството“, Шумен</span>
+          </div>
+          <p class="event-desc">Специална вечер, в която да се погледнете по нов начин — през това, което лицето ви разказва за вас. В уютна атмосфера и на чаша вино.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2026-03-28-sebepoznanie-mini-analiz.jpg" class="pe-poster"><img src="img/sabitia/plakati/2026-03-28-sebepoznanie-mini-analiz-640.jpg" srcset="img/sabitia/plakati/2026-03-28-sebepoznanie-mini-analiz-640.jpg 640w, img/sabitia/plakati/2026-03-28-sebepoznanie-mini-analiz.jpg 1200w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Себепознание и мини анализ“ — 28 март 2026, хотел „Рубо“, Шумен" width="640" height="335" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Среща</div>
+          <h4 class="event-title">Себепознание и мини анализ</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2026-03-28">28 март 2026</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>15:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Хотел „Рубо“, Шумен</span>
+          </div>
+          <p class="event-desc">Опознайте лицето си с Елина Божимирова — с мини анализ, на по чаша чай или кафе.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2026-02-21-wine-face-reading.jpg" class="pe-poster"><img src="img/sabitia/plakati/2026-02-21-wine-face-reading-640.jpg" srcset="img/sabitia/plakati/2026-02-21-wine-face-reading-640.jpg 640w, img/sabitia/plakati/2026-02-21-wine-face-reading.jpg 960w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Wine &amp; Face Reading“ — 21 февруари 2026, Gourmet Hub Decanto, Варна" width="640" height="425" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Вечер</div>
+          <h4 class="event-title">Wine &amp; Face Reading</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2026-02-21">21 февруари 2026</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>18:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Gourmet Hub Decanto, Варна</span>
+          </div>
+          <p class="event-desc">Вино и разчитане на лица — опознайте лицето си с Елина Божимирова.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2026-01-24-ochite-varna.jpg" class="pe-poster"><img src="img/sabitia/plakati/2026-01-24-ochite-varna-640.jpg" srcset="img/sabitia/plakati/2026-01-24-ochite-varna-640.jpg 640w, img/sabitia/plakati/2026-01-24-ochite-varna.jpg 850w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Очите — какво можете да прочетете и вие по очите на човек“ — 24 януари 2026, Варна" width="640" height="640" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Среща</div>
+          <h4 class="event-title">Очите</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2026-01-24">24 януари 2026</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>15:30</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Blend 73, Варна</span>
+          </div>
+          <p class="event-desc">Какво можете да прочетете и вие по очите на човек.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="archive-group">
+      <h3 class="archive-year">2025</h3>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2025-11-22-ochite-shumen.jpg" class="pe-poster"><img src="img/sabitia/plakati/2025-11-22-ochite-shumen-640.jpg" srcset="img/sabitia/plakati/2025-11-22-ochite-shumen-640.jpg 640w, img/sabitia/plakati/2025-11-22-ochite-shumen.jpg 850w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Очите — какво можете да прочетете и вие по очите на човек“ — 22 ноември 2025, Шумен" width="640" height="640" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Среща</div>
+          <h4 class="event-title">Очите</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2025-11-22">22 ноември 2025</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Хотел „Рубо“, Шумен</span>
+          </div>
+          <p class="event-desc">Какво можете да прочетете и вие по очите на човек.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2025-10-04-rabotilnica-partnior.jpg" class="pe-poster"><img src="img/sabitia/plakati/2025-10-04-rabotilnica-partnior-640.jpg" srcset="img/sabitia/plakati/2025-10-04-rabotilnica-partnior-640.jpg 640w, img/sabitia/plakati/2025-10-04-rabotilnica-partnior.jpg 960w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Работилница за разчитане на лица“ — 4 октомври 2025, Варна" width="640" height="640" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Работилница</div>
+          <h4 class="event-title">Работилница за разчитане на лица</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2025-10-04">4 октомври 2025</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>11:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Хотел Campus 90, Варна</span>
+          </div>
+          <p class="event-desc">Как да разпознаваме стила на взаимодействие на партньора до нас само с един поглед. Знания, практика и томбола с ваучер подарък.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2025-03-22-formite-na-liceto.jpg" class="pe-poster"><img src="img/sabitia/plakati/2025-03-22-formite-na-liceto-640.jpg" srcset="img/sabitia/plakati/2025-03-22-formite-na-liceto-640.jpg 640w, img/sabitia/plakati/2025-03-22-formite-na-liceto.jpg 1600w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Формите на лицето и какво казват те за личността зад тях“ — 22 март 2025, Варна" width="640" height="305" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Обучение и практика</div>
+          <h4 class="event-title">Формите на лицето и какво казват те за личността зад тях</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2025-03-22">22 март 2025</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>10:30–13:00</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Campus 90, Варна</span>
+          </div>
+          <p class="event-desc">Обучение с практическа част — как да разпознаваме основните форми на лицето и какво разкриват те за човека.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="archive-group">
+      <h3 class="archive-year">2024</h3>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2024-10-12-liceto-ni-shumen.jpg" class="pe-poster"><img src="img/sabitia/plakati/2024-10-12-liceto-ni-shumen-640.jpg" srcset="img/sabitia/plakati/2024-10-12-liceto-ni-shumen-640.jpg 640w, img/sabitia/plakati/2024-10-12-liceto-ni-shumen.jpg 960w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Лицето ни — това сме НИЕ“ — 12 октомври 2024, Шумен" width="640" height="360" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Среща</div>
+          <h4 class="event-title">Лицето ни — това сме НИЕ</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2024-10-12">12 октомври 2024</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>13:30</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Студио „От нота до цвят“, Шумен</span>
+          </div>
+          <p class="event-desc">Как да разчитате в собственото си лице знаците на натрупана преумора, стрес или прегаряне — какво означават те и кога е време да промените нещо в ежедневието си.</p>
+        </div>
+      </article>
+
+      <article class="pe reveal">
+        <a href="img/sabitia/plakati/2024-09-11-liceto-ni-varna.jpg" class="pe-poster"><img src="img/sabitia/plakati/2024-09-11-liceto-ni-varna-640.jpg" srcset="img/sabitia/plakati/2024-09-11-liceto-ni-varna-640.jpg 640w, img/sabitia/plakati/2024-09-11-liceto-ni-varna.jpg 960w" sizes="(max-width:560px) calc(100vw - 4rem), (max-width:768px) 480px, (max-width:1100px) 240px, 320px" alt="Плакат: „Лицето ни — това сме НИЕ“ — 11 септември 2024, Варна" width="640" height="360" loading="lazy"></a>
+        <div class="pe-body">
+          <div class="event-type">Среща</div>
+          <h4 class="event-title">Лицето ни — това сме НИЕ</h4>
+          <div class="event-meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><time datetime="2024-09-11">11 септември 2024</time></span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>18:30</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Социалната чайна, Варна</span>
+          </div>
+          <p class="event-desc">Как да познавате и разчитате сигналите на натрупана преумора, стрес или прегаряне — във вашето лице или в това на близките ви.</p>
+        </div>
+      </article>
+    </div>
 
   </div>
 </section>
@@ -430,26 +511,27 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
   </div>
 </footer>
 
-<!-- Увеличен изглед на снимките -->
-<dialog id="lightbox" class="lightbox" aria-label="Снимка от събитие">
+<!-- Увеличен изглед на плакатите -->
+<dialog id="lightbox" class="lightbox" aria-label="Плакат на събитие">
   <figure>
     <img alt="">
     <figcaption></figcaption>
   </figure>
   <button type="button" class="lb-btn lb-close" aria-label="Затвори"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-  <button type="button" class="lb-btn lb-prev" aria-label="Предишна снимка"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <button type="button" class="lb-btn lb-next" aria-label="Следваща снимка"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+  <button type="button" class="lb-btn lb-prev" aria-label="Предишен плакат"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+  <button type="button" class="lb-btn lb-next" aria-label="Следващ плакат"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
 </dialog>
 
 <script src="app.js?v=20260719"></script>
 <script>
-// Lightbox: снимките са линкове към голямата версия, така че без JS пак се отварят
+// Lightbox: плакатите са линкове към голямата версия, така че без JS пак се отварят.
+// Стрелките разлистват всички плакати подред (от най-новия към най-стария).
 (function () {
   var lb = document.getElementById('lightbox');
   if (!lb || typeof lb.showModal !== 'function') return;
   var img = lb.querySelector('img'), cap = lb.querySelector('figcaption');
   var prev = lb.querySelector('.lb-prev'), next = lb.querySelector('.lb-next');
-  var group = [], idx = 0;
+  var group = Array.prototype.slice.call(document.querySelectorAll('.pe-poster')), idx = 0;
   function show(i) {
     idx = (i + group.length) % group.length;
     var thumb = group[idx].querySelector('img');
@@ -458,15 +540,11 @@ h3 {font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:400;col
     cap.textContent = thumb.alt;
     prev.hidden = next.hidden = group.length < 2;
   }
-  document.querySelectorAll('.event-photos').forEach(function (g) {
-    var links = Array.prototype.slice.call(g.querySelectorAll('.ev-photo'));
-    links.forEach(function (a, i) {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        group = links;
-        show(i);
-        lb.showModal();
-      });
+  group.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      show(i);
+      lb.showModal();
     });
   });
   prev.addEventListener('click', function () { show(idx - 1); });
