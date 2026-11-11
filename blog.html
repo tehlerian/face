@@ -128,11 +128,6 @@ window.silktideConsentManager.init({
 .page-hero-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
 .page-hero-tag::before {content:"";width:28px;height:1px;background:var(--gold)}
 .page-hero-sub {font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink2);line-height:1.7;max-width:520px}
-#filters {padding:0.5rem 4rem 0;background:var(--bg);position:sticky;top:72px;z-index:50;border-bottom:1px solid var(--border)}
-.filter-wrap {display:flex;gap:0;overflow-x:auto}
-.filter-btn {padding:0.6rem 1.4rem;font-family:"DM Sans",sans-serif;font-size:0.73rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.3s;white-space:nowrap;margin-bottom:-1px}
-.filter-btn:hover {color:var(--gold)}
-.filter-btn.active {color:var(--gold);border-bottom-color:var(--gold)}
 #blog-grid {padding:3rem 4rem 7rem;background:var(--bg)}
 .grid-container {display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
 .blog-card.featured {grid-column:span 2}
@@ -141,7 +136,6 @@ window.silktideConsentManager.init({
 .blog-card-img img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;transition:transform 0.5s ease}
 .blog-card:hover .blog-card-img img {transform:scale(1.04)}
 .blog-card-img-overlay {position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.3) 0%,transparent 60%);pointer-events:none}
-.blog-card-badge {position:absolute;top:1rem;left:1rem;background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.22rem 0.65rem}
 .blog-card-body {padding:1.6rem;display:flex;flex-direction:column;flex:1}
 .blog-card-meta {font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
 .blog-card-title {font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-weight:400;line-height:1.35;color:var(--ink);margin-bottom:0.7rem}
@@ -162,7 +156,6 @@ window.silktideConsentManager.init({
 .article-hero-back:hover {color:#faf8f4}
 .article-hero-back svg {width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 .article-meta {display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
-.article-cat {background:var(--gold);color:#fff;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.22rem 0.65rem}
 .article-date {font-size:0.72rem;letter-spacing:0.1em;color:rgba(250,248,244,0.55);text-transform:uppercase}
 .article-title {font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:#faf8f4}
 .article-body {background:var(--bg);padding:5rem 4rem 7rem}
@@ -197,7 +190,6 @@ window.silktideConsentManager.init({
 .btn-cta-ghost:hover {border-color:var(--gold-rich);color:var(--gold-rich)}
 @media (max-width:1100px) {
   #page-hero {padding:110px 2rem 4rem}
-  #filters {padding:0.5rem 2rem 0}
   #blog-grid {padding:2.5rem 2rem 6rem}
   .grid-container {grid-template-columns:1fr 1fr}
   .blog-card.featured {grid-column:span 2}
@@ -257,10 +249,6 @@ window.silktideConsentManager.init({
     </div>
   </section>
 
-  <div id="filters">
-    <div class="filter-wrap" id="filterWrap"></div>
-  </div>
-
   <section id="blog-grid">
     <div class="grid-container" id="gridContainer"></div>
   </section>
@@ -280,7 +268,6 @@ window.silktideConsentManager.init({
         Обратно към блога
       </button>
       <div class="article-meta">
-        <span class="article-cat" id="artCat"></span>
         <span class="article-date" id="artDate"></span>
       </div>
       <div class="article-title" id="artTitle"></div>
@@ -343,29 +330,9 @@ window.silktideConsentManager.init({
    НЕ РЕДАКТИРАЙ ПО-ДОЛУ — ЛОГИКА НА БЛОГА
 ════════════════════════════════════════════════ */
 
-let currentFilter = 'Всички';
 let currentArticleIdx = null;
 // Use optimised webp versions of article images (fallback handled by browser if missing)
 function optSrc(s){ return s ? 'img/opt/' + s.replace(/^img\//,'').replace(/\.[^.]+$/,'') + '.webp' : s; }
-
-// Build category filter buttons
-function buildFilters() {
-  const cats = ['Всички', ...new Set(ARTICLES.map(a => a.category))];
-  const wrap = document.getElementById('filterWrap');
-  wrap.innerHTML = cats.map(function(c) {
-    var cls = (c === currentFilter) ? 'filter-btn active' : 'filter-btn';
-    return '<button class="' + cls + '" onclick="setFilter(\'' + c + '\',this)">' + c + '</button>';
-  }).join('');
-}
-
-// Set active filter and re-render grid
-function setFilter(cat, btn) {
-  currentFilter = cat;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGrid();
-  setTimeout(drawPlaceholders, 0);
-}
 
 // Placeholder SVG for articles without images
 function placeholderHTML(articleIdx) {
@@ -466,29 +433,24 @@ function drawPlaceholders() {
   });
 }
 
-// Render blog grid
+// Render blog grid — всички статии заедно, без категории
 function renderGrid() {
-  const filtered = currentFilter === 'Всички'
-    ? ARTICLES
-    : ARTICLES.filter(a => a.category === currentFilter);
-
   const container = document.getElementById('gridContainer');
-  if (filtered.length === 0) {
-    container.innerHTML = '<div class="no-results">Няма статии в тази категория</div>';
+  if (ARTICLES.length === 0) {
+    container.innerHTML = '<div class="no-results">Скоро тук ще има нови статии</div>';
     return;
   }
 
-  container.innerHTML = filtered.map((a, i) => {
-    const featured = i === 0 && currentFilter === 'Всички' ? ' featured' : '';
+  container.innerHTML = ARTICLES.map((a, i) => {
+    const featured = i === 0 ? ' featured' : '';
     const imgHTML = a.img
       ? `<img src="${optSrc(a.img)}" alt="${a.title}" loading="lazy">`
-      : placeholderHTML(ARTICLES.indexOf(a));
+      : placeholderHTML(i);
     return `
-      <div class="blog-card${featured}" style="animation:fadeUp 0.5s ${i*0.07}s both" onclick="showArticle(${ARTICLES.indexOf(a)})">
+      <div class="blog-card${featured}" style="animation:fadeUp 0.5s ${i*0.07}s both" onclick="showArticle(${i})">
         <div class="blog-card-img">
           ${imgHTML}
           <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-badge">${a.category}</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">${a.date}</div>
@@ -507,7 +469,6 @@ function showArticle(idx) {
   currentArticleIdx = idx;
   const a = ARTICLES[idx];
   document.getElementById('blog-view').style.display = 'none';
-  document.getElementById('filters').style.display = 'none';
   const av = document.getElementById('article-view');
   av.classList.add('visible');
 
@@ -525,7 +486,6 @@ function showArticle(idx) {
     heroEl.style.background = 'var(--teal)';
   }
 
-  document.getElementById('artCat').textContent = a.category;
   document.getElementById('artDate').textContent = a.date;
   document.getElementById('artTitle').textContent = a.title;
   document.getElementById('artContent').innerHTML = a.content;
@@ -544,7 +504,6 @@ function showArticle(idx) {
 // Back to blog list
 function showBlog() {
   document.getElementById('blog-view').style.display = 'block';
-  document.getElementById('filters').style.display = 'block';
   document.getElementById('article-view').classList.remove('visible');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
@@ -560,7 +519,6 @@ const revealObs = new IntersectionObserver((entries) => {
 }, {threshold: 0.08});
 
 // Init
-buildFilters();
 renderGrid();
 drawPlaceholders();
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
