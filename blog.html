@@ -2,127 +2,37 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO — заглавие, описание и снимка при споделяне (променят се тук) ═══ -->
+<title>Блог за разчитане на лица и физиогномика | YourFaceTalk</title>
+<meta name="description" content="Статии за разчитане на лица (Face Reading): какво показват челото, веждите, очите, носът и устните за характера, силните страни и поведението на човека.">
+<link rel="canonical" href="https://yourfacetalk.com/blog.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Елина Божимирова">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:url" content="https://yourfacetalk.com/blog.html">
+<meta property="og:title" content="Блог за разчитане на лица и физиогномика | YourFaceTalk">
+<meta property="og:description" content="Статии за разчитане на лица (Face Reading): какво показват челото, веждите, очите, носът и устните за характера, силните страни и поведението на човека.">
+<meta property="og:image" content="https://yourfacetalk.com/img/Hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ═══ Бисквитки + Google Analytics — настройките са в consent.js ═══ -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
-    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    security_storage:      'granted'
-  });
-</script>
-
-<!-- 2. Silktide Consent Manager -->
 <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
-<style id="silktide-consent-manager-overrides">
-#stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #B8892E;
-  --backgroundColor: #faf8f4;
-  --textColor: #4b494b;
-  --backdropBackgroundColor: #00000033;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #B8892E;
-  --iconBackgroundColor: #FAF8F4;
-}
-</style>
 <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
-<script>
-window.silktideConsentManager.init({
-  backdrop: {
-    show: false
-  },
-  icon: {
-    position: "bottomRight"
-  },
-  prompt: {
-    position: "bottomRight"
-  },
-  consentTypes: [
-    {
-      id: "essential",
-      label: "Задължителни",
-      description: "<p>Задължителни бисквитки</p>",
-      required: true
-    },
-    {
-      id: "analytics",
-      label: "Аналитични",
-      description: "<p>Аналитични бисквитки</p>",
-      defaultValue: false,
-      gtag: "analytics_storage",
-      scripts: [
-        {
-          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
-          load: "async"
-        }
-      ],
-      onAccept: function() {
-        // Google Analytics 4 (G-J3RM10J6K9)
-        gtag('js', new Date());
-        gtag('config', 'G-J3RM10J6K9');
-      }
-    },
-    {
-      id: "marketing",
-      label: "Маркетингови",
-      description: "<p>Бисквитки за маркетингово измерване</p>",
-      defaultValue: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
-    }
-  ],
-  text: {
-    prompt: {
-      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
-      acceptAllButtonText: "Приеми",
-      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
-      rejectNonEssentialButtonText: "Откажи",
-      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
-      preferencesButtonText: "Настройки",
-      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
-    },
-    preferences: {
-      title: "Настройване на бисквитките",
-      description: "<p>Уважаваме вашето желание за анонимност</p>",
-      saveButtonText: "Запази и Затвори",
-      saveButtonAccessibleLabel: "Запази и Затвори",
-      creditLinkText: "+",
-      creditLinkAccessibleLabel: "+"
-    }
-  }
-});
-</script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J3RM10J6K9');
-</script>
+<script src="consent.js?v=202611160005"></script>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Блог — YourFaceTalk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261022">
+<link rel="stylesheet" href="styles.css?v=202611152342">
 <style>
-.nav-links a:hover,.nav-links a.active {color:var(--gold)}
-.nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
+/* Стилове само за списъка със статии. Оформлението на самите статии е в styles.css („Статия от блога“). */
 #page-hero {padding:120px 4rem 5rem;background:var(--bg);position:relative;overflow:hidden}
 .page-hero-inner {position:relative;z-index:2;max-width:680px;opacity:0;animation:fadeUp 0.9s 0.3s forwards}
 .page-hero-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem}
@@ -130,6 +40,12 @@ window.silktideConsentManager.init({
 .page-hero-sub {font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink2);line-height:1.7;max-width:520px}
 #blog-grid {padding:3rem 4rem 7rem;background:var(--bg)}
 .grid-container {display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.grid-container .blog-card {animation:fadeUp 0.5s both}
+.grid-container .blog-card:nth-child(2) {animation-delay:0.07s}
+.grid-container .blog-card:nth-child(3) {animation-delay:0.14s}
+.grid-container .blog-card:nth-child(4) {animation-delay:0.21s}
+.grid-container .blog-card:nth-child(5) {animation-delay:0.28s}
+.grid-container .blog-card:nth-child(6) {animation-delay:0.35s}
 .blog-card.featured {grid-column:span 2}
 .blog-card-img {position:relative;overflow:hidden;height:220px}
 .blog-card.featured .blog-card-img {height:320px}
@@ -143,73 +59,37 @@ window.silktideConsentManager.init({
 .blog-card-excerpt {font-size:0.84rem;color:var(--muted);line-height:1.75;flex:1}
 .blog-card-read {display:inline-flex;align-items:center;gap:0.35rem;margin-top:1.2rem;color:var(--gold);font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;transition:gap 0.3s}
 .blog-card:hover .blog-card-read {gap:0.6rem}
-.blog-card-placeholder {position:absolute;inset:0;overflow:hidden;background:var(--bg2)}
-.blog-card-placeholder canvas {position:absolute;inset:0;width:100%;height:100%}
-.no-results {grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-style:italic}
-#article-view {display:none;padding-top:80px}
-#article-view.visible {display:block}
-.article-hero {height:60vh;min-height:400px;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--bg2)}
-.article-hero-img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
-.article-hero-overlay {position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.85) 0%,rgba(26,22,18,0.3) 50%,transparent 100%)}
-.article-hero-content {position:relative;z-index:2;padding:4rem;color:#faf8f4;max-width:820px}
-.article-hero-back {display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,244,0.65);text-decoration:none;transition:color 0.3s;cursor:pointer;margin-bottom:1.6rem;background:none;border:none}
-.article-hero-back:hover {color:#faf8f4}
-.article-hero-back svg {width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
-.article-meta {display:flex;gap:1rem;align-items:center;margin-bottom:1rem}
-.article-date {font-size:0.72rem;letter-spacing:0.1em;color:rgba(250,248,244,0.55);text-transform:uppercase}
-.article-title {font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:#faf8f4}
-.article-body {background:var(--bg);padding:5rem 4rem 7rem}
-.article-content {max-width:720px;margin:0 auto}
-.article-content p {color:var(--ink2);line-height:1.9;font-size:0.97rem;margin-bottom:1.4rem}
-.article-content h3,.article-content h4 {font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin:2rem 0 0.8rem}
-.article-content h4 {font-size:1.2rem}
-.article-content ul,.article-content ol {margin:0 0 1.4rem 1.2rem}
-.article-content li {color:var(--ink2);line-height:1.85;font-size:0.95rem;margin-bottom:0.5rem}
-.article-content strong {color:var(--ink);font-weight:500}
-.article-content em {font-style:italic;color:var(--ink2)}
-.article-content hr {border:none;border-top:1px solid var(--border);margin:2.5rem 0}
-.article-content blockquote {border-left:2px solid var(--gold);padding:1.2rem 1.6rem;background:rgba(184,137,46,0.05);margin:1.8rem 0}
-.article-content blockquote p {font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink);margin:0}
-.article-share {margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.article-share-label {font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
-.article-nav {display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border)}
-.article-nav-btn {display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;transition:color 0.3s;font-family:"DM Sans",sans-serif}
-.article-nav-btn:hover {color:var(--gold)}
-.article-nav-btn svg {width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
-#cta {background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
-.cta-inner {position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
-.cta-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
-.cta-tag::before,.cta-tag::after {content:"";width:28px;height:1px;background:var(--gold-rich)}
-.cta-title {font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.2rem}
-.cta-title em {font-style:italic;color:var(--gold-rich)}
-.cta-sub {font-size:0.96rem;color:rgba(250,248,244,0.5);line-height:1.8;margin-bottom:2.5rem}
-.cta-actions {display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
-.btn-cta-primary {background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
 .btn-cta-primary:hover {background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,46,0.3)}
-.btn-cta-ghost {background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
-.btn-cta-ghost:hover {border-color:var(--gold-rich);color:var(--gold-rich)}
 @media (max-width:1100px) {
   #page-hero {padding:110px 2rem 4rem}
   #blog-grid {padding:2.5rem 2rem 6rem}
   .grid-container {grid-template-columns:1fr 1fr}
   .blog-card.featured {grid-column:span 2}
-  .article-body {padding:4rem 2rem 6rem}
-  #cta {padding:5rem 2rem}
 }
 @media (max-width:768px) {
   .grid-container {grid-template-columns:1fr}
   .blog-card.featured {grid-column:span 1}
-  .article-hero-content {padding:2rem}
-  .cta-actions {flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
-<script src="blog-data.js"></script>
 
-<!-- NAV -->
+<!-- BLOG-IDS:START — адресите на статиите по ред; попълва се автоматично от _tools/update-site.bat -->
+<script>var BLOG_IDS=["samostoyatelna-rabota-2026","ekip-lica-2026","hr-podbor-2026","lica-biznes-2025","nasoki-deystvie-2025","brad-pitt-2025","vertikalni-linii-2025","topografia-lice-2025","vejdi-pochivka-2025","nisko-chelo-2025","plytni-ustni-2025","nashite-brachki-2025","visoki-vejdi-2025","mini-avtobiografia-2025","formi-povedenie-2024","ogledalni-snimki-2024"];</script>
+<!-- BLOG-IDS:END -->
+<script>
+/* Стари връзки от вида blog.html?article=3 се пренасочват към страницата на съответната статия */
+(function () {
+  var n = new URLSearchParams(location.search).get('article');
+  if (n === null || typeof BLOG_IDS === 'undefined') return;
+  var i = parseInt(n, 10);
+  if (!isNaN(i) && i >= 0 && i < BLOG_IDS.length) location.replace('blog/' + BLOG_IDS[i] + '.html');
+})();
+</script>
+
+<!-- NAV:START — общото меню; променя се в _tools/nav.html (после пуснете _tools/update-site.bat) -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo"><img src="img/opt/logo.webp" alt="YourFaceTalk Logo"></a>
+  <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="YourFaceTalk — начало" width="272" height="300"></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="index.html">Начало</a></li>
@@ -218,70 +98,241 @@ window.silktideConsentManager.init({
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
-          <li><a href="uslugi-workshop.html">Обучения</a></li>
+          <li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li>
+          <li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li>
           <li><a href="uslugi-vaucher.html">Подари разчитане</a></li>
         </ul>
       </li>
-      <li><a href="blog.html">Блог</a></li>
+      <li><a href="blog.html" class="active" aria-current="page">Блог</a></li>
       <li><a href="sabitia.html">Събития</a></li>
       <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
     </ul>
     <a href="tel:+359888773076" class="nav-phone" title="Обади се">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       <span class="phone-num">+359 888 773 076</span>
     </a>
   </div>
   <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
+<!-- NAV:END -->
 
-<!-- ════════════════════════════════════════════════════
-     БЛОГ ИЗГЛЕД (списък)
-════════════════════════════════════════════════════ -->
-<div id="blog-view">
+<main>
 
-  <section id="page-hero">
-    <div class="page-hero-bg"></div>
-    <div class="page-hero-inner">
-      <div class="page-hero-tag">Знание · Прозрения · Физиогномика</div>
-      <h1>Блог —<br><em>Лицата говорят</em></h1>
-      <p class="page-hero-sub">Статии, наблюдения и прозрения от практиката по разчитане на лица. Всяка седмица — нова перспектива за себе си и хората около теб.</p>
-    </div>
-  </section>
+<section id="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Знание · Прозрения · Физиогномика</div>
+    <h1>Блог —<br><em>Лицата говорят</em></h1>
+    <p class="page-hero-sub">Статии, наблюдения и прозрения от практиката по разчитане на лица (Face Reading) — какво показват чертите на лицето за характера, силните страни и поведението на човека.</p>
+  </div>
+</section>
 
-  <section id="blog-grid">
-    <div class="grid-container" id="gridContainer"></div>
-  </section>
-
-</div>
-
-<!-- ════════════════════════════════════════════════════
-     СТАТИЯ ИЗГЛЕД (четене)
-════════════════════════════════════════════════════ -->
-<div id="article-view">
-  <div class="article-hero">
-    <img id="artHeroImg" src="" alt="" class="article-hero-img">
-    <div class="article-hero-overlay"></div>
-    <div class="article-hero-content">
-      <button class="article-hero-back" onclick="showBlog()">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-        Обратно към блога
-      </button>
-      <div class="article-meta">
-        <span class="article-date" id="artDate"></span>
+<!-- ═══════════════════════════════════════════════════════════
+     СПИСЪК СЪС СТАТИИТЕ
+     ★ Статиите се добавят и променят в blog-data.js ★
+     След промяна пуснете _tools/update-site.bat — той обновява този списък,
+     прави отделна страница за всяка статия в папка blog/ и обновява sitemap.xml.
+     Не редактирайте на ръка нищо между BLOG-LIST:START и BLOG-LIST:END.
+     ═══════════════════════════════════════════════════════════ -->
+<section id="blog-grid">
+  <div class="grid-container" id="gridContainer">
+    <!-- BLOG-LIST:START — попълва се автоматично от blog-data.js -->
+    <a class="blog-card featured" href="blog/samostoyatelna-rabota-2026.html">
+      <div class="blog-card-img">
+        <img src="img/opt/samostoyatelna-rabota-2026.webp" alt="Имаш качество да работиш самостоятелно и това се вижда в лицето ти?" decoding="async">
+        <div class="blog-card-img-overlay"></div>
       </div>
-      <div class="article-title" id="artTitle"></div>
-    </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">13 Февруари 2026</div>
+        <h2 class="blog-card-title">Имаш качество да работиш самостоятелно и това се вижда в лицето ти?</h2>
+        <p class="blog-card-excerpt">Начин да разбереш хората, меките им умения и качества на личността — и дали биха били подходящи за изискванията на дадена длъжност.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/ekip-lica-2026.html">
+      <div class="blog-card-img">
+        <img src="img/opt/ekip-lica-2026.webp" alt="Лицето на екипа – как да разчетем динамиката на екипа през лицата" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">26 Януари 2026</div>
+        <h2 class="blog-card-title">Лицето на екипа – как да разчетем динамиката на екипа през лицата</h2>
+        <p class="blog-card-excerpt">Само знанията и компетенциите на лидера ли имат значение, за да бъде един екип по-дълготраен и успешен? Мисля, че всички знаем отговора - а и Лицето го показва също!</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/hr-podbor-2026.html">
+      <div class="blog-card-img">
+        <img src="img/opt/hr-podbor-2026.webp" alt="Разчитане на лица — нов слой към процеса на подбор на кандидати" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">09 Януари 2026</div>
+        <h2 class="blog-card-title">Разчитане на лица — нов слой към процеса на подбор на кандидати</h2>
+        <p class="blog-card-excerpt">Не става въпрос за етикиране. Става въпрос за виждане на човека до нас. И всеки, когато е &quot;видян&quot; и е на правилното за него място, личната му удовлетвореност расте.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/lica-biznes-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/lica-biznes-2025.webp" alt="Познанията за лицата и ролята им в бизнеса" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">15 Декември 2025</div>
+        <h2 class="blog-card-title">Познанията за лицата и ролята им в бизнеса</h2>
+        <p class="blog-card-excerpt">Да умееш да видиш онези качества, които няма да ги видиш написани в CV-то на човек. Умеете ли да виждате хората в екипа си такива каквито са?</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/nasoki-deystvie-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/nasoki-deystvie-2025.webp" alt="Лицето показва основни насоки на действие — Къде?" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">15 Ноември 2025</div>
+        <h2 class="blog-card-title">Лицето показва основни насоки на действие — Къде?</h2>
+        <p class="blog-card-excerpt">История от ежедневието: как само по две-три черти в лицето ще можете да разберете как действа даден човек на работното си място.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/brad-pitt-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/brad-pitt-2025.webp" alt="Кратък прочит на някои черти от лицето на Брад Пит" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">20 Октомври 2025</div>
+        <h2 class="blog-card-title">Кратък прочит на някои черти от лицето на Брад Пит</h2>
+        <p class="blog-card-excerpt">Какво казват: челюстта, формата на лицето и една бръчка, която говори много. Познайте Брад Пит само по тези 3 черти.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/vertikalni-linii-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/vertikalni-linii-2025.webp" alt="Вертикални линии между веждите" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">14 Септември 2025</div>
+        <h2 class="blog-card-title">Вертикални линии между веждите</h2>
+        <p class="blog-card-excerpt">За какво говорят вертикалните бръчки между веждите — какво казва лицето ти.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/topografia-lice-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/topografia-lice-2025.webp" alt="Топография в нашето лице?!" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">04 Август 2025</div>
+        <h2 class="blog-card-title">Топография в нашето лице?!</h2>
+        <p class="blog-card-excerpt">Китайската физиогномика и един от начините да обясним ин/ян баланс в лицата.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/vejdi-pochivka-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/vejdi-pochivka-2025.webp" alt="Умеете ли да си давате почивка — веждите могат да покажат това" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">24 Юли 2025</div>
+        <h2 class="blog-card-title">Умеете ли да си давате почивка — веждите могат да покажат това</h2>
+        <p class="blog-card-excerpt">Веждите са един от най-красноречивите елементи на лицето — научете какво разкриват за вашата връзка с почивката и възстановяването.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/nisko-chelo-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/nisko-chelo-2025.webp" alt="Защо в живота на някои хора всичко е &quot;черно&quot; или &quot;бяло&quot;" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">24 Юни 2025</div>
+        <h2 class="blog-card-title">Защо в живота на някои хора всичко е &quot;черно&quot; или &quot;бяло&quot;</h2>
+        <p class="blog-card-excerpt">Кои са чертите в лицето, които могат да подскажат за подобен мироглед.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/plytni-ustni-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/plytni-ustni-2025.webp" alt="Плътни устни" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">21 Май 2025</div>
+        <h2 class="blog-card-title">Плътни устни</h2>
+        <p class="blog-card-excerpt">Устата  ни е едно от най-чувствените ни места в нашето лице и устните са много сензитивни, съдържайки множество нервни окончания.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/nashite-brachki-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/nashite-brachki-2025.webp" alt="Face Reading за нашите бръчки" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">03 Април 2025</div>
+        <h2 class="blog-card-title">Face Reading за нашите бръчки</h2>
+        <p class="blog-card-excerpt">Заличавайки дадена бръчка, дали заличаваме и това, което е вече част от нас?!</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/visoki-vejdi-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/visoki-vejdi-2025.webp" alt="Какво показват високо разположените вежди" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">25 Февруари 2025</div>
+        <h2 class="blog-card-title">Какво показват високо разположените вежди</h2>
+        <p class="blog-card-excerpt">По космите на веждите, по дължината им, по разположението им, формата им може да се тълкува много за човека.</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/mini-avtobiografia-2025.html">
+      <div class="blog-card-img">
+        <img src="img/opt/mini-avtobiografia-2025.webp" alt="Нашата мини &quot;автобиография&quot; е закодирана в чертите ни" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">26 Януари 2025</div>
+        <h2 class="blog-card-title">Нашата мини &quot;автобиография&quot; е закодирана в чертите ни</h2>
+        <p class="blog-card-excerpt">Как мислим всъщност, как чувстваме и как действаме? Запитвали ли сте се?</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/formi-povedenie-2024.html">
+      <div class="blog-card-img">
+        <img src="img/opt/formi-povedenie-2024.webp" alt="Формите създават поведение" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">16 Ноември 2024</div>
+        <h2 class="blog-card-title">Формите създават поведение</h2>
+        <p class="blog-card-excerpt">Формата ни дава рамка – как се чувстваме във физическият свят</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+    <a class="blog-card" href="blog/ogledalni-snimki-2024.html">
+      <div class="blog-card-img">
+        <img src="img/opt/ogledalni-snimki-2024.webp" alt="Какво представляват огледалните снимки и техният анализ" loading="lazy" decoding="async">
+        <div class="blog-card-img-overlay"></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">23 Септември 2024</div>
+        <h2 class="blog-card-title">Какво представляват огледалните снимки и техният анализ</h2>
+        <p class="blog-card-excerpt">Има ли баланс между двете ни части? Какво означават различията?</p>
+        <span class="blog-card-read">Прочети →</span>
+      </div>
+    </a>
+<!-- BLOG-LIST:END -->
   </div>
-  <div class="article-body">
-    <div class="article-content" id="artContent"></div>
-    <div class="article-share">
-      <span class="article-share-label">Сподели:</span>
-      <a href="https://www.facebook.com/profile.php?id=61551052808065" target="_blank" class="btn-primary" style="padding:0.5rem 1rem;font-size:0.72rem">Facebook</a>
-    </div>
-    <div class="article-nav" id="artNav"></div>
-  </div>
-</div>
+</section>
+
+</main>
 
 <div class="gold-divider"></div>
 
@@ -293,20 +344,20 @@ window.silktideConsentManager.init({
     <p class="cta-sub">Знанието е първата стъпка. Консултацията е втората.</p>
     <div class="cta-actions">
       <a href="index.html#contact" class="btn-cta-primary">Запитване по имейл</a>
-      <a href="index.html#services" class="btn-cta-ghost">Разгледай услугите</a>
+      <a href="uslugi.html" class="btn-cta-ghost">Разгледай услугите</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER:START — общият футър; променя се в _tools/footer.html (после пуснете _tools/update-site.bat) -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">YourFace<span>Talk</span></div>
-      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+      <p>Професионални консултации за разчитане на лица (Face Reading) с Елина Божимирова — онлайн и на живо във Варна. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
-    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi.html">Всички услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li><li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="index.html#contact">Контакти</a></li><li><a href="face-reading-bulgaria.html" hreflang="en" lang="en">English</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -320,218 +371,35 @@ window.silktideConsentManager.init({
     </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
-<script src="app.js?v=20260719"></script>
-<script>
-/* ARTICLES са заредени от blog-data.js (зареден в <head>) */
-
-
-/* ════════════════════════════════════════════════
-   НЕ РЕДАКТИРАЙ ПО-ДОЛУ — ЛОГИКА НА БЛОГА
-════════════════════════════════════════════════ */
-
-let currentArticleIdx = null;
-// Use optimised webp versions of article images (fallback handled by browser if missing)
-function optSrc(s){ return s ? 'img/opt/' + s.replace(/^img\//,'').replace(/\.[^.]+$/,'') + '.webp' : s; }
-
-// Placeholder SVG for articles without images
-function placeholderHTML(articleIdx) {
-  return '<div class="blog-card-placeholder"><canvas data-idx="' + articleIdx + '" class="ph-canvas"></canvas></div>';
-}
-
-// Draw unique geometric art on each placeholder canvas
-function drawPlaceholders() {
-  // Palette sets — each article gets its own palette
-  var palettes = [
-    { bg: ['#e8e2d9','#d4c9b8'], shapes: ['#b8892e','#c9a84c','#1f3d38'] },  // gold/teal
-    { bg: ['#d6dde3','#c4cfd8'], shapes: ['#1f3d38','#2a5248','#b8892e'] },  // teal/gold
-    { bg: ['#e2d9e8','#d0c4da'], shapes: ['#6b4f8a','#b8892e','#1f3d38'] },  // purple/gold
-    { bg: ['#dde3d6','#ccd8c4'], shapes: ['#3a6b4f','#b8892e','#1a2535'] },  // green/gold
-    { bg: ['#e3ddd6','#d8cfc4'], shapes: ['#8a5a2e','#1f3d38','#c9a84c'] },  // warm/teal
-    { bg: ['#d6dde3','#bfcdd8'], shapes: ['#1a2535','#b8892e','#2a5248'] },  // navy/gold
-    { bg: ['#e8dfd6','#d4c8bc'], shapes: ['#c9a84c','#1f3d38','#8a5a2e'] },  // amber/teal
-    { bg: ['#dce3dd','#c8d4ca'], shapes: ['#2a5248','#b8892e','#6b4f8a'] },  // sage/gold
-    { bg: ['#e3dce3','#d4c8d4'], shapes: ['#6b4f8a','#1f3d38','#c9a84c'] },  // mauve/teal
-  ];
-
-  document.querySelectorAll('.ph-canvas').forEach(function(canvas) {
-    var idx = parseInt(canvas.dataset.idx) % palettes.length;
-    var pal = palettes[idx];
-    var w = canvas.offsetWidth || 400;
-    var h = canvas.offsetHeight || 260;
-    canvas.width = w;
-    canvas.height = h;
-    var ctx = canvas.getContext('2d');
-
-    // Background gradient
-    var grad = ctx.createLinearGradient(0, 0, w, h);
-    grad.addColorStop(0, pal.bg[0]);
-    grad.addColorStop(1, pal.bg[1]);
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
-
-    // Seed random from idx for consistent art per article
-    var seed = idx * 137 + 42;
-    function rnd() { seed = (seed * 1664525 + 1013904223) & 0xffffffff; return Math.abs(seed) / 0xffffffff; }
-
-    // Draw geometric shapes
-    for (var i = 0; i < 8; i++) {
-      var x = rnd() * w;
-      var y = rnd() * h;
-      var r = 30 + rnd() * (Math.min(w,h) * 0.35);
-      var color = pal.shapes[Math.floor(rnd() * pal.shapes.length)];
-      var alpha = 0.06 + rnd() * 0.12;
-
-      ctx.save();
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = color;
-
-      var shape = Math.floor(rnd() * 3);
-      if (shape === 0) {
-        // Circle
-        ctx.beginPath();
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.fill();
-      } else if (shape === 1) {
-        // Rotated rectangle
-        ctx.translate(x, y);
-        ctx.rotate(rnd() * Math.PI);
-        ctx.fillRect(-r * 0.5, -r * 0.5, r * (0.8 + rnd()), r * (0.4 + rnd() * 0.4));
-      } else {
-        // Triangle
-        ctx.beginPath();
-        ctx.moveTo(x, y - r);
-        ctx.lineTo(x + r * 0.9, y + r * 0.6);
-        ctx.lineTo(x - r * 0.9, y + r * 0.6);
-        ctx.closePath();
-        ctx.fill();
-      }
-      ctx.restore();
+<!-- ═══ Структурирани данни за Google и AI (schema.org) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://yourfacetalk.com/blog.html#blog",
+      "url": "https://yourfacetalk.com/blog.html",
+      "name": "Блог на YourFaceTalk — Лицата говорят",
+      "description": "Статии за разчитане на лица (Face Reading) и физиогномика: какво показват чертите на лицето за характера, силните страни и поведението на човека.",
+      "inLanguage": "bg-BG",
+      "isPartOf": { "@id": "https://yourfacetalk.com/#website" },
+      "author": { "@type": "Person", "@id": "https://yourfacetalk.com/#elina", "name": "Елина Божимирова", "url": "https://yourfacetalk.com/za-nas.html" },
+      "publisher": { "@type": "Organization", "@id": "https://yourfacetalk.com/#organization", "name": "YourFaceTalk", "url": "https://yourfacetalk.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://yourfacetalk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://yourfacetalk.com/blog.html" }
+      ]
     }
-
-    // Fine lines grid overlay
-    ctx.globalAlpha = 0.04;
-    ctx.strokeStyle = pal.shapes[0];
-    ctx.lineWidth = 1;
-    for (var gx = 0; gx < w; gx += 40) {
-      ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, h); ctx.stroke();
-    }
-    for (var gy = 0; gy < h; gy += 40) {
-      ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(w, gy); ctx.stroke();
-    }
-
-    // Central accent — small circle
-    ctx.globalAlpha = 0.18;
-    ctx.fillStyle = pal.shapes[0];
-    ctx.beginPath();
-    ctx.arc(w * 0.5, h * 0.5, 18, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha = 0.08;
-    ctx.beginPath();
-    ctx.arc(w * 0.5, h * 0.5, 35, 0, Math.PI * 2);
-    ctx.fill();
-  });
-}
-
-// Render blog grid — всички статии заедно, без категории
-function renderGrid() {
-  const container = document.getElementById('gridContainer');
-  if (ARTICLES.length === 0) {
-    container.innerHTML = '<div class="no-results">Скоро тук ще има нови статии</div>';
-    return;
-  }
-
-  container.innerHTML = ARTICLES.map((a, i) => {
-    const featured = i === 0 ? ' featured' : '';
-    const imgHTML = a.img
-      ? `<img src="${optSrc(a.img)}" alt="${a.title}" loading="lazy">`
-      : placeholderHTML(i);
-    return `
-      <div class="blog-card${featured}" style="animation:fadeUp 0.5s ${i*0.07}s both" onclick="showArticle(${i})">
-        <div class="blog-card-img">
-          ${imgHTML}
-          <div class="blog-card-img-overlay"></div>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">${a.date}</div>
-          <div class="blog-card-title">${a.title}</div>
-          <p class="blog-card-excerpt">${a.excerpt}</p>
-          <span class="blog-card-read">Прочети →</span>
-        </div>
-      </div>`;
-  }).join('');
-
-  // Cards animate via CSS animation-delay
-}
-
-// Show full article
-function showArticle(idx) {
-  currentArticleIdx = idx;
-  const a = ARTICLES[idx];
-  document.getElementById('blog-view').style.display = 'none';
-  const av = document.getElementById('article-view');
-  av.classList.add('visible');
-
-  // Hero image
-  const heroImg = document.getElementById('artHeroImg');
-  const heroEl = av.querySelector('.article-hero');
-  if (a.img) {
-    heroImg.src = optSrc(a.img);
-    heroImg.style.display = 'block';
-    heroEl.style.height = '60vh'; heroEl.style.minHeight = '400px';
-    heroEl.style.background = '';
-  } else {
-    heroImg.style.display = 'none';
-    heroEl.style.height = '35vh'; heroEl.style.minHeight = '200px';
-    heroEl.style.background = 'var(--teal)';
-  }
-
-  document.getElementById('artDate').textContent = a.date;
-  document.getElementById('artTitle').textContent = a.title;
-  document.getElementById('artContent').innerHTML = a.content;
-
-  // Prev/Next nav
-  const prev = idx < ARTICLES.length - 1 ? ARTICLES[idx + 1] : null;
-  const next = idx > 0 ? ARTICLES[idx - 1] : null;
-  document.getElementById('artNav').innerHTML = `
-    ${prev ? `<button class="article-nav-btn" onclick="showArticle(${idx+1})"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> ${prev.title.substring(0,45)}...</button>` : '<span></span>'}
-    ${next ? `<button class="article-nav-btn" onclick="showArticle(${idx-1})">${next.title.substring(0,45)}... <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>` : '<span></span>'}
-  `;
-
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-// Back to blog list
-function showBlog() {
-  document.getElementById('blog-view').style.display = 'block';
-  document.getElementById('article-view').classList.remove('visible');
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-// Reveal observer
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      revealObs.unobserve(e.target);
-    }
-  });
-}, {threshold: 0.08});
-
-// Init
-renderGrid();
-drawPlaceholders();
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-// Handle ?article=N from index.html links
-var urlParams = new URLSearchParams(window.location.search);
-var articleParam = urlParams.get('article');
-if (articleParam !== null) {
-  var idx = parseInt(articleParam);
-  if (!isNaN(idx) && idx >= 0 && idx < ARTICLES.length) {
-    setTimeout(function() { showArticle(idx); }, 100);
-  }
+  ]
 }
 </script>
+
+<script src="app.js?v=202611160001"></script>
 </body>
 </html>

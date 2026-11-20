@@ -1,8 +1,30 @@
 # robots.txt — yourfacetalk.com
+# Сайтът е отворен за всички търсачки и за AI асистентите (ChatGPT, Claude, Perplexity, Gemini и др.).
+
 User-agent: *
 Allow: /
 
 # Файлът на лийд магнита се доставя само по имейл — да не се индексира.
 Disallow: /dl/
+# Работни папки (ако случайно бъдат качени на сървъра)
+Disallow: /_tools/
+Disallow: /_arhiv/
+
+# AI търсачки и асистенти — изрично разрешени (същите правила като за всички останали)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bingbot
+Allow: /
+Disallow: /dl/
+Disallow: /_tools/
+Disallow: /_arhiv/
 
 Sitemap: https://yourfacetalk.com/sitemap.xml

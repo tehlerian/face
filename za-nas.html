@@ -2,132 +2,40 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
-    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    security_storage:      'granted'
-  });
-</script>
-
-<!-- 2. Silktide Consent Manager -->
-<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
-<style id="silktide-consent-manager-overrides">
-#stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #B8892E;
-  --backgroundColor: #faf8f4;
-  --textColor: #4b494b;
-  --backdropBackgroundColor: #00000033;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #B8892E;
-  --iconBackgroundColor: #FAF8F4;
-}
-</style>
-<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
-<script>
-window.silktideConsentManager.init({
-  backdrop: {
-    show: false
-  },
-  icon: {
-    position: "bottomRight"
-  },
-  prompt: {
-    position: "bottomRight"
-  },
-  consentTypes: [
-    {
-      id: "essential",
-      label: "Задължителни",
-      description: "<p>Задължителни бисквитки</p>",
-      required: true
-    },
-    {
-      id: "analytics",
-      label: "Аналитични",
-      description: "<p>Аналитични бисквитки</p>",
-      defaultValue: false,
-      gtag: "analytics_storage",
-      scripts: [
-        {
-          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
-          load: "async"
-        }
-      ],
-      onAccept: function() {
-        // Google Analytics 4 (G-J3RM10J6K9)
-        gtag('js', new Date());
-        gtag('config', 'G-J3RM10J6K9');
-      }
-    },
-    {
-      id: "marketing",
-      label: "Маркетингови",
-      description: "<p>Бисквитки за маркетингово измерване</p>",
-      defaultValue: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
-    }
-  ],
-  text: {
-    prompt: {
-      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
-      acceptAllButtonText: "Приеми",
-      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
-      rejectNonEssentialButtonText: "Откажи",
-      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
-      preferencesButtonText: "Настройки",
-      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
-    },
-    preferences: {
-      title: "Настройване на бисквитките",
-      description: "<p>Уважаваме вашето желание за анонимност</p>",
-      saveButtonText: "Запази и Затвори",
-      saveButtonAccessibleLabel: "Запази и Затвори",
-      creditLinkText: "+",
-      creditLinkAccessibleLabel: "+"
-    }
-  }
-});
-</script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J3RM10J6K9');
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO — заглавие, описание и снимка при споделяне (променят се тук) ═══ -->
+<title>За мен — Елина Божимирова, сертифициран Face Reader | YourFaceTalk</title>
+<meta name="description" content="Елина Божимирова е сертифициран Face Reader (Psychosomatic Therapy College, Австралия) с над 250 консултации по разчитане на лица — западна и китайска школа.">
+<link rel="canonical" href="https://yourfacetalk.com/za-nas.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Елина Божимирова">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:url" content="https://yourfacetalk.com/za-nas.html">
+<meta property="og:title" content="За мен — Елина Божимирова, сертифициран Face Reader | YourFaceTalk">
+<meta property="og:description" content="Елина Божимирова е сертифициран Face Reader (Psychosomatic Therapy College, Австралия) с над 250 консултации по разчитане на лица — западна и китайска школа.">
+<meta property="og:image" content="https://yourfacetalk.com/img/elina.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ═══ Бисквитки + Google Analytics — настройките са в consent.js ═══ -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
+<script src="consent.js?v=202611160005"></script>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<title>За Нас — YourFaceTalk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261022">
+<link rel="stylesheet" href="styles.css?v=202611152342">
 <style>
-.nav-links a:hover,.nav-links a.active {color:var(--gold)}
-.nav-links a:hover::after,.nav-links a.active::after {transform:scaleX(1)}
 #page-hero {padding-top:80px;min-height:60vh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;background:var(--bg);overflow:hidden}
 .page-hero-left {padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;position:relative}
 .page-hero-left::after {content:"";position:absolute;top:0;bottom:0;right:0;width:1px;background:linear-gradient(to bottom,transparent,var(--border2),transparent)}
 .page-hero-breadcrumb {display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none}
-.page-hero-breadcrumb:hover {color:var(--gold)}
 .page-hero-breadcrumb svg {width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
 .page-hero-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
 .page-hero-tag::before {content:"";width:28px;height:1px;background:var(--gold)}
@@ -136,6 +44,8 @@ window.silktideConsentManager.init({
 .page-hero-img {width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .page-hero-img-overlay {position:absolute;top:0;left:0;bottom:0;width:80px;background:linear-gradient(to right,var(--bg),transparent);pointer-events:none}
 #story {background:var(--bg2)}
+/* главното заглавие на страницата (h1) — със същия размер като останалите заглавия на секции */
+#story h1 {font-size:clamp(2.1rem,3.8vw,3.4rem);line-height:1.15}
 .story-grid {display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;margin-top:3.5rem}
 .story-img-col {position:relative}
 .story-img {width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
@@ -191,16 +101,9 @@ window.silktideConsentManager.init({
 .school-cert svg {width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
 #cta {background:#1f3d38;padding:7rem 4rem;position:relative;overflow:hidden}
 .cta-inner {position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
-.cta-tag {display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
-.cta-tag::before,.cta-tag::after {content:"";width:28px;height:1px;background:var(--gold-rich)}
 .cta-title {font-family:"Cormorant Garamond",serif;font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.4rem}
-.cta-title em {font-style:italic;color:var(--gold-rich)}
 .cta-sub {font-size:1rem;color:rgba(250,248,244,0.55);line-height:1.8;margin-bottom:3rem;max-width:560px;margin-left:auto;margin-right:auto}
-.cta-actions {display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
-.btn-cta-primary {background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
 .btn-cta-primary:hover {background:var(--gold-rich);transform:translateY(-2px);box-shadow:0 12px 32px rgba(184,137,46,0.3)}
-.btn-cta-ghost {background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
-.btn-cta-ghost:hover {border-color:var(--gold-rich);color:var(--gold-rich)}
 @media (max-width:1100px) {
   #page-hero {grid-template-columns:1fr;min-height:auto}
   .page-hero-left {padding:4rem 2rem;min-height:50vh}
@@ -214,26 +117,24 @@ window.silktideConsentManager.init({
 @media (max-width:768px) {
   .beliefs-grid,.schools-grid {grid-template-columns:1fr}
   .mission-stats {grid-template-columns:repeat(3,1fr)}
-  #cta {padding:5rem 2rem}
-  .cta-actions {flex-direction:column;align-items:center}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV:START — общото меню; променя се в _tools/nav.html (после пуснете _tools/update-site.bat) -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo"><img src="img/opt/logo.webp" alt="YourFaceTalk Logo"></a>
+  <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="YourFaceTalk — начало" width="272" height="300"></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="index.html">Начало</a></li>
-      <li><a href="za-nas.html">За мен</a></li>
+      <li><a href="za-nas.html" class="active" aria-current="page">За мен</a></li>
       <li class="has-dropdown">
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
-          <li><a href="uslugi-workshop.html">Обучения</a></li>
+          <li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li>
+          <li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li>
           <li><a href="uslugi-vaucher.html">Подари разчитане</a></li>
         </ul>
       </li>
@@ -242,12 +143,13 @@ window.silktideConsentManager.init({
       <li><a href="index.html#contact" class="nav-cta">Контакти</a></li>
     </ul>
     <a href="tel:+359888773076" class="nav-phone" title="Обади се">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       <span class="phone-num">+359 888 773 076</span>
     </a>
   </div>
   <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
+<!-- NAV:END -->
 
 <!-- PAGE HERO -->
 <!-- 
@@ -275,14 +177,14 @@ window.silktideConsentManager.init({
   <div class="section-tag reveal">Историята</div>
   <div class="story-grid">
     <div class="story-img-col reveal">
-      <img src="img/opt/elina.webp" alt="Елина Божимирова" class="story-img">
+      <img src="img/opt/elina.webp" alt="Елина Божимирова — сертифициран Face Reader, основател на YourFaceTalk" class="story-img" width="600" height="900">
       <!--<div class="story-badge">
         <div class="story-badge-num">15+</div>
         <div class="story-badge-text">Години опит</div>
       </div>-->
     </div>
     <div class="story-text-col reveal">
-      <h2>Науката за четене за лицето<br>влезе в <em>живота ми</em></h2>
+      <h1>Науката за четене за лицето<br>влезе в <em>живота ми</em></h1>
       <div class="story-opening" style="margin-top:1.8rem">
         През годините, работейки в корпоративния свят, винаги съм търсела различни отговори — за себе си и за света, в който живеем.
       </div>
@@ -460,15 +362,15 @@ window.silktideConsentManager.init({
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER:START — общият футър; променя се в _tools/footer.html (после пуснете _tools/update-site.bat) -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">YourFace<span>Talk</span></div>
-      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+      <p>Професионални консултации за разчитане на лица (Face Reading) с Елина Божимирова — онлайн и на живо във Варна. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
-    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="index.html#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi.html">Всички услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li><li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="index.html#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="index.html#contact">Контакти</a></li><li><a href="face-reading-bulgaria.html" hreflang="en" lang="en">English</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -482,7 +384,57 @@ window.silktideConsentManager.init({
     </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
-<script src="app.js?v=20260719"></script>
+<!-- ═══ Структурирани данни за Google и AI (schema.org) — кой е авторът и експертът зад сайта ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      "@id": "https://yourfacetalk.com/za-nas.html#webpage",
+      "url": "https://yourfacetalk.com/za-nas.html",
+      "name": "За мен — Елина Божимирова, сертифициран Face Reader",
+      "inLanguage": "bg-BG",
+      "isPartOf": { "@id": "https://yourfacetalk.com/#website" },
+      "mainEntity": { "@id": "https://yourfacetalk.com/#elina" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yourfacetalk.com/#elina",
+      "name": "Елина Божимирова",
+      "alternateName": "Elina Bozhimirova",
+      "jobTitle": "Сертифициран Face Reader",
+      "description": "Елина Божимирова е сертифициран Face Reader (Psychosomatic Therapy College, Австралия) и основател на YourFaceTalk. След 15 години в корпоративния свят се посвещава на разчитането на лица по западната и китайската школа и е провела над 250 консултации.",
+      "url": "https://yourfacetalk.com/za-nas.html",
+      "image": "https://yourfacetalk.com/img/elina.jpg",
+      "worksFor": { "@type": "Organization", "@id": "https://yourfacetalk.com/#organization", "name": "YourFaceTalk", "url": "https://yourfacetalk.com/" },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Psychosomatic Therapy College",
+        "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified Face Reader",
+        "credentialCategory": "Сертификат",
+        "recognizedBy": { "@type": "Organization", "name": "Psychosomatic Therapy College, Австралия" }
+      },
+      "knowsAbout": ["Разчитане на лица", "Face reading", "Физиогномика", "Physiognomy", "Психосоматика", "Невербална комуникация", "Себепознание"],
+      "sameAs": ["https://www.linkedin.com/in/elina-bozhimirova-3360a9301/"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://yourfacetalk.com/" },
+        { "@type": "ListItem", "position": 2, "name": "За мен", "item": "https://yourfacetalk.com/za-nas.html" }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js?v=202611160001"></script>
 </body>
 </html>

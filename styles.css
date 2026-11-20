@@ -418,3 +418,127 @@
     .has-dropdown.open .dropdown-menu{display:block;transform:none}
     .dropdown-menu a{padding:0.85rem 2rem 0.85rem 3rem;border-bottom:1px solid var(--border);font-size:0.9rem}
   }
+
+  /* ═══════════════════════════════════════════════════════════
+     ОБЩИ КОМПОНЕНТИ ЗА ВЪТРЕШНИТЕ СТРАНИЦИ
+     (преди бяха копирани във всяка страница — сега са само тук)
+     ═══════════════════════════════════════════════════════════ */
+
+  /* ── Активна връзка в менюто ── */
+  .nav-links a.active{color:var(--gold)}
+  .nav-links a.active::after{transform:scaleX(1)}
+
+  /* ── „Всички услуги“ (връзка назад в началото на страницата) ── */
+  .page-hero-breadcrumb{display:flex;width:fit-content;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem;text-decoration:none;transition:color 0.3s}
+  .page-hero-breadcrumb:hover{color:var(--gold)}
+  .page-hero-breadcrumb svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+
+  /* ── ЦЕНИ С ОТСТЪПКА ──
+     Надпис над цената + стара цена, задраскана по диагонал + нова цена.
+     HTML:  <div class="discount-label">Специална отстъпка 15%</div>
+            <div class="price-row"><del class="price-old">35 €</del> … новата цена … </div>
+     Цветът на задраскването се сменя от --strike. */
+  .discount-label{display:inline-block;background:var(--gold);color:#fff;font-size:0.64rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;line-height:1.3;padding:0.35rem 0.7rem;margin-bottom:0.8rem}
+  .price-row{display:flex;align-items:baseline;gap:0.8rem;flex-wrap:wrap}
+  .price-old{--strike:#b23a2e;display:inline-block;font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:400;line-height:1;color:var(--muted);text-decoration:none;white-space:nowrap;padding:0.1em 0.2em;background:linear-gradient(to top left,transparent calc(50% - 1.3px),var(--strike) calc(50% - 0.8px),var(--strike) calc(50% + 0.8px),transparent calc(50% + 1.3px))}
+  .on-dark .price-old{--strike:#eaa392;color:rgba(250,248,244,0.6)}
+  .on-dark .discount-label{background:var(--gold-rich);color:#1a1612}
+
+  /* ── CTA лента в края на страницата ── */
+  #cta{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  .cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;text-align:center}
+  .cta-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-rich);margin-bottom:1.4rem}
+  .cta-tag::before,.cta-tag::after{content:"";width:28px;height:1px;background:var(--gold-rich)}
+  .cta-title{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;color:#faf8f4;line-height:1.15;margin-bottom:1.2rem}
+  .cta-title em{font-style:italic;color:var(--gold-rich)}
+  .cta-sub{font-size:0.96rem;color:rgba(250,248,244,0.5);line-height:1.8;margin-bottom:2.5rem}
+  .cta-actions{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
+  .btn-cta-primary{background:var(--gold);color:#fff;padding:1rem 2.4rem;font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));display:inline-block}
+  .btn-cta-primary:hover{background:var(--gold-rich);transform:translateY(-2px)}
+  .btn-cta-ghost{background:transparent;color:#faf8f4;padding:1rem 2.4rem;border:1px solid rgba(250,248,244,0.25);font-family:"DM Sans",sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;display:inline-block}
+  .btn-cta-ghost:hover{border-color:var(--gold-rich);color:var(--gold-rich)}
+
+  /* ── Често задавани въпроси (отварящи се редове) ── */
+  .faq-list{max-width:820px;display:flex;flex-direction:column;gap:0.8rem}
+  .faq-item{background:var(--surface);border:1px solid var(--border);transition:border-color 0.3s}
+  .faq-item[open]{border-color:var(--border2)}
+  .faq-item summary{cursor:pointer;list-style:none;padding:1.2rem 1.5rem;font-family:"Cormorant Garamond",serif;font-size:1.25rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{content:"+";font-family:"DM Sans",sans-serif;font-size:1.4rem;line-height:1;color:var(--gold);transition:transform 0.3s;flex-shrink:0}
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .faq-item p{padding:0 1.5rem 1.4rem;color:var(--ink2);font-size:0.96rem;line-height:1.8}
+  .faq-item p a{color:var(--gold)}
+  #faq{background:var(--bg)}
+  #faq .faq-list{margin-top:2.6rem}
+
+  /* ── Форма за запитване върху тъмен фон (страниците с услуги „след запитване“) ── */
+  #inquiry{background:var(--teal);padding:7rem 4rem;position:relative;overflow:hidden}
+  .inquiry-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;max-width:1100px;margin:0 auto}
+  .inquiry-text .section-tag{color:var(--gold-rich)}
+  .inquiry-text .section-tag::before{background:var(--gold-rich)}
+  .inquiry-text h2{font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;color:#faf8f4;line-height:1.2}
+  .inquiry-text h2 em{font-style:italic;color:var(--gold-rich)}
+  .inquiry-text p{color:rgba(250,248,244,0.72);font-size:0.98rem;line-height:1.8;margin-top:1.2rem}
+  .inquiry-highlights{margin-top:2rem;display:flex;flex-direction:column;gap:0.85rem}
+  .inq-hl{display:flex;align-items:center;gap:0.8rem;font-size:0.95rem;color:rgba(250,248,244,0.88)}
+  .inq-hl svg{width:16px;height:16px;stroke:var(--gold-rich);fill:none;stroke-width:2;flex-shrink:0}
+  .inquiry-form{background:rgba(250,248,244,0.05);border:1px solid rgba(250,248,244,0.12);padding:2.5rem}
+  .inquiry-form .form-group label{color:rgba(250,248,244,0.68)}
+  .inquiry-form .btn-primary{width:100%;text-align:center;margin-top:0.4rem}
+  .form-msg{display:none;margin-top:1rem;padding:1rem;font-size:0.9rem;line-height:1.6}
+  .form-msg.ok{background:rgba(184,137,46,0.15);border:1px solid rgba(184,137,46,0.3);color:var(--gold-rich)}
+  .form-msg.err{background:rgba(200,80,80,0.1);border:1px solid rgba(200,80,80,0.3);color:#e08080}
+  .form-msg.err a{color:var(--gold-rich)}
+  .form-msg.show{display:block}
+
+  /* ── Статия от блога (страниците в папка blog/) ── */
+  .article-hero{height:60vh;min-height:400px;position:relative;overflow:hidden;display:flex;align-items:flex-end;background:var(--bg2);margin-top:78px}
+  .article-hero.no-img{height:auto;min-height:260px;background:var(--teal)}
+  .article-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
+  .article-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,18,0.85) 0%,rgba(26,22,18,0.3) 50%,transparent 100%)}
+  .article-hero-content{position:relative;z-index:2;padding:4rem;color:#faf8f4;max-width:820px}
+  .article-hero-back{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(250,248,244,0.65);text-decoration:none;transition:color 0.3s;cursor:pointer;margin-bottom:1.6rem;background:none;border:none}
+  .article-hero-back:hover{color:#faf8f4}
+  .article-hero-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+  .article-meta{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+  .article-date{font-size:0.72rem;letter-spacing:0.1em;color:rgba(250,248,244,0.7);text-transform:uppercase}
+  .article-hero h1.article-title,.article-title{font-family:"Cormorant Garamond",serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:300;line-height:1.15;color:#faf8f4}
+  .article-body{background:var(--bg);padding:5rem 4rem 7rem}
+  .article-content{max-width:720px;margin:0 auto}
+  .article-content p{color:var(--ink2);line-height:1.9;font-size:0.97rem;margin-bottom:1.4rem}
+  .article-content h2,.article-content h3,.article-content h4{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:400;color:var(--ink);margin:2rem 0 0.8rem;line-height:1.3}
+  .article-content h2{font-size:1.6rem}
+  .article-content h4{font-size:1.2rem}
+  .article-content ul,.article-content ol{margin:0 0 1.4rem 1.2rem}
+  .article-content li{color:var(--ink2);line-height:1.85;font-size:0.95rem;margin-bottom:0.5rem}
+  .article-content strong{color:var(--ink);font-weight:500}
+  .article-content em{font-style:italic;color:var(--ink2)}
+  .article-content a{color:var(--gold)}
+  .article-content img{display:block;margin:1.8rem auto}
+  .article-content hr{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+  .article-content blockquote{border-left:2px solid var(--gold);padding:1.2rem 1.6rem;background:rgba(184,137,46,0.05);margin:1.8rem 0}
+  .article-content blockquote p{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-style:italic;color:var(--ink);margin:0}
+  .article-author{max-width:720px;margin:3rem auto 0;padding:1.4rem 1.6rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);font-size:0.92rem;line-height:1.75;color:var(--ink2)}
+  .article-author a{color:var(--gold)}
+  .article-share{max-width:720px;margin:2.2rem auto 0;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+  .article-share-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)}
+  .article-nav{max-width:720px;margin:2rem auto 0;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+  .article-nav-btn{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;border:none;transition:color 0.3s;font-family:"DM Sans",sans-serif;text-decoration:none;line-height:1.5}
+  .article-nav-btn:hover{color:var(--gold)}
+  .article-nav-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+
+  @media(max-width:1100px){
+    #cta{padding:5rem 2rem}
+    #inquiry{padding:5rem 2rem}
+    .inquiry-inner{grid-template-columns:1fr;gap:3rem}
+    .article-body{padding:4rem 2rem 6rem}
+  }
+  @media(max-width:768px){
+    #cta{padding:5rem 1.6rem}
+    .cta-actions{flex-direction:column;align-items:center}
+    #inquiry{padding:4.5rem 1.6rem}
+    .inquiry-form{padding:1.8rem 1.3rem}
+    .article-hero-content{padding:2rem}
+    .article-nav{flex-direction:column;align-items:flex-start}
+  }

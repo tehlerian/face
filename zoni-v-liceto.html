@@ -2,115 +2,12 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+
+<!-- ═══ Бисквитки + Google Analytics — настройките са в consent.js ═══ -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
-    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    security_storage:      'granted'
-  });
-</script>
-
-<!-- 2. Silktide Consent Manager -->
 <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
-<style id="silktide-consent-manager-overrides">
-#stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #B8892E;
-  --backgroundColor: #faf8f4;
-  --textColor: #4b494b;
-  --backdropBackgroundColor: #00000033;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #B8892E;
-  --iconBackgroundColor: #FAF8F4;
-}
-</style>
 <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
-<script>
-window.silktideConsentManager.init({
-  backdrop: {
-    show: false
-  },
-  icon: {
-    position: "bottomRight"
-  },
-  prompt: {
-    position: "bottomRight"
-  },
-  consentTypes: [
-    {
-      id: "essential",
-      label: "Задължителни",
-      description: "<p>Задължителни бисквитки</p>",
-      required: true
-    },
-    {
-      id: "analytics",
-      label: "Аналитични",
-      description: "<p>Аналитични бисквитки</p>",
-      defaultValue: false,
-      gtag: "analytics_storage",
-      scripts: [
-        {
-          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
-          load: "async"
-        }
-      ],
-      onAccept: function() {
-        // Google Analytics 4 (G-J3RM10J6K9)
-        gtag('js', new Date());
-        gtag('config', 'G-J3RM10J6K9');
-      }
-    },
-    {
-      id: "marketing",
-      label: "Маркетингови",
-      description: "<p>Бисквитки за маркетингово измерване</p>",
-      defaultValue: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
-    }
-  ],
-  text: {
-    prompt: {
-      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
-      acceptAllButtonText: "Приеми",
-      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
-      rejectNonEssentialButtonText: "Откажи",
-      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
-      preferencesButtonText: "Настройки",
-      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
-    },
-    preferences: {
-      title: "Настройване на бисквитките",
-      description: "<p>Уважаваме вашето желание за анонимност</p>",
-      saveButtonText: "Запази и Затвори",
-      saveButtonAccessibleLabel: "Запази и Затвори",
-      creditLinkText: "+",
-      creditLinkAccessibleLabel: "+"
-    }
-  }
-});
-</script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J3RM10J6K9');
-</script>
+<script src="consent.js?v=202611160005"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Зони в лицето — безплатен наръчник по себепознание (PDF) | YourFaceTalk</title>
@@ -141,7 +38,7 @@ window.silktideConsentManager.init({
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/opt/naruchnik-korica.webp" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20261022">
+<link rel="stylesheet" href="styles.css?v=202611152342">
 
 <style>
   /* ── ЛЕНДИНГ: ЗОНИ В ЛИЦЕТО ── */
@@ -717,7 +614,7 @@ window.silktideConsentManager.init({
       <div class="footer-logo">YourFace<span>Talk</span></div>
       <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li><li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
     <div class="footer-col"><h4>Безплатно</h4><ul><li><a href="zoni-v-liceto.html">Наръчник „Зони в лицето“</a></li><li><a href="ogledalen-test.html">Огледален тест</a></li><li><a href="quiz.html">Кратък тест</a></li><li><a href="blog.html">Блог</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="index.html">Начална страница</a></li></ul></div>
   </div>
@@ -755,11 +652,11 @@ window.silktideConsentManager.init({
       "url": "https://yourfacetalk.com/",
       "name": "YourFaceTalk",
       "inLanguage": "bg-BG",
-      "publisher": { "@id": "https://yourfacetalk.com/#org" }
+      "publisher": { "@id": "https://yourfacetalk.com/#organization" }
     },
     {
       "@type": "Organization",
-      "@id": "https://yourfacetalk.com/#org",
+      "@id": "https://yourfacetalk.com/#organization",
       "name": "YourFaceTalk",
       "url": "https://yourfacetalk.com/",
       "email": "yourfacetalk@gmail.com",
@@ -779,7 +676,7 @@ window.silktideConsentManager.init({
       "name": "Елина Божимирова",
       "jobTitle": "Face Reader",
       "url": "https://yourfacetalk.com/za-nas.html",
-      "worksFor": { "@id": "https://yourfacetalk.com/#org" },
+      "worksFor": { "@id": "https://yourfacetalk.com/#organization" },
       "knowsAbout": ["Разчитане на лица", "Face reading", "Себепознание", "Психосоматика"],
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
@@ -797,7 +694,7 @@ window.silktideConsentManager.init({
       "inLanguage": "bg-BG",
       "encodingFormat": "application/pdf",
       "author": { "@id": "https://yourfacetalk.com/#elina" },
-      "publisher": { "@id": "https://yourfacetalk.com/#org" },
+      "publisher": { "@id": "https://yourfacetalk.com/#organization" },
       "image": "https://yourfacetalk.com/img/opt/naruchnik-korica.webp",
       "offers": {
         "@type": "Offer",

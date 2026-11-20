@@ -86,6 +86,49 @@
 })();
 
 /* ═══════════════════════════════════════════════════════════
+   ФОРМИ ЗА ЗАПИТВАНЕ — обща логика
+   Работи за всяка форма с атрибут data-inquiry-form="име":
+
+     <form action="https://formspree.io/f/…" method="POST" data-inquiry-form="special-occasion">
+       … полета (name и email са задължителни имена) …
+       <button type="submit" class="btn-primary">Изпрати запитване</button>
+       <div class="form-msg ok">✓ Благодарим! …</div>
+       <div class="form-msg err">Нещо се обърка. …</div>
+     </form>
+
+   Изпраща запитването през Formspree, показва съобщение за успех/грешка,
+   пуска авто-отговора до клиента (виж по-долу) и отчита събитие
+   "generate_lead" в Google Analytics с името от data-inquiry-form.
+═══════════════════════════════════════════════════════════ */
+(function () {
+  document.querySelectorAll('form[data-inquiry-form]').forEach(function (form) {
+    var btn = form.querySelector('button[type="submit"]');
+    var ok = form.querySelector('.form-msg.ok');
+    var err = form.querySelector('.form-msg.err');
+    var btnText = btn ? btn.textContent : '';
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (ok) ok.classList.remove('show');
+      if (err) err.classList.remove('show');
+      if (btn) { btn.disabled = true; btn.textContent = 'Изпращане...'; }
+      var fd = new FormData(form);
+      var name = (fd.get('name') || '').toString().trim();
+      var email = (fd.get('email') || '').toString().trim();
+      fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+        .then(function (r) {
+          if (!r.ok) throw new Error('send failed');
+          if (ok) ok.classList.add('show');
+          form.reset();
+          if (window.sendAutoReply) window.sendAutoReply(name, email);
+          if (window.gtag) gtag('event', 'generate_lead', { event_category: form.getAttribute('data-inquiry-form') || 'inquiry' });
+        })
+        .catch(function () { if (err) err.classList.add('show'); })
+        .then(function () { if (btn) { btn.disabled = false; btn.textContent = btnText; } });
+    });
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════
    АВТО-ОТГОВОР ПО ИМЕЙЛ (EmailJS) — безплатна алтернатива
    на платения autoresponse на Formspree.
 

@@ -2,138 +2,48 @@
 <html lang="bg">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══ SEO — заглавие, описание и снимка при споделяне (променят се тук) ═══ -->
+<title>Разчитане на лица (Face Reading) с Елина Божимирова | YourFaceTalk</title>
+<meta name="description" content="Какво казва лицето за характера и силните ви страни? Персонални анализи с разчитане на лице (Face Reading, физиогномика) — онлайн и на живо във Варна.">
+<link rel="canonical" href="https://yourfacetalk.com/">
+<link rel="alternate" hreflang="bg" href="https://yourfacetalk.com/">
+<link rel="alternate" hreflang="en" href="https://yourfacetalk.com/face-reading-bulgaria.html">
+<link rel="alternate" hreflang="x-default" href="https://yourfacetalk.com/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Елина Божимирова">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YourFaceTalk">
+<meta property="og:locale" content="bg_BG">
+<meta property="og:url" content="https://yourfacetalk.com/">
+<meta property="og:title" content="Разчитане на лица (Face Reading) с Елина Божимирова | YourFaceTalk">
+<meta property="og:description" content="Какво казва лицето за характера и силните ви страни? Персонални анализи с разчитане на лице (Face Reading, физиогномика) — онлайн и на живо във Варна.">
+<meta property="og:image" content="https://yourfacetalk.com/img/Hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- ═══ Бисквитки + Google Analytics — настройките са в consent.js ═══ -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-<!-- 1. Consent Mode v2 — по подразбиране всичко по избор е "denied" -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('consent', 'default', {
-    analytics_storage:     localStorage.getItem('stcm.consent.analytics') === 'true' ? 'granted' : 'denied',
-    ad_storage:            localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_user_data:          localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    ad_personalization:    localStorage.getItem('stcm.consent.marketing') === 'true' ? 'granted' : 'denied',
-    functionality_storage: 'granted',
-    security_storage:      'granted'
-  });
-</script>
-
-<!-- 2. Silktide Consent Manager -->
 <link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.css" integrity="sha384-IO1E/jCrQXyH5rwcI0SXP7OXw47JFqQNDQcKhbFvqnL2IunBxxwE2Ne5XyAmCqKs" crossorigin="anonymous">
-<style id="silktide-consent-manager-overrides">
-#stcm-wrapper {
-  --boxShadow: -5px 5px 10px 0px #00000012, 0px 0px 50px 0px #0000001a;
-  --fontFamily: Helvetica Neue, Segoe UI, Arial, sans-serif;
-  --primaryColor: #B8892E;
-  --backgroundColor: #faf8f4;
-  --textColor: #4b494b;
-  --backdropBackgroundColor: #00000033;
-  --backdropBackgroundBlur: 0px;
-  --iconColor: #B8892E;
-  --iconBackgroundColor: #FAF8F4;
-}
-</style>
 <script src="https://cdn.jsdelivr.net/gh/silktide/consent-manager@v2.0.0/silktide-consent-manager.js" integrity="sha384-j4NIMOecmtzMWe9GJADIIe5hTlHG63aiTQ/2XorW10RNyQJg+IU+xwFVDy45wBah" crossorigin="anonymous"></script>
-<script>
-window.silktideConsentManager.init({
-  backdrop: {
-    show: false
-  },
-  icon: {
-    position: "bottomRight"
-  },
-  prompt: {
-    position: "bottomRight"
-  },
-  consentTypes: [
-    {
-      id: "essential",
-      label: "Задължителни",
-      description: "<p>Задължителни бисквитки</p>",
-      required: true
-    },
-    {
-      id: "analytics",
-      label: "Аналитични",
-      description: "<p>Аналитични бисквитки</p>",
-      defaultValue: false,
-      gtag: "analytics_storage",
-      scripts: [
-        {
-          url: "https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9",
-          load: "async"
-        }
-      ],
-      onAccept: function() {
-        // Google Analytics 4 (G-J3RM10J6K9)
-        gtag('js', new Date());
-        gtag('config', 'G-J3RM10J6K9');
-      }
-    },
-    {
-      id: "marketing",
-      label: "Маркетингови",
-      description: "<p>Бисквитки за маркетингово измерване</p>",
-      defaultValue: false,
-      gtag: [
-        "ad_storage",
-        "ad_user_data",
-        "ad_personalization"
-      ]
-    }
-  ],
-  text: {
-    prompt: {
-      description: "<p>Бисквитките се използват единствено за анализ на потребителското изживяване и предоставяне на персонализирано съдържание</p>",
-      acceptAllButtonText: "Приеми",
-      acceptAllButtonAccessibleLabel: "Приеми бисквитки",
-      rejectNonEssentialButtonText: "Откажи",
-      rejectNonEssentialButtonAccessibleLabel: "Откажи бисквитки",
-      preferencesButtonText: "Настройки",
-      preferencesButtonAccessibleLabel: "Настройки на бисквитки"
-    },
-    preferences: {
-      title: "Настройване на бисквитките",
-      description: "<p>Уважаваме вашето желание за анонимност</p>",
-      saveButtonText: "Запази и Затвори",
-      saveButtonAccessibleLabel: "Запази и Затвори",
-      creditLinkText: "+",
-      creditLinkAccessibleLabel: "+"
-    }
-  }
-});
-</script>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J3RM10J6K9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J3RM10J6K9');
-</script>
+<script src="consent.js?v=202611160005"></script>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YourFaceTalk — Разчитане на лицето</title>
-<meta name="description" content="YourFaceTalk — професионално разчитане на лица с Елина Божимирова. Персонални анализи, обучения, лекции и събития.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- Preload hero (LCP) — responsive WebP -->
 <link rel="preload" as="image" href="img/opt/hero-1920.webp" imagesrcset="img/opt/hero-1280.webp 1280w, img/opt/hero-1920.webp 1920w, img/opt/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="styles.css?v=20261022">
+<link rel="stylesheet" href="styles.css?v=202611152342">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-<script src="blog-data.js"></script>
 
-<!-- NAV -->
+<!-- NAV:START — общото меню; променя се в _tools/nav.html (после пуснете _tools/update-site.bat) -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">
-    <img src="img/logo.png" alt="YourFaceTalk Logo">
-  </a>
+  <a href="#hero" class="nav-logo"><img src="img/logo.png" alt="YourFaceTalk — начало" width="272" height="300"></a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#hero">Начало</a></li>
@@ -142,8 +52,8 @@ window.silktideConsentManager.init({
         <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">Услуги <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li><a href="uslugi-personalni.html">Персонални</a></li>
-          <li><a href="uslugi-mominsko.html">Специални поводи</a></li>
-          <li><a href="uslugi-workshop.html">Обучения</a></li>
+          <li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li>
+          <li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li>
           <li><a href="uslugi-vaucher.html">Подари разчитане</a></li>
         </ul>
       </li>
@@ -152,12 +62,13 @@ window.silktideConsentManager.init({
       <li><a href="#contact" class="nav-cta">Контакти</a></li>
     </ul>
     <a href="tel:+359888773076" class="nav-phone" title="Обади се">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       <span class="phone-num">+359 888 773 076</span>
     </a>
   </div>
   <div class="hamburger" aria-label="Меню" role="button" tabindex="0"><span></span><span></span><span></span></div>
 </nav>
+<!-- NAV:END -->
 
 <!-- HERO -->
 <section id="hero">
@@ -201,36 +112,36 @@ window.silktideConsentManager.init({
         <span class="service-num">01</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M15 5.5c1.5.8 2.5 2.3 2.5 4s-1 3.2-2.5 4"/></svg></span>
       </div>
-      <div class="service-title">Персонални анализи</div>
+      <h3 class="service-title">Персонални анализи</h3>
       <p class="service-desc">Задълбочена индивидуална консултация за личностни характеристики, модели на поведение и потенциали.</p>
       <span class="service-more">Научи повече →</span>
     </a>
-    <a href="uslugi-mominsko.html" class="service-card reveal">
+    <a href="uslugi-specialni-povodi.html" class="service-card reveal">
       <div class="svc-media">
         <picture>
-          <source type="image/avif" srcset="img/opt/mParti1.avif">
-          <source type="image/webp" srcset="img/opt/mParti1.webp">
-          <img src="img/mParti1.jpg" alt="Специални поводи — разчитане на лица на партита и празници" loading="lazy">
+          <source type="image/avif" srcset="img/opt/mParti6.avif">
+          <source type="image/webp" srcset="img/opt/mParti6.webp">
+          <img src="img/mParti6.jpg" alt="Специални поводи — разчитане на лица на гостите на празник" loading="lazy">
         </picture>
       </div>
       <div class="svc-top">
         <span class="service-num">02</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
       </div>
-      <div class="service-title">Специални поводи</div>
-      <p class="service-desc">Вдъхновяващи разчитания на лица за партита, тийм билдинги и специални събития.</p>
+      <h3 class="service-title">Специални поводи</h3>
+      <p class="service-desc">Елина идва на вашия празник и разчита лицето на всеки гост. До 12 души, след запитване.</p>
       <span class="service-more">Научи повече →</span>
     </a>
-    <a href="uslugi-workshop.html" class="service-card reveal">
+    <a href="uslugi-targovski-obucheniya.html" class="service-card reveal">
       <div class="svc-media">
-        <img src="img/businessTrainings.jpg" alt="Обучения — практически уъркшоп по разчитане на лица за екипи" loading="lazy">
+        <img src="img/trainingsS.jpg" alt="Обучения — търговско обучение по разчитане на лица за малки групи" loading="lazy" width="1200" height="785">
       </div>
       <div class="svc-top">
         <span class="service-num">03</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span>
       </div>
-      <div class="service-title">Обучения</div>
-      <p class="service-desc">Практически уъркшопи и обучения за екипи и за всеки, който иска да разбере как хората около него вземат решения, комуникират и реагират под натиск.</p>
+      <h3 class="service-title">Обучения</h3>
+      <p class="service-desc">Търговски обучения за малки групи до 12 души — как да „прочетете“ клиента по лицето му. След запитване.</p>
       <span class="service-more">Научи повече →</span>
     </a>
     <a href="uslugi-vaucher.html" class="service-card reveal">
@@ -241,7 +152,7 @@ window.silktideConsentManager.init({
         <span class="service-num">04</span>
         <span class="service-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></span>
       </div>
-      <div class="service-title">Подари разчитане</div>
+      <h3 class="service-title">Подари разчитане</h3>
       <p class="service-desc">Ваучер за персонален анализ — личен и запомнящ се подарък за близък човек.</p>
       <span class="service-more">Научи повече →</span>
     </a>
@@ -407,7 +318,7 @@ window.silktideConsentManager.init({
     <p class="intro-lead">Метод, който разкрива как вземаме решения, как реагираме под напрежение и какви са вътрешните ни ресурси — всичко това, „записано“ в чертите на лицето.</p>
   </div>
   <div class="intro-body reveal">
-    <p>Разчитането на лица е метод, който разкрива дълготрайни модели на поведение, начина по който вземаме решения и действаме.</p>
+    <p>Разчитането на лица — познато още като Face Reading (фейс рийдинг) или физиогномика — е метод, който разкрива дълготрайни модели на поведение, начина по който вземаме решения и действаме.</p>
     <p>Лицето носи информация за нашите силни страни, реакции под напрежение, стил на комуникация и вътрешни ресурси — всичко това е „записано“ в чертите, които носим през целия си живот.</p>
     <p>Като сертифициран Face Reader (Psychosomatic Therapy College) Елина помага на хора и екипи да разберат по-дълбоко себе си и другите — чрез анализа на чертите на лицето.</p>
   </div>
@@ -427,6 +338,52 @@ window.silktideConsentManager.init({
       <h3>Комуникация и връзки</h3>
       <p>Стилът на общуване и пътят към по-осъзнати взаимоотношения.</p>
     </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- FAQ (Често задавани въпроси)
+     ВАЖНО: ако промените въпрос или отговор тук, променете го и в блока "FAQPage"
+     най-долу на страницата (структурирани данни) — двата текста трябва да съвпадат. -->
+<section id="faq">
+  <div class="reveal">
+    <div class="section-tag">Въпроси</div>
+    <h2>Често задавани<br><em>въпроси</em></h2>
+  </div>
+  <div class="faq-list reveal">
+    <details class="faq-item">
+      <summary>Какво е разчитане на лица (Face Reading)?</summary>
+      <p>Разчитането на лица (на английски Face Reading, срещано и като „фейс рийдинг“) е метод за себепознание, при който чертите на лицето — чело, вежди, очи, нос, уста, скули и брадичка — се разглеждат като карта на характера: как човек мисли, взема решения, общува и реагира под напрежение.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Каква е разликата между физиогномика и разчитане на лица?</summary>
+      <p>Физиогномика е историческото название на учението за връзката между чертите на лицето и характера — традиция, позната от древна Гърция, Индия и Китай. Разчитането на лица е съвременното ѝ практическо приложение. В YourFaceTalk Елина Божимирова работи със западната и китайската школа и е сертифицирана като Face Reader от Psychosomatic Therapy College, Австралия.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Какво може да се разбере за характера по лицето?</summary>
+      <p>Силните страни и естествените умения на човека, стилът му на общуване, начинът, по който взема решения, реакциите му под напрежение и темата, която е най-актуална за него в момента. Разчитането описва тенденции и модели на поведение — не предсказва бъдещето.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Гадаене ли е разчитането на лица?</summary>
+      <p>Не. Разчитането на лица е метод за разпознаване на устойчиви модели на поведение — без предсказания и без „езотерика“. То не е медицинска или психологическа диагноза и не замества работата със специалист; това е инструмент за себепознание и за по-добро разбиране на хората около нас.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Как протича персоналният анализ?</summary>
+      <p>Изпращате няколко снимки на лицето си преди срещата. Самата среща е онлайн през Zoom или на живо във Варна и продължава от 30 до 90 минути според избрания формат. При задълбочения анализ се разглежда всяка зона на лицето, а по желание получавате и писмен доклад. Вижте <a href="uslugi-personalni.html">форматите на персоналния анализ</a>.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Мога ли да направя анализ онлайн, ако не живея във Варна?</summary>
+      <p>Да. Срещите се провеждат онлайн през Zoom, независимо къде се намирате, а на живо — във Варна.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Колко струва разчитането на лице?</summary>
+      <p>Цената зависи от формата — базов анализ (30 минути), задълбочен анализ (60 минути), анализ с писмен доклад (90 минути) или анализ за двойки. Актуалните цени са на страницата <a href="uslugi-personalni.html">„Персонални анализи“</a>.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Предлагате ли разчитане на лица за събития и обучения за екипи?</summary>
+      <p>Да. За празници и лични събития Елина прави кратки разчитания на гостите — вижте <a href="uslugi-specialni-povodi.html">„Специални поводи“</a>. За търговци и малки екипи провежда <a href="uslugi-targovski-obucheniya.html">търговски обучения</a>. И двете са за групи до 12 души, след запитване.</p>
+    </details>
   </div>
 </section>
 
@@ -470,7 +427,44 @@ window.silktideConsentManager.init({
     <a href="blog.html" class="btn-ghost" style="font-size:0.8rem;padding:0.7rem 1.5rem;">Всички статии →</a>
   </div>
   <div class="blog-grid" id="homeBlogGrid">
-    <!-- Последните 3 статии се зареждат автоматично от blog-data.js -->
+    <!-- BLOG-HOME:START — последните 3 статии; попълват се автоматично от blog-data.js при пускане на _tools/update-site.bat -->
+    <a href="blog/samostoyatelna-rabota-2026.html" class="blog-card featured reveal">
+      <div class="blog-img">
+        <picture><source type="image/avif" srcset="img/opt/samostoyatelna-rabota-2026.avif"><source type="image/webp" srcset="img/opt/samostoyatelna-rabota-2026.webp"><img src="img/samostoyatelna-rabota-2026.png" alt="Имаш качество да работиш самостоятелно и това се вижда в лицето ти?" loading="lazy" decoding="async"></picture>
+        <div class="blog-img-overlay"></div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>13 Февруари 2026</span></div>
+        <h3 class="blog-title">Имаш качество да работиш самостоятелно и това се вижда в лицето ти?</h3>
+        <p class="blog-excerpt">Начин да разбереш хората, меките им умения и качества на личността — и дали биха били подходящи за изискванията на дадена длъжност.</p>
+        <span class="blog-read-more">Прочети →</span>
+      </div>
+    </a>
+    <a href="blog/ekip-lica-2026.html" class="blog-card reveal">
+      <div class="blog-img">
+        <picture><source type="image/avif" srcset="img/opt/ekip-lica-2026.avif"><source type="image/webp" srcset="img/opt/ekip-lica-2026.webp"><img src="img/ekip-lica-2026.png" alt="Лицето на екипа – как да разчетем динамиката на екипа през лицата" loading="lazy" decoding="async"></picture>
+        <div class="blog-img-overlay"></div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>26 Януари 2026</span></div>
+        <h3 class="blog-title">Лицето на екипа – как да разчетем динамиката на екипа през лицата</h3>
+        <p class="blog-excerpt">Само знанията и компетенциите на лидера ли имат значение, за да бъде един екип по-дълготраен и успешен? Мисля, че всички знаем отговора - а и Лицето го показва също!</p>
+        <span class="blog-read-more">Прочети →</span>
+      </div>
+    </a>
+    <a href="blog/hr-podbor-2026.html" class="blog-card reveal">
+      <div class="blog-img">
+        <picture><source type="image/avif" srcset="img/opt/hr-podbor-2026.avif"><source type="image/webp" srcset="img/opt/hr-podbor-2026.webp"><img src="img/hr-podbor-2026.png" alt="Разчитане на лица — нов слой към процеса на подбор на кандидати" loading="lazy" decoding="async"></picture>
+        <div class="blog-img-overlay"></div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta"><span>09 Януари 2026</span></div>
+        <h3 class="blog-title">Разчитане на лица — нов слой към процеса на подбор на кандидати</h3>
+        <p class="blog-excerpt">Не става въпрос за етикиране. Става въпрос за виждане на човека до нас. И всеки, когато е &quot;видян&quot; и е на правилното за него място, личната му удовлетвореност расте.</p>
+        <span class="blog-read-more">Прочети →</span>
+      </div>
+    </a>
+<!-- BLOG-HOME:END -->
   </div>
 </section>
 
@@ -547,7 +541,7 @@ window.silktideConsentManager.init({
         <div class="form-group"><label>Телефон</label><input type="text" name="phone" placeholder="+359 88 123 4567"></div>
         <div class="form-group"><label>Компания</label><input type="text" name="company" placeholder="Вашата компания"></div>
         <div class="form-group"><label>Вид услуга</label>
-          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Специален повод</option><option>Обучение за екип</option><option>Ваучер за подарък</option></select>
+          <select name="service"><option value="">Изберете услуга...</option><option>Персонален анализ</option><option>Специален повод</option><option>Търговско обучение</option><option>Уъркшоп за екип</option><option>Ваучер за подарък</option></select>
         </div>
         <div class="form-group"><label>Съобщение</label><textarea name="message" placeholder="Разкажете ни повече за вашите нужди..."></textarea></div>
         <button type="submit" class="btn-primary" id="submitBtn">Изпрати запитване</button>
@@ -597,15 +591,15 @@ window.silktideConsentManager.init({
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER:START — общият футър; променя се в _tools/footer.html (после пуснете _tools/update-site.bat) -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="footer-logo">YourFace<span>Talk</span></div>
-      <p>Професионални консултации за разчитане на лица. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
+      <p>Професионални консултации за разчитане на лица (Face Reading) с Елина Божимирова — онлайн и на живо във Варна. Помагаме на хората и организациите да се разберат по-добре чрез метода за разчитане на лица.</p>
     </div>
-    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-mominsko.html">Специални поводи</a></li><li><a href="uslugi-workshop.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
-    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="#contact">Контакти</a></li></ul></div>
+    <div class="footer-col"><h4>Услуги</h4><ul><li><a href="uslugi.html">Всички услуги</a></li><li><a href="uslugi-personalni.html">Персонални анализи</a></li><li><a href="uslugi-specialni-povodi.html">Специални поводи</a></li><li><a href="uslugi-targovski-obucheniya.html">Обучения</a></li><li><a href="uslugi-vaucher.html">Подари разчитане</a></li></ul></div>
+    <div class="footer-col"><h4>Компания</h4><ul><li><a href="za-nas.html">За мен</a></li><li><a href="zoni-v-liceto.html">Безплатен наръчник</a></li><li><a href="#testimonials">Отзиви</a></li><li><a href="blog.html">Блог</a></li><li><a href="sabitia.html">Събития</a></li><li><a href="#contact">Контакти</a></li><li><a href="face-reading-bulgaria.html" hreflang="en" lang="en">English</a></li></ul></div>
     <div class="footer-col"><h4>Контакти</h4><ul><li><a href="mailto:yourfacetalk@gmail.com">yourfacetalk@gmail.com</a></li><li><a href="tel:+359888773076">+359 888 773 076</a></li><li><a href="https://yourfacetalk.com" target="_blank" rel="noopener">yourfacetalk.com</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -619,11 +613,123 @@ window.silktideConsentManager.init({
     </div>
   </div>
 </footer>
+<!-- FOOTER:END -->
 
 <!-- Скрит фрейм — приема отговора на MailerLite (бюлетин), за да не се презарежда страницата -->
 <iframe name="ml-sink-nl" id="ml-sink-nl" style="display:none" title="MailerLite" aria-hidden="true"></iframe>
 
-<script src="app.js?v=20260719"></script>
+<!-- ═══════════════════════════════════════════════════════════
+     СТРУКТУРИРАНИ ДАННИ ЗА GOOGLE И AI (schema.org)
+     Тук е „визитката“ на сайта за търсачките и изкуствените интелекти:
+     кой е YourFaceTalk, коя е Елина, какви услуги се предлагат и
+     често задаваните въпроси. При промяна на телефон, имейл, профили в
+     социалните мрежи или въпросите от секция „Често задавани въпроси“ —
+     променете ги и тук.
+     ═══════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://yourfacetalk.com/#website",
+      "url": "https://yourfacetalk.com/",
+      "name": "YourFaceTalk",
+      "alternateName": ["Your Face Talk", "Какво казва лицето ти"],
+      "description": "Разчитане на лица (Face Reading) с Елина Божимирова — персонални анализи, обучения и събития.",
+      "inLanguage": "bg-BG",
+      "publisher": { "@id": "https://yourfacetalk.com/#organization" }
+    },
+    {
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://yourfacetalk.com/#organization",
+      "name": "YourFaceTalk",
+      "alternateName": ["Your Face Talk", "Какво казва лицето ти"],
+      "url": "https://yourfacetalk.com/",
+      "logo": "https://yourfacetalk.com/img/logo.png",
+      "image": "https://yourfacetalk.com/img/Hero.jpg",
+      "description": "YourFaceTalk предлага професионално разчитане на лица (Face Reading, физиогномика): персонални анализи на характера и силните страни, анализи за двойки, разчитане на лица за специални поводи, търговски обучения и ваучери за подарък. Онлайн и на живо във Варна.",
+      "slogan": "Лицето показва качествата на личността",
+      "email": "yourfacetalk@gmail.com",
+      "telephone": "+359888773076",
+      "founder": { "@id": "https://yourfacetalk.com/#elina" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Варна", "addressCountry": "BG" },
+      "areaServed": [
+        { "@type": "City", "name": "Варна" },
+        { "@type": "Country", "name": "България" }
+      ],
+      "knowsAbout": ["Разчитане на лица", "Face reading", "Фейс рийдинг", "Физиогномика", "Physiognomy", "Характер и силни страни на личността", "Себепознание"],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61551052808065",
+        "https://www.instagram.com/kakvo_kazva_liceto_ti/",
+        "https://www.linkedin.com/in/elina-bozhimirova-3360a9301/",
+        "https://www.youtube.com/@%D0%9A%D0%B0%D0%BA%D0%B2%D0%BE%D0%BA%D0%B0%D0%B7%D0%B2%D0%B0%D0%BB%D0%B8%D1%86%D0%B5%D1%82%D0%BE%D1%82%D0%B8",
+        "https://www.tiktok.com/@your_face_talk"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Услуги на YourFaceTalk",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Персонален анализ с разчитане на лице", "url": "https://yourfacetalk.com/uslugi-personalni.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Разчитане на лица за специални поводи", "url": "https://yourfacetalk.com/uslugi-specialni-povodi.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Търговски обучения с разчитане на лица", "url": "https://yourfacetalk.com/uslugi-targovski-obucheniya.html" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ваучер за подарък за разчитане на лице", "url": "https://yourfacetalk.com/uslugi-vaucher.html" } }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yourfacetalk.com/#elina",
+      "name": "Елина Божимирова",
+      "alternateName": "Elina Bozhimirova",
+      "jobTitle": "Сертифициран Face Reader",
+      "description": "Елина Божимирова е сертифициран Face Reader (Psychosomatic Therapy College, Австралия) и основател на YourFaceTalk. Провела е над 250 консултации по разчитане на лица.",
+      "url": "https://yourfacetalk.com/za-nas.html",
+      "image": "https://yourfacetalk.com/img/elina.jpg",
+      "worksFor": { "@id": "https://yourfacetalk.com/#organization" },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Psychosomatic Therapy College",
+        "address": { "@type": "PostalAddress", "addressCountry": "AU" }
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Certified Face Reader",
+        "credentialCategory": "Сертификат",
+        "recognizedBy": { "@type": "Organization", "name": "Psychosomatic Therapy College, Австралия" }
+      },
+      "knowsAbout": ["Разчитане на лица", "Face reading", "Физиогномика", "Physiognomy", "Психосоматика", "Невербална комуникация", "Себепознание"],
+      "sameAs": ["https://www.linkedin.com/in/elina-bozhimirova-3360a9301/"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://yourfacetalk.com/#webpage",
+      "url": "https://yourfacetalk.com/",
+      "name": "Разчитане на лица (Face Reading) с Елина Божимирова",
+      "inLanguage": "bg-BG",
+      "isPartOf": { "@id": "https://yourfacetalk.com/#website" },
+      "about": { "@id": "https://yourfacetalk.com/#organization" },
+      "primaryImageOfPage": "https://yourfacetalk.com/img/Hero.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yourfacetalk.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Какво е разчитане на лица (Face Reading)?", "acceptedAnswer": { "@type": "Answer", "text": "Разчитането на лица (на английски Face Reading, срещано и като „фейс рийдинг“) е метод за себепознание, при който чертите на лицето — чело, вежди, очи, нос, уста, скули и брадичка — се разглеждат като карта на характера: как човек мисли, взема решения, общува и реагира под напрежение." } },
+        { "@type": "Question", "name": "Каква е разликата между физиогномика и разчитане на лица?", "acceptedAnswer": { "@type": "Answer", "text": "Физиогномика е историческото название на учението за връзката между чертите на лицето и характера — традиция, позната от древна Гърция, Индия и Китай. Разчитането на лица е съвременното ѝ практическо приложение. В YourFaceTalk Елина Божимирова работи със западната и китайската школа и е сертифицирана като Face Reader от Psychosomatic Therapy College, Австралия." } },
+        { "@type": "Question", "name": "Какво може да се разбере за характера по лицето?", "acceptedAnswer": { "@type": "Answer", "text": "Силните страни и естествените умения на човека, стилът му на общуване, начинът, по който взема решения, реакциите му под напрежение и темата, която е най-актуална за него в момента. Разчитането описва тенденции и модели на поведение — не предсказва бъдещето." } },
+        { "@type": "Question", "name": "Гадаене ли е разчитането на лица?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Разчитането на лица е метод за разпознаване на устойчиви модели на поведение — без предсказания и без „езотерика“. То не е медицинска или психологическа диагноза и не замества работата със специалист; това е инструмент за себепознание и за по-добро разбиране на хората около нас." } },
+        { "@type": "Question", "name": "Как протича персоналният анализ?", "acceptedAnswer": { "@type": "Answer", "text": "Изпращате няколко снимки на лицето си преди срещата. Самата среща е онлайн през Zoom или на живо във Варна и продължава от 30 до 90 минути според избрания формат. При задълбочения анализ се разглежда всяка зона на лицето, а по желание получавате и писмен доклад." } },
+        { "@type": "Question", "name": "Мога ли да направя анализ онлайн, ако не живея във Варна?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Срещите се провеждат онлайн през Zoom, независимо къде се намирате, а на живо — във Варна." } },
+        { "@type": "Question", "name": "Колко струва разчитането на лице?", "acceptedAnswer": { "@type": "Answer", "text": "Цената зависи от формата — базов анализ (30 минути), задълбочен анализ (60 минути), анализ с писмен доклад (90 минути) или анализ за двойки. Актуалните цени са на страницата „Персонални анализи“: https://yourfacetalk.com/uslugi-personalni.html" } },
+        { "@type": "Question", "name": "Предлагате ли разчитане на лица за събития и обучения за екипи?", "acceptedAnswer": { "@type": "Answer", "text": "Да. За празници и лични събития Елина прави кратки разчитания на гостите — вижте „Специални поводи“. За търговци и малки екипи провежда търговски обучения. И двете са за групи до 12 души, след запитване." } }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="app.js?v=202611160001"></script>
 <script>
   // ── Page-specific JS (index) ──
 
@@ -810,39 +916,6 @@ window.silktideConsentManager.init({
     });
   })();
 
-  // Auto-render last 3 articles from blog-data.js (optimised <picture> with fallback)
-  function optBase(src){ return src.replace(/^img\//,'').replace(/\.[^.]+$/,''); }
-  function renderHomeBlog() {
-    const grid = document.getElementById('homeBlogGrid');
-    if (!grid || typeof ARTICLES === 'undefined') return;
-    const latest = ARTICLES.slice(0, 3);
-    grid.innerHTML = latest.map(function(a, i) {
-      var featured = i === 0 ? ' featured' : '';
-      var imgHTML;
-      if (a.img) {
-        var b = optBase(a.img);
-        imgHTML = '<picture>' +
-          '<source type="image/avif" srcset="img/opt/' + b + '.avif">' +
-          '<source type="image/webp" srcset="img/opt/' + b + '.webp">' +
-          '<img src="' + a.img + '" alt="' + a.title + '" loading="lazy">' +
-          '</picture>';
-      } else {
-        imgHTML = '<div class="blog-img-bg"><svg viewBox="0 0 24 24" stroke-width="0.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>';
-      }
-      return '<a href="blog.html?article=' + i + '" class="blog-card' + featured + ' reveal">' +
-        '<div class="blog-img">' + imgHTML +
-        '<div class="blog-img-overlay"></div>' +
-        '</div>' +
-        '<div class="blog-body">' +
-        '<div class="blog-meta"><span>' + a.date + '</span></div>' +
-        '<div class="blog-title">' + a.title + '</div>' +
-        '<p class="blog-excerpt">' + a.excerpt + '</p>' +
-        '<span class="blog-read-more">Прочети →</span>' +
-        '</div></a>';
-    }).join('');
-    grid.querySelectorAll('.reveal').forEach(function(el) { window.revealObserver.observe(el); });
-  }
-  renderHomeBlog();
 </script>
 </body>
 </html>
